@@ -1,7 +1,8 @@
 # Detect string-escape corruption in raw exam JSON: control chars (\t \r \x08 \x0b \x0c \x07)
 # and newlines inside $...$ math spans (e.g. "\notin" written in a non-raw string -> "\n" + "otin").
 import json, re, glob, sys
-RX = re.compile(r"\$\$(.+?)\$\$|\$(.+?)\$", re.S)
+# an escaped dollar (backslash + $, e.g. a MIPS register) is not a math delimiter
+RX = re.compile(r"(?<!\\)\$\$(.+?)(?<!\\)\$\$|(?<!\\)\$(.+?)(?<!\\)\$", re.S)
 bad = 0
 def walk(x, where):
     global bad

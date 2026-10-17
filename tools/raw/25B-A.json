@@ -1,0 +1,805 @@
+{
+ "examCode": "25B-A",
+ "examLabel": "2025 סמסטר א מועד ב",
+ "year": 2025,
+ "examDate": "18.03.2025",
+ "sourceFile": "sitting 25B-A (exam pages 2-17)",
+ "keyFile": "sitting 25B-A pp.2-17 (circled options) + pp.18-33 (handwritten solution)",
+ "contexts": {},
+ "questions": [
+  {
+   "num": 1,
+   "topic": "boolean_algebra",
+   "question": "מי מהמשוואות הבאות לא נכונה?",
+   "options": [
+    {
+     "id": "a",
+     "type": "math",
+     "value": "((\\bar A\\oplus B)+(A\\oplus C))\\cdot(C\\oplus\\bar B)=\\overline{\\bar B\\oplus C}"
+    },
+    {
+     "id": "b",
+     "type": "math",
+     "value": "(A\\oplus B)\\cdot((\\bar A\\oplus B)+(A\\oplus\\bar C))=\\bar A\\cdot B\\cdot\\bar C+A\\cdot\\bar B\\cdot C"
+    },
+    {
+     "id": "c",
+     "type": "math",
+     "value": "(A\\oplus\\bar B)\\cdot((A\\oplus B)+(A\\oplus C))=\\bar A\\cdot\\bar B\\cdot C+A\\cdot B\\cdot\\bar C"
+    },
+    {
+     "id": "d",
+     "type": "math",
+     "value": "((A\\oplus B)+(A\\oplus C))\\cdot(C\\oplus B)=\\overline{\\bar B\\cdot\\bar C+B\\cdot C}"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "א: $((\\bar A\\oplus B)+(A\\oplus C))\\cdot(C\\oplus\\bar B)=\\bar B\\bar C+BC=\\overline{B\\oplus C}$, ואילו $\\overline{\\bar B\\oplus C}=B\\oplus C=\\bar B C+B\\bar C$ - לכן המשוואה אינה נכונה.\nב: $(A\\oplus B)\\cdot(\\overline{A\\oplus B}+\\overline{A\\oplus C})=(A\\oplus B)\\cdot\\overline{A\\oplus C}=(\\bar A B+A\\bar B)(\\bar A\\bar C+AC)=\\bar A B\\bar C+A\\bar B C$ - נכונה.\nג: $\\overline{A\\oplus B}\\cdot((A\\oplus B)+(A\\oplus C))=\\overline{A\\oplus B}\\cdot(A\\oplus C)=\\bar A\\bar B C+AB\\bar C$ - נכונה.\nד: $((A\\oplus B)+(A\\oplus C))\\cdot(C\\oplus B)=B\\oplus C=\\overline{\\bar B\\bar C+BC}$ - נכונה.",
+   "note": "Option d RHS: a long overline spans the whole sum; read as overline of (B-bar C-bar + B C)."
+  },
+  {
+   "num": 2,
+   "topic": "mips_machine_code",
+   "question": "מה יהיה באוגר \\$5 אחרי ביצוע הפקודות הבאות:\n`addi \\$1, \\$0, 0xAAAA`\n`add  \\$1, \\$1, \\$1`\n`addi \\$5, \\$1, 0xAAAA`\n`addi \\$5, \\$5, 0x0002`",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "0xFFFE0000"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "0xFFFFFFFF"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "0x0001FFFF"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "0x00020001"
+    },
+    {
+     "id": "e",
+     "type": "text",
+     "value": "0x00000001"
+    },
+    {
+     "id": "f",
+     "type": "text",
+     "value": "0xFFFFFFF2"
+    }
+   ],
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "low",
+   "explanation": "addi מבצע הרחבת סימן: $\\$1=\\texttt{0xFFFFAAAA}$; לאחר החיבור $\\$1=\\texttt{0xFFFF5554}$; $\\$5=\\texttt{0xFFFEFFFE}$, ולאחר החיבור האחרון (2) הפתרון המודפס מסיים ב-0xFFFE0000.",
+   "hold": "Official key (circled a, 0xFFFE0000; p.19 working ends 0xFFFEFFFE + 2 = 0xFFFE0000) disagrees with recomputation: 0xFFFEFFFE + 2 = 0xFFFF0000, which is not among the options. Lecturer arithmetic slip or misprinted option.",
+   "note": "Held: key circled a = 0xFFFE0000 but 0xFFFEFFFE+2 = 0xFFFF0000."
+  },
+  {
+   "num": 3,
+   "topic": "floating_point",
+   "question": "המספר $\\frac{1}{3}$ בבסיס 2 הוא השבר הבינארי האינסופי: $[0.01\\ 01\\ 01\\ 01\\ldots]_2$\nכיצד ייוצג המספר $-\\frac{1}{384}$ בייצוג Single Precision Floating Point (1 סיבית סימן, 8 סיביות אקספוננט ו-23 סיביות שבר) ?",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "0xBB2AAAAB"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "0xBB2AAAAA"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "0xF6555555"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "0xF6555556"
+    },
+    {
+     "id": "e",
+     "type": "text",
+     "value": "0xF02AAAAA"
+    },
+    {
+     "id": "f",
+     "type": "text",
+     "value": "0xBC555556"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "$-\\frac{1}{384}=\\frac{1}{128}\\cdot\\left(-\\frac{1}{3}\\right)=(-1)^1\\cdot 2^{-7}\\cdot 0.010101\\ldots=(-1)^1\\cdot 2^{-9}\\cdot 1.0101010\\ldots$\n$E-127=-9\\Rightarrow E=127-9=118$, $S=1$.\nהשדות: סימן $1$, אקספוננט $01110110$, שבר $01010101010101010101010|101\\ldots$ - עיגול כלפי מעלה של הסיבית האחרונה נותן `0xBB2AAAAB`."
+  },
+  {
+   "num": 4,
+   "topic": "number_bases",
+   "question": "מהו ערכו העשרוני של השבר האינסופי $[0.22\\ 21\\ 21\\ 21\\ 21\\ldots]_5$ בבסיס 5?",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "299/600"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "1395/3000"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "1493/3000"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "13/24"
+    },
+    {
+     "id": "e",
+     "type": "text",
+     "value": "11/24"
+    },
+    {
+     "id": "f",
+     "type": "text",
+     "value": "251/600"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "$X=[0.22\\ 21\\ 21\\ 21\\ldots]_5=[0.01]_5+[0.212121\\ldots]_5$, כאשר $[0.01]_5=\\frac{1}{25}$ ו-$Y=[0.212121\\ldots]_5$.\n$5^2Y=[21]_5+Y\\Rightarrow 24Y=11\\Rightarrow Y=\\frac{11}{24}$.\n$X=\\frac{1}{25}+\\frac{11}{24}=\\frac{24+11\\cdot 25}{25\\cdot 24}=\\frac{24+275}{600}=\\frac{299}{600}$."
+  },
+  {
+   "num": 5,
+   "topic": "signed_twos_complement",
+   "question": "$X$ הוא מספר 2's complement בן 13 סיביות מהן 6 הם מימין לנקודה הבינרית. כלומר:\n$X=\\langle X_6,X_5,X_4,X_3,X_2,X_1,X_0\\,.\\,X_{-1},X_{-2},X_{-3},X_{-4},X_{-5},X_{-6}\\rangle$\nידוע שסיביות $X_4$ ו-$X_2$ הן \"1\", וסיבית $X_{-2}$ היא \"0\". מה לא נכון:",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "$\\langle X\\rangle$ יכול להיות $51\\frac{39}{64}$"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "$\\langle X\\rangle$ לא יכול להיות $-4\\frac{14}{32}$"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "$\\langle X\\rangle$ לא יכול להיות $-49\\frac{27}{64}$"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "$\\langle X\\rangle$ יכול להיות $63\\frac{9}{16}$"
+    },
+    {
+     "id": "e",
+     "type": "text",
+     "value": "$\\langle X\\rangle$ יכול להיות $-33\\frac{15}{32}$"
+    },
+    {
+     "id": "f",
+     "type": "text",
+     "value": "$\\langle X\\rangle$ לא יכול להיות $-46\\frac{11}{32}$"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "בדיקת כל אפשרות לפי ייצוג 13 הסיביות:\n$51\\frac{39}{64}=\\langle 0110011.100111\\rangle$ - הסיביות $X_4,X_2,X_{-2}$ אינן מתאימות ($X_2=0$), לכן $\\langle X\\rangle$ לא יכול להיות $51\\frac{39}{64}$ - זו הטענה הלא נכונה.\n$-4\\frac{14}{32}=\\langle 1111011.100100\\rangle$, $-49\\frac{27}{64}=\\langle 1001110.100101\\rangle$ ו-$-46\\frac{11}{32}=\\langle 1010001.101010\\rangle$ - לא יכולים (הטענות \"לא יכול\" נכונות).\n$63\\frac{9}{16}=\\langle 0111111.100100\\rangle$ ו-$-33\\frac{15}{32}=\\langle 1011110.100010\\rangle$ - יכולים."
+  },
+  {
+   "num": 6,
+   "topic": "signed_twos_complement",
+   "question": "כדי להציג את תחום המספרים מ- $(-2^{14})$ ועד $(2^{14}-\\frac{1}{64})$ צריך מספר בינארי בשיטת המשלים ל-2 בו יש:",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "21 ספרות מהן 15 לחלק השלם."
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "22 ספרות מהן 14 לחלק השלם."
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "21 ספרות מהן 14 לחלק השלם."
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "20 ספרות מהן 14 לחלק השלם."
+    },
+    {
+     "id": "e",
+     "type": "text",
+     "value": "22 ספרות מהן 16 לחלק השלם."
+    },
+    {
+     "id": "f",
+     "type": "text",
+     "value": "20 ספרות מהן 15 לחלק השלם."
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "המשקל $-2^{14}$ הוא של ה-MSB (סיבית הסימן), ולכן יש סיביות מ-0 ועד 14, כלומר 15 סיביות לחלק השלם.\nל-$\\frac{1}{64}$ נדרשות 6 סיביות שבר. לכן מדובר ב-$\\langle m.n\\rangle=\\langle 15.6\\rangle$, כלומר 21 ספרות מהן 15 לחלק השלם."
+  },
+  {
+   "num": 7,
+   "topic": "floating_point",
+   "question": "אנו עוסקים בשני מספרים המיוצגים ב- Single Precision Floating Point (1 סיבית סימן, 8 סיביות אקספוננט ו-23 סיביות שבר, Fraction). מהו היחס בין המספר החיובי הגדול ביותר עם אקספוננט נתון לבין המספר החיובי הקטן ביותר עם אותו אקספוננט?",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "או $(2-2^{-23})$ או $(2^{23}-1)$"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "או $2$ או $(2-2^{-23})$"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "$2-2^{-23}$"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "$1-2^{-23}$"
+    },
+    {
+     "id": "e",
+     "type": "text",
+     "value": "או $(2-2^{-23})$ או $2^{-23}$"
+    },
+    {
+     "id": "f",
+     "type": "text",
+     "value": "אין אפשרות לדעת היות והיחס תלוי בערך האקספוננט שלא נתון לנו"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "יש להבדיל בין שני המספרים החיוביים עם $E=0$ (דנורמליים) והחיוביים עם $E$ בתחום $1\\ldots 254$.\nבמצב רגיל ($E\\ne 0$): מינימום $=2^{E-127}\\cdot 1.00\\ldots 0$, מקסימום $=2^{E-127}\\cdot 1.11\\ldots 1=2^{E-127}\\cdot(2-2^{-23})$, והיחס בינהם הוא כמובן $(2-2^{-23})$.\nבמצב שבו האקספוננט הוא 0: $\\text{eps}=2^{-23}\\cdot 2^{-126}$, $\\text{MAX}_0=2^{-126}\\cdot(1-2^{-23})$, והיחס בינהם $\\frac{1-2^{-23}}{2^{-23}}=2^{23}-1$.\nלכן התשובה היא $(2^{23}-1)$ או $(2-2^{-23})$.",
+   "note": "Options a, b and e each print a leading 'או' (the printed line reads 'או X או Y' in the RTL layout); transcribed as printed. The lecturer's solution answer is '(2^23-1) או (2-2^-23)'."
+  },
+  {
+   "num": 8,
+   "topic": "datapath_control",
+   "question": "הוספנו למעבד ה-MIPS שמימשנו בהרצאות פקודה חדשה. הפקודה, blt (branch less than) פקודה זו קופצת לכתובת של `PC+4+sext(imm)*4` אם הערך שבאוגר Rs קטן מהערך שבאוגר Rt. אם לא, אזי נמשיך לפקודה הבאה. אלו שלבים היו מתבצעים במהלך ביצוע הפקודה הזו?",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "Fetch, Decode, ALU"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "Fetch, Decode, Write-Back"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "Fetch, Decode, ALU, Write-Back"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "Fetch, Decode"
+    },
+    {
+     "id": "e",
+     "type": "text",
+     "value": "Fetch, Decode, Memory, Write-Back"
+    },
+    {
+     "id": "f",
+     "type": "text",
+     "value": "Fetch, Decode, Memory"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "פקודה זו מתבצעת בדומה ל-beq, אלא שה-ALU מבצע פעולת SLT (במקום חיסור) ונתייחס לתוצאה.\nFetch $\\to$ Decode $\\to$ ALU, ולפי תוצאת ה-ALU נכניס את כתובת ה-BRANCH ל-PC או את PC+4 - בדיוק כמו ב-beq."
+  },
+  {
+   "num": 9,
+   "topic": "latches_flipflops",
+   "question": "לפניכם ארבעה דלגלגים (FF-ים), המחוברים בצורת אוגר הזזה (Shift Register). הכניסה משמאל (ל-D3) מחוברת ליציאת שרשרת של 2 שערי XOR, המבצעים פעולת XOR בין Q3 ל Q2, ואח\"כ XOR בין התוצאה לבין Q0. הערך באוגר ההזזה הוא: [Q3, Q2, Q1, Q0] = [0, 1, 0, 1] כמצויר. מה יהיה הערך באוגר אחרי 5 עליות שעון?",
+   "options": [
+    {
+     "id": "a",
+     "type": "math",
+     "value": "[Q_3,Q_2,Q_1,Q_0]=[0,1,1,0]"
+    },
+    {
+     "id": "b",
+     "type": "math",
+     "value": "[Q_3,Q_2,Q_1,Q_0]=[1,1,0,0]"
+    },
+    {
+     "id": "c",
+     "type": "math",
+     "value": "[Q_3,Q_2,Q_1,Q_0]=[1,1,0,1]"
+    },
+    {
+     "id": "d",
+     "type": "math",
+     "value": "[Q_3,Q_2,Q_1,Q_0]=[1,0,0,0]"
+    },
+    {
+     "id": "e",
+     "type": "math",
+     "value": "[Q_3,Q_2,Q_1,Q_0]=[1,0,0,1]"
+    },
+    {
+     "id": "f",
+     "type": "math",
+     "value": "[Q_3,Q_2,Q_1,Q_0]=[0,0,1,1]"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "$D_3=Q_3\\oplus Q_2\\oplus Q_0$ (שאר הדלגלגים מזיזים ימינה).\nמצב התחלה $[0,1,0,1]$ (5); אחרי עלייה 1: $[0,0,1,0]$ (2); אחרי 2: $[0,0,0,1]$ (1); אחרי 3: $[1,0,0,0]$ (8); אחרי 4: $[1,1,0,0]$ (12); אחרי 5: $[0,1,1,0]$ (6).",
+   "image": "images/exams/25B-A-Q9.png"
+  },
+  {
+   "num": 10,
+   "topic": "mips_assembly_c",
+   "question": "נתון קטע הקוד הבא הכתוב בשפת האסמבלי של מעבד ה-MIPS. מה היה הערך ההתחלתי באוגר \\$3, אם כאשר נגיע ל-end, באוגר \\$8 יש את המספר 17.\n`addi \\$7, \\$0, 1`\n`addi \\$8, \\$0, 0`\n`lp:    beq  \\$0, \\$7, end`\n`       and  \\$10, \\$7, \\$3`\n`       bne  \\$10, \\$0, lab1`\n`       addi \\$8, \\$8, 1`\n`lab1:  add  \\$7, \\$7, \\$7`\n`       j    lp`\n`end:`",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "0x830F14F6"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "0xF2FF16F8"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "0x93FE28FE"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "0x8326140C"
+    },
+    {
+     "id": "e",
+     "type": "text",
+     "value": "0x00FF6000"
+    },
+    {
+     "id": "f",
+     "type": "text",
+     "value": "0xE0FF6348"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "`\\$7` הוא ה-MASK ומתחיל ב-`0x00000001`; בכל סיבוב הוא מוזז שמאלה ב-1 ולכן עובר על כל 32 הביטים, ויוצאים כאשר `\\$7==0`.\nכל פעם מבצעים AND בין ה-MASK ל-`\\$3`: אם הביט הוא \"1\" מדלגים (אין `\\$8++`), אם הביט הוא \"0\" מבצעים `\\$8++`.\nלכן בסוף `\\$8` סופר את מספר האפסים (הביטים שערכם \"0\") שיש במספר שב-`\\$3`. 17 אפסים משמעו 15 אחדים - רק בתשובה א יש 15 אחדים."
+  },
+  {
+   "num": 11,
+   "topic": "number_bases",
+   "question": "מה לא נכון ?",
+   "options": [
+    {
+     "id": "a",
+     "type": "math",
+     "value": "[1011.1101]_2=[12.4]_8+[1.01]_4"
+    },
+    {
+     "id": "b",
+     "type": "math",
+     "value": "[1A7]_{16}=2\\times[266]_8+[323]_4"
+    },
+    {
+     "id": "c",
+     "type": "math",
+     "value": "[2201.125]_{10}=[4231.1]_8"
+    },
+    {
+     "id": "d",
+     "type": "math",
+     "value": "[187]_9=[7]_8+9\\times[122]_3"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "א: $[12.4]_8=[001010.100]_2$ ו-$[1.01]_4=[01.0001]_2$; הסכום הוא $[1011.1001]_2$ (ולא $[1011.1101]_2$) - לכן הטענה לא נכונה.\nב: $[266]_8=[010110110]_2$, $[323]_4=[111011]_2$, $2\\times[266]_8+[323]_4=[110100111]_2=[1A7]_{16}$ - נכון.\nג: $[2201.125]_{10}=[100010011001.001]_2=[4231.1]_8$ - נכון.\nד: $[187]_9=[012221]_3$; $9\\times[122]_3=[12200]_3$, $[7]_8=7=[21]_3$, והסכום $[12221]_3$ - נכון."
+  },
+  {
+   "num": 12,
+   "topic": "signed_twos_complement",
+   "question": "במחבר 2's Comp. של 8 ביט יש יציאה הנדלקת כאשר יש Overflow. באיזה מהחישובים הבאים לא תידלק יציאה זו?",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "`10100011 - 00011001`"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "`01011111 - 11001001`"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "`10101111 + 10111001`"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "`11000101 - 01100100`"
+    },
+    {
+     "id": "e",
+     "type": "text",
+     "value": "`01001111 - 11000011`"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "התחום ב-8 ביט הוא $-128\\le X\\le 127$.\nא: $10100011-00011001=(-93)-25=-118$ - אין גלישה.\nב: $01011111-11001001=95-(-55)=150$ - יש גלישה.\nג: $10101111+10111001=(-81)+(-71)=-152$ - יש גלישה.\nד: $11000101-01100100=(-59)-100=-159$ - יש גלישה.\nה: $01001111-11000011=79-(-61)=140$ - יש גלישה."
+  },
+  {
+   "num": 13,
+   "topic": "mips_assembly_c",
+   "question": "שורת ה- C הבאה תורגמה לשפת האסמבלי של ה-MIPS.\n`tmp = array[4*i];`\nידוע ש- i הוא \\$3, ש- tmp הוא \\$4, ושכתובת ההתחלה של array נמצאת ב- \\$2. מהו התרגום הנכון?",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "`add \\$5, \\$3, \\$3`\n`add \\$5, \\$5, \\$5`\n`add \\$5, \\$5, \\$5`\n`add \\$5, \\$5, \\$5`\n`add \\$5, \\$5, \\$2`\n`lw  \\$4, 0(\\$5)`"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "`add \\$5, \\$3, \\$3`\n`add \\$5, \\$5, \\$5`\n`add \\$5, \\$5, \\$5`\n`add \\$5, \\$5, \\$2`\n`lw  \\$4, 0(\\$5)`"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "`add \\$5, \\$3, \\$3`\n`add \\$5, \\$5, \\$5`\n`add \\$5, \\$5, \\$2`\n`lw  \\$4, 0(\\$5)`"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "`add \\$5, \\$3, \\$3`\n`add \\$5, \\$5, \\$5`\n`add \\$5, \\$5, \\$5`\n`add \\$5, \\$5, \\$5`\n`add \\$5, \\$5, \\$5`\n`add \\$5, \\$5, \\$2`\n`lw  \\$4, 0(\\$5)`"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "הכתובת של `array[4*i]` היא $4\\cdot(4\\cdot i)+\\text{array}=16i+\\$2$:\n`add \\$5,\\$3,\\$3` ($\\$5=2i$); `add \\$5,\\$5,\\$5` ($4i$); `add \\$5,\\$5,\\$5` ($8i$); `add \\$5,\\$5,\\$5` ($16i$); `add \\$5,\\$5,\\$2` ($\\$5=\\$2+16i=\\&\\text{array}[4i]$); `lw \\$4,0(\\$5)` ($\\text{tmp}=\\text{array}[4i]$)."
+  },
+  {
+   "num": 14,
+   "topic": "decoders_muxes",
+   "question": "איזו מהמשוואות מתארת נכון את המעגל הבא?",
+   "options": [
+    {
+     "id": "a",
+     "type": "math",
+     "value": "F=\\bar C\\cdot\\bar D+B\\cdot\\bar D+A\\cdot D"
+    },
+    {
+     "id": "b",
+     "type": "math",
+     "value": "F=\\bar C\\cdot\\bar D+B"
+    },
+    {
+     "id": "c",
+     "type": "math",
+     "value": "F=\\bar C\\cdot\\bar D+A+B\\cdot\\bar D"
+    },
+    {
+     "id": "d",
+     "type": "math",
+     "value": "F=\\bar C\\cdot D+B\\cdot\\bar D+A\\cdot D"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "פיתוח לפי כניסות הנתונים של המולטיפלקסר:\n$F=\\bar A\\bar B\\bar C\\cdot\\bar D+\\bar A\\bar B C\\cdot 0+\\bar A B\\bar C\\cdot\\bar D+\\bar A B C\\cdot\\bar D+A\\bar B\\bar C(\\bar D+D)+A\\bar B C\\cdot D+AB\\bar C(\\bar D+D)+ABC(\\bar D+D)=\\bar C\\bar D+B\\bar D+AD$.\nבדיקת האפשרויות האחרות: ב - עבור $[A,B,C,D]=[0,1,1,1]$ הביטוי $\\bar C\\bar D+B$ שווה 1 ואילו $F=0$; ג - עבור $[1,0,1,0]$ הביטוי שווה 1 ואילו $F=0$; ד - עבור $[0,0,0,1]$ הביטוי שווה 1 ואילו $F=0$.",
+   "image": "images/exams/25B-A-Q14.png"
+  },
+  {
+   "num": 15,
+   "topic": "decoders_muxes",
+   "question": "איזו מהמשוואות מתארת נכון את המעגל הבא?",
+   "options": [
+    {
+     "id": "a",
+     "type": "math",
+     "value": "F=\\bar A\\cdot \\bar B\\cdot \\bar C\\cdot \\bar D+\\bar A\\cdot \\bar B\\cdot C\\cdot \\bar D+A\\cdot \\bar B\\cdot \\bar C\\cdot D+A\\cdot \\bar B\\cdot C\\cdot D+\\bar A\\cdot B\\cdot \\bar C\\cdot \\bar D+\\bar A\\cdot B\\cdot \\bar C\\cdot D+A\\cdot B\\cdot \\bar C\\cdot \\bar D+A\\cdot B\\cdot \\bar C\\cdot D"
+    },
+    {
+     "id": "b",
+     "type": "math",
+     "value": "F=\\bar A\\cdot \\bar B\\cdot \\bar C\\cdot D+\\bar A\\cdot \\bar B\\cdot C\\cdot \\bar D+A\\cdot \\bar B\\cdot \\bar C\\cdot \\bar D+A\\cdot \\bar B\\cdot C\\cdot D+\\bar A\\cdot B\\cdot \\bar C\\cdot \\bar D+\\bar A\\cdot B\\cdot \\bar C\\cdot D+A\\cdot B\\cdot \\bar C\\cdot \\bar D+A\\cdot B\\cdot \\bar C\\cdot D"
+    },
+    {
+     "id": "c",
+     "type": "math",
+     "value": "F=\\bar A\\cdot \\bar B\\cdot \\bar C\\cdot \\bar D+\\bar A\\cdot \\bar B\\cdot C\\cdot \\bar D+A\\cdot \\bar B\\cdot \\bar C\\cdot D+A\\cdot \\bar B\\cdot C\\cdot D+\\bar A\\cdot B\\cdot \\bar C\\cdot \\bar D+\\bar A\\cdot B\\cdot C\\cdot D+A\\cdot B\\cdot \\bar C\\cdot \\bar D+A\\cdot B\\cdot \\bar C\\cdot D"
+    },
+    {
+     "id": "d",
+     "type": "math",
+     "value": "F=\\bar A\\cdot \\bar B\\cdot \\bar C\\cdot \\bar D+\\bar A\\cdot \\bar B\\cdot C\\cdot \\bar D+A\\cdot \\bar B\\cdot \\bar C\\cdot \\bar D+A\\cdot \\bar B\\cdot C\\cdot D+\\bar A\\cdot B\\cdot \\bar C\\cdot \\bar D+\\bar A\\cdot B\\cdot \\bar C\\cdot D+A\\cdot B\\cdot \\bar C\\cdot \\bar D+A\\cdot B\\cdot C\\cdot D"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "נמצא את משוואת $F$ מהמעגל; תחילה נחשב את הקשר בין $AB$ ל-$XY$:\n$AB=00\\to XY=00$, $AB=01\\to XY=10$, $AB=10\\to XY=11$, $AB=11\\to XY=10$.\n$F=(\\bar X\\bar Y)\\cdot(\\bar C\\bar D+C\\bar D)+(X\\bar Y)\\cdot\\bar C+(XY)\\cdot D$ (אין מצב $\\bar X Y$).\n$\\Rightarrow F=\\bar A\\bar B(\\bar C\\bar D+C\\bar D)+(\\bar A B+AB)\\cdot\\bar C\\cdot(\\bar D+D)+A\\bar B(\\bar C+C)\\cdot D$, ובפיתוח למכפלות מלאות מתקבלת תשובה א.",
+   "image": "images/exams/25B-A-Q15.png",
+   "note": "Option rows read at 4x zoom; the minterm sets were rebuilt from the printed rows and the key row a recomputed from the circuit by script."
+  },
+  {
+   "num": 16,
+   "topic": "arithmetic_circuits",
+   "question": "בידנו מעגל הכופל את המספר השלם מטיפוס unsigned בן ארבע סיביות $[a_3,a_2,a_1,a_0]_2$ במספר 27 (גם כן unsigned) המיוצג על ידי $[11011]_2$. המכפל בנוי מרכיבי HA (כלומר Half-Adder) ורכיבי FA (כלומר Full-Adder). עלינו לספור את מספר הרכיבים ומספר היציאות. אנו כמובן מעדיפים מספר מינימלי של רכיבים (במקום FA לכאורה אפשר להשתמש בשני HA. אם יש כזה מקרה – נעדיף את ה- FA הבודד)\nמה נכון?",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "יש במכפל 4 רכיבי HA ו-7 רכיבי FA ויש לו 9 יציאות"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "יש במכפל 6 רכיבי HA ו-6 רכיבי FA ויש לו 10 יציאות"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "יש במכפל 6 רכיבי HA ו-4 רכיבי FA ויש לו 9 יציאות"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "יש במכפל 6 רכיבי HA ו-5 רכיבי FA ויש לו 8 יציאות"
+    },
+    {
+     "id": "e",
+     "type": "text",
+     "value": "יש במכפל 5 רכיבי HA ו-5 רכיבי FA ויש לו 10 יציאות"
+    },
+    {
+     "id": "f",
+     "type": "text",
+     "value": "יש במכפל 5 רכיבי HA ו-4 רכיבי FA ויש לו 8 יציאות"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "מכיוון ש-$27=[11011]_2$, מחברים את ארבע השורות $A\\cdot 2^0,\\ A\\cdot 2^1,\\ A\\cdot 2^3,\\ A\\cdot 2^4$ (השורות המתאימות לביטים השווים 1).\nמתקבלים $7\\times$FA ו-$4\\times$HA, ויש 9 יציאות ($y_0\\ldots y_8$)."
+  },
+  {
+   "num": 17,
+   "topic": "mips_machine_code",
+   "question": "הפקודה `beq \\$s3, \\$a1, lab1` נמצאת בכתובת `0x400330`. הכתובת של lab1 היא `0x400550`.\nמהו התרגום הנכון שלה לשפת המכונה של מעבד ה-MIPS?",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "0x12650087"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "0x10B3021F"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "0x12650088"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "0x10B30088"
+    },
+    {
+     "id": "e",
+     "type": "text",
+     "value": "0x12650219"
+    },
+    {
+     "id": "f",
+     "type": "text",
+     "value": "0x12650220"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "$\\text{beq}\\Rightarrow$ opcode $=4$, $\\text{Rs}=\\$s3=\\$19$, $\\text{Rt}=\\$a1=\\$5$.\nההפרש בין הכתובות: $\\texttt{0x400550}-\\texttt{0x400330}=\\texttt{0x220}$ בתים, כלומר $\\texttt{0x88}$ מילים. צריך לקפוץ $\\texttt{0x88}$ מילים קדימה אך מכיוון שה-PC כבר הוגדל ב-4, ה-imm הוא $\\texttt{0x87}$.\n$000100\\ |\\ 10011\\ |\\ 00101\\ |\\ 0000\\,0000\\,1000\\,0111\\Rightarrow\\texttt{0x12650087}$."
+  },
+  {
+   "num": 18,
+   "topic": "datapath_control",
+   "question": "במעבד ה- MIPS Single Cycle שלמדנו מי מהצירופים הרשומים מטה של אותות הבקרה נכון לפקודת beq? (יש ציור נוסף של המעבד בנספח לבחינה)",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "ALUOp=01 (sub);  RegDst=0; ALUSrc=0;  RegWrite=0;  Jump=0"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "ALUOp=10 (func);  RegDst=1; MemRead=0;  RegWrite=1;  Branch=1"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "ALUOp=01 (sub);  RegDst=1; MemWrite=0;  Jump=1;  Branch=1"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "ALUOp=00 (add);  RegDst=1; MemRead=0;  RegWrite=0;  Branch=1"
+    },
+    {
+     "id": "e",
+     "type": "text",
+     "value": "ALUOp=10 (func);  RegDst=0; ALUSrc=0;  RegWrite=0;  Branch=1"
+    },
+    {
+     "id": "f",
+     "type": "text",
+     "value": "ALUOp=01 (sub);  RegDst=0; MemWrite=0;  RegWrite=1;  Jump=0"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "בפקודת beq אותות הבקרה הם: ALUSrc=0, ALUOp=01 (SUB), MemRead=0, MemWrite=0, MemtoReg=X, RegDst=X, RegWrite=0, Branch=1, Jump=0.\nרק האפשרות א מתאימה.",
+   "image": "images/exams/25B-A-Q18.png",
+   "note": "Datapath figure is a low-resolution source scan; control-signal labels in it are not legible in the source."
+  },
+  {
+   "num": 19,
+   "topic": "mips_machine_code",
+   "question": "הפקודה `0x03DD082A` בשפת מכונה של ה-MIPS הינה בעצם פקודת האסמבלי הבאה:",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "`slt \\$at, \\$fp, \\$sp`"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "`slt \\$fp, \\$sp, \\$at`"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "`beq \\$fp, \\$sp, 0x082A`"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "`bne \\$sp, \\$fp, 2378`"
+    },
+    {
+     "id": "e",
+     "type": "text",
+     "value": "`xor \\$fp, \\$sp, \\$at`"
+    },
+    {
+     "id": "f",
+     "type": "text",
+     "value": "`xor \\$fp, \\$sp, \\$t1`"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "`0x03DD082A` $=\\ 000000\\ |\\ 11110\\ |\\ 11101\\ |\\ 00001\\ |\\ 00000\\ |\\ 101010$.\nopcode $=0\\Rightarrow$ R-type; $\\text{Rs}=\\$30=\\$fp$, $\\text{Rt}=\\$29=\\$sp$, $\\text{Rd}=\\$1=\\$at$, funct $=42=\\text{slt}$.\n$\\Rightarrow$ `slt \\$at, \\$fp, \\$sp`"
+  },
+  {
+   "num": 20,
+   "topic": "mips_assembly_c",
+   "question": "קטע ה- C הבא תורגם לשפת הסף (אסמבלי) של מחשב MIPS. הנח כי כתובת ההתחלה של array נמצאת באוגר \\$4. הערך size שהוא גודל המערך נמצא באוגר \\$5. המערך הינו מערך של מילים (1 Word = 4 bytes). אוגרים \\$4 ו- \\$5 צריכים להישאר ללא שינוי.\n`ptr = &array[0];`\n`a = *ptr;`\n`b = a;`\n`for(i=0; i<size; i++)`\n`  {`\n`    if (*ptr>a)  a = *ptr;`\n`    if (*ptr<b)  b = *ptr;`\n`    ptr++;`\n`  }`\nלהלן התרגום:\n`add \\$6, \\$0, \\$4`\n`lw  \\$7, 0(\\$6)`\n`addi \\$8, \\$7, 0`\n`addi \\$9, \\$0, 0`\n`j lb4`\n`lb1: lw  \\$11, 0(\\$6)`\n`slt  \\$1, \\$7, \\$11`\n`@@@@@@@`\n`addi \\$9, \\$9, 1`\n`lb4: slt  \\$1, \\$9, \\$5`\n`bne  \\$1, \\$0, lb1`\nמהתרגום נשמטו פקודות במקום המסומן ב- @@@@@@@. הפקודות החסרות הן:",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "`beq  \\$1, \\$0, lb2`\n`add  \\$7, \\$11, \\$0`\n`lb2: slt  \\$1, \\$11, \\$8`\n`beq  \\$1, \\$0, lb3`\n`sub  \\$8, \\$11, \\$0`\n`lb3: addi \\$6, \\$6, 4`"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "`bne  \\$1, \\$0, lb2`\n`add  \\$7, \\$11, \\$0`\n`lb2: slt  \\$1, \\$11, \\$8`\n`bne  \\$1, \\$0, lb3`\n`sub  \\$8, \\$11, \\$0`\n`lb3: addi \\$6, \\$6, 4`"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "`beq  \\$1, \\$0, lb2`\n`add  \\$7, \\$11, \\$0`\n`lb2: slt  \\$1, \\$8, \\$11`\n`beq  \\$1, \\$0, lb3`\n`sub  \\$8, \\$11, \\$0`\n`lb3: addi \\$6, \\$6, 4`"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "`beq  \\$1, \\$0, lb2`\n`add  \\$7, \\$11, \\$0`\n`lb2: slt  \\$1, \\$8, \\$11`\n`bne  \\$1, \\$0, lb3`\n`sub  \\$8, \\$11, \\$0`\n`lb3: addi \\$6, \\$6, 4`"
+    },
+    {
+     "id": "e",
+     "type": "text",
+     "value": "`beq  \\$1, \\$0, lb2`\n`add  \\$7, \\$11, \\$0`\n`lb2: slt  \\$1, \\$11, \\$8`\n`beq  \\$1, \\$0, lb3`\n`sub  \\$8, \\$11, \\$0`\n`lb3: addi \\$6, \\$6, 1`"
+    },
+    {
+     "id": "f",
+     "type": "text",
+     "value": "`bne  \\$1, \\$0, lb2`\n`add  \\$7, \\$11, \\$0`\n`lb2: slt  \\$1, \\$11, \\$8`\n`bne  \\$1, \\$0, lb3`\n`sub  \\$8, \\$11, \\$0`\n`lb3: addi \\$6, \\$6, 1`"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "התרגום: `slt \\$1,\\$7,\\$11` בודק `if (*ptr>a)`; אם `\\$1==0` מדלגים על `a = *ptr` (`beq \\$1,\\$0,lb2`), אחרת `add \\$7,\\$11,\\$0`.\n`lb2: slt \\$1,\\$11,\\$8` בודק `if (*ptr<b)`; אם `\\$1==0` מדלגים (`beq \\$1,\\$0,lb3`), אחרת `sub \\$8,\\$11,\\$0` (`b = *ptr`); `lb3: addi \\$6,\\$6,4` מקדם את `ptr` למילה הבאה.\nב, ו: תנאי הפוך (bne במקום beq); ג: ההשוואה ב-slt הפוכה; ד: ההשוואה הפוכה והתנאי הפוך (מתקבל `if (*ptr<=b) b=*ptr`); ה: `ptr` מקודם ב-1 ולא ב-4."
+  }
+ ]
+}

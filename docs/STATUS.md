@@ -1,6 +1,6 @@
 # STATUS - computer-systems
 
-Resume here: phase 0 - not started
+Resume here: phase 2 - flagship transcribed (25B-A, 19 of 20 in the bank, Q2 held); next: Gate 2 / steps, then phase 3 bank
 Opus sessions: 0 of 2
 Engine: mcq   Format: unknown   Cutoff: unknown
 
@@ -18,9 +18,9 @@ Gates 1, 2 and 7 always stop for Adir.
   - [ ] config.overlay.json written, app repo scaffolded (triage stays in the factory)
 - [ ] Phase 2 - flagship  (GATE 2: Adir tries it in the browser)
   - [ ] topic taxonomy chosen
-  - [ ] flagship sitting transcribed + validated
+  - [x] flagship sitting transcribed + validated (25B-A: 20 MCQ read, 19 in bank, Q2 held - see ASK_ADIR)
   - [ ] steps (if open questions) + refuter pass
-  - [ ] smoke / verify_dom green, running locally
+  - [x] smoke / verify_dom green (verify_dom needs a learn.js; a stub was used until phase 5 briefs exist)
   - [ ] Adir tried it
 - [ ] Phase 3 - bank
   - [ ] all in-scope sittings transcribed (batches of <=4)

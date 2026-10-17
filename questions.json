@@ -1,0 +1,1136 @@
+{
+ "meta": {
+  "generated": "tools/build_questions.py",
+  "exams": [
+   {
+    "examCode": "25B-A",
+    "examLabel": "2025 סמסטר א מועד ב",
+    "year": 2025,
+    "source": "exam",
+    "examDate": "18.03.2025"
+   }
+  ],
+  "topics": [
+   {
+    "key": "number_bases",
+    "label": "המרה בין בסיסים"
+   },
+   {
+    "key": "unsigned_numbers",
+    "label": "מספרים לא מכוונים"
+   },
+   {
+    "key": "signed_twos_complement",
+    "label": "משלים ל-2 ו-overflow"
+   },
+   {
+    "key": "floating_point",
+    "label": "נקודה צפה IEEE-754"
+   },
+   {
+    "key": "boolean_algebra",
+    "label": "אלגברה בוליאנית"
+   },
+   {
+    "key": "logic_gates",
+    "label": "שערים לוגיים"
+   },
+   {
+    "key": "decoders_muxes",
+    "label": "מפענחים ורבבים"
+   },
+   {
+    "key": "combinational_design",
+    "label": "תכנון מעגלים צירופיים"
+   },
+   {
+    "key": "arithmetic_circuits",
+    "label": "מעגלי חיבור וכפל"
+   },
+   {
+    "key": "latches_flipflops",
+    "label": "נועלים ודלגלגים"
+   },
+   {
+    "key": "datapath_control",
+    "label": "נתיב נתונים ובקרה"
+   },
+   {
+    "key": "mips_machine_code",
+    "label": "קידוד פקודות MIPS"
+   },
+   {
+    "key": "mips_assembly_c",
+    "label": "אסמבלי MIPS ותרגום ל-C"
+   }
+  ],
+  "title": "מבוא למערכות מחשב",
+  "accent": "#94a3b8",
+  "accent2": "#7c3aed",
+  "storePrefix": "computer-systems",
+  "needHelp": [
+   {
+    "id": "ieee754",
+    "titleHe": "נקודה צפה IEEE-754",
+    "icon": "🔢",
+    "topic": "floating_point",
+    "entryLabelHe": "צריך עזרה בנקודה צפה?"
+   },
+   {
+    "id": "boolean",
+    "titleHe": "אלגברה בוליאנית ושקילויות",
+    "icon": "🧮",
+    "topic": "boolean_algebra",
+    "entryLabelHe": "צריך עזרה באלגברה בוליאנית?"
+   },
+   {
+    "id": "mips_enc",
+    "titleHe": "קידוד פקודות MIPS",
+    "icon": "💾",
+    "topic": "mips_machine_code",
+    "entryLabelHe": "צריך עזרה בקידוד פקודות MIPS?"
+   },
+   {
+    "id": "mips_trace",
+    "titleHe": "מעקב MIPS ואסמבלי↔C",
+    "icon": "🧭",
+    "topic": "mips_assembly_c",
+    "entryLabelHe": "צריך עזרה במעקב MIPS ובאסמבלי?"
+   }
+  ],
+  "counts": {
+   "total": 19,
+   "unique": 19,
+   "contexts": 0,
+   "math": 152
+  }
+ },
+ "contexts": {},
+ "questions": [
+  {
+   "num": 1,
+   "topic": "boolean_algebra",
+   "question": "מי מהמשוואות הבאות לא נכונה?",
+   "options": [
+    {
+     "id": "a",
+     "type": "math",
+     "value": "((\\bar A\\oplus B)+(A\\oplus C))\\cdot(C\\oplus\\bar B)=\\overline{\\bar B\\oplus C}",
+     "html": "<span class=\"math-inline opt-math\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">(</mo><mo stretchy=\"false\">(</mo><mover accent=\"true\"><mi>A</mi><mo>ˉ</mo></mover><mo>⊕</mo><mi>B</mi><mo stretchy=\"false\">)</mo><mo>+</mo><mo stretchy=\"false\">(</mo><mi>A</mi><mo>⊕</mo><mi>C</mi><mo stretchy=\"false\">)</mo><mo stretchy=\"false\">)</mo><mo>⋅</mo><mo stretchy=\"false\">(</mo><mi>C</mi><mo>⊕</mo><mover accent=\"true\"><mi>B</mi><mo>ˉ</mo></mover><mo stretchy=\"false\">)</mo><mo>=</mo><mrow class=\"ovl\"><mrow><mover accent=\"true\"><mi>B</mi><mo>ˉ</mo></mover><mo>⊕</mo><mi>C</mi></mrow></mrow></mrow><annotation encoding=\"application/x-tex\">((\\bar A\\oplus B)+(A\\oplus C))\\cdot(C\\oplus\\bar B)=\\overline{\\bar B\\oplus C}</annotation></semantics></math></span>"
+    },
+    {
+     "id": "b",
+     "type": "math",
+     "value": "(A\\oplus B)\\cdot((\\bar A\\oplus B)+(A\\oplus\\bar C))=\\bar A\\cdot B\\cdot\\bar C+A\\cdot\\bar B\\cdot C",
+     "html": "<span class=\"math-inline opt-math\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">(</mo><mi>A</mi><mo>⊕</mo><mi>B</mi><mo stretchy=\"false\">)</mo><mo>⋅</mo><mo stretchy=\"false\">(</mo><mo stretchy=\"false\">(</mo><mover accent=\"true\"><mi>A</mi><mo>ˉ</mo></mover><mo>⊕</mo><mi>B</mi><mo stretchy=\"false\">)</mo><mo>+</mo><mo stretchy=\"false\">(</mo><mi>A</mi><mo>⊕</mo><mover accent=\"true\"><mi>C</mi><mo>ˉ</mo></mover><mo stretchy=\"false\">)</mo><mo stretchy=\"false\">)</mo><mo>=</mo><mover accent=\"true\"><mi>A</mi><mo>ˉ</mo></mover><mo>⋅</mo><mi>B</mi><mo>⋅</mo><mover accent=\"true\"><mi>C</mi><mo>ˉ</mo></mover><mo>+</mo><mi>A</mi><mo>⋅</mo><mover accent=\"true\"><mi>B</mi><mo>ˉ</mo></mover><mo>⋅</mo><mi>C</mi></mrow><annotation encoding=\"application/x-tex\">(A\\oplus B)\\cdot((\\bar A\\oplus B)+(A\\oplus\\bar C))=\\bar A\\cdot B\\cdot\\bar C+A\\cdot\\bar B\\cdot C</annotation></semantics></math></span>"
+    },
+    {
+     "id": "c",
+     "type": "math",
+     "value": "(A\\oplus\\bar B)\\cdot((A\\oplus B)+(A\\oplus C))=\\bar A\\cdot\\bar B\\cdot C+A\\cdot B\\cdot\\bar C",
+     "html": "<span class=\"math-inline opt-math\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">(</mo><mi>A</mi><mo>⊕</mo><mover accent=\"true\"><mi>B</mi><mo>ˉ</mo></mover><mo stretchy=\"false\">)</mo><mo>⋅</mo><mo stretchy=\"false\">(</mo><mo stretchy=\"false\">(</mo><mi>A</mi><mo>⊕</mo><mi>B</mi><mo stretchy=\"false\">)</mo><mo>+</mo><mo stretchy=\"false\">(</mo><mi>A</mi><mo>⊕</mo><mi>C</mi><mo stretchy=\"false\">)</mo><mo stretchy=\"false\">)</mo><mo>=</mo><mover accent=\"true\"><mi>A</mi><mo>ˉ</mo></mover><mo>⋅</mo><mover accent=\"true\"><mi>B</mi><mo>ˉ</mo></mover><mo>⋅</mo><mi>C</mi><mo>+</mo><mi>A</mi><mo>⋅</mo><mi>B</mi><mo>⋅</mo><mover accent=\"true\"><mi>C</mi><mo>ˉ</mo></mover></mrow><annotation encoding=\"application/x-tex\">(A\\oplus\\bar B)\\cdot((A\\oplus B)+(A\\oplus C))=\\bar A\\cdot\\bar B\\cdot C+A\\cdot B\\cdot\\bar C</annotation></semantics></math></span>"
+    },
+    {
+     "id": "d",
+     "type": "math",
+     "value": "((A\\oplus B)+(A\\oplus C))\\cdot(C\\oplus B)=\\overline{\\bar B\\cdot\\bar C+B\\cdot C}",
+     "html": "<span class=\"math-inline opt-math\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">(</mo><mo stretchy=\"false\">(</mo><mi>A</mi><mo>⊕</mo><mi>B</mi><mo stretchy=\"false\">)</mo><mo>+</mo><mo stretchy=\"false\">(</mo><mi>A</mi><mo>⊕</mo><mi>C</mi><mo stretchy=\"false\">)</mo><mo stretchy=\"false\">)</mo><mo>⋅</mo><mo stretchy=\"false\">(</mo><mi>C</mi><mo>⊕</mo><mi>B</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mrow class=\"ovl\"><mrow><mover accent=\"true\"><mi>B</mi><mo>ˉ</mo></mover><mo>⋅</mo><mover accent=\"true\"><mi>C</mi><mo>ˉ</mo></mover><mo>+</mo><mi>B</mi><mo>⋅</mo><mi>C</mi></mrow></mrow></mrow><annotation encoding=\"application/x-tex\">((A\\oplus B)+(A\\oplus C))\\cdot(C\\oplus B)=\\overline{\\bar B\\cdot\\bar C+B\\cdot C}</annotation></semantics></math></span>"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "א: $((\\bar A\\oplus B)+(A\\oplus C))\\cdot(C\\oplus\\bar B)=\\bar B\\bar C+BC=\\overline{B\\oplus C}$, ואילו $\\overline{\\bar B\\oplus C}=B\\oplus C=\\bar B C+B\\bar C$ - לכן המשוואה אינה נכונה.\nב: $(A\\oplus B)\\cdot(\\overline{A\\oplus B}+\\overline{A\\oplus C})=(A\\oplus B)\\cdot\\overline{A\\oplus C}=(\\bar A B+A\\bar B)(\\bar A\\bar C+AC)=\\bar A B\\bar C+A\\bar B C$ - נכונה.\nג: $\\overline{A\\oplus B}\\cdot((A\\oplus B)+(A\\oplus C))=\\overline{A\\oplus B}\\cdot(A\\oplus C)=\\bar A\\bar B C+AB\\bar C$ - נכונה.\nד: $((A\\oplus B)+(A\\oplus C))\\cdot(C\\oplus B)=B\\oplus C=\\overline{\\bar B\\bar C+BC}$ - נכונה.",
+   "note": "Option d RHS: a long overline spans the whole sum; read as overline of (B-bar C-bar + B C).",
+   "id": "25B-A-Q1",
+   "examCode": "25B-A",
+   "examLabel": "2025 סמסטר א מועד ב",
+   "year": 2025,
+   "source": "exam",
+   "topicLabel": "אלגברה בוליאנית",
+   "questionHtml": "מי מהמשוואות הבאות לא נכונה?",
+   "explanationHtml": "א: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">(</mo><mo stretchy=\"false\">(</mo><mover accent=\"true\"><mi>A</mi><mo>ˉ</mo></mover><mo>⊕</mo><mi>B</mi><mo stretchy=\"false\">)</mo><mo>+</mo><mo stretchy=\"false\">(</mo><mi>A</mi><mo>⊕</mo><mi>C</mi><mo stretchy=\"false\">)</mo><mo stretchy=\"false\">)</mo><mo>⋅</mo><mo stretchy=\"false\">(</mo><mi>C</mi><mo>⊕</mo><mover accent=\"true\"><mi>B</mi><mo>ˉ</mo></mover><mo stretchy=\"false\">)</mo><mo>=</mo><mover accent=\"true\"><mi>B</mi><mo>ˉ</mo></mover><mover accent=\"true\"><mi>C</mi><mo>ˉ</mo></mover><mo>+</mo><mi>B</mi><mi>C</mi><mo>=</mo><mrow class=\"ovl\"><mrow><mi>B</mi><mo>⊕</mo><mi>C</mi></mrow></mrow></mrow><annotation encoding=\"application/x-tex\">((\\bar A\\oplus B)+(A\\oplus C))\\cdot(C\\oplus\\bar B)=\\bar B\\bar C+BC=\\overline{B\\oplus C}</annotation></semantics></math></span>, ואילו <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mrow class=\"ovl\"><mrow><mover accent=\"true\"><mi>B</mi><mo>ˉ</mo></mover><mo>⊕</mo><mi>C</mi></mrow></mrow><mo>=</mo><mi>B</mi><mo>⊕</mo><mi>C</mi><mo>=</mo><mover accent=\"true\"><mi>B</mi><mo>ˉ</mo></mover><mi>C</mi><mo>+</mo><mi>B</mi><mover accent=\"true\"><mi>C</mi><mo>ˉ</mo></mover></mrow><annotation encoding=\"application/x-tex\">\\overline{\\bar B\\oplus C}=B\\oplus C=\\bar B C+B\\bar C</annotation></semantics></math></span> - לכן המשוואה אינה נכונה.<br>ב: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">(</mo><mi>A</mi><mo>⊕</mo><mi>B</mi><mo stretchy=\"false\">)</mo><mo>⋅</mo><mo stretchy=\"false\">(</mo><mrow class=\"ovl\"><mrow><mi>A</mi><mo>⊕</mo><mi>B</mi></mrow></mrow><mo>+</mo><mrow class=\"ovl\"><mrow><mi>A</mi><mo>⊕</mo><mi>C</mi></mrow></mrow><mo stretchy=\"false\">)</mo><mo>=</mo><mo stretchy=\"false\">(</mo><mi>A</mi><mo>⊕</mo><mi>B</mi><mo stretchy=\"false\">)</mo><mo>⋅</mo><mrow class=\"ovl\"><mrow><mi>A</mi><mo>⊕</mo><mi>C</mi></mrow></mrow><mo>=</mo><mo stretchy=\"false\">(</mo><mover accent=\"true\"><mi>A</mi><mo>ˉ</mo></mover><mi>B</mi><mo>+</mo><mi>A</mi><mover accent=\"true\"><mi>B</mi><mo>ˉ</mo></mover><mo stretchy=\"false\">)</mo><mo stretchy=\"false\">(</mo><mover accent=\"true\"><mi>A</mi><mo>ˉ</mo></mover><mover accent=\"true\"><mi>C</mi><mo>ˉ</mo></mover><mo>+</mo><mi>A</mi><mi>C</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mover accent=\"true\"><mi>A</mi><mo>ˉ</mo></mover><mi>B</mi><mover accent=\"true\"><mi>C</mi><mo>ˉ</mo></mover><mo>+</mo><mi>A</mi><mover accent=\"true\"><mi>B</mi><mo>ˉ</mo></mover><mi>C</mi></mrow><annotation encoding=\"application/x-tex\">(A\\oplus B)\\cdot(\\overline{A\\oplus B}+\\overline{A\\oplus C})=(A\\oplus B)\\cdot\\overline{A\\oplus C}=(\\bar A B+A\\bar B)(\\bar A\\bar C+AC)=\\bar A B\\bar C+A\\bar B C</annotation></semantics></math></span> - נכונה.<br>ג: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mrow class=\"ovl\"><mrow><mi>A</mi><mo>⊕</mo><mi>B</mi></mrow></mrow><mo>⋅</mo><mo stretchy=\"false\">(</mo><mo stretchy=\"false\">(</mo><mi>A</mi><mo>⊕</mo><mi>B</mi><mo stretchy=\"false\">)</mo><mo>+</mo><mo stretchy=\"false\">(</mo><mi>A</mi><mo>⊕</mo><mi>C</mi><mo stretchy=\"false\">)</mo><mo stretchy=\"false\">)</mo><mo>=</mo><mrow class=\"ovl\"><mrow><mi>A</mi><mo>⊕</mo><mi>B</mi></mrow></mrow><mo>⋅</mo><mo stretchy=\"false\">(</mo><mi>A</mi><mo>⊕</mo><mi>C</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mover accent=\"true\"><mi>A</mi><mo>ˉ</mo></mover><mover accent=\"true\"><mi>B</mi><mo>ˉ</mo></mover><mi>C</mi><mo>+</mo><mi>A</mi><mi>B</mi><mover accent=\"true\"><mi>C</mi><mo>ˉ</mo></mover></mrow><annotation encoding=\"application/x-tex\">\\overline{A\\oplus B}\\cdot((A\\oplus B)+(A\\oplus C))=\\overline{A\\oplus B}\\cdot(A\\oplus C)=\\bar A\\bar B C+AB\\bar C</annotation></semantics></math></span> - נכונה.<br>ד: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">(</mo><mo stretchy=\"false\">(</mo><mi>A</mi><mo>⊕</mo><mi>B</mi><mo stretchy=\"false\">)</mo><mo>+</mo><mo stretchy=\"false\">(</mo><mi>A</mi><mo>⊕</mo><mi>C</mi><mo stretchy=\"false\">)</mo><mo stretchy=\"false\">)</mo><mo>⋅</mo><mo stretchy=\"false\">(</mo><mi>C</mi><mo>⊕</mo><mi>B</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mi>B</mi><mo>⊕</mo><mi>C</mi><mo>=</mo><mrow class=\"ovl\"><mrow><mover accent=\"true\"><mi>B</mi><mo>ˉ</mo></mover><mover accent=\"true\"><mi>C</mi><mo>ˉ</mo></mover><mo>+</mo><mi>B</mi><mi>C</mi></mrow></mrow></mrow><annotation encoding=\"application/x-tex\">((A\\oplus B)+(A\\oplus C))\\cdot(C\\oplus B)=B\\oplus C=\\overline{\\bar B\\bar C+BC}</annotation></semantics></math></span> - נכונה.",
+   "dedupKey": "a567194b785abe35"
+  },
+  {
+   "num": 3,
+   "topic": "floating_point",
+   "question": "המספר $\\frac{1}{3}$ בבסיס 2 הוא השבר הבינארי האינסופי: $[0.01\\ 01\\ 01\\ 01\\ldots]_2$\nכיצד ייוצג המספר $-\\frac{1}{384}$ בייצוג Single Precision Floating Point (1 סיבית סימן, 8 סיביות אקספוננט ו-23 סיביות שבר) ?",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "0xBB2AAAAB",
+     "html": "0xBB2AAAAB"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "0xBB2AAAAA",
+     "html": "0xBB2AAAAA"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "0xF6555555",
+     "html": "0xF6555555"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "0xF6555556",
+     "html": "0xF6555556"
+    },
+    {
+     "id": "e",
+     "type": "text",
+     "value": "0xF02AAAAA",
+     "html": "0xF02AAAAA"
+    },
+    {
+     "id": "f",
+     "type": "text",
+     "value": "0xBC555556",
+     "html": "0xBC555556"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "$-\\frac{1}{384}=\\frac{1}{128}\\cdot\\left(-\\frac{1}{3}\\right)=(-1)^1\\cdot 2^{-7}\\cdot 0.010101\\ldots=(-1)^1\\cdot 2^{-9}\\cdot 1.0101010\\ldots$\n$E-127=-9\\Rightarrow E=127-9=118$, $S=1$.\nהשדות: סימן $1$, אקספוננט $01110110$, שבר $01010101010101010101010|101\\ldots$ - עיגול כלפי מעלה של הסיבית האחרונה נותן `0xBB2AAAAB`.",
+   "id": "25B-A-Q3",
+   "examCode": "25B-A",
+   "examLabel": "2025 סמסטר א מועד ב",
+   "year": 2025,
+   "source": "exam",
+   "topicLabel": "נקודה צפה IEEE-754",
+   "questionHtml": "המספר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mfrac><mn>1</mn><mn>3</mn></mfrac></mrow><annotation encoding=\"application/x-tex\">\\frac{1}{3}</annotation></semantics></math></span> בבסיס 2 הוא השבר הבינארי האינסופי: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><mn>0.01</mn><mtext> </mtext><mn>01</mn><mtext> </mtext><mn>01</mn><mtext> </mtext><mn>01</mn><mo>…</mo><msub><mo stretchy=\"false\">]</mo><mn>2</mn></msub></mrow><annotation encoding=\"application/x-tex\">[0.01\\ 01\\ 01\\ 01\\ldots]_2</annotation></semantics></math></span><br>כיצד ייוצג המספר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo>−</mo><mfrac><mn>1</mn><mn>384</mn></mfrac></mrow><annotation encoding=\"application/x-tex\">-\\frac{1}{384}</annotation></semantics></math></span> בייצוג Single Precision Floating Point (1 סיבית סימן, 8 סיביות אקספוננט ו-23 סיביות שבר) ?",
+   "explanationHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo>−</mo><mfrac><mn>1</mn><mn>384</mn></mfrac><mo>=</mo><mfrac><mn>1</mn><mn>128</mn></mfrac><mo>⋅</mo><mrow><mo fence=\"true\">(</mo><mo>−</mo><mfrac><mn>1</mn><mn>3</mn></mfrac><mo fence=\"true\">)</mo></mrow><mo>=</mo><mo stretchy=\"false\">(</mo><mo>−</mo><mn>1</mn><msup><mo stretchy=\"false\">)</mo><mn>1</mn></msup><mo>⋅</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>7</mn></mrow></msup><mo>⋅</mo><mn>0.010101</mn><mo>…</mo><mo>=</mo><mo stretchy=\"false\">(</mo><mo>−</mo><mn>1</mn><msup><mo stretchy=\"false\">)</mo><mn>1</mn></msup><mo>⋅</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>9</mn></mrow></msup><mo>⋅</mo><mn>1.0101010</mn><mo>…</mo></mrow><annotation encoding=\"application/x-tex\">-\\frac{1}{384}=\\frac{1}{128}\\cdot\\left(-\\frac{1}{3}\\right)=(-1)^1\\cdot 2^{-7}\\cdot 0.010101\\ldots=(-1)^1\\cdot 2^{-9}\\cdot 1.0101010\\ldots</annotation></semantics></math></span><br><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>E</mi><mo>−</mo><mn>127</mn><mo>=</mo><mo>−</mo><mn>9</mn><mo>⇒</mo><mi>E</mi><mo>=</mo><mn>127</mn><mo>−</mo><mn>9</mn><mo>=</mo><mn>118</mn></mrow><annotation encoding=\"application/x-tex\">E-127=-9\\Rightarrow E=127-9=118</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>S</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">S=1</annotation></semantics></math></span>.<br>השדות: סימן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">1</annotation></semantics></math></span>, אקספוננט <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>01110110</mn></mrow><annotation encoding=\"application/x-tex\">01110110</annotation></semantics></math></span>, שבר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>01010101010101010101010</mn><mi mathvariant=\"normal\">∣</mi><mn>101</mn><mo>…</mo></mrow><annotation encoding=\"application/x-tex\">01010101010101010101010|101\\ldots</annotation></semantics></math></span> - עיגול כלפי מעלה של הסיבית האחרונה נותן <code class=\"tok\" dir=\"ltr\">0xBB2AAAAB</code>.",
+   "dedupKey": "25a361933874f500"
+  },
+  {
+   "num": 4,
+   "topic": "number_bases",
+   "question": "מהו ערכו העשרוני של השבר האינסופי $[0.22\\ 21\\ 21\\ 21\\ 21\\ldots]_5$ בבסיס 5?",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "299/600",
+     "html": "299/600"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "1395/3000",
+     "html": "1395/3000"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "1493/3000",
+     "html": "1493/3000"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "13/24",
+     "html": "13/24"
+    },
+    {
+     "id": "e",
+     "type": "text",
+     "value": "11/24",
+     "html": "11/24"
+    },
+    {
+     "id": "f",
+     "type": "text",
+     "value": "251/600",
+     "html": "251/600"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "$X=[0.22\\ 21\\ 21\\ 21\\ldots]_5=[0.01]_5+[0.212121\\ldots]_5$, כאשר $[0.01]_5=\\frac{1}{25}$ ו-$Y=[0.212121\\ldots]_5$.\n$5^2Y=[21]_5+Y\\Rightarrow 24Y=11\\Rightarrow Y=\\frac{11}{24}$.\n$X=\\frac{1}{25}+\\frac{11}{24}=\\frac{24+11\\cdot 25}{25\\cdot 24}=\\frac{24+275}{600}=\\frac{299}{600}$.",
+   "id": "25B-A-Q4",
+   "examCode": "25B-A",
+   "examLabel": "2025 סמסטר א מועד ב",
+   "year": 2025,
+   "source": "exam",
+   "topicLabel": "המרה בין בסיסים",
+   "questionHtml": "מהו ערכו העשרוני של השבר האינסופי <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><mn>0.22</mn><mtext> </mtext><mn>21</mn><mtext> </mtext><mn>21</mn><mtext> </mtext><mn>21</mn><mtext> </mtext><mn>21</mn><mo>…</mo><msub><mo stretchy=\"false\">]</mo><mn>5</mn></msub></mrow><annotation encoding=\"application/x-tex\">[0.22\\ 21\\ 21\\ 21\\ 21\\ldots]_5</annotation></semantics></math></span> בבסיס 5?",
+   "explanationHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>X</mi><mo>=</mo><mo stretchy=\"false\">[</mo><mn>0.22</mn><mtext> </mtext><mn>21</mn><mtext> </mtext><mn>21</mn><mtext> </mtext><mn>21</mn><mo>…</mo><msub><mo stretchy=\"false\">]</mo><mn>5</mn></msub><mo>=</mo><mo stretchy=\"false\">[</mo><mn>0.01</mn><msub><mo stretchy=\"false\">]</mo><mn>5</mn></msub><mo>+</mo><mo stretchy=\"false\">[</mo><mn>0.212121</mn><mo>…</mo><msub><mo stretchy=\"false\">]</mo><mn>5</mn></msub></mrow><annotation encoding=\"application/x-tex\">X=[0.22\\ 21\\ 21\\ 21\\ldots]_5=[0.01]_5+[0.212121\\ldots]_5</annotation></semantics></math></span>, כאשר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><mn>0.01</mn><msub><mo stretchy=\"false\">]</mo><mn>5</mn></msub><mo>=</mo><mfrac><mn>1</mn><mn>25</mn></mfrac></mrow><annotation encoding=\"application/x-tex\">[0.01]_5=\\frac{1}{25}</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>Y</mi><mo>=</mo><mo stretchy=\"false\">[</mo><mn>0.212121</mn><mo>…</mo><msub><mo stretchy=\"false\">]</mo><mn>5</mn></msub></mrow><annotation encoding=\"application/x-tex\">Y=[0.212121\\ldots]_5</annotation></semantics></math></span>.<br><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>5</mn><mn>2</mn></msup><mi>Y</mi><mo>=</mo><mo stretchy=\"false\">[</mo><mn>21</mn><msub><mo stretchy=\"false\">]</mo><mn>5</mn></msub><mo>+</mo><mi>Y</mi><mo>⇒</mo><mn>24</mn><mi>Y</mi><mo>=</mo><mn>11</mn><mo>⇒</mo><mi>Y</mi><mo>=</mo><mfrac><mn>11</mn><mn>24</mn></mfrac></mrow><annotation encoding=\"application/x-tex\">5^2Y=[21]_5+Y\\Rightarrow 24Y=11\\Rightarrow Y=\\frac{11}{24}</annotation></semantics></math></span>.<br><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>X</mi><mo>=</mo><mfrac><mn>1</mn><mn>25</mn></mfrac><mo>+</mo><mfrac><mn>11</mn><mn>24</mn></mfrac><mo>=</mo><mfrac><mrow><mn>24</mn><mo>+</mo><mn>11</mn><mo>⋅</mo><mn>25</mn></mrow><mrow><mn>25</mn><mo>⋅</mo><mn>24</mn></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>24</mn><mo>+</mo><mn>275</mn></mrow><mn>600</mn></mfrac><mo>=</mo><mfrac><mn>299</mn><mn>600</mn></mfrac></mrow><annotation encoding=\"application/x-tex\">X=\\frac{1}{25}+\\frac{11}{24}=\\frac{24+11\\cdot 25}{25\\cdot 24}=\\frac{24+275}{600}=\\frac{299}{600}</annotation></semantics></math></span>.",
+   "dedupKey": "828bd8e7cb977ddc"
+  },
+  {
+   "num": 5,
+   "topic": "signed_twos_complement",
+   "question": "$X$ הוא מספר 2's complement בן 13 סיביות מהן 6 הם מימין לנקודה הבינרית. כלומר:\n$X=\\langle X_6,X_5,X_4,X_3,X_2,X_1,X_0\\,.\\,X_{-1},X_{-2},X_{-3},X_{-4},X_{-5},X_{-6}\\rangle$\nידוע שסיביות $X_4$ ו-$X_2$ הן \"1\", וסיבית $X_{-2}$ היא \"0\". מה לא נכון:",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "$\\langle X\\rangle$ יכול להיות $51\\frac{39}{64}$",
+     "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">⟨</mo><mi>X</mi><mo stretchy=\"false\">⟩</mo></mrow><annotation encoding=\"application/x-tex\">\\langle X\\rangle</annotation></semantics></math></span> יכול להיות <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>51</mn><mfrac><mn>39</mn><mn>64</mn></mfrac></mrow><annotation encoding=\"application/x-tex\">51\\frac{39}{64}</annotation></semantics></math></span>"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "$\\langle X\\rangle$ לא יכול להיות $-4\\frac{14}{32}$",
+     "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">⟨</mo><mi>X</mi><mo stretchy=\"false\">⟩</mo></mrow><annotation encoding=\"application/x-tex\">\\langle X\\rangle</annotation></semantics></math></span> לא יכול להיות <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo>−</mo><mn>4</mn><mfrac><mn>14</mn><mn>32</mn></mfrac></mrow><annotation encoding=\"application/x-tex\">-4\\frac{14}{32}</annotation></semantics></math></span>"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "$\\langle X\\rangle$ לא יכול להיות $-49\\frac{27}{64}$",
+     "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">⟨</mo><mi>X</mi><mo stretchy=\"false\">⟩</mo></mrow><annotation encoding=\"application/x-tex\">\\langle X\\rangle</annotation></semantics></math></span> לא יכול להיות <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo>−</mo><mn>49</mn><mfrac><mn>27</mn><mn>64</mn></mfrac></mrow><annotation encoding=\"application/x-tex\">-49\\frac{27}{64}</annotation></semantics></math></span>"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "$\\langle X\\rangle$ יכול להיות $63\\frac{9}{16}$",
+     "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">⟨</mo><mi>X</mi><mo stretchy=\"false\">⟩</mo></mrow><annotation encoding=\"application/x-tex\">\\langle X\\rangle</annotation></semantics></math></span> יכול להיות <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>63</mn><mfrac><mn>9</mn><mn>16</mn></mfrac></mrow><annotation encoding=\"application/x-tex\">63\\frac{9}{16}</annotation></semantics></math></span>"
+    },
+    {
+     "id": "e",
+     "type": "text",
+     "value": "$\\langle X\\rangle$ יכול להיות $-33\\frac{15}{32}$",
+     "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">⟨</mo><mi>X</mi><mo stretchy=\"false\">⟩</mo></mrow><annotation encoding=\"application/x-tex\">\\langle X\\rangle</annotation></semantics></math></span> יכול להיות <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo>−</mo><mn>33</mn><mfrac><mn>15</mn><mn>32</mn></mfrac></mrow><annotation encoding=\"application/x-tex\">-33\\frac{15}{32}</annotation></semantics></math></span>"
+    },
+    {
+     "id": "f",
+     "type": "text",
+     "value": "$\\langle X\\rangle$ לא יכול להיות $-46\\frac{11}{32}$",
+     "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">⟨</mo><mi>X</mi><mo stretchy=\"false\">⟩</mo></mrow><annotation encoding=\"application/x-tex\">\\langle X\\rangle</annotation></semantics></math></span> לא יכול להיות <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo>−</mo><mn>46</mn><mfrac><mn>11</mn><mn>32</mn></mfrac></mrow><annotation encoding=\"application/x-tex\">-46\\frac{11}{32}</annotation></semantics></math></span>"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "בדיקת כל אפשרות לפי ייצוג 13 הסיביות:\n$51\\frac{39}{64}=\\langle 0110011.100111\\rangle$ - הסיביות $X_4,X_2,X_{-2}$ אינן מתאימות ($X_2=0$), לכן $\\langle X\\rangle$ לא יכול להיות $51\\frac{39}{64}$ - זו הטענה הלא נכונה.\n$-4\\frac{14}{32}=\\langle 1111011.100100\\rangle$, $-49\\frac{27}{64}=\\langle 1001110.100101\\rangle$ ו-$-46\\frac{11}{32}=\\langle 1010001.101010\\rangle$ - לא יכולים (הטענות \"לא יכול\" נכונות).\n$63\\frac{9}{16}=\\langle 0111111.100100\\rangle$ ו-$-33\\frac{15}{32}=\\langle 1011110.100010\\rangle$ - יכולים.",
+   "id": "25B-A-Q5",
+   "examCode": "25B-A",
+   "examLabel": "2025 סמסטר א מועד ב",
+   "year": 2025,
+   "source": "exam",
+   "topicLabel": "משלים ל-2 ו-overflow",
+   "questionHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>X</mi></mrow><annotation encoding=\"application/x-tex\">X</annotation></semantics></math></span> הוא מספר 2's complement בן 13 סיביות מהן 6 הם מימין לנקודה הבינרית. כלומר:<br><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>X</mi><mo>=</mo><mo stretchy=\"false\">⟨</mo><msub><mi>X</mi><mn>6</mn></msub><mo separator=\"true\">,</mo><msub><mi>X</mi><mn>5</mn></msub><mo separator=\"true\">,</mo><msub><mi>X</mi><mn>4</mn></msub><mo separator=\"true\">,</mo><msub><mi>X</mi><mn>3</mn></msub><mo separator=\"true\">,</mo><msub><mi>X</mi><mn>2</mn></msub><mo separator=\"true\">,</mo><msub><mi>X</mi><mn>1</mn></msub><mo separator=\"true\">,</mo><msub><mi>X</mi><mn>0</mn></msub><mtext> </mtext><mi mathvariant=\"normal\">.</mi><mtext> </mtext><msub><mi>X</mi><mrow><mo>−</mo><mn>1</mn></mrow></msub><mo separator=\"true\">,</mo><msub><mi>X</mi><mrow><mo>−</mo><mn>2</mn></mrow></msub><mo separator=\"true\">,</mo><msub><mi>X</mi><mrow><mo>−</mo><mn>3</mn></mrow></msub><mo separator=\"true\">,</mo><msub><mi>X</mi><mrow><mo>−</mo><mn>4</mn></mrow></msub><mo separator=\"true\">,</mo><msub><mi>X</mi><mrow><mo>−</mo><mn>5</mn></mrow></msub><mo separator=\"true\">,</mo><msub><mi>X</mi><mrow><mo>−</mo><mn>6</mn></mrow></msub><mo stretchy=\"false\">⟩</mo></mrow><annotation encoding=\"application/x-tex\">X=\\langle X_6,X_5,X_4,X_3,X_2,X_1,X_0\\,.\\,X_{-1},X_{-2},X_{-3},X_{-4},X_{-5},X_{-6}\\rangle</annotation></semantics></math></span><br>ידוע שסיביות <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>X</mi><mn>4</mn></msub></mrow><annotation encoding=\"application/x-tex\">X_4</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>X</mi><mn>2</mn></msub></mrow><annotation encoding=\"application/x-tex\">X_2</annotation></semantics></math></span> הן \"1\", וסיבית <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>X</mi><mrow><mo>−</mo><mn>2</mn></mrow></msub></mrow><annotation encoding=\"application/x-tex\">X_{-2}</annotation></semantics></math></span> היא \"0\". מה לא נכון:",
+   "explanationHtml": "בדיקת כל אפשרות לפי ייצוג 13 הסיביות:<br><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>51</mn><mfrac><mn>39</mn><mn>64</mn></mfrac><mo>=</mo><mo stretchy=\"false\">⟨</mo><mn>0110011.100111</mn><mo stretchy=\"false\">⟩</mo></mrow><annotation encoding=\"application/x-tex\">51\\frac{39}{64}=\\langle 0110011.100111\\rangle</annotation></semantics></math></span> - הסיביות <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>X</mi><mn>4</mn></msub><mo separator=\"true\">,</mo><msub><mi>X</mi><mn>2</mn></msub><mo separator=\"true\">,</mo><msub><mi>X</mi><mrow><mo>−</mo><mn>2</mn></mrow></msub></mrow><annotation encoding=\"application/x-tex\">X_4,X_2,X_{-2}</annotation></semantics></math></span> אינן מתאימות (<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>X</mi><mn>2</mn></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">X_2=0</annotation></semantics></math></span>), לכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">⟨</mo><mi>X</mi><mo stretchy=\"false\">⟩</mo></mrow><annotation encoding=\"application/x-tex\">\\langle X\\rangle</annotation></semantics></math></span> לא יכול להיות <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>51</mn><mfrac><mn>39</mn><mn>64</mn></mfrac></mrow><annotation encoding=\"application/x-tex\">51\\frac{39}{64}</annotation></semantics></math></span> - זו הטענה הלא נכונה.<br><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo>−</mo><mn>4</mn><mfrac><mn>14</mn><mn>32</mn></mfrac><mo>=</mo><mo stretchy=\"false\">⟨</mo><mn>1111011.100100</mn><mo stretchy=\"false\">⟩</mo></mrow><annotation encoding=\"application/x-tex\">-4\\frac{14}{32}=\\langle 1111011.100100\\rangle</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo>−</mo><mn>49</mn><mfrac><mn>27</mn><mn>64</mn></mfrac><mo>=</mo><mo stretchy=\"false\">⟨</mo><mn>1001110.100101</mn><mo stretchy=\"false\">⟩</mo></mrow><annotation encoding=\"application/x-tex\">-49\\frac{27}{64}=\\langle 1001110.100101\\rangle</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo>−</mo><mn>46</mn><mfrac><mn>11</mn><mn>32</mn></mfrac><mo>=</mo><mo stretchy=\"false\">⟨</mo><mn>1010001.101010</mn><mo stretchy=\"false\">⟩</mo></mrow><annotation encoding=\"application/x-tex\">-46\\frac{11}{32}=\\langle 1010001.101010\\rangle</annotation></semantics></math></span> - לא יכולים (הטענות \"לא יכול\" נכונות).<br><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>63</mn><mfrac><mn>9</mn><mn>16</mn></mfrac><mo>=</mo><mo stretchy=\"false\">⟨</mo><mn>0111111.100100</mn><mo stretchy=\"false\">⟩</mo></mrow><annotation encoding=\"application/x-tex\">63\\frac{9}{16}=\\langle 0111111.100100\\rangle</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo>−</mo><mn>33</mn><mfrac><mn>15</mn><mn>32</mn></mfrac><mo>=</mo><mo stretchy=\"false\">⟨</mo><mn>1011110.100010</mn><mo stretchy=\"false\">⟩</mo></mrow><annotation encoding=\"application/x-tex\">-33\\frac{15}{32}=\\langle 1011110.100010\\rangle</annotation></semantics></math></span> - יכולים.",
+   "dedupKey": "dd7ee7dcda9f9b92"
+  },
+  {
+   "num": 6,
+   "topic": "signed_twos_complement",
+   "question": "כדי להציג את תחום המספרים מ- $(-2^{14})$ ועד $(2^{14}-\\frac{1}{64})$ צריך מספר בינארי בשיטת המשלים ל-2 בו יש:",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "21 ספרות מהן 15 לחלק השלם.",
+     "html": "21 ספרות מהן 15 לחלק השלם."
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "22 ספרות מהן 14 לחלק השלם.",
+     "html": "22 ספרות מהן 14 לחלק השלם."
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "21 ספרות מהן 14 לחלק השלם.",
+     "html": "21 ספרות מהן 14 לחלק השלם."
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "20 ספרות מהן 14 לחלק השלם.",
+     "html": "20 ספרות מהן 14 לחלק השלם."
+    },
+    {
+     "id": "e",
+     "type": "text",
+     "value": "22 ספרות מהן 16 לחלק השלם.",
+     "html": "22 ספרות מהן 16 לחלק השלם."
+    },
+    {
+     "id": "f",
+     "type": "text",
+     "value": "20 ספרות מהן 15 לחלק השלם.",
+     "html": "20 ספרות מהן 15 לחלק השלם."
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "המשקל $-2^{14}$ הוא של ה-MSB (סיבית הסימן), ולכן יש סיביות מ-0 ועד 14, כלומר 15 סיביות לחלק השלם.\nל-$\\frac{1}{64}$ נדרשות 6 סיביות שבר. לכן מדובר ב-$\\langle m.n\\rangle=\\langle 15.6\\rangle$, כלומר 21 ספרות מהן 15 לחלק השלם.",
+   "id": "25B-A-Q6",
+   "examCode": "25B-A",
+   "examLabel": "2025 סמסטר א מועד ב",
+   "year": 2025,
+   "source": "exam",
+   "topicLabel": "משלים ל-2 ו-overflow",
+   "questionHtml": "כדי להציג את תחום המספרים מ- <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">(</mo><mo>−</mo><msup><mn>2</mn><mn>14</mn></msup><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">(-2^{14})</annotation></semantics></math></span> ועד <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">(</mo><msup><mn>2</mn><mn>14</mn></msup><mo>−</mo><mfrac><mn>1</mn><mn>64</mn></mfrac><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">(2^{14}-\\frac{1}{64})</annotation></semantics></math></span> צריך מספר בינארי בשיטת המשלים ל-2 בו יש:",
+   "explanationHtml": "המשקל <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo>−</mo><msup><mn>2</mn><mn>14</mn></msup></mrow><annotation encoding=\"application/x-tex\">-2^{14}</annotation></semantics></math></span> הוא של ה-MSB (סיבית הסימן), ולכן יש סיביות מ-0 ועד 14, כלומר 15 סיביות לחלק השלם.<br>ל-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mfrac><mn>1</mn><mn>64</mn></mfrac></mrow><annotation encoding=\"application/x-tex\">\\frac{1}{64}</annotation></semantics></math></span> נדרשות 6 סיביות שבר. לכן מדובר ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">⟨</mo><mi>m</mi><mi mathvariant=\"normal\">.</mi><mi>n</mi><mo stretchy=\"false\">⟩</mo><mo>=</mo><mo stretchy=\"false\">⟨</mo><mn>15.6</mn><mo stretchy=\"false\">⟩</mo></mrow><annotation encoding=\"application/x-tex\">\\langle m.n\\rangle=\\langle 15.6\\rangle</annotation></semantics></math></span>, כלומר 21 ספרות מהן 15 לחלק השלם.",
+   "dedupKey": "4587ddbe4d1788fd"
+  },
+  {
+   "num": 7,
+   "topic": "floating_point",
+   "question": "אנו עוסקים בשני מספרים המיוצגים ב- Single Precision Floating Point (1 סיבית סימן, 8 סיביות אקספוננט ו-23 סיביות שבר, Fraction). מהו היחס בין המספר החיובי הגדול ביותר עם אקספוננט נתון לבין המספר החיובי הקטן ביותר עם אותו אקספוננט?",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "או $(2-2^{-23})$ או $(2^{23}-1)$",
+     "html": "או <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">(</mo><mn>2</mn><mo>−</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>23</mn></mrow></msup><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">(2-2^{-23})</annotation></semantics></math></span> או <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">(</mo><msup><mn>2</mn><mn>23</mn></msup><mo>−</mo><mn>1</mn><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">(2^{23}-1)</annotation></semantics></math></span>"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "או $2$ או $(2-2^{-23})$",
+     "html": "או <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">2</annotation></semantics></math></span> או <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">(</mo><mn>2</mn><mo>−</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>23</mn></mrow></msup><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">(2-2^{-23})</annotation></semantics></math></span>"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "$2-2^{-23}$",
+     "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><mo>−</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>23</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">2-2^{-23}</annotation></semantics></math></span>"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "$1-2^{-23}$",
+     "html": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>1</mn><mo>−</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>23</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">1-2^{-23}</annotation></semantics></math></span>"
+    },
+    {
+     "id": "e",
+     "type": "text",
+     "value": "או $(2-2^{-23})$ או $2^{-23}$",
+     "html": "או <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">(</mo><mn>2</mn><mo>−</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>23</mn></mrow></msup><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">(2-2^{-23})</annotation></semantics></math></span> או <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mrow><mo>−</mo><mn>23</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">2^{-23}</annotation></semantics></math></span>"
+    },
+    {
+     "id": "f",
+     "type": "text",
+     "value": "אין אפשרות לדעת היות והיחס תלוי בערך האקספוננט שלא נתון לנו",
+     "html": "אין אפשרות לדעת היות והיחס תלוי בערך האקספוננט שלא נתון לנו"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "יש להבדיל בין שני המספרים החיוביים עם $E=0$ (דנורמליים) והחיוביים עם $E$ בתחום $1\\ldots 254$.\nבמצב רגיל ($E\\ne 0$): מינימום $=2^{E-127}\\cdot 1.00\\ldots 0$, מקסימום $=2^{E-127}\\cdot 1.11\\ldots 1=2^{E-127}\\cdot(2-2^{-23})$, והיחס בינהם הוא כמובן $(2-2^{-23})$.\nבמצב שבו האקספוננט הוא 0: $\\text{eps}=2^{-23}\\cdot 2^{-126}$, $\\text{MAX}_0=2^{-126}\\cdot(1-2^{-23})$, והיחס בינהם $\\frac{1-2^{-23}}{2^{-23}}=2^{23}-1$.\nלכן התשובה היא $(2^{23}-1)$ או $(2-2^{-23})$.",
+   "note": "Options a, b and e each print a leading 'או' (the printed line reads 'או X או Y' in the RTL layout); transcribed as printed. The lecturer's solution answer is '(2^23-1) או (2-2^-23)'.",
+   "id": "25B-A-Q7",
+   "examCode": "25B-A",
+   "examLabel": "2025 סמסטר א מועד ב",
+   "year": 2025,
+   "source": "exam",
+   "topicLabel": "נקודה צפה IEEE-754",
+   "questionHtml": "אנו עוסקים בשני מספרים המיוצגים ב- Single Precision Floating Point (1 סיבית סימן, 8 סיביות אקספוננט ו-23 סיביות שבר, Fraction). מהו היחס בין המספר החיובי הגדול ביותר עם אקספוננט נתון לבין המספר החיובי הקטן ביותר עם אותו אקספוננט?",
+   "explanationHtml": "יש להבדיל בין שני המספרים החיוביים עם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>E</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">E=0</annotation></semantics></math></span> (דנורמליים) והחיוביים עם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>E</mi></mrow><annotation encoding=\"application/x-tex\">E</annotation></semantics></math></span> בתחום <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>1</mn><mo>…</mo><mn>254</mn></mrow><annotation encoding=\"application/x-tex\">1\\ldots 254</annotation></semantics></math></span>.<br>במצב רגיל (<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>E</mi><mo mathvariant=\"normal\">≠</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">E\\ne 0</annotation></semantics></math></span>): מינימום <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo>=</mo><msup><mn>2</mn><mrow><mi>E</mi><mo>−</mo><mn>127</mn></mrow></msup><mo>⋅</mo><mn>1.00</mn><mo>…</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">=2^{E-127}\\cdot 1.00\\ldots 0</annotation></semantics></math></span>, מקסימום <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo>=</mo><msup><mn>2</mn><mrow><mi>E</mi><mo>−</mo><mn>127</mn></mrow></msup><mo>⋅</mo><mn>1.11</mn><mo>…</mo><mn>1</mn><mo>=</mo><msup><mn>2</mn><mrow><mi>E</mi><mo>−</mo><mn>127</mn></mrow></msup><mo>⋅</mo><mo stretchy=\"false\">(</mo><mn>2</mn><mo>−</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>23</mn></mrow></msup><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">=2^{E-127}\\cdot 1.11\\ldots 1=2^{E-127}\\cdot(2-2^{-23})</annotation></semantics></math></span>, והיחס בינהם הוא כמובן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">(</mo><mn>2</mn><mo>−</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>23</mn></mrow></msup><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">(2-2^{-23})</annotation></semantics></math></span>.<br>במצב שבו האקספוננט הוא 0: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mtext>eps</mtext><mo>=</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>23</mn></mrow></msup><mo>⋅</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>126</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">\\text{eps}=2^{-23}\\cdot 2^{-126}</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mtext>MAX</mtext><mn>0</mn></msub><mo>=</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>126</mn></mrow></msup><mo>⋅</mo><mo stretchy=\"false\">(</mo><mn>1</mn><mo>−</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>23</mn></mrow></msup><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">\\text{MAX}_0=2^{-126}\\cdot(1-2^{-23})</annotation></semantics></math></span>, והיחס בינהם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mfrac><mrow><mn>1</mn><mo>−</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>23</mn></mrow></msup></mrow><msup><mn>2</mn><mrow><mo>−</mo><mn>23</mn></mrow></msup></mfrac><mo>=</mo><msup><mn>2</mn><mn>23</mn></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">\\frac{1-2^{-23}}{2^{-23}}=2^{23}-1</annotation></semantics></math></span>.<br>לכן התשובה היא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">(</mo><msup><mn>2</mn><mn>23</mn></msup><mo>−</mo><mn>1</mn><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">(2^{23}-1)</annotation></semantics></math></span> או <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">(</mo><mn>2</mn><mo>−</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>23</mn></mrow></msup><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">(2-2^{-23})</annotation></semantics></math></span>.",
+   "dedupKey": "810a1983fb889c05"
+  },
+  {
+   "num": 8,
+   "topic": "datapath_control",
+   "question": "הוספנו למעבד ה-MIPS שמימשנו בהרצאות פקודה חדשה. הפקודה, blt (branch less than) פקודה זו קופצת לכתובת של `PC+4+sext(imm)*4` אם הערך שבאוגר Rs קטן מהערך שבאוגר Rt. אם לא, אזי נמשיך לפקודה הבאה. אלו שלבים היו מתבצעים במהלך ביצוע הפקודה הזו?",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "Fetch, Decode, ALU",
+     "html": "Fetch, Decode, ALU"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "Fetch, Decode, Write-Back",
+     "html": "Fetch, Decode, Write-Back"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "Fetch, Decode, ALU, Write-Back",
+     "html": "Fetch, Decode, ALU, Write-Back"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "Fetch, Decode",
+     "html": "Fetch, Decode"
+    },
+    {
+     "id": "e",
+     "type": "text",
+     "value": "Fetch, Decode, Memory, Write-Back",
+     "html": "Fetch, Decode, Memory, Write-Back"
+    },
+    {
+     "id": "f",
+     "type": "text",
+     "value": "Fetch, Decode, Memory",
+     "html": "Fetch, Decode, Memory"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "פקודה זו מתבצעת בדומה ל-beq, אלא שה-ALU מבצע פעולת SLT (במקום חיסור) ונתייחס לתוצאה.\nFetch $\\to$ Decode $\\to$ ALU, ולפי תוצאת ה-ALU נכניס את כתובת ה-BRANCH ל-PC או את PC+4 - בדיוק כמו ב-beq.",
+   "id": "25B-A-Q8",
+   "examCode": "25B-A",
+   "examLabel": "2025 סמסטר א מועד ב",
+   "year": 2025,
+   "source": "exam",
+   "topicLabel": "נתיב נתונים ובקרה",
+   "questionHtml": "הוספנו למעבד ה-MIPS שמימשנו בהרצאות פקודה חדשה. הפקודה, blt (branch less than) פקודה זו קופצת לכתובת של <code class=\"tok\" dir=\"ltr\">PC+4+sext(imm)*4</code> אם הערך שבאוגר Rs קטן מהערך שבאוגר Rt. אם לא, אזי נמשיך לפקודה הבאה. אלו שלבים היו מתבצעים במהלך ביצוע הפקודה הזו?",
+   "explanationHtml": "פקודה זו מתבצעת בדומה ל-beq, אלא שה-ALU מבצע פעולת SLT (במקום חיסור) ונתייחס לתוצאה.<br>Fetch <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo>→</mo></mrow><annotation encoding=\"application/x-tex\">\\to</annotation></semantics></math></span> Decode <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo>→</mo></mrow><annotation encoding=\"application/x-tex\">\\to</annotation></semantics></math></span> ALU, ולפי תוצאת ה-ALU נכניס את כתובת ה-BRANCH ל-PC או את PC+4 - בדיוק כמו ב-beq.",
+   "dedupKey": "34764f1bea4032f9"
+  },
+  {
+   "num": 9,
+   "topic": "latches_flipflops",
+   "question": "לפניכם ארבעה דלגלגים (FF-ים), המחוברים בצורת אוגר הזזה (Shift Register). הכניסה משמאל (ל-D3) מחוברת ליציאת שרשרת של 2 שערי XOR, המבצעים פעולת XOR בין Q3 ל Q2, ואח\"כ XOR בין התוצאה לבין Q0. הערך באוגר ההזזה הוא: [Q3, Q2, Q1, Q0] = [0, 1, 0, 1] כמצויר. מה יהיה הערך באוגר אחרי 5 עליות שעון?",
+   "options": [
+    {
+     "id": "a",
+     "type": "math",
+     "value": "[Q_3,Q_2,Q_1,Q_0]=[0,1,1,0]",
+     "html": "<span class=\"math-inline opt-math\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><msub><mi>Q</mi><mn>3</mn></msub><mo separator=\"true\">,</mo><msub><mi>Q</mi><mn>2</mn></msub><mo separator=\"true\">,</mo><msub><mi>Q</mi><mn>1</mn></msub><mo separator=\"true\">,</mo><msub><mi>Q</mi><mn>0</mn></msub><mo stretchy=\"false\">]</mo><mo>=</mo><mo stretchy=\"false\">[</mo><mn>0</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>0</mn><mo stretchy=\"false\">]</mo></mrow><annotation encoding=\"application/x-tex\">[Q_3,Q_2,Q_1,Q_0]=[0,1,1,0]</annotation></semantics></math></span>"
+    },
+    {
+     "id": "b",
+     "type": "math",
+     "value": "[Q_3,Q_2,Q_1,Q_0]=[1,1,0,0]",
+     "html": "<span class=\"math-inline opt-math\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><msub><mi>Q</mi><mn>3</mn></msub><mo separator=\"true\">,</mo><msub><mi>Q</mi><mn>2</mn></msub><mo separator=\"true\">,</mo><msub><mi>Q</mi><mn>1</mn></msub><mo separator=\"true\">,</mo><msub><mi>Q</mi><mn>0</mn></msub><mo stretchy=\"false\">]</mo><mo>=</mo><mo stretchy=\"false\">[</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>0</mn><mo separator=\"true\">,</mo><mn>0</mn><mo stretchy=\"false\">]</mo></mrow><annotation encoding=\"application/x-tex\">[Q_3,Q_2,Q_1,Q_0]=[1,1,0,0]</annotation></semantics></math></span>"
+    },
+    {
+     "id": "c",
+     "type": "math",
+     "value": "[Q_3,Q_2,Q_1,Q_0]=[1,1,0,1]",
+     "html": "<span class=\"math-inline opt-math\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><msub><mi>Q</mi><mn>3</mn></msub><mo separator=\"true\">,</mo><msub><mi>Q</mi><mn>2</mn></msub><mo separator=\"true\">,</mo><msub><mi>Q</mi><mn>1</mn></msub><mo separator=\"true\">,</mo><msub><mi>Q</mi><mn>0</mn></msub><mo stretchy=\"false\">]</mo><mo>=</mo><mo stretchy=\"false\">[</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>0</mn><mo separator=\"true\">,</mo><mn>1</mn><mo stretchy=\"false\">]</mo></mrow><annotation encoding=\"application/x-tex\">[Q_3,Q_2,Q_1,Q_0]=[1,1,0,1]</annotation></semantics></math></span>"
+    },
+    {
+     "id": "d",
+     "type": "math",
+     "value": "[Q_3,Q_2,Q_1,Q_0]=[1,0,0,0]",
+     "html": "<span class=\"math-inline opt-math\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><msub><mi>Q</mi><mn>3</mn></msub><mo separator=\"true\">,</mo><msub><mi>Q</mi><mn>2</mn></msub><mo separator=\"true\">,</mo><msub><mi>Q</mi><mn>1</mn></msub><mo separator=\"true\">,</mo><msub><mi>Q</mi><mn>0</mn></msub><mo stretchy=\"false\">]</mo><mo>=</mo><mo stretchy=\"false\">[</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>0</mn><mo separator=\"true\">,</mo><mn>0</mn><mo separator=\"true\">,</mo><mn>0</mn><mo stretchy=\"false\">]</mo></mrow><annotation encoding=\"application/x-tex\">[Q_3,Q_2,Q_1,Q_0]=[1,0,0,0]</annotation></semantics></math></span>"
+    },
+    {
+     "id": "e",
+     "type": "math",
+     "value": "[Q_3,Q_2,Q_1,Q_0]=[1,0,0,1]",
+     "html": "<span class=\"math-inline opt-math\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><msub><mi>Q</mi><mn>3</mn></msub><mo separator=\"true\">,</mo><msub><mi>Q</mi><mn>2</mn></msub><mo separator=\"true\">,</mo><msub><mi>Q</mi><mn>1</mn></msub><mo separator=\"true\">,</mo><msub><mi>Q</mi><mn>0</mn></msub><mo stretchy=\"false\">]</mo><mo>=</mo><mo stretchy=\"false\">[</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>0</mn><mo separator=\"true\">,</mo><mn>0</mn><mo separator=\"true\">,</mo><mn>1</mn><mo stretchy=\"false\">]</mo></mrow><annotation encoding=\"application/x-tex\">[Q_3,Q_2,Q_1,Q_0]=[1,0,0,1]</annotation></semantics></math></span>"
+    },
+    {
+     "id": "f",
+     "type": "math",
+     "value": "[Q_3,Q_2,Q_1,Q_0]=[0,0,1,1]",
+     "html": "<span class=\"math-inline opt-math\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><msub><mi>Q</mi><mn>3</mn></msub><mo separator=\"true\">,</mo><msub><mi>Q</mi><mn>2</mn></msub><mo separator=\"true\">,</mo><msub><mi>Q</mi><mn>1</mn></msub><mo separator=\"true\">,</mo><msub><mi>Q</mi><mn>0</mn></msub><mo stretchy=\"false\">]</mo><mo>=</mo><mo stretchy=\"false\">[</mo><mn>0</mn><mo separator=\"true\">,</mo><mn>0</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>1</mn><mo stretchy=\"false\">]</mo></mrow><annotation encoding=\"application/x-tex\">[Q_3,Q_2,Q_1,Q_0]=[0,0,1,1]</annotation></semantics></math></span>"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "$D_3=Q_3\\oplus Q_2\\oplus Q_0$ (שאר הדלגלגים מזיזים ימינה).\nמצב התחלה $[0,1,0,1]$ (5); אחרי עלייה 1: $[0,0,1,0]$ (2); אחרי 2: $[0,0,0,1]$ (1); אחרי 3: $[1,0,0,0]$ (8); אחרי 4: $[1,1,0,0]$ (12); אחרי 5: $[0,1,1,0]$ (6).",
+   "image": "images/exams/25B-A-Q9.png",
+   "id": "25B-A-Q9",
+   "examCode": "25B-A",
+   "examLabel": "2025 סמסטר א מועד ב",
+   "year": 2025,
+   "source": "exam",
+   "topicLabel": "נועלים ודלגלגים",
+   "questionHtml": "לפניכם ארבעה דלגלגים (FF-ים), המחוברים בצורת אוגר הזזה (Shift Register). הכניסה משמאל (ל-D3) מחוברת ליציאת שרשרת של 2 שערי XOR, המבצעים פעולת XOR בין Q3 ל Q2, ואח\"כ XOR בין התוצאה לבין Q0. הערך באוגר ההזזה הוא: [Q3, Q2, Q1, Q0] = [0, 1, 0, 1] כמצויר. מה יהיה הערך באוגר אחרי 5 עליות שעון?",
+   "explanationHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>D</mi><mn>3</mn></msub><mo>=</mo><msub><mi>Q</mi><mn>3</mn></msub><mo>⊕</mo><msub><mi>Q</mi><mn>2</mn></msub><mo>⊕</mo><msub><mi>Q</mi><mn>0</mn></msub></mrow><annotation encoding=\"application/x-tex\">D_3=Q_3\\oplus Q_2\\oplus Q_0</annotation></semantics></math></span> (שאר הדלגלגים מזיזים ימינה).<br>מצב התחלה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><mn>0</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>0</mn><mo separator=\"true\">,</mo><mn>1</mn><mo stretchy=\"false\">]</mo></mrow><annotation encoding=\"application/x-tex\">[0,1,0,1]</annotation></semantics></math></span> (5); אחרי עלייה 1: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><mn>0</mn><mo separator=\"true\">,</mo><mn>0</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>0</mn><mo stretchy=\"false\">]</mo></mrow><annotation encoding=\"application/x-tex\">[0,0,1,0]</annotation></semantics></math></span> (2); אחרי 2: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><mn>0</mn><mo separator=\"true\">,</mo><mn>0</mn><mo separator=\"true\">,</mo><mn>0</mn><mo separator=\"true\">,</mo><mn>1</mn><mo stretchy=\"false\">]</mo></mrow><annotation encoding=\"application/x-tex\">[0,0,0,1]</annotation></semantics></math></span> (1); אחרי 3: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>0</mn><mo separator=\"true\">,</mo><mn>0</mn><mo separator=\"true\">,</mo><mn>0</mn><mo stretchy=\"false\">]</mo></mrow><annotation encoding=\"application/x-tex\">[1,0,0,0]</annotation></semantics></math></span> (8); אחרי 4: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>0</mn><mo separator=\"true\">,</mo><mn>0</mn><mo stretchy=\"false\">]</mo></mrow><annotation encoding=\"application/x-tex\">[1,1,0,0]</annotation></semantics></math></span> (12); אחרי 5: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><mn>0</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>0</mn><mo stretchy=\"false\">]</mo></mrow><annotation encoding=\"application/x-tex\">[0,1,1,0]</annotation></semantics></math></span> (6).",
+   "dedupKey": "8d0c79e9123634c7"
+  },
+  {
+   "num": 10,
+   "topic": "mips_assembly_c",
+   "question": "נתון קטע הקוד הבא הכתוב בשפת האסמבלי של מעבד ה-MIPS. מה היה הערך ההתחלתי באוגר \\$3, אם כאשר נגיע ל-end, באוגר \\$8 יש את המספר 17.\n`addi \\$7, \\$0, 1`\n`addi \\$8, \\$0, 0`\n`lp:    beq  \\$0, \\$7, end`\n`       and  \\$10, \\$7, \\$3`\n`       bne  \\$10, \\$0, lab1`\n`       addi \\$8, \\$8, 1`\n`lab1:  add  \\$7, \\$7, \\$7`\n`       j    lp`\n`end:`",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "0x830F14F6",
+     "html": "0x830F14F6"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "0xF2FF16F8",
+     "html": "0xF2FF16F8"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "0x93FE28FE",
+     "html": "0x93FE28FE"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "0x8326140C",
+     "html": "0x8326140C"
+    },
+    {
+     "id": "e",
+     "type": "text",
+     "value": "0x00FF6000",
+     "html": "0x00FF6000"
+    },
+    {
+     "id": "f",
+     "type": "text",
+     "value": "0xE0FF6348",
+     "html": "0xE0FF6348"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "`\\$7` הוא ה-MASK ומתחיל ב-`0x00000001`; בכל סיבוב הוא מוזז שמאלה ב-1 ולכן עובר על כל 32 הביטים, ויוצאים כאשר `\\$7==0`.\nכל פעם מבצעים AND בין ה-MASK ל-`\\$3`: אם הביט הוא \"1\" מדלגים (אין `\\$8++`), אם הביט הוא \"0\" מבצעים `\\$8++`.\nלכן בסוף `\\$8` סופר את מספר האפסים (הביטים שערכם \"0\") שיש במספר שב-`\\$3`. 17 אפסים משמעו 15 אחדים - רק בתשובה א יש 15 אחדים.",
+   "id": "25B-A-Q10",
+   "examCode": "25B-A",
+   "examLabel": "2025 סמסטר א מועד ב",
+   "year": 2025,
+   "source": "exam",
+   "topicLabel": "אסמבלי MIPS ותרגום ל-C",
+   "questionHtml": "נתון קטע הקוד הבא הכתוב בשפת האסמבלי של מעבד ה-MIPS. מה היה הערך ההתחלתי באוגר $3, אם כאשר נגיע ל-end, באוגר $8 יש את המספר 17.<br><code class=\"tok\" dir=\"ltr\">addi $7, $0, 1</code><br><code class=\"tok\" dir=\"ltr\">addi $8, $0, 0</code><br><code class=\"tok\" dir=\"ltr\">lp:    beq  $0, $7, end</code><br><code class=\"tok\" dir=\"ltr\">       and  $10, $7, $3</code><br><code class=\"tok\" dir=\"ltr\">       bne  $10, $0, lab1</code><br><code class=\"tok\" dir=\"ltr\">       addi $8, $8, 1</code><br><code class=\"tok\" dir=\"ltr\">lab1:  add  $7, $7, $7</code><br><code class=\"tok\" dir=\"ltr\">       j    lp</code><br><code class=\"tok\" dir=\"ltr\">end:</code>",
+   "explanationHtml": "<code class=\"tok\" dir=\"ltr\">$7</code> הוא ה-MASK ומתחיל ב-<code class=\"tok\" dir=\"ltr\">0x00000001</code>; בכל סיבוב הוא מוזז שמאלה ב-1 ולכן עובר על כל 32 הביטים, ויוצאים כאשר <code class=\"tok\" dir=\"ltr\">$7==0</code>.<br>כל פעם מבצעים AND בין ה-MASK ל-<code class=\"tok\" dir=\"ltr\">$3</code>: אם הביט הוא \"1\" מדלגים (אין <code class=\"tok\" dir=\"ltr\">$8++</code>), אם הביט הוא \"0\" מבצעים <code class=\"tok\" dir=\"ltr\">$8++</code>.<br>לכן בסוף <code class=\"tok\" dir=\"ltr\">$8</code> סופר את מספר האפסים (הביטים שערכם \"0\") שיש במספר שב-<code class=\"tok\" dir=\"ltr\">$3</code>. 17 אפסים משמעו 15 אחדים - רק בתשובה א יש 15 אחדים.",
+   "dedupKey": "bbb0e124d4d5d294"
+  },
+  {
+   "num": 11,
+   "topic": "number_bases",
+   "question": "מה לא נכון ?",
+   "options": [
+    {
+     "id": "a",
+     "type": "math",
+     "value": "[1011.1101]_2=[12.4]_8+[1.01]_4",
+     "html": "<span class=\"math-inline opt-math\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><mn>1011.1101</mn><msub><mo stretchy=\"false\">]</mo><mn>2</mn></msub><mo>=</mo><mo stretchy=\"false\">[</mo><mn>12.4</mn><msub><mo stretchy=\"false\">]</mo><mn>8</mn></msub><mo>+</mo><mo stretchy=\"false\">[</mo><mn>1.01</mn><msub><mo stretchy=\"false\">]</mo><mn>4</mn></msub></mrow><annotation encoding=\"application/x-tex\">[1011.1101]_2=[12.4]_8+[1.01]_4</annotation></semantics></math></span>"
+    },
+    {
+     "id": "b",
+     "type": "math",
+     "value": "[1A7]_{16}=2\\times[266]_8+[323]_4",
+     "html": "<span class=\"math-inline opt-math\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><mn>1</mn><mi>A</mi><mn>7</mn><msub><mo stretchy=\"false\">]</mo><mn>16</mn></msub><mo>=</mo><mn>2</mn><mo>×</mo><mo stretchy=\"false\">[</mo><mn>266</mn><msub><mo stretchy=\"false\">]</mo><mn>8</mn></msub><mo>+</mo><mo stretchy=\"false\">[</mo><mn>323</mn><msub><mo stretchy=\"false\">]</mo><mn>4</mn></msub></mrow><annotation encoding=\"application/x-tex\">[1A7]_{16}=2\\times[266]_8+[323]_4</annotation></semantics></math></span>"
+    },
+    {
+     "id": "c",
+     "type": "math",
+     "value": "[2201.125]_{10}=[4231.1]_8",
+     "html": "<span class=\"math-inline opt-math\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><mn>2201.125</mn><msub><mo stretchy=\"false\">]</mo><mn>10</mn></msub><mo>=</mo><mo stretchy=\"false\">[</mo><mn>4231.1</mn><msub><mo stretchy=\"false\">]</mo><mn>8</mn></msub></mrow><annotation encoding=\"application/x-tex\">[2201.125]_{10}=[4231.1]_8</annotation></semantics></math></span>"
+    },
+    {
+     "id": "d",
+     "type": "math",
+     "value": "[187]_9=[7]_8+9\\times[122]_3",
+     "html": "<span class=\"math-inline opt-math\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><mn>187</mn><msub><mo stretchy=\"false\">]</mo><mn>9</mn></msub><mo>=</mo><mo stretchy=\"false\">[</mo><mn>7</mn><msub><mo stretchy=\"false\">]</mo><mn>8</mn></msub><mo>+</mo><mn>9</mn><mo>×</mo><mo stretchy=\"false\">[</mo><mn>122</mn><msub><mo stretchy=\"false\">]</mo><mn>3</mn></msub></mrow><annotation encoding=\"application/x-tex\">[187]_9=[7]_8+9\\times[122]_3</annotation></semantics></math></span>"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "א: $[12.4]_8=[001010.100]_2$ ו-$[1.01]_4=[01.0001]_2$; הסכום הוא $[1011.1001]_2$ (ולא $[1011.1101]_2$) - לכן הטענה לא נכונה.\nב: $[266]_8=[010110110]_2$, $[323]_4=[111011]_2$, $2\\times[266]_8+[323]_4=[110100111]_2=[1A7]_{16}$ - נכון.\nג: $[2201.125]_{10}=[100010011001.001]_2=[4231.1]_8$ - נכון.\nד: $[187]_9=[012221]_3$; $9\\times[122]_3=[12200]_3$, $[7]_8=7=[21]_3$, והסכום $[12221]_3$ - נכון.",
+   "id": "25B-A-Q11",
+   "examCode": "25B-A",
+   "examLabel": "2025 סמסטר א מועד ב",
+   "year": 2025,
+   "source": "exam",
+   "topicLabel": "המרה בין בסיסים",
+   "questionHtml": "מה לא נכון ?",
+   "explanationHtml": "א: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><mn>12.4</mn><msub><mo stretchy=\"false\">]</mo><mn>8</mn></msub><mo>=</mo><mo stretchy=\"false\">[</mo><mn>001010.100</mn><msub><mo stretchy=\"false\">]</mo><mn>2</mn></msub></mrow><annotation encoding=\"application/x-tex\">[12.4]_8=[001010.100]_2</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><mn>1.01</mn><msub><mo stretchy=\"false\">]</mo><mn>4</mn></msub><mo>=</mo><mo stretchy=\"false\">[</mo><mn>01.0001</mn><msub><mo stretchy=\"false\">]</mo><mn>2</mn></msub></mrow><annotation encoding=\"application/x-tex\">[1.01]_4=[01.0001]_2</annotation></semantics></math></span>; הסכום הוא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><mn>1011.1001</mn><msub><mo stretchy=\"false\">]</mo><mn>2</mn></msub></mrow><annotation encoding=\"application/x-tex\">[1011.1001]_2</annotation></semantics></math></span> (ולא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><mn>1011.1101</mn><msub><mo stretchy=\"false\">]</mo><mn>2</mn></msub></mrow><annotation encoding=\"application/x-tex\">[1011.1101]_2</annotation></semantics></math></span>) - לכן הטענה לא נכונה.<br>ב: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><mn>266</mn><msub><mo stretchy=\"false\">]</mo><mn>8</mn></msub><mo>=</mo><mo stretchy=\"false\">[</mo><mn>010110110</mn><msub><mo stretchy=\"false\">]</mo><mn>2</mn></msub></mrow><annotation encoding=\"application/x-tex\">[266]_8=[010110110]_2</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><mn>323</mn><msub><mo stretchy=\"false\">]</mo><mn>4</mn></msub><mo>=</mo><mo stretchy=\"false\">[</mo><mn>111011</mn><msub><mo stretchy=\"false\">]</mo><mn>2</mn></msub></mrow><annotation encoding=\"application/x-tex\">[323]_4=[111011]_2</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><mo>×</mo><mo stretchy=\"false\">[</mo><mn>266</mn><msub><mo stretchy=\"false\">]</mo><mn>8</mn></msub><mo>+</mo><mo stretchy=\"false\">[</mo><mn>323</mn><msub><mo stretchy=\"false\">]</mo><mn>4</mn></msub><mo>=</mo><mo stretchy=\"false\">[</mo><mn>110100111</mn><msub><mo stretchy=\"false\">]</mo><mn>2</mn></msub><mo>=</mo><mo stretchy=\"false\">[</mo><mn>1</mn><mi>A</mi><mn>7</mn><msub><mo stretchy=\"false\">]</mo><mn>16</mn></msub></mrow><annotation encoding=\"application/x-tex\">2\\times[266]_8+[323]_4=[110100111]_2=[1A7]_{16}</annotation></semantics></math></span> - נכון.<br>ג: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><mn>2201.125</mn><msub><mo stretchy=\"false\">]</mo><mn>10</mn></msub><mo>=</mo><mo stretchy=\"false\">[</mo><mn>100010011001.001</mn><msub><mo stretchy=\"false\">]</mo><mn>2</mn></msub><mo>=</mo><mo stretchy=\"false\">[</mo><mn>4231.1</mn><msub><mo stretchy=\"false\">]</mo><mn>8</mn></msub></mrow><annotation encoding=\"application/x-tex\">[2201.125]_{10}=[100010011001.001]_2=[4231.1]_8</annotation></semantics></math></span> - נכון.<br>ד: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><mn>187</mn><msub><mo stretchy=\"false\">]</mo><mn>9</mn></msub><mo>=</mo><mo stretchy=\"false\">[</mo><mn>012221</mn><msub><mo stretchy=\"false\">]</mo><mn>3</mn></msub></mrow><annotation encoding=\"application/x-tex\">[187]_9=[012221]_3</annotation></semantics></math></span>; <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>9</mn><mo>×</mo><mo stretchy=\"false\">[</mo><mn>122</mn><msub><mo stretchy=\"false\">]</mo><mn>3</mn></msub><mo>=</mo><mo stretchy=\"false\">[</mo><mn>12200</mn><msub><mo stretchy=\"false\">]</mo><mn>3</mn></msub></mrow><annotation encoding=\"application/x-tex\">9\\times[122]_3=[12200]_3</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><mn>7</mn><msub><mo stretchy=\"false\">]</mo><mn>8</mn></msub><mo>=</mo><mn>7</mn><mo>=</mo><mo stretchy=\"false\">[</mo><mn>21</mn><msub><mo stretchy=\"false\">]</mo><mn>3</mn></msub></mrow><annotation encoding=\"application/x-tex\">[7]_8=7=[21]_3</annotation></semantics></math></span>, והסכום <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><mn>12221</mn><msub><mo stretchy=\"false\">]</mo><mn>3</mn></msub></mrow><annotation encoding=\"application/x-tex\">[12221]_3</annotation></semantics></math></span> - נכון.",
+   "dedupKey": "b5b8372b8247f46e"
+  },
+  {
+   "num": 12,
+   "topic": "signed_twos_complement",
+   "question": "במחבר 2's Comp. של 8 ביט יש יציאה הנדלקת כאשר יש Overflow. באיזה מהחישובים הבאים לא תידלק יציאה זו?",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "`10100011 - 00011001`",
+     "html": "<code class=\"tok\" dir=\"ltr\">10100011 - 00011001</code>"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "`01011111 - 11001001`",
+     "html": "<code class=\"tok\" dir=\"ltr\">01011111 - 11001001</code>"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "`10101111 + 10111001`",
+     "html": "<code class=\"tok\" dir=\"ltr\">10101111 + 10111001</code>"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "`11000101 - 01100100`",
+     "html": "<code class=\"tok\" dir=\"ltr\">11000101 - 01100100</code>"
+    },
+    {
+     "id": "e",
+     "type": "text",
+     "value": "`01001111 - 11000011`",
+     "html": "<code class=\"tok\" dir=\"ltr\">01001111 - 11000011</code>"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "התחום ב-8 ביט הוא $-128\\le X\\le 127$.\nא: $10100011-00011001=(-93)-25=-118$ - אין גלישה.\nב: $01011111-11001001=95-(-55)=150$ - יש גלישה.\nג: $10101111+10111001=(-81)+(-71)=-152$ - יש גלישה.\nד: $11000101-01100100=(-59)-100=-159$ - יש גלישה.\nה: $01001111-11000011=79-(-61)=140$ - יש גלישה.",
+   "id": "25B-A-Q12",
+   "examCode": "25B-A",
+   "examLabel": "2025 סמסטר א מועד ב",
+   "year": 2025,
+   "source": "exam",
+   "topicLabel": "משלים ל-2 ו-overflow",
+   "questionHtml": "במחבר 2's Comp. של 8 ביט יש יציאה הנדלקת כאשר יש Overflow. באיזה מהחישובים הבאים לא תידלק יציאה זו?",
+   "explanationHtml": "התחום ב-8 ביט הוא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo>−</mo><mn>128</mn><mo>≤</mo><mi>X</mi><mo>≤</mo><mn>127</mn></mrow><annotation encoding=\"application/x-tex\">-128\\le X\\le 127</annotation></semantics></math></span>.<br>א: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>10100011</mn><mo>−</mo><mn>00011001</mn><mo>=</mo><mo stretchy=\"false\">(</mo><mo>−</mo><mn>93</mn><mo stretchy=\"false\">)</mo><mo>−</mo><mn>25</mn><mo>=</mo><mo>−</mo><mn>118</mn></mrow><annotation encoding=\"application/x-tex\">10100011-00011001=(-93)-25=-118</annotation></semantics></math></span> - אין גלישה.<br>ב: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>01011111</mn><mo>−</mo><mn>11001001</mn><mo>=</mo><mn>95</mn><mo>−</mo><mo stretchy=\"false\">(</mo><mo>−</mo><mn>55</mn><mo stretchy=\"false\">)</mo><mo>=</mo><mn>150</mn></mrow><annotation encoding=\"application/x-tex\">01011111-11001001=95-(-55)=150</annotation></semantics></math></span> - יש גלישה.<br>ג: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>10101111</mn><mo>+</mo><mn>10111001</mn><mo>=</mo><mo stretchy=\"false\">(</mo><mo>−</mo><mn>81</mn><mo stretchy=\"false\">)</mo><mo>+</mo><mo stretchy=\"false\">(</mo><mo>−</mo><mn>71</mn><mo stretchy=\"false\">)</mo><mo>=</mo><mo>−</mo><mn>152</mn></mrow><annotation encoding=\"application/x-tex\">10101111+10111001=(-81)+(-71)=-152</annotation></semantics></math></span> - יש גלישה.<br>ד: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>11000101</mn><mo>−</mo><mn>01100100</mn><mo>=</mo><mo stretchy=\"false\">(</mo><mo>−</mo><mn>59</mn><mo stretchy=\"false\">)</mo><mo>−</mo><mn>100</mn><mo>=</mo><mo>−</mo><mn>159</mn></mrow><annotation encoding=\"application/x-tex\">11000101-01100100=(-59)-100=-159</annotation></semantics></math></span> - יש גלישה.<br>ה: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>01001111</mn><mo>−</mo><mn>11000011</mn><mo>=</mo><mn>79</mn><mo>−</mo><mo stretchy=\"false\">(</mo><mo>−</mo><mn>61</mn><mo stretchy=\"false\">)</mo><mo>=</mo><mn>140</mn></mrow><annotation encoding=\"application/x-tex\">01001111-11000011=79-(-61)=140</annotation></semantics></math></span> - יש גלישה.",
+   "dedupKey": "a9c6571bdf508d45"
+  },
+  {
+   "num": 13,
+   "topic": "mips_assembly_c",
+   "question": "שורת ה- C הבאה תורגמה לשפת האסמבלי של ה-MIPS.\n`tmp = array[4*i];`\nידוע ש- i הוא \\$3, ש- tmp הוא \\$4, ושכתובת ההתחלה של array נמצאת ב- \\$2. מהו התרגום הנכון?",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "`add \\$5, \\$3, \\$3`\n`add \\$5, \\$5, \\$5`\n`add \\$5, \\$5, \\$5`\n`add \\$5, \\$5, \\$5`\n`add \\$5, \\$5, \\$2`\n`lw  \\$4, 0(\\$5)`",
+     "html": "<code class=\"tok\" dir=\"ltr\">add $5, $3, $3</code><br><code class=\"tok\" dir=\"ltr\">add $5, $5, $5</code><br><code class=\"tok\" dir=\"ltr\">add $5, $5, $5</code><br><code class=\"tok\" dir=\"ltr\">add $5, $5, $5</code><br><code class=\"tok\" dir=\"ltr\">add $5, $5, $2</code><br><code class=\"tok\" dir=\"ltr\">lw  $4, 0($5)</code>"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "`add \\$5, \\$3, \\$3`\n`add \\$5, \\$5, \\$5`\n`add \\$5, \\$5, \\$5`\n`add \\$5, \\$5, \\$2`\n`lw  \\$4, 0(\\$5)`",
+     "html": "<code class=\"tok\" dir=\"ltr\">add $5, $3, $3</code><br><code class=\"tok\" dir=\"ltr\">add $5, $5, $5</code><br><code class=\"tok\" dir=\"ltr\">add $5, $5, $5</code><br><code class=\"tok\" dir=\"ltr\">add $5, $5, $2</code><br><code class=\"tok\" dir=\"ltr\">lw  $4, 0($5)</code>"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "`add \\$5, \\$3, \\$3`\n`add \\$5, \\$5, \\$5`\n`add \\$5, \\$5, \\$2`\n`lw  \\$4, 0(\\$5)`",
+     "html": "<code class=\"tok\" dir=\"ltr\">add $5, $3, $3</code><br><code class=\"tok\" dir=\"ltr\">add $5, $5, $5</code><br><code class=\"tok\" dir=\"ltr\">add $5, $5, $2</code><br><code class=\"tok\" dir=\"ltr\">lw  $4, 0($5)</code>"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "`add \\$5, \\$3, \\$3`\n`add \\$5, \\$5, \\$5`\n`add \\$5, \\$5, \\$5`\n`add \\$5, \\$5, \\$5`\n`add \\$5, \\$5, \\$5`\n`add \\$5, \\$5, \\$2`\n`lw  \\$4, 0(\\$5)`",
+     "html": "<code class=\"tok\" dir=\"ltr\">add $5, $3, $3</code><br><code class=\"tok\" dir=\"ltr\">add $5, $5, $5</code><br><code class=\"tok\" dir=\"ltr\">add $5, $5, $5</code><br><code class=\"tok\" dir=\"ltr\">add $5, $5, $5</code><br><code class=\"tok\" dir=\"ltr\">add $5, $5, $5</code><br><code class=\"tok\" dir=\"ltr\">add $5, $5, $2</code><br><code class=\"tok\" dir=\"ltr\">lw  $4, 0($5)</code>"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "הכתובת של `array[4*i]` היא $4\\cdot(4\\cdot i)+\\text{array}=16i+\\$2$:\n`add \\$5,\\$3,\\$3` ($\\$5=2i$); `add \\$5,\\$5,\\$5` ($4i$); `add \\$5,\\$5,\\$5` ($8i$); `add \\$5,\\$5,\\$5` ($16i$); `add \\$5,\\$5,\\$2` ($\\$5=\\$2+16i=\\&\\text{array}[4i]$); `lw \\$4,0(\\$5)` ($\\text{tmp}=\\text{array}[4i]$).",
+   "id": "25B-A-Q13",
+   "examCode": "25B-A",
+   "examLabel": "2025 סמסטר א מועד ב",
+   "year": 2025,
+   "source": "exam",
+   "topicLabel": "אסמבלי MIPS ותרגום ל-C",
+   "questionHtml": "שורת ה- C הבאה תורגמה לשפת האסמבלי של ה-MIPS.<br><code class=\"tok\" dir=\"ltr\">tmp = array[4*i];</code><br>ידוע ש- i הוא $3, ש- tmp הוא $4, ושכתובת ההתחלה של array נמצאת ב- $2. מהו התרגום הנכון?",
+   "explanationHtml": "הכתובת של <code class=\"tok\" dir=\"ltr\">array[4*i]</code> היא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>4</mn><mo>⋅</mo><mo stretchy=\"false\">(</mo><mn>4</mn><mo>⋅</mo><mi>i</mi><mo stretchy=\"false\">)</mo><mo>+</mo><mtext>array</mtext><mo>=</mo><mn>16</mn><mi>i</mi><mo>+</mo><mi mathvariant=\"normal\">$</mi><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">4\\cdot(4\\cdot i)+\\text{array}=16i+\\$2</annotation></semantics></math></span>:<br><code class=\"tok\" dir=\"ltr\">add $5,$3,$3</code> (<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">$</mi><mn>5</mn><mo>=</mo><mn>2</mn><mi>i</mi></mrow><annotation encoding=\"application/x-tex\">\\$5=2i</annotation></semantics></math></span>); <code class=\"tok\" dir=\"ltr\">add $5,$5,$5</code> (<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>4</mn><mi>i</mi></mrow><annotation encoding=\"application/x-tex\">4i</annotation></semantics></math></span>); <code class=\"tok\" dir=\"ltr\">add $5,$5,$5</code> (<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>8</mn><mi>i</mi></mrow><annotation encoding=\"application/x-tex\">8i</annotation></semantics></math></span>); <code class=\"tok\" dir=\"ltr\">add $5,$5,$5</code> (<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>16</mn><mi>i</mi></mrow><annotation encoding=\"application/x-tex\">16i</annotation></semantics></math></span>); <code class=\"tok\" dir=\"ltr\">add $5,$5,$2</code> (<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">$</mi><mn>5</mn><mo>=</mo><mi mathvariant=\"normal\">$</mi><mn>2</mn><mo>+</mo><mn>16</mn><mi>i</mi><mo>=</mo><mi mathvariant=\"normal\">&amp;</mi><mtext>array</mtext><mo stretchy=\"false\">[</mo><mn>4</mn><mi>i</mi><mo stretchy=\"false\">]</mo></mrow><annotation encoding=\"application/x-tex\">\\$5=\\$2+16i=\\&amp;\\text{array}[4i]</annotation></semantics></math></span>); <code class=\"tok\" dir=\"ltr\">lw $4,0($5)</code> (<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mtext>tmp</mtext><mo>=</mo><mtext>array</mtext><mo stretchy=\"false\">[</mo><mn>4</mn><mi>i</mi><mo stretchy=\"false\">]</mo></mrow><annotation encoding=\"application/x-tex\">\\text{tmp}=\\text{array}[4i]</annotation></semantics></math></span>).",
+   "dedupKey": "2100c22951f8606a"
+  },
+  {
+   "num": 14,
+   "topic": "decoders_muxes",
+   "question": "איזו מהמשוואות מתארת נכון את המעגל הבא?",
+   "options": [
+    {
+     "id": "a",
+     "type": "math",
+     "value": "F=\\bar C\\cdot\\bar D+B\\cdot\\bar D+A\\cdot D",
+     "html": "<span class=\"math-inline opt-math\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>F</mi><mo>=</mo><mover accent=\"true\"><mi>C</mi><mo>ˉ</mo></mover><mo>⋅</mo><mover accent=\"true\"><mi>D</mi><mo>ˉ</mo></mover><mo>+</mo><mi>B</mi><mo>⋅</mo><mover accent=\"true\"><mi>D</mi><mo>ˉ</mo></mover><mo>+</mo><mi>A</mi><mo>⋅</mo><mi>D</mi></mrow><annotation encoding=\"application/x-tex\">F=\\bar C\\cdot\\bar D+B\\cdot\\bar D+A\\cdot D</annotation></semantics></math></span>"
+    },
+    {
+     "id": "b",
+     "type": "math",
+     "value": "F=\\bar C\\cdot\\bar D+B",
+     "html": "<span class=\"math-inline opt-math\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>F</mi><mo>=</mo><mover accent=\"true\"><mi>C</mi><mo>ˉ</mo></mover><mo>⋅</mo><mover accent=\"true\"><mi>D</mi><mo>ˉ</mo></mover><mo>+</mo><mi>B</mi></mrow><annotation encoding=\"application/x-tex\">F=\\bar C\\cdot\\bar D+B</annotation></semantics></math></span>"
+    },
+    {
+     "id": "c",
+     "type": "math",
+     "value": "F=\\bar C\\cdot\\bar D+A+B\\cdot\\bar D",
+     "html": "<span class=\"math-inline opt-math\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>F</mi><mo>=</mo><mover accent=\"true\"><mi>C</mi><mo>ˉ</mo></mover><mo>⋅</mo><mover accent=\"true\"><mi>D</mi><mo>ˉ</mo></mover><mo>+</mo><mi>A</mi><mo>+</mo><mi>B</mi><mo>⋅</mo><mover accent=\"true\"><mi>D</mi><mo>ˉ</mo></mover></mrow><annotation encoding=\"application/x-tex\">F=\\bar C\\cdot\\bar D+A+B\\cdot\\bar D</annotation></semantics></math></span>"
+    },
+    {
+     "id": "d",
+     "type": "math",
+     "value": "F=\\bar C\\cdot D+B\\cdot\\bar D+A\\cdot D",
+     "html": "<span class=\"math-inline opt-math\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>F</mi><mo>=</mo><mover accent=\"true\"><mi>C</mi><mo>ˉ</mo></mover><mo>⋅</mo><mi>D</mi><mo>+</mo><mi>B</mi><mo>⋅</mo><mover accent=\"true\"><mi>D</mi><mo>ˉ</mo></mover><mo>+</mo><mi>A</mi><mo>⋅</mo><mi>D</mi></mrow><annotation encoding=\"application/x-tex\">F=\\bar C\\cdot D+B\\cdot\\bar D+A\\cdot D</annotation></semantics></math></span>"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "פיתוח לפי כניסות הנתונים של המולטיפלקסר:\n$F=\\bar A\\bar B\\bar C\\cdot\\bar D+\\bar A\\bar B C\\cdot 0+\\bar A B\\bar C\\cdot\\bar D+\\bar A B C\\cdot\\bar D+A\\bar B\\bar C(\\bar D+D)+A\\bar B C\\cdot D+AB\\bar C(\\bar D+D)+ABC(\\bar D+D)=\\bar C\\bar D+B\\bar D+AD$.\nבדיקת האפשרויות האחרות: ב - עבור $[A,B,C,D]=[0,1,1,1]$ הביטוי $\\bar C\\bar D+B$ שווה 1 ואילו $F=0$; ג - עבור $[1,0,1,0]$ הביטוי שווה 1 ואילו $F=0$; ד - עבור $[0,0,0,1]$ הביטוי שווה 1 ואילו $F=0$.",
+   "image": "images/exams/25B-A-Q14.png",
+   "id": "25B-A-Q14",
+   "examCode": "25B-A",
+   "examLabel": "2025 סמסטר א מועד ב",
+   "year": 2025,
+   "source": "exam",
+   "topicLabel": "מפענחים ורבבים",
+   "questionHtml": "איזו מהמשוואות מתארת נכון את המעגל הבא?",
+   "explanationHtml": "פיתוח לפי כניסות הנתונים של המולטיפלקסר:<br><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>F</mi><mo>=</mo><mover accent=\"true\"><mi>A</mi><mo>ˉ</mo></mover><mover accent=\"true\"><mi>B</mi><mo>ˉ</mo></mover><mover accent=\"true\"><mi>C</mi><mo>ˉ</mo></mover><mo>⋅</mo><mover accent=\"true\"><mi>D</mi><mo>ˉ</mo></mover><mo>+</mo><mover accent=\"true\"><mi>A</mi><mo>ˉ</mo></mover><mover accent=\"true\"><mi>B</mi><mo>ˉ</mo></mover><mi>C</mi><mo>⋅</mo><mn>0</mn><mo>+</mo><mover accent=\"true\"><mi>A</mi><mo>ˉ</mo></mover><mi>B</mi><mover accent=\"true\"><mi>C</mi><mo>ˉ</mo></mover><mo>⋅</mo><mover accent=\"true\"><mi>D</mi><mo>ˉ</mo></mover><mo>+</mo><mover accent=\"true\"><mi>A</mi><mo>ˉ</mo></mover><mi>B</mi><mi>C</mi><mo>⋅</mo><mover accent=\"true\"><mi>D</mi><mo>ˉ</mo></mover><mo>+</mo><mi>A</mi><mover accent=\"true\"><mi>B</mi><mo>ˉ</mo></mover><mover accent=\"true\"><mi>C</mi><mo>ˉ</mo></mover><mo stretchy=\"false\">(</mo><mover accent=\"true\"><mi>D</mi><mo>ˉ</mo></mover><mo>+</mo><mi>D</mi><mo stretchy=\"false\">)</mo><mo>+</mo><mi>A</mi><mover accent=\"true\"><mi>B</mi><mo>ˉ</mo></mover><mi>C</mi><mo>⋅</mo><mi>D</mi><mo>+</mo><mi>A</mi><mi>B</mi><mover accent=\"true\"><mi>C</mi><mo>ˉ</mo></mover><mo stretchy=\"false\">(</mo><mover accent=\"true\"><mi>D</mi><mo>ˉ</mo></mover><mo>+</mo><mi>D</mi><mo stretchy=\"false\">)</mo><mo>+</mo><mi>A</mi><mi>B</mi><mi>C</mi><mo stretchy=\"false\">(</mo><mover accent=\"true\"><mi>D</mi><mo>ˉ</mo></mover><mo>+</mo><mi>D</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mover accent=\"true\"><mi>C</mi><mo>ˉ</mo></mover><mover accent=\"true\"><mi>D</mi><mo>ˉ</mo></mover><mo>+</mo><mi>B</mi><mover accent=\"true\"><mi>D</mi><mo>ˉ</mo></mover><mo>+</mo><mi>A</mi><mi>D</mi></mrow><annotation encoding=\"application/x-tex\">F=\\bar A\\bar B\\bar C\\cdot\\bar D+\\bar A\\bar B C\\cdot 0+\\bar A B\\bar C\\cdot\\bar D+\\bar A B C\\cdot\\bar D+A\\bar B\\bar C(\\bar D+D)+A\\bar B C\\cdot D+AB\\bar C(\\bar D+D)+ABC(\\bar D+D)=\\bar C\\bar D+B\\bar D+AD</annotation></semantics></math></span>.<br>בדיקת האפשרויות האחרות: ב - עבור <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><mi>A</mi><mo separator=\"true\">,</mo><mi>B</mi><mo separator=\"true\">,</mo><mi>C</mi><mo separator=\"true\">,</mo><mi>D</mi><mo stretchy=\"false\">]</mo><mo>=</mo><mo stretchy=\"false\">[</mo><mn>0</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>1</mn><mo stretchy=\"false\">]</mo></mrow><annotation encoding=\"application/x-tex\">[A,B,C,D]=[0,1,1,1]</annotation></semantics></math></span> הביטוי <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mover accent=\"true\"><mi>C</mi><mo>ˉ</mo></mover><mover accent=\"true\"><mi>D</mi><mo>ˉ</mo></mover><mo>+</mo><mi>B</mi></mrow><annotation encoding=\"application/x-tex\">\\bar C\\bar D+B</annotation></semantics></math></span> שווה 1 ואילו <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>F</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">F=0</annotation></semantics></math></span>; ג - עבור <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>0</mn><mo separator=\"true\">,</mo><mn>1</mn><mo separator=\"true\">,</mo><mn>0</mn><mo stretchy=\"false\">]</mo></mrow><annotation encoding=\"application/x-tex\">[1,0,1,0]</annotation></semantics></math></span> הביטוי שווה 1 ואילו <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>F</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">F=0</annotation></semantics></math></span>; ד - עבור <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><mn>0</mn><mo separator=\"true\">,</mo><mn>0</mn><mo separator=\"true\">,</mo><mn>0</mn><mo separator=\"true\">,</mo><mn>1</mn><mo stretchy=\"false\">]</mo></mrow><annotation encoding=\"application/x-tex\">[0,0,0,1]</annotation></semantics></math></span> הביטוי שווה 1 ואילו <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>F</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">F=0</annotation></semantics></math></span>.",
+   "dedupKey": "c99b5ee3e030c2a7"
+  },
+  {
+   "num": 15,
+   "topic": "decoders_muxes",
+   "question": "איזו מהמשוואות מתארת נכון את המעגל הבא?",
+   "options": [
+    {
+     "id": "a",
+     "type": "math",
+     "value": "F=\\bar A\\cdot \\bar B\\cdot \\bar C\\cdot \\bar D+\\bar A\\cdot \\bar B\\cdot C\\cdot \\bar D+A\\cdot \\bar B\\cdot \\bar C\\cdot D+A\\cdot \\bar B\\cdot C\\cdot D+\\bar A\\cdot B\\cdot \\bar C\\cdot \\bar D+\\bar A\\cdot B\\cdot \\bar C\\cdot D+A\\cdot B\\cdot \\bar C\\cdot \\bar D+A\\cdot B\\cdot \\bar C\\cdot D",
+     "html": "<span class=\"math-inline opt-math\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>F</mi><mo>=</mo><mover accent=\"true\"><mi>A</mi><mo>ˉ</mo></mover><mo>⋅</mo><mover accent=\"true\"><mi>B</mi><mo>ˉ</mo></mover><mo>⋅</mo><mover accent=\"true\"><mi>C</mi><mo>ˉ</mo></mover><mo>⋅</mo><mover accent=\"true\"><mi>D</mi><mo>ˉ</mo></mover><mo>+</mo><mover accent=\"true\"><mi>A</mi><mo>ˉ</mo></mover><mo>⋅</mo><mover accent=\"true\"><mi>B</mi><mo>ˉ</mo></mover><mo>⋅</mo><mi>C</mi><mo>⋅</mo><mover accent=\"true\"><mi>D</mi><mo>ˉ</mo></mover><mo>+</mo><mi>A</mi><mo>⋅</mo><mover accent=\"true\"><mi>B</mi><mo>ˉ</mo></mover><mo>⋅</mo><mover accent=\"true\"><mi>C</mi><mo>ˉ</mo></mover><mo>⋅</mo><mi>D</mi><mo>+</mo><mi>A</mi><mo>⋅</mo><mover accent=\"true\"><mi>B</mi><mo>ˉ</mo></mover><mo>⋅</mo><mi>C</mi><mo>⋅</mo><mi>D</mi><mo>+</mo><mover accent=\"true\"><mi>A</mi><mo>ˉ</mo></mover><mo>⋅</mo><mi>B</mi><mo>⋅</mo><mover accent=\"true\"><mi>C</mi><mo>ˉ</mo></mover><mo>⋅</mo><mover accent=\"true\"><mi>D</mi><mo>ˉ</mo></mover><mo>+</mo><mover accent=\"true\"><mi>A</mi><mo>ˉ</mo></mover><mo>⋅</mo><mi>B</mi><mo>⋅</mo><mover accent=\"true\"><mi>C</mi><mo>ˉ</mo></mover><mo>⋅</mo><mi>D</mi><mo>+</mo><mi>A</mi><mo>⋅</mo><mi>B</mi><mo>⋅</mo><mover accent=\"true\"><mi>C</mi><mo>ˉ</mo></mover><mo>⋅</mo><mover accent=\"true\"><mi>D</mi><mo>ˉ</mo></mover><mo>+</mo><mi>A</mi><mo>⋅</mo><mi>B</mi><mo>⋅</mo><mover accent=\"true\"><mi>C</mi><mo>ˉ</mo></mover><mo>⋅</mo><mi>D</mi></mrow><annotation encoding=\"application/x-tex\">F=\\bar A\\cdot \\bar B\\cdot \\bar C\\cdot \\bar D+\\bar A\\cdot \\bar B\\cdot C\\cdot \\bar D+A\\cdot \\bar B\\cdot \\bar C\\cdot D+A\\cdot \\bar B\\cdot C\\cdot D+\\bar A\\cdot B\\cdot \\bar C\\cdot \\bar D+\\bar A\\cdot B\\cdot \\bar C\\cdot D+A\\cdot B\\cdot \\bar C\\cdot \\bar D+A\\cdot B\\cdot \\bar C\\cdot D</annotation></semantics></math></span>"
+    },
+    {
+     "id": "b",
+     "type": "math",
+     "value": "F=\\bar A\\cdot \\bar B\\cdot \\bar C\\cdot D+\\bar A\\cdot \\bar B\\cdot C\\cdot \\bar D+A\\cdot \\bar B\\cdot \\bar C\\cdot \\bar D+A\\cdot \\bar B\\cdot C\\cdot D+\\bar A\\cdot B\\cdot \\bar C\\cdot \\bar D+\\bar A\\cdot B\\cdot \\bar C\\cdot D+A\\cdot B\\cdot \\bar C\\cdot \\bar D+A\\cdot B\\cdot \\bar C\\cdot D",
+     "html": "<span class=\"math-inline opt-math\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>F</mi><mo>=</mo><mover accent=\"true\"><mi>A</mi><mo>ˉ</mo></mover><mo>⋅</mo><mover accent=\"true\"><mi>B</mi><mo>ˉ</mo></mover><mo>⋅</mo><mover accent=\"true\"><mi>C</mi><mo>ˉ</mo></mover><mo>⋅</mo><mi>D</mi><mo>+</mo><mover accent=\"true\"><mi>A</mi><mo>ˉ</mo></mover><mo>⋅</mo><mover accent=\"true\"><mi>B</mi><mo>ˉ</mo></mover><mo>⋅</mo><mi>C</mi><mo>⋅</mo><mover accent=\"true\"><mi>D</mi><mo>ˉ</mo></mover><mo>+</mo><mi>A</mi><mo>⋅</mo><mover accent=\"true\"><mi>B</mi><mo>ˉ</mo></mover><mo>⋅</mo><mover accent=\"true\"><mi>C</mi><mo>ˉ</mo></mover><mo>⋅</mo><mover accent=\"true\"><mi>D</mi><mo>ˉ</mo></mover><mo>+</mo><mi>A</mi><mo>⋅</mo><mover accent=\"true\"><mi>B</mi><mo>ˉ</mo></mover><mo>⋅</mo><mi>C</mi><mo>⋅</mo><mi>D</mi><mo>+</mo><mover accent=\"true\"><mi>A</mi><mo>ˉ</mo></mover><mo>⋅</mo><mi>B</mi><mo>⋅</mo><mover accent=\"true\"><mi>C</mi><mo>ˉ</mo></mover><mo>⋅</mo><mover accent=\"true\"><mi>D</mi><mo>ˉ</mo></mover><mo>+</mo><mover accent=\"true\"><mi>A</mi><mo>ˉ</mo></mover><mo>⋅</mo><mi>B</mi><mo>⋅</mo><mover accent=\"true\"><mi>C</mi><mo>ˉ</mo></mover><mo>⋅</mo><mi>D</mi><mo>+</mo><mi>A</mi><mo>⋅</mo><mi>B</mi><mo>⋅</mo><mover accent=\"true\"><mi>C</mi><mo>ˉ</mo></mover><mo>⋅</mo><mover accent=\"true\"><mi>D</mi><mo>ˉ</mo></mover><mo>+</mo><mi>A</mi><mo>⋅</mo><mi>B</mi><mo>⋅</mo><mover accent=\"true\"><mi>C</mi><mo>ˉ</mo></mover><mo>⋅</mo><mi>D</mi></mrow><annotation encoding=\"application/x-tex\">F=\\bar A\\cdot \\bar B\\cdot \\bar C\\cdot D+\\bar A\\cdot \\bar B\\cdot C\\cdot \\bar D+A\\cdot \\bar B\\cdot \\bar C\\cdot \\bar D+A\\cdot \\bar B\\cdot C\\cdot D+\\bar A\\cdot B\\cdot \\bar C\\cdot \\bar D+\\bar A\\cdot B\\cdot \\bar C\\cdot D+A\\cdot B\\cdot \\bar C\\cdot \\bar D+A\\cdot B\\cdot \\bar C\\cdot D</annotation></semantics></math></span>"
+    },
+    {
+     "id": "c",
+     "type": "math",
+     "value": "F=\\bar A\\cdot \\bar B\\cdot \\bar C\\cdot \\bar D+\\bar A\\cdot \\bar B\\cdot C\\cdot \\bar D+A\\cdot \\bar B\\cdot \\bar C\\cdot D+A\\cdot \\bar B\\cdot C\\cdot D+\\bar A\\cdot B\\cdot \\bar C\\cdot \\bar D+\\bar A\\cdot B\\cdot C\\cdot D+A\\cdot B\\cdot \\bar C\\cdot \\bar D+A\\cdot B\\cdot \\bar C\\cdot D",
+     "html": "<span class=\"math-inline opt-math\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>F</mi><mo>=</mo><mover accent=\"true\"><mi>A</mi><mo>ˉ</mo></mover><mo>⋅</mo><mover accent=\"true\"><mi>B</mi><mo>ˉ</mo></mover><mo>⋅</mo><mover accent=\"true\"><mi>C</mi><mo>ˉ</mo></mover><mo>⋅</mo><mover accent=\"true\"><mi>D</mi><mo>ˉ</mo></mover><mo>+</mo><mover accent=\"true\"><mi>A</mi><mo>ˉ</mo></mover><mo>⋅</mo><mover accent=\"true\"><mi>B</mi><mo>ˉ</mo></mover><mo>⋅</mo><mi>C</mi><mo>⋅</mo><mover accent=\"true\"><mi>D</mi><mo>ˉ</mo></mover><mo>+</mo><mi>A</mi><mo>⋅</mo><mover accent=\"true\"><mi>B</mi><mo>ˉ</mo></mover><mo>⋅</mo><mover accent=\"true\"><mi>C</mi><mo>ˉ</mo></mover><mo>⋅</mo><mi>D</mi><mo>+</mo><mi>A</mi><mo>⋅</mo><mover accent=\"true\"><mi>B</mi><mo>ˉ</mo></mover><mo>⋅</mo><mi>C</mi><mo>⋅</mo><mi>D</mi><mo>+</mo><mover accent=\"true\"><mi>A</mi><mo>ˉ</mo></mover><mo>⋅</mo><mi>B</mi><mo>⋅</mo><mover accent=\"true\"><mi>C</mi><mo>ˉ</mo></mover><mo>⋅</mo><mover accent=\"true\"><mi>D</mi><mo>ˉ</mo></mover><mo>+</mo><mover accent=\"true\"><mi>A</mi><mo>ˉ</mo></mover><mo>⋅</mo><mi>B</mi><mo>⋅</mo><mi>C</mi><mo>⋅</mo><mi>D</mi><mo>+</mo><mi>A</mi><mo>⋅</mo><mi>B</mi><mo>⋅</mo><mover accent=\"true\"><mi>C</mi><mo>ˉ</mo></mover><mo>⋅</mo><mover accent=\"true\"><mi>D</mi><mo>ˉ</mo></mover><mo>+</mo><mi>A</mi><mo>⋅</mo><mi>B</mi><mo>⋅</mo><mover accent=\"true\"><mi>C</mi><mo>ˉ</mo></mover><mo>⋅</mo><mi>D</mi></mrow><annotation encoding=\"application/x-tex\">F=\\bar A\\cdot \\bar B\\cdot \\bar C\\cdot \\bar D+\\bar A\\cdot \\bar B\\cdot C\\cdot \\bar D+A\\cdot \\bar B\\cdot \\bar C\\cdot D+A\\cdot \\bar B\\cdot C\\cdot D+\\bar A\\cdot B\\cdot \\bar C\\cdot \\bar D+\\bar A\\cdot B\\cdot C\\cdot D+A\\cdot B\\cdot \\bar C\\cdot \\bar D+A\\cdot B\\cdot \\bar C\\cdot D</annotation></semantics></math></span>"
+    },
+    {
+     "id": "d",
+     "type": "math",
+     "value": "F=\\bar A\\cdot \\bar B\\cdot \\bar C\\cdot \\bar D+\\bar A\\cdot \\bar B\\cdot C\\cdot \\bar D+A\\cdot \\bar B\\cdot \\bar C\\cdot \\bar D+A\\cdot \\bar B\\cdot C\\cdot D+\\bar A\\cdot B\\cdot \\bar C\\cdot \\bar D+\\bar A\\cdot B\\cdot \\bar C\\cdot D+A\\cdot B\\cdot \\bar C\\cdot \\bar D+A\\cdot B\\cdot C\\cdot D",
+     "html": "<span class=\"math-inline opt-math\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>F</mi><mo>=</mo><mover accent=\"true\"><mi>A</mi><mo>ˉ</mo></mover><mo>⋅</mo><mover accent=\"true\"><mi>B</mi><mo>ˉ</mo></mover><mo>⋅</mo><mover accent=\"true\"><mi>C</mi><mo>ˉ</mo></mover><mo>⋅</mo><mover accent=\"true\"><mi>D</mi><mo>ˉ</mo></mover><mo>+</mo><mover accent=\"true\"><mi>A</mi><mo>ˉ</mo></mover><mo>⋅</mo><mover accent=\"true\"><mi>B</mi><mo>ˉ</mo></mover><mo>⋅</mo><mi>C</mi><mo>⋅</mo><mover accent=\"true\"><mi>D</mi><mo>ˉ</mo></mover><mo>+</mo><mi>A</mi><mo>⋅</mo><mover accent=\"true\"><mi>B</mi><mo>ˉ</mo></mover><mo>⋅</mo><mover accent=\"true\"><mi>C</mi><mo>ˉ</mo></mover><mo>⋅</mo><mover accent=\"true\"><mi>D</mi><mo>ˉ</mo></mover><mo>+</mo><mi>A</mi><mo>⋅</mo><mover accent=\"true\"><mi>B</mi><mo>ˉ</mo></mover><mo>⋅</mo><mi>C</mi><mo>⋅</mo><mi>D</mi><mo>+</mo><mover accent=\"true\"><mi>A</mi><mo>ˉ</mo></mover><mo>⋅</mo><mi>B</mi><mo>⋅</mo><mover accent=\"true\"><mi>C</mi><mo>ˉ</mo></mover><mo>⋅</mo><mover accent=\"true\"><mi>D</mi><mo>ˉ</mo></mover><mo>+</mo><mover accent=\"true\"><mi>A</mi><mo>ˉ</mo></mover><mo>⋅</mo><mi>B</mi><mo>⋅</mo><mover accent=\"true\"><mi>C</mi><mo>ˉ</mo></mover><mo>⋅</mo><mi>D</mi><mo>+</mo><mi>A</mi><mo>⋅</mo><mi>B</mi><mo>⋅</mo><mover accent=\"true\"><mi>C</mi><mo>ˉ</mo></mover><mo>⋅</mo><mover accent=\"true\"><mi>D</mi><mo>ˉ</mo></mover><mo>+</mo><mi>A</mi><mo>⋅</mo><mi>B</mi><mo>⋅</mo><mi>C</mi><mo>⋅</mo><mi>D</mi></mrow><annotation encoding=\"application/x-tex\">F=\\bar A\\cdot \\bar B\\cdot \\bar C\\cdot \\bar D+\\bar A\\cdot \\bar B\\cdot C\\cdot \\bar D+A\\cdot \\bar B\\cdot \\bar C\\cdot \\bar D+A\\cdot \\bar B\\cdot C\\cdot D+\\bar A\\cdot B\\cdot \\bar C\\cdot \\bar D+\\bar A\\cdot B\\cdot \\bar C\\cdot D+A\\cdot B\\cdot \\bar C\\cdot \\bar D+A\\cdot B\\cdot C\\cdot D</annotation></semantics></math></span>"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "נמצא את משוואת $F$ מהמעגל; תחילה נחשב את הקשר בין $AB$ ל-$XY$:\n$AB=00\\to XY=00$, $AB=01\\to XY=10$, $AB=10\\to XY=11$, $AB=11\\to XY=10$.\n$F=(\\bar X\\bar Y)\\cdot(\\bar C\\bar D+C\\bar D)+(X\\bar Y)\\cdot\\bar C+(XY)\\cdot D$ (אין מצב $\\bar X Y$).\n$\\Rightarrow F=\\bar A\\bar B(\\bar C\\bar D+C\\bar D)+(\\bar A B+AB)\\cdot\\bar C\\cdot(\\bar D+D)+A\\bar B(\\bar C+C)\\cdot D$, ובפיתוח למכפלות מלאות מתקבלת תשובה א.",
+   "image": "images/exams/25B-A-Q15.png",
+   "note": "Option rows read at 4x zoom; the minterm sets were rebuilt from the printed rows and the key row a recomputed from the circuit by script.",
+   "id": "25B-A-Q15",
+   "examCode": "25B-A",
+   "examLabel": "2025 סמסטר א מועד ב",
+   "year": 2025,
+   "source": "exam",
+   "topicLabel": "מפענחים ורבבים",
+   "questionHtml": "איזו מהמשוואות מתארת נכון את המעגל הבא?",
+   "explanationHtml": "נמצא את משוואת <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>F</mi></mrow><annotation encoding=\"application/x-tex\">F</annotation></semantics></math></span> מהמעגל; תחילה נחשב את הקשר בין <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mi>B</mi></mrow><annotation encoding=\"application/x-tex\">AB</annotation></semantics></math></span> ל-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>X</mi><mi>Y</mi></mrow><annotation encoding=\"application/x-tex\">XY</annotation></semantics></math></span>:<br><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mi>B</mi><mo>=</mo><mn>00</mn><mo>→</mo><mi>X</mi><mi>Y</mi><mo>=</mo><mn>00</mn></mrow><annotation encoding=\"application/x-tex\">AB=00\\to XY=00</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mi>B</mi><mo>=</mo><mn>01</mn><mo>→</mo><mi>X</mi><mi>Y</mi><mo>=</mo><mn>10</mn></mrow><annotation encoding=\"application/x-tex\">AB=01\\to XY=10</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mi>B</mi><mo>=</mo><mn>10</mn><mo>→</mo><mi>X</mi><mi>Y</mi><mo>=</mo><mn>11</mn></mrow><annotation encoding=\"application/x-tex\">AB=10\\to XY=11</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mi>B</mi><mo>=</mo><mn>11</mn><mo>→</mo><mi>X</mi><mi>Y</mi><mo>=</mo><mn>10</mn></mrow><annotation encoding=\"application/x-tex\">AB=11\\to XY=10</annotation></semantics></math></span>.<br><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>F</mi><mo>=</mo><mo stretchy=\"false\">(</mo><mover accent=\"true\"><mi>X</mi><mo>ˉ</mo></mover><mover accent=\"true\"><mi>Y</mi><mo>ˉ</mo></mover><mo stretchy=\"false\">)</mo><mo>⋅</mo><mo stretchy=\"false\">(</mo><mover accent=\"true\"><mi>C</mi><mo>ˉ</mo></mover><mover accent=\"true\"><mi>D</mi><mo>ˉ</mo></mover><mo>+</mo><mi>C</mi><mover accent=\"true\"><mi>D</mi><mo>ˉ</mo></mover><mo stretchy=\"false\">)</mo><mo>+</mo><mo stretchy=\"false\">(</mo><mi>X</mi><mover accent=\"true\"><mi>Y</mi><mo>ˉ</mo></mover><mo stretchy=\"false\">)</mo><mo>⋅</mo><mover accent=\"true\"><mi>C</mi><mo>ˉ</mo></mover><mo>+</mo><mo stretchy=\"false\">(</mo><mi>X</mi><mi>Y</mi><mo stretchy=\"false\">)</mo><mo>⋅</mo><mi>D</mi></mrow><annotation encoding=\"application/x-tex\">F=(\\bar X\\bar Y)\\cdot(\\bar C\\bar D+C\\bar D)+(X\\bar Y)\\cdot\\bar C+(XY)\\cdot D</annotation></semantics></math></span> (אין מצב <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mover accent=\"true\"><mi>X</mi><mo>ˉ</mo></mover><mi>Y</mi></mrow><annotation encoding=\"application/x-tex\">\\bar X Y</annotation></semantics></math></span>).<br><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo>⇒</mo><mi>F</mi><mo>=</mo><mover accent=\"true\"><mi>A</mi><mo>ˉ</mo></mover><mover accent=\"true\"><mi>B</mi><mo>ˉ</mo></mover><mo stretchy=\"false\">(</mo><mover accent=\"true\"><mi>C</mi><mo>ˉ</mo></mover><mover accent=\"true\"><mi>D</mi><mo>ˉ</mo></mover><mo>+</mo><mi>C</mi><mover accent=\"true\"><mi>D</mi><mo>ˉ</mo></mover><mo stretchy=\"false\">)</mo><mo>+</mo><mo stretchy=\"false\">(</mo><mover accent=\"true\"><mi>A</mi><mo>ˉ</mo></mover><mi>B</mi><mo>+</mo><mi>A</mi><mi>B</mi><mo stretchy=\"false\">)</mo><mo>⋅</mo><mover accent=\"true\"><mi>C</mi><mo>ˉ</mo></mover><mo>⋅</mo><mo stretchy=\"false\">(</mo><mover accent=\"true\"><mi>D</mi><mo>ˉ</mo></mover><mo>+</mo><mi>D</mi><mo stretchy=\"false\">)</mo><mo>+</mo><mi>A</mi><mover accent=\"true\"><mi>B</mi><mo>ˉ</mo></mover><mo stretchy=\"false\">(</mo><mover accent=\"true\"><mi>C</mi><mo>ˉ</mo></mover><mo>+</mo><mi>C</mi><mo stretchy=\"false\">)</mo><mo>⋅</mo><mi>D</mi></mrow><annotation encoding=\"application/x-tex\">\\Rightarrow F=\\bar A\\bar B(\\bar C\\bar D+C\\bar D)+(\\bar A B+AB)\\cdot\\bar C\\cdot(\\bar D+D)+A\\bar B(\\bar C+C)\\cdot D</annotation></semantics></math></span>, ובפיתוח למכפלות מלאות מתקבלת תשובה א.",
+   "dedupKey": "a3cdcc54e7c8c149"
+  },
+  {
+   "num": 16,
+   "topic": "arithmetic_circuits",
+   "question": "בידנו מעגל הכופל את המספר השלם מטיפוס unsigned בן ארבע סיביות $[a_3,a_2,a_1,a_0]_2$ במספר 27 (גם כן unsigned) המיוצג על ידי $[11011]_2$. המכפל בנוי מרכיבי HA (כלומר Half-Adder) ורכיבי FA (כלומר Full-Adder). עלינו לספור את מספר הרכיבים ומספר היציאות. אנו כמובן מעדיפים מספר מינימלי של רכיבים (במקום FA לכאורה אפשר להשתמש בשני HA. אם יש כזה מקרה – נעדיף את ה- FA הבודד)\nמה נכון?",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "יש במכפל 4 רכיבי HA ו-7 רכיבי FA ויש לו 9 יציאות",
+     "html": "יש במכפל 4 רכיבי HA ו-7 רכיבי FA ויש לו 9 יציאות"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "יש במכפל 6 רכיבי HA ו-6 רכיבי FA ויש לו 10 יציאות",
+     "html": "יש במכפל 6 רכיבי HA ו-6 רכיבי FA ויש לו 10 יציאות"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "יש במכפל 6 רכיבי HA ו-4 רכיבי FA ויש לו 9 יציאות",
+     "html": "יש במכפל 6 רכיבי HA ו-4 רכיבי FA ויש לו 9 יציאות"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "יש במכפל 6 רכיבי HA ו-5 רכיבי FA ויש לו 8 יציאות",
+     "html": "יש במכפל 6 רכיבי HA ו-5 רכיבי FA ויש לו 8 יציאות"
+    },
+    {
+     "id": "e",
+     "type": "text",
+     "value": "יש במכפל 5 רכיבי HA ו-5 רכיבי FA ויש לו 10 יציאות",
+     "html": "יש במכפל 5 רכיבי HA ו-5 רכיבי FA ויש לו 10 יציאות"
+    },
+    {
+     "id": "f",
+     "type": "text",
+     "value": "יש במכפל 5 רכיבי HA ו-4 רכיבי FA ויש לו 8 יציאות",
+     "html": "יש במכפל 5 רכיבי HA ו-4 רכיבי FA ויש לו 8 יציאות"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "מכיוון ש-$27=[11011]_2$, מחברים את ארבע השורות $A\\cdot 2^0,\\ A\\cdot 2^1,\\ A\\cdot 2^3,\\ A\\cdot 2^4$ (השורות המתאימות לביטים השווים 1).\nמתקבלים $7\\times$FA ו-$4\\times$HA, ויש 9 יציאות ($y_0\\ldots y_8$).",
+   "id": "25B-A-Q16",
+   "examCode": "25B-A",
+   "examLabel": "2025 סמסטר א מועד ב",
+   "year": 2025,
+   "source": "exam",
+   "topicLabel": "מעגלי חיבור וכפל",
+   "questionHtml": "בידנו מעגל הכופל את המספר השלם מטיפוס unsigned בן ארבע סיביות <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><msub><mi>a</mi><mn>3</mn></msub><mo separator=\"true\">,</mo><msub><mi>a</mi><mn>2</mn></msub><mo separator=\"true\">,</mo><msub><mi>a</mi><mn>1</mn></msub><mo separator=\"true\">,</mo><msub><mi>a</mi><mn>0</mn></msub><msub><mo stretchy=\"false\">]</mo><mn>2</mn></msub></mrow><annotation encoding=\"application/x-tex\">[a_3,a_2,a_1,a_0]_2</annotation></semantics></math></span> במספר 27 (גם כן unsigned) המיוצג על ידי <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">[</mo><mn>11011</mn><msub><mo stretchy=\"false\">]</mo><mn>2</mn></msub></mrow><annotation encoding=\"application/x-tex\">[11011]_2</annotation></semantics></math></span>. המכפל בנוי מרכיבי HA (כלומר Half-Adder) ורכיבי FA (כלומר Full-Adder). עלינו לספור את מספר הרכיבים ומספר היציאות. אנו כמובן מעדיפים מספר מינימלי של רכיבים (במקום FA לכאורה אפשר להשתמש בשני HA. אם יש כזה מקרה – נעדיף את ה- FA הבודד)<br>מה נכון?",
+   "explanationHtml": "מכיוון ש-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>27</mn><mo>=</mo><mo stretchy=\"false\">[</mo><mn>11011</mn><msub><mo stretchy=\"false\">]</mo><mn>2</mn></msub></mrow><annotation encoding=\"application/x-tex\">27=[11011]_2</annotation></semantics></math></span>, מחברים את ארבע השורות <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>A</mi><mo>⋅</mo><msup><mn>2</mn><mn>0</mn></msup><mo separator=\"true\">,</mo><mtext> </mtext><mi>A</mi><mo>⋅</mo><msup><mn>2</mn><mn>1</mn></msup><mo separator=\"true\">,</mo><mtext> </mtext><mi>A</mi><mo>⋅</mo><msup><mn>2</mn><mn>3</mn></msup><mo separator=\"true\">,</mo><mtext> </mtext><mi>A</mi><mo>⋅</mo><msup><mn>2</mn><mn>4</mn></msup></mrow><annotation encoding=\"application/x-tex\">A\\cdot 2^0,\\ A\\cdot 2^1,\\ A\\cdot 2^3,\\ A\\cdot 2^4</annotation></semantics></math></span> (השורות המתאימות לביטים השווים 1).<br>מתקבלים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>7</mn><mo>×</mo></mrow><annotation encoding=\"application/x-tex\">7\\times</annotation></semantics></math></span>FA ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>4</mn><mo>×</mo></mrow><annotation encoding=\"application/x-tex\">4\\times</annotation></semantics></math></span>HA, ויש 9 יציאות (<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mi>y</mi><mn>0</mn></msub><mo>…</mo><msub><mi>y</mi><mn>8</mn></msub></mrow><annotation encoding=\"application/x-tex\">y_0\\ldots y_8</annotation></semantics></math></span>).",
+   "dedupKey": "344fa993db5059be"
+  },
+  {
+   "num": 17,
+   "topic": "mips_machine_code",
+   "question": "הפקודה `beq \\$s3, \\$a1, lab1` נמצאת בכתובת `0x400330`. הכתובת של lab1 היא `0x400550`.\nמהו התרגום הנכון שלה לשפת המכונה של מעבד ה-MIPS?",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "0x12650087",
+     "html": "0x12650087"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "0x10B3021F",
+     "html": "0x10B3021F"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "0x12650088",
+     "html": "0x12650088"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "0x10B30088",
+     "html": "0x10B30088"
+    },
+    {
+     "id": "e",
+     "type": "text",
+     "value": "0x12650219",
+     "html": "0x12650219"
+    },
+    {
+     "id": "f",
+     "type": "text",
+     "value": "0x12650220",
+     "html": "0x12650220"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "$\\text{beq}\\Rightarrow$ opcode $=4$, $\\text{Rs}=\\$s3=\\$19$, $\\text{Rt}=\\$a1=\\$5$.\nההפרש בין הכתובות: $\\texttt{0x400550}-\\texttt{0x400330}=\\texttt{0x220}$ בתים, כלומר $\\texttt{0x88}$ מילים. צריך לקפוץ $\\texttt{0x88}$ מילים קדימה אך מכיוון שה-PC כבר הוגדל ב-4, ה-imm הוא $\\texttt{0x87}$.\n$000100\\ |\\ 10011\\ |\\ 00101\\ |\\ 0000\\,0000\\,1000\\,0111\\Rightarrow\\texttt{0x12650087}$.",
+   "id": "25B-A-Q17",
+   "examCode": "25B-A",
+   "examLabel": "2025 סמסטר א מועד ב",
+   "year": 2025,
+   "source": "exam",
+   "topicLabel": "קידוד פקודות MIPS",
+   "questionHtml": "הפקודה <code class=\"tok\" dir=\"ltr\">beq $s3, $a1, lab1</code> נמצאת בכתובת <code class=\"tok\" dir=\"ltr\">0x400330</code>. הכתובת של lab1 היא <code class=\"tok\" dir=\"ltr\">0x400550</code>.<br>מהו התרגום הנכון שלה לשפת המכונה של מעבד ה-MIPS?",
+   "explanationHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mtext>beq</mtext><mo>⇒</mo></mrow><annotation encoding=\"application/x-tex\">\\text{beq}\\Rightarrow</annotation></semantics></math></span> opcode <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo>=</mo><mn>4</mn></mrow><annotation encoding=\"application/x-tex\">=4</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mtext>Rs</mtext><mo>=</mo><mi mathvariant=\"normal\">$</mi><mi>s</mi><mn>3</mn><mo>=</mo><mi mathvariant=\"normal\">$</mi><mn>19</mn></mrow><annotation encoding=\"application/x-tex\">\\text{Rs}=\\$s3=\\$19</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mtext>Rt</mtext><mo>=</mo><mi mathvariant=\"normal\">$</mi><mi>a</mi><mn>1</mn><mo>=</mo><mi mathvariant=\"normal\">$</mi><mn>5</mn></mrow><annotation encoding=\"application/x-tex\">\\text{Rt}=\\$a1=\\$5</annotation></semantics></math></span>.<br>ההפרש בין הכתובות: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mtext mathvariant=\"monospace\">0x400550</mtext><mo>−</mo><mtext mathvariant=\"monospace\">0x400330</mtext><mo>=</mo><mtext mathvariant=\"monospace\">0x220</mtext></mrow><annotation encoding=\"application/x-tex\">\\texttt{0x400550}-\\texttt{0x400330}=\\texttt{0x220}</annotation></semantics></math></span> בתים, כלומר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mtext mathvariant=\"monospace\">0x88</mtext></mrow><annotation encoding=\"application/x-tex\">\\texttt{0x88}</annotation></semantics></math></span> מילים. צריך לקפוץ <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mtext mathvariant=\"monospace\">0x88</mtext></mrow><annotation encoding=\"application/x-tex\">\\texttt{0x88}</annotation></semantics></math></span> מילים קדימה אך מכיוון שה-PC כבר הוגדל ב-4, ה-imm הוא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mtext mathvariant=\"monospace\">0x87</mtext></mrow><annotation encoding=\"application/x-tex\">\\texttt{0x87}</annotation></semantics></math></span>.<br><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>000100</mn><mtext> </mtext><mi mathvariant=\"normal\">∣</mi><mtext> </mtext><mn>10011</mn><mtext> </mtext><mi mathvariant=\"normal\">∣</mi><mtext> </mtext><mn>00101</mn><mtext> </mtext><mi mathvariant=\"normal\">∣</mi><mtext> </mtext><mn>0000</mn><mtext> </mtext><mn>0000</mn><mtext> </mtext><mn>1000</mn><mtext> </mtext><mn>0111</mn><mo>⇒</mo><mtext mathvariant=\"monospace\">0x12650087</mtext></mrow><annotation encoding=\"application/x-tex\">000100\\ |\\ 10011\\ |\\ 00101\\ |\\ 0000\\,0000\\,1000\\,0111\\Rightarrow\\texttt{0x12650087}</annotation></semantics></math></span>.",
+   "dedupKey": "c08c81e907de51b5"
+  },
+  {
+   "num": 18,
+   "topic": "datapath_control",
+   "question": "במעבד ה- MIPS Single Cycle שלמדנו מי מהצירופים הרשומים מטה של אותות הבקרה נכון לפקודת beq? (יש ציור נוסף של המעבד בנספח לבחינה)",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "ALUOp=01 (sub);  RegDst=0; ALUSrc=0;  RegWrite=0;  Jump=0",
+     "html": "ALUOp=01 (sub);  RegDst=0; ALUSrc=0;  RegWrite=0;  Jump=0"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "ALUOp=10 (func);  RegDst=1; MemRead=0;  RegWrite=1;  Branch=1",
+     "html": "ALUOp=10 (func);  RegDst=1; MemRead=0;  RegWrite=1;  Branch=1"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "ALUOp=01 (sub);  RegDst=1; MemWrite=0;  Jump=1;  Branch=1",
+     "html": "ALUOp=01 (sub);  RegDst=1; MemWrite=0;  Jump=1;  Branch=1"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "ALUOp=00 (add);  RegDst=1; MemRead=0;  RegWrite=0;  Branch=1",
+     "html": "ALUOp=00 (add);  RegDst=1; MemRead=0;  RegWrite=0;  Branch=1"
+    },
+    {
+     "id": "e",
+     "type": "text",
+     "value": "ALUOp=10 (func);  RegDst=0; ALUSrc=0;  RegWrite=0;  Branch=1",
+     "html": "ALUOp=10 (func);  RegDst=0; ALUSrc=0;  RegWrite=0;  Branch=1"
+    },
+    {
+     "id": "f",
+     "type": "text",
+     "value": "ALUOp=01 (sub);  RegDst=0; MemWrite=0;  RegWrite=1;  Jump=0",
+     "html": "ALUOp=01 (sub);  RegDst=0; MemWrite=0;  RegWrite=1;  Jump=0"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "בפקודת beq אותות הבקרה הם: ALUSrc=0, ALUOp=01 (SUB), MemRead=0, MemWrite=0, MemtoReg=X, RegDst=X, RegWrite=0, Branch=1, Jump=0.\nרק האפשרות א מתאימה.",
+   "image": "images/exams/25B-A-Q18.png",
+   "note": "Datapath figure is a low-resolution source scan; control-signal labels in it are not legible in the source.",
+   "id": "25B-A-Q18",
+   "examCode": "25B-A",
+   "examLabel": "2025 סמסטר א מועד ב",
+   "year": 2025,
+   "source": "exam",
+   "topicLabel": "נתיב נתונים ובקרה",
+   "questionHtml": "במעבד ה- MIPS Single Cycle שלמדנו מי מהצירופים הרשומים מטה של אותות הבקרה נכון לפקודת beq? (יש ציור נוסף של המעבד בנספח לבחינה)",
+   "explanationHtml": "בפקודת beq אותות הבקרה הם: ALUSrc=0, ALUOp=01 (SUB), MemRead=0, MemWrite=0, MemtoReg=X, RegDst=X, RegWrite=0, Branch=1, Jump=0.<br>רק האפשרות א מתאימה.",
+   "dedupKey": "203c7813ef6f9e57"
+  },
+  {
+   "num": 19,
+   "topic": "mips_machine_code",
+   "question": "הפקודה `0x03DD082A` בשפת מכונה של ה-MIPS הינה בעצם פקודת האסמבלי הבאה:",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "`slt \\$at, \\$fp, \\$sp`",
+     "html": "<code class=\"tok\" dir=\"ltr\">slt $at, $fp, $sp</code>"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "`slt \\$fp, \\$sp, \\$at`",
+     "html": "<code class=\"tok\" dir=\"ltr\">slt $fp, $sp, $at</code>"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "`beq \\$fp, \\$sp, 0x082A`",
+     "html": "<code class=\"tok\" dir=\"ltr\">beq $fp, $sp, 0x082A</code>"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "`bne \\$sp, \\$fp, 2378`",
+     "html": "<code class=\"tok\" dir=\"ltr\">bne $sp, $fp, 2378</code>"
+    },
+    {
+     "id": "e",
+     "type": "text",
+     "value": "`xor \\$fp, \\$sp, \\$at`",
+     "html": "<code class=\"tok\" dir=\"ltr\">xor $fp, $sp, $at</code>"
+    },
+    {
+     "id": "f",
+     "type": "text",
+     "value": "`xor \\$fp, \\$sp, \\$t1`",
+     "html": "<code class=\"tok\" dir=\"ltr\">xor $fp, $sp, $t1</code>"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "`0x03DD082A` $=\\ 000000\\ |\\ 11110\\ |\\ 11101\\ |\\ 00001\\ |\\ 00000\\ |\\ 101010$.\nopcode $=0\\Rightarrow$ R-type; $\\text{Rs}=\\$30=\\$fp$, $\\text{Rt}=\\$29=\\$sp$, $\\text{Rd}=\\$1=\\$at$, funct $=42=\\text{slt}$.\n$\\Rightarrow$ `slt \\$at, \\$fp, \\$sp`",
+   "id": "25B-A-Q19",
+   "examCode": "25B-A",
+   "examLabel": "2025 סמסטר א מועד ב",
+   "year": 2025,
+   "source": "exam",
+   "topicLabel": "קידוד פקודות MIPS",
+   "questionHtml": "הפקודה <code class=\"tok\" dir=\"ltr\">0x03DD082A</code> בשפת מכונה של ה-MIPS הינה בעצם פקודת האסמבלי הבאה:",
+   "explanationHtml": "<code class=\"tok\" dir=\"ltr\">0x03DD082A</code> <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo>=</mo><mtext> </mtext><mn>000000</mn><mtext> </mtext><mi mathvariant=\"normal\">∣</mi><mtext> </mtext><mn>11110</mn><mtext> </mtext><mi mathvariant=\"normal\">∣</mi><mtext> </mtext><mn>11101</mn><mtext> </mtext><mi mathvariant=\"normal\">∣</mi><mtext> </mtext><mn>00001</mn><mtext> </mtext><mi mathvariant=\"normal\">∣</mi><mtext> </mtext><mn>00000</mn><mtext> </mtext><mi mathvariant=\"normal\">∣</mi><mtext> </mtext><mn>101010</mn></mrow><annotation encoding=\"application/x-tex\">=\\ 000000\\ |\\ 11110\\ |\\ 11101\\ |\\ 00001\\ |\\ 00000\\ |\\ 101010</annotation></semantics></math></span>.<br>opcode <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo>=</mo><mn>0</mn><mo>⇒</mo></mrow><annotation encoding=\"application/x-tex\">=0\\Rightarrow</annotation></semantics></math></span> R-type; <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mtext>Rs</mtext><mo>=</mo><mi mathvariant=\"normal\">$</mi><mn>30</mn><mo>=</mo><mi mathvariant=\"normal\">$</mi><mi>f</mi><mi>p</mi></mrow><annotation encoding=\"application/x-tex\">\\text{Rs}=\\$30=\\$fp</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mtext>Rt</mtext><mo>=</mo><mi mathvariant=\"normal\">$</mi><mn>29</mn><mo>=</mo><mi mathvariant=\"normal\">$</mi><mi>s</mi><mi>p</mi></mrow><annotation encoding=\"application/x-tex\">\\text{Rt}=\\$29=\\$sp</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mtext>Rd</mtext><mo>=</mo><mi mathvariant=\"normal\">$</mi><mn>1</mn><mo>=</mo><mi mathvariant=\"normal\">$</mi><mi>a</mi><mi>t</mi></mrow><annotation encoding=\"application/x-tex\">\\text{Rd}=\\$1=\\$at</annotation></semantics></math></span>, funct <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo>=</mo><mn>42</mn><mo>=</mo><mtext>slt</mtext></mrow><annotation encoding=\"application/x-tex\">=42=\\text{slt}</annotation></semantics></math></span>.<br><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo>⇒</mo></mrow><annotation encoding=\"application/x-tex\">\\Rightarrow</annotation></semantics></math></span> <code class=\"tok\" dir=\"ltr\">slt $at, $fp, $sp</code>",
+   "dedupKey": "1259d648752e8fc6"
+  },
+  {
+   "num": 20,
+   "topic": "mips_assembly_c",
+   "question": "קטע ה- C הבא תורגם לשפת הסף (אסמבלי) של מחשב MIPS. הנח כי כתובת ההתחלה של array נמצאת באוגר \\$4. הערך size שהוא גודל המערך נמצא באוגר \\$5. המערך הינו מערך של מילים (1 Word = 4 bytes). אוגרים \\$4 ו- \\$5 צריכים להישאר ללא שינוי.\n`ptr = &array[0];`\n`a = *ptr;`\n`b = a;`\n`for(i=0; i<size; i++)`\n`  {`\n`    if (*ptr>a)  a = *ptr;`\n`    if (*ptr<b)  b = *ptr;`\n`    ptr++;`\n`  }`\nלהלן התרגום:\n`add \\$6, \\$0, \\$4`\n`lw  \\$7, 0(\\$6)`\n`addi \\$8, \\$7, 0`\n`addi \\$9, \\$0, 0`\n`j lb4`\n`lb1: lw  \\$11, 0(\\$6)`\n`slt  \\$1, \\$7, \\$11`\n`@@@@@@@`\n`addi \\$9, \\$9, 1`\n`lb4: slt  \\$1, \\$9, \\$5`\n`bne  \\$1, \\$0, lb1`\nמהתרגום נשמטו פקודות במקום המסומן ב- @@@@@@@. הפקודות החסרות הן:",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "`beq  \\$1, \\$0, lb2`\n`add  \\$7, \\$11, \\$0`\n`lb2: slt  \\$1, \\$11, \\$8`\n`beq  \\$1, \\$0, lb3`\n`sub  \\$8, \\$11, \\$0`\n`lb3: addi \\$6, \\$6, 4`",
+     "html": "<code class=\"tok\" dir=\"ltr\">beq  $1, $0, lb2</code><br><code class=\"tok\" dir=\"ltr\">add  $7, $11, $0</code><br><code class=\"tok\" dir=\"ltr\">lb2: slt  $1, $11, $8</code><br><code class=\"tok\" dir=\"ltr\">beq  $1, $0, lb3</code><br><code class=\"tok\" dir=\"ltr\">sub  $8, $11, $0</code><br><code class=\"tok\" dir=\"ltr\">lb3: addi $6, $6, 4</code>"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "`bne  \\$1, \\$0, lb2`\n`add  \\$7, \\$11, \\$0`\n`lb2: slt  \\$1, \\$11, \\$8`\n`bne  \\$1, \\$0, lb3`\n`sub  \\$8, \\$11, \\$0`\n`lb3: addi \\$6, \\$6, 4`",
+     "html": "<code class=\"tok\" dir=\"ltr\">bne  $1, $0, lb2</code><br><code class=\"tok\" dir=\"ltr\">add  $7, $11, $0</code><br><code class=\"tok\" dir=\"ltr\">lb2: slt  $1, $11, $8</code><br><code class=\"tok\" dir=\"ltr\">bne  $1, $0, lb3</code><br><code class=\"tok\" dir=\"ltr\">sub  $8, $11, $0</code><br><code class=\"tok\" dir=\"ltr\">lb3: addi $6, $6, 4</code>"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "`beq  \\$1, \\$0, lb2`\n`add  \\$7, \\$11, \\$0`\n`lb2: slt  \\$1, \\$8, \\$11`\n`beq  \\$1, \\$0, lb3`\n`sub  \\$8, \\$11, \\$0`\n`lb3: addi \\$6, \\$6, 4`",
+     "html": "<code class=\"tok\" dir=\"ltr\">beq  $1, $0, lb2</code><br><code class=\"tok\" dir=\"ltr\">add  $7, $11, $0</code><br><code class=\"tok\" dir=\"ltr\">lb2: slt  $1, $8, $11</code><br><code class=\"tok\" dir=\"ltr\">beq  $1, $0, lb3</code><br><code class=\"tok\" dir=\"ltr\">sub  $8, $11, $0</code><br><code class=\"tok\" dir=\"ltr\">lb3: addi $6, $6, 4</code>"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "`beq  \\$1, \\$0, lb2`\n`add  \\$7, \\$11, \\$0`\n`lb2: slt  \\$1, \\$8, \\$11`\n`bne  \\$1, \\$0, lb3`\n`sub  \\$8, \\$11, \\$0`\n`lb3: addi \\$6, \\$6, 4`",
+     "html": "<code class=\"tok\" dir=\"ltr\">beq  $1, $0, lb2</code><br><code class=\"tok\" dir=\"ltr\">add  $7, $11, $0</code><br><code class=\"tok\" dir=\"ltr\">lb2: slt  $1, $8, $11</code><br><code class=\"tok\" dir=\"ltr\">bne  $1, $0, lb3</code><br><code class=\"tok\" dir=\"ltr\">sub  $8, $11, $0</code><br><code class=\"tok\" dir=\"ltr\">lb3: addi $6, $6, 4</code>"
+    },
+    {
+     "id": "e",
+     "type": "text",
+     "value": "`beq  \\$1, \\$0, lb2`\n`add  \\$7, \\$11, \\$0`\n`lb2: slt  \\$1, \\$11, \\$8`\n`beq  \\$1, \\$0, lb3`\n`sub  \\$8, \\$11, \\$0`\n`lb3: addi \\$6, \\$6, 1`",
+     "html": "<code class=\"tok\" dir=\"ltr\">beq  $1, $0, lb2</code><br><code class=\"tok\" dir=\"ltr\">add  $7, $11, $0</code><br><code class=\"tok\" dir=\"ltr\">lb2: slt  $1, $11, $8</code><br><code class=\"tok\" dir=\"ltr\">beq  $1, $0, lb3</code><br><code class=\"tok\" dir=\"ltr\">sub  $8, $11, $0</code><br><code class=\"tok\" dir=\"ltr\">lb3: addi $6, $6, 1</code>"
+    },
+    {
+     "id": "f",
+     "type": "text",
+     "value": "`bne  \\$1, \\$0, lb2`\n`add  \\$7, \\$11, \\$0`\n`lb2: slt  \\$1, \\$11, \\$8`\n`bne  \\$1, \\$0, lb3`\n`sub  \\$8, \\$11, \\$0`\n`lb3: addi \\$6, \\$6, 1`",
+     "html": "<code class=\"tok\" dir=\"ltr\">bne  $1, $0, lb2</code><br><code class=\"tok\" dir=\"ltr\">add  $7, $11, $0</code><br><code class=\"tok\" dir=\"ltr\">lb2: slt  $1, $11, $8</code><br><code class=\"tok\" dir=\"ltr\">bne  $1, $0, lb3</code><br><code class=\"tok\" dir=\"ltr\">sub  $8, $11, $0</code><br><code class=\"tok\" dir=\"ltr\">lb3: addi $6, $6, 1</code>"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "התרגום: `slt \\$1,\\$7,\\$11` בודק `if (*ptr>a)`; אם `\\$1==0` מדלגים על `a = *ptr` (`beq \\$1,\\$0,lb2`), אחרת `add \\$7,\\$11,\\$0`.\n`lb2: slt \\$1,\\$11,\\$8` בודק `if (*ptr<b)`; אם `\\$1==0` מדלגים (`beq \\$1,\\$0,lb3`), אחרת `sub \\$8,\\$11,\\$0` (`b = *ptr`); `lb3: addi \\$6,\\$6,4` מקדם את `ptr` למילה הבאה.\nב, ו: תנאי הפוך (bne במקום beq); ג: ההשוואה ב-slt הפוכה; ד: ההשוואה הפוכה והתנאי הפוך (מתקבל `if (*ptr<=b) b=*ptr`); ה: `ptr` מקודם ב-1 ולא ב-4.",
+   "id": "25B-A-Q20",
+   "examCode": "25B-A",
+   "examLabel": "2025 סמסטר א מועד ב",
+   "year": 2025,
+   "source": "exam",
+   "topicLabel": "אסמבלי MIPS ותרגום ל-C",
+   "questionHtml": "קטע ה- C הבא תורגם לשפת הסף (אסמבלי) של מחשב MIPS. הנח כי כתובת ההתחלה של array נמצאת באוגר $4. הערך size שהוא גודל המערך נמצא באוגר $5. המערך הינו מערך של מילים (1 Word = 4 bytes). אוגרים $4 ו- $5 צריכים להישאר ללא שינוי.<br><code class=\"tok\" dir=\"ltr\">ptr = &amp;array[0];</code><br><code class=\"tok\" dir=\"ltr\">a = *ptr;</code><br><code class=\"tok\" dir=\"ltr\">b = a;</code><br><code class=\"tok\" dir=\"ltr\">for(i=0; i&lt;size; i++)</code><br><code class=\"tok\" dir=\"ltr\">  {</code><br><code class=\"tok\" dir=\"ltr\">    if (*ptr&gt;a)  a = *ptr;</code><br><code class=\"tok\" dir=\"ltr\">    if (*ptr&lt;b)  b = *ptr;</code><br><code class=\"tok\" dir=\"ltr\">    ptr++;</code><br><code class=\"tok\" dir=\"ltr\">  }</code><br>להלן התרגום:<br><code class=\"tok\" dir=\"ltr\">add $6, $0, $4</code><br><code class=\"tok\" dir=\"ltr\">lw  $7, 0($6)</code><br><code class=\"tok\" dir=\"ltr\">addi $8, $7, 0</code><br><code class=\"tok\" dir=\"ltr\">addi $9, $0, 0</code><br><code class=\"tok\" dir=\"ltr\">j lb4</code><br><code class=\"tok\" dir=\"ltr\">lb1: lw  $11, 0($6)</code><br><code class=\"tok\" dir=\"ltr\">slt  $1, $7, $11</code><br><code class=\"tok\" dir=\"ltr\">@@@@@@@</code><br><code class=\"tok\" dir=\"ltr\">addi $9, $9, 1</code><br><code class=\"tok\" dir=\"ltr\">lb4: slt  $1, $9, $5</code><br><code class=\"tok\" dir=\"ltr\">bne  $1, $0, lb1</code><br>מהתרגום נשמטו פקודות במקום המסומן ב- @@@@@@@. הפקודות החסרות הן:",
+   "explanationHtml": "התרגום: <code class=\"tok\" dir=\"ltr\">slt $1,$7,$11</code> בודק <code class=\"tok\" dir=\"ltr\">if (*ptr&gt;a)</code>; אם <code class=\"tok\" dir=\"ltr\">$1==0</code> מדלגים על <code class=\"tok\" dir=\"ltr\">a = *ptr</code> (<code class=\"tok\" dir=\"ltr\">beq $1,$0,lb2</code>), אחרת <code class=\"tok\" dir=\"ltr\">add $7,$11,$0</code>.<br><code class=\"tok\" dir=\"ltr\">lb2: slt $1,$11,$8</code> בודק <code class=\"tok\" dir=\"ltr\">if (*ptr&lt;b)</code>; אם <code class=\"tok\" dir=\"ltr\">$1==0</code> מדלגים (<code class=\"tok\" dir=\"ltr\">beq $1,$0,lb3</code>), אחרת <code class=\"tok\" dir=\"ltr\">sub $8,$11,$0</code> (<code class=\"tok\" dir=\"ltr\">b = *ptr</code>); <code class=\"tok\" dir=\"ltr\">lb3: addi $6,$6,4</code> מקדם את <code class=\"tok\" dir=\"ltr\">ptr</code> למילה הבאה.<br>ב, ו: תנאי הפוך (bne במקום beq); ג: ההשוואה ב-slt הפוכה; ד: ההשוואה הפוכה והתנאי הפוך (מתקבל <code class=\"tok\" dir=\"ltr\">if (*ptr&lt;=b) b=*ptr</code>); ה: <code class=\"tok\" dir=\"ltr\">ptr</code> מקודם ב-1 ולא ב-4.",
+   "dedupKey": "d2823472582c882e"
+  }
+ ]
+}

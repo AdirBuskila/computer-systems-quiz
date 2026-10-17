@@ -13,4 +13,11 @@ Open questions for Adir. One entry per item; the orchestrator moves it to Resolv
 - Status: hold
 -->
 
+### 25B-A Q2 - official key disagrees with the arithmetic
+- Path: sitting 25B-A (exam page 2, solution page 19)
+- Page: 2 (question), 19 (working)
+- Question: addi $1,$0,0xAAAA ; add $1,$1,$1 ; addi $5,$1,0xAAAA ; addi $5,$5,0x0002. The key circles option a, 0xFFFE0000. Recomputed: $1 = 0xFFFFAAAA, then 0xFFFF5554, $5 = 0xFFFEFFFE, then +2 = 0xFFFF0000, which is not among the six options. The lecturer's own working writes 0xFFFEFFFE + 2 = 0xFFFE0000.
+- Needed: decide whether to keep Q2 held, accept a as the official answer (arithmetic slip in the key), or drop the question.
+- Status: hold
+
 ## Resolved
