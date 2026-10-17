@@ -9,7 +9,8 @@ Key (circled and confirmed on the solution pages): option a in every question.
 Keys checked by script (tools/verify/23A-B/check.py): Q1 Q2 Q3 Q4 Q5 Q9 Q11 Q12 Q13 Q14 Q15 Q16 Q17 Q19 recomputed
 and agree (14); Q6 range is trivial.
 DISAGREEMENT: Q10 -- simulation gives $9 = 0x200 = 512 (option d); the key circles a (0x100) and the lecturer's own
-working (p.27) reads the loop as stopping one doubling early -> held (see docs/ASK_ADIR.md).
+working (p.27) reads the loop as stopping one doubling early -> arbiter 2026-10-17: ship d as solved (official:false).
+Q12 -- printed option b (a subtraction) is also overflow-free -> arbiter 2026-10-17: acceptedIds a+b (official:false).
 Handwritten Hebrew explanation text is reconstructed from the solution pages; the formulas are exact."""
 import json, pathlib
 
@@ -170,20 +171,18 @@ questions.append(Q(
 בונים את הטבלה אחורה מהמצב הנוכחי $[0,1,0,1]$: לפני עלייה אחת $[1,0,1,1]$; לפני 2: $[0,1,1,1]$; לפני 3: $[1,1,1,0]$; לפני 4: $[1,1,0,1]$.""",
     image="images/exams/23A-B-Q9.png"))
 
-# ---------------------------------------------------------------- 10  (HELD: key disagrees with simulation)
-q10 = Q(
+# ---------------------------------------------------------------- 10  (arbiter 2026-10-17: key a wrong, d solved)
+questions.append(Q(
     10, "mips_assembly_c", "נתון קטע הקוד הבא הכתוב בשפת אסמבלי של מעבד MIPS. מה יהיה הערך של אוגר §9 כשנגיע ל- end?\n"
     + code(["addi $7, $0, -1", "addi $8, $0, 0x156", "addi $9, $0, 0x1",
             "lp:  slt  $1, $8, $9", "     bne  $1, $0, end", "     add  $9, $9, $9", "     addi $7, $7, 1", "     j    lp", "end:"]),
     opts("0x100", "7", "342", "512", "0x80"),
-    None,
-    r"""§8 מכיל $\texttt{0x156}=342$ ו-§9 מתחיל ב-1 ומוכפל ב-2 בכל סיבוב; הלולאה נעצרת כאשר $§8<§9$.""",
-    hold="Official key (circled a, 0x100; p.27 working ends at $9=2^8=256) disagrees with simulation: 342<256 is false, so $9 is "
-         "doubled once more to 512 (option d) and only then does slt succeed. Lecturer reading slip.",
-    note="Held: key circled a = 0x100, but simulating the code gives $9 = 512 (option d).",
-    confidence="low")
-del q10["correctId"]
-questions.append(q10)
+    "d",
+    r"""המפתח הרשמי סימן א ($\texttt{0x100}=256$), אך התשובה הנכונה היא ד ($512$) כי כאשר $§9=256$ הבדיקה $342<256$ שקרית, ולכן §9 מוכפל פעם נוספת ל-$512$ ורק אז הלולאה נעצרת.
+§8 מכיל $\texttt{0x156}=342$ ו-§9 מתחיל ב-1 ומוכפל ב-2 בכל סיבוב; הלולאה נעצרת כאשר $§8<§9$.
+§9 עובר את הערכים $1,2,4,\ldots,256$ - בכולם $342\ge §9$ וממשיכים; ב-$§9=512$ מתקיים $342<512$ וקופצים ל-end. (בפתרון המרצה $§7=8$, כלומר $256=2^8\le 342$, אבל §9 עצמו כבר הוכפל ל-$2^9=512$.)""",
+    answerSource="solved", official=False,
+    note="Arbiter 2026-10-17: key circled a = 0x100 is a reading slip (p.27 confuses $7=8 with $9); simulation gives $9 = 512, option d."))
 
 # ---------------------------------------------------------------- 11
 questions.append(Q(
@@ -198,25 +197,22 @@ questions.append(Q(
 ג: $17\times16+15+[1000]_{16}+2\cdot 4096=[110]_{16}+[F]_{16}+[3000]_{16}=[311F]_{16}$ - נכון.
 ד: $14\cdot17\cdot16+1=[EE0]_{16}+1=[EE1]_{16}$ ו-$[4000]_{16}-[EE1]_{16}=[311F]_{16}$ - נכון."""))
 
-# ---------------------------------------------------------------- 12  (HELD: two options are overflow-free as printed)
-q12 = Q(
+# ---------------------------------------------------------------- 12  (arbiter 2026-10-17: a and b both accepted)
+questions.append(Q(
     12, "signed_twos_complement",
     "במחבר 2's Comp. של 8 ביט יש יציאה הנדלקת כאשר יש Overflow. באיזה מהחישובים הבאים לא תידלק יציאה זו?",
     opts("`01111000 + 10011100`", "`01111000 - 01100100`", "`10111010 + 10110000`",
          "`01011010 - 11001001`", "`11100010 - 01100011`"),
-    None,
-    r"""התחום ב-8 ביט הוא $-128\le X\le 127$.
+    "a",
+    r"""שתי תשובות נכונות: א ו-ב. אופרטור החיסור באפשרות ב מודפס כך בגיליון, והחישוב כפי שהודפס אינו גולש (המפתח הרשמי סימן רק את א).
+התחום ב-8 ביט הוא $-128\le X\le 127$.
 א: $120+(-100)=20$ - אין גלישה.
 ב: כפי שהודפס $120-100=20$ - אין גלישה (בפתרון המרצה מחושב $120+100=220$ - יש גלישה).
 ג: $(-70)+(-80)=-150$ - יש גלישה.
 ד: $90-(-55)=145$ - יש גלישה.
 ה: $(-30)-99=-129$ - יש גלישה.""",
-    hold="Option b as printed (01111000 - 01100100 = 120-100 = 20) does not overflow, so a and b are both correct; the circled key is a "
-         "and the lecturer's working (p.29) treats b as an addition (120+100=220, overflow). Misprinted operator in option b.",
-    note="Held: printed option b is a subtraction with no overflow, same as the key a; the solution page evaluates it as an addition.",
-    confidence="low")
-del q12["correctId"]
-questions.append(q12)
+    acceptedIds=["a", "b"], answerSource="solved", official=False,
+    note="Arbiter 2026-10-17: printed option b (01111000 - 01100100 = 20) has no overflow, same as the key a; the solution page evaluates b as an addition. Both accepted."))
 
 # ---------------------------------------------------------------- 13
 questions.append(Q(

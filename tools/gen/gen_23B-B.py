@@ -10,7 +10,7 @@ Keys checked by script (tools/verify/23B-B/check.py): Q1 Q2 Q3 Q4 Q5 Q9 Q10 Q11 
 recomputed and agree (15); Q6 bounds are trivial; Q7/Q8/Q18 are conceptual.
 DISAGREEMENT: Q20 -- simulating the loop shows option a (bne ... lab2) skips the store when array1[i]>array2[i], so it
 leaves the elementwise minimum in array2; option b (beq ... lab2) is the correct translation. The lecturer's
-solution page (p.35) comments a as correct -> held (see docs/ASK_ADIR.md).
+solution page (p.35) comments a as correct -> arbiter 2026-10-17: ship b as solved (official:false).
 Handwritten Hebrew explanation text is reconstructed from the solution pages; the formulas are exact."""
 import json, pathlib
 
@@ -310,14 +310,13 @@ q20 = Q(
     + code(C20, "c") + "\nלהלן התרגום:\n" + code(ASM20) + "\nמהתרגום נשמטו פקודות במקום המסומן ב- `@@@@@@@`.\nהפקודות החסרות הן:",
     opts(alt20("$11, $10", "bne", "lab2"), alt20("$11, $10", "beq", "lab2"), alt20("$10, $11", "bne", "lab2"),
          alt20("$10, $11", "beq", "lab2"), alt20("$11, $10", "bne", "lab1"), alt20("$11, $10", "beq", "lab1")),
-    None,
-    r"""§8 מצביע ל-`array2[i]` ו-§9 ל-`array1[i]`; `lw §10,0(§9)` טוען את `array1[i]` ו-`lw §11,0(§8)` את `array2[i]`. הפקודה `slt §1,§11,§10` נותנת `§1=1` כאשר `array2[i]<array1[i]`, כלומר כאשר התנאי `array1[i]>array2[i]` מתקיים.""",
-    hold="Official key (circled a: slt $1,$11,$10 ; bne $1,$0,lab2 ; sw) disagrees with simulation: with bne the store is skipped exactly when "
-         "array1[i]>array2[i], so array2 ends as the elementwise minimum, not the maximum the C code computes. beq (option b) is the correct "
-         "translation; the lecturer's solution page (p.35) comments a as correct and b as 'wrong condition'.",
-    note="Held: key circled a, but simulation shows option b implements the C code (option c also gives the same result).",
-    confidence="low")
-del q20["correctId"]
+    "b",
+    r"""המפתח הרשמי סימן א, אך התשובה הנכונה היא ב כי ב-א הפקודה `bne` מדלגת על ההעתקה בדיוק כאשר `array1[i]>array2[i]`, כלומר הפוך מהתנאי שבקוד.
+§8 מצביע ל-`array2[i]` ו-§9 ל-`array1[i]`; `lw §10,0(§9)` טוען את `array1[i]` ו-`lw §11,0(§8)` את `array2[i]`. הפקודה `slt §1,§11,§10` נותנת `§1=1` כאשר `array2[i]<array1[i]`, כלומר כאשר התנאי `array1[i]>array2[i]` מתקיים.
+לכן יש לדלג על ההעתקה כאשר `§1=0` (`beq §1,§0,lab2`), ואחרת `sw §10,0(§8)` מבצע `array2[i]=array1[i]` - תשובה ב.
+הערה: ג (`slt §1,§10,§11` עם `bne`) מעתיקה כאשר `array1[i]>=array2[i]`; היא משאירה אותו מערך כי במקרה השוויון ההעתקה אינה משנה דבר, אבל היא תרגום של `>=` ולא של `>`.""",
+    answerSource="solved", official=False,
+    note="Arbiter 2026-10-17: key circled a skips the store exactly when array1[i]>array2[i] (array2 ends as the minimum); b is the faithful translation. c matches b's final array only because the equal-case store is a no-op; it translates >=, so b is the unique answer (same standard as 24A-A Q20).")
 questions.append(q20)
 
 exam = {

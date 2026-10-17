@@ -377,12 +377,12 @@
      "value": "0x80"
     }
    ],
-   "answerSource": "solution-pdf",
-   "official": true,
-   "confidence": "low",
-   "explanation": "\\$8 מכיל $\\texttt{0x156}=342$ ו-\\$9 מתחיל ב-1 ומוכפל ב-2 בכל סיבוב; הלולאה נעצרת כאשר $\\$8<\\$9$.",
-   "hold": "Official key (circled a, 0x100; p.27 working ends at $9=2^8=256) disagrees with simulation: 342<256 is false, so $9 is doubled once more to 512 (option d) and only then does slt succeed. Lecturer reading slip.",
-   "note": "Held: key circled a = 0x100, but simulating the code gives $9 = 512 (option d)."
+   "correctId": "d",
+   "answerSource": "solved",
+   "official": false,
+   "confidence": "high",
+   "explanation": "המפתח הרשמי סימן א ($\\texttt{0x100}=256$), אך התשובה הנכונה היא ד ($512$) כי כאשר $\\$9=256$ הבדיקה $342<256$ שקרית, ולכן \\$9 מוכפל פעם נוספת ל-$512$ ורק אז הלולאה נעצרת.\n\\$8 מכיל $\\texttt{0x156}=342$ ו-\\$9 מתחיל ב-1 ומוכפל ב-2 בכל סיבוב; הלולאה נעצרת כאשר $\\$8<\\$9$.\n\\$9 עובר את הערכים $1,2,4,\\ldots,256$ - בכולם $342\\ge \\$9$ וממשיכים; ב-$\\$9=512$ מתקיים $342<512$ וקופצים ל-end. (בפתרון המרצה $\\$7=8$, כלומר $256=2^8\\le 342$, אבל \\$9 עצמו כבר הוכפל ל-$2^9=512$.)",
+   "note": "Arbiter 2026-10-17: key circled a = 0x100 is a reading slip (p.27 confuses $7=8 with $9); simulation gives $9 = 512, option d."
   },
   {
    "num": 11,
@@ -447,12 +447,16 @@
      "value": "`11100010 - 01100011`"
     }
    ],
-   "answerSource": "solution-pdf",
-   "official": true,
-   "confidence": "low",
-   "explanation": "התחום ב-8 ביט הוא $-128\\le X\\le 127$.\nא: $120+(-100)=20$ - אין גלישה.\nב: כפי שהודפס $120-100=20$ - אין גלישה (בפתרון המרצה מחושב $120+100=220$ - יש גלישה).\nג: $(-70)+(-80)=-150$ - יש גלישה.\nד: $90-(-55)=145$ - יש גלישה.\nה: $(-30)-99=-129$ - יש גלישה.",
-   "hold": "Option b as printed (01111000 - 01100100 = 120-100 = 20) does not overflow, so a and b are both correct; the circled key is a and the lecturer's working (p.29) treats b as an addition (120+100=220, overflow). Misprinted operator in option b.",
-   "note": "Held: printed option b is a subtraction with no overflow, same as the key a; the solution page evaluates it as an addition."
+   "correctId": "a",
+   "answerSource": "solved",
+   "official": false,
+   "confidence": "high",
+   "explanation": "שתי תשובות נכונות: א ו-ב. אופרטור החיסור באפשרות ב מודפס כך בגיליון, והחישוב כפי שהודפס אינו גולש (המפתח הרשמי סימן רק את א).\nהתחום ב-8 ביט הוא $-128\\le X\\le 127$.\nא: $120+(-100)=20$ - אין גלישה.\nב: כפי שהודפס $120-100=20$ - אין גלישה (בפתרון המרצה מחושב $120+100=220$ - יש גלישה).\nג: $(-70)+(-80)=-150$ - יש גלישה.\nד: $90-(-55)=145$ - יש גלישה.\nה: $(-30)-99=-129$ - יש גלישה.",
+   "acceptedIds": [
+    "a",
+    "b"
+   ],
+   "note": "Arbiter 2026-10-17: printed option b (01111000 - 01100100 = 20) has no overflow, same as the key a; the solution page evaluates b as an addition. Both accepted."
   },
   {
    "num": 13,

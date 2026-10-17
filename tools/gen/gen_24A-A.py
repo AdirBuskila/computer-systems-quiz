@@ -311,8 +311,9 @@ questions.append(Q(
          alt20("$10, $11", "bne", "lab2"), alt20("$11, $10", "bne", "lab1"), alt20("$11, $10", "beq", "lab1")), "a",
     r"""§8 מצביע ל-`array2[i]` ו-§9 ל-`array1[i]` (`# §8 = array2+4*i`, `# §9 = array1+4*i`). `lw §10,0(§9)` טוען את `array1[i]` ו-`lw §11,0(§8)` את `array2[i]`.
 `slt §1,§11,§10` נותן `§1=1` אם `array2[i]<array1[i]`, כלומר אם `array1[i]>array2[i]`; אם לא - מדלגים על ההעתקה (`beq §1,§0,lab2`), אחרת `sw §10,0(§8)` (`array2[i]=array1[i]`).
-ב: התנאי הפוך (`bne`, בפתרון: "wrong condition"); ג, ד: ההשוואה ב-`slt` הפוכה ("wrong compare"); ה, ו: קפיצה ל-`lab1` ("wrong label") מדלגת גם על `i++` ובדיקת תנאי הלולאה.""",
-    note="Option d (slt $1,$10,$11 ; bne ... lab2) gives the same final array as the key because it differs only when the two elements are equal (the store would copy an equal value); the lecturer's solution page still labels d 'wrong compare' and keeps a as the only answer."))
+ב: התנאי הפוך (`bne`, בפתרון: "wrong condition"); ג, ד: ההשוואה ב-`slt` הפוכה ("wrong compare"); ה, ו: קפיצה ל-`lab1` ("wrong label") מדלגת גם על `i++` ובדיקת תנאי הלולאה.
+הערה: ד מעתיקה כאשר `array1[i]>=array2[i]` ומשאירה אותו מערך (במקרה השוויון ההעתקה אינה משנה דבר), אבל היא תרגום של `>=` ולא של `>`, ולכן התרגום הנאמן לקוד הוא רק א.""",
+    note="Arbiter 2026-10-17: key a stands as the unique faithful translation. Option d (slt $1,$10,$11 ; bne ... lab2) gives the same final array as the key because it differs only when the two elements are equal (the store would copy an equal value); the lecturer's solution page still labels d 'wrong compare' and keeps a as the only answer."))
 
 exam = {
     "examCode": "24A-A",

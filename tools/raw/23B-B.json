@@ -792,12 +792,12 @@
      "value": "```asm\nlw $10, 0($9)\nlw $11, 0($8)\nslt $1, $11, $10\nbeq $1, $0, lab1\nsw $10, 0($8)\n```"
     }
    ],
-   "answerSource": "solution-pdf",
-   "official": true,
-   "confidence": "low",
-   "explanation": "\\$8 מצביע ל-`array2[i]` ו-\\$9 ל-`array1[i]`; `lw \\$10,0(\\$9)` טוען את `array1[i]` ו-`lw \\$11,0(\\$8)` את `array2[i]`. הפקודה `slt \\$1,\\$11,\\$10` נותנת `\\$1=1` כאשר `array2[i]<array1[i]`, כלומר כאשר התנאי `array1[i]>array2[i]` מתקיים.",
-   "hold": "Official key (circled a: slt $1,$11,$10 ; bne $1,$0,lab2 ; sw) disagrees with simulation: with bne the store is skipped exactly when array1[i]>array2[i], so array2 ends as the elementwise minimum, not the maximum the C code computes. beq (option b) is the correct translation; the lecturer's solution page (p.35) comments a as correct and b as 'wrong condition'.",
-   "note": "Held: key circled a, but simulation shows option b implements the C code (option c also gives the same result)."
+   "correctId": "b",
+   "answerSource": "solved",
+   "official": false,
+   "confidence": "high",
+   "explanation": "המפתח הרשמי סימן א, אך התשובה הנכונה היא ב כי ב-א הפקודה `bne` מדלגת על ההעתקה בדיוק כאשר `array1[i]>array2[i]`, כלומר הפוך מהתנאי שבקוד.\n\\$8 מצביע ל-`array2[i]` ו-\\$9 ל-`array1[i]`; `lw \\$10,0(\\$9)` טוען את `array1[i]` ו-`lw \\$11,0(\\$8)` את `array2[i]`. הפקודה `slt \\$1,\\$11,\\$10` נותנת `\\$1=1` כאשר `array2[i]<array1[i]`, כלומר כאשר התנאי `array1[i]>array2[i]` מתקיים.\nלכן יש לדלג על ההעתקה כאשר `\\$1=0` (`beq \\$1,\\$0,lab2`), ואחרת `sw \\$10,0(\\$8)` מבצע `array2[i]=array1[i]` - תשובה ב.\nהערה: ג (`slt \\$1,\\$10,\\$11` עם `bne`) מעתיקה כאשר `array1[i]>=array2[i]`; היא משאירה אותו מערך כי במקרה השוויון ההעתקה אינה משנה דבר, אבל היא תרגום של `>=` ולא של `>`.",
+   "note": "Arbiter 2026-10-17: key circled a skips the store exactly when array1[i]>array2[i] (array2 ends as the minimum); b is the faithful translation. c matches b's final array only because the equal-case store is a no-op; it translates >=, so b is the unique answer (same standard as 24A-A Q20)."
   }
  ]
 }
