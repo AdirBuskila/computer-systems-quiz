@@ -250,14 +250,17 @@ if (learnCh.length) {
 
 // ---------------- guided courses ("צריך עזרה?", course-ui.js) ----------------
 {
-  const NH = CFG.needHelp || [];
   const COURSES = window.COURSES || {};
+  // a configured course is hidden until it has >= 1 built level (phase 5b writes them); only built courses are checked
+  const NH = (CFG.needHelp || []).filter(c => ((COURSES[c.id] || {}).levels || []).length > 0);
+  const NH_CFG = (CFG.needHelp || []).length;
   const KEY = id => `${CFG.storePrefix}_course_${id}_v1`;
   const bankBefore = window.localStorage.getItem(CFG.storePrefix + "_progress_v1");
   if (!NH.length) {
-    assert($("#helpEntry").style.display === "none", "course: header entry hidden (needHelp is empty)");
-    assert($$("#helpCards .crs-promo").length === 0, "course: no start-screen cards (needHelp is empty)");
-    assert($("#helpCards").classList.contains("hidden"), "course: card container hidden (needHelp is empty)");
+    assert($("#helpEntry").style.display === "none", "course: header entry hidden (no course has levels)");
+    assert($$("#helpCards .crs-promo").length === 0, "course: no start-screen cards (no course has levels)");
+    assert($("#helpCards").classList.contains("hidden"), "course: card container hidden (no course has levels)");
+    if (NH_CFG) console.log("guided courses: none built yet (skipped)");
   } else {
     assert($("#helpEntry").style.display !== "none", "course: header entry visible");
     const cards = $$("#helpCards .crs-promo");

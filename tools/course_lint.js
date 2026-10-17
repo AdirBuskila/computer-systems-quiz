@@ -189,7 +189,8 @@ const byCourse = {};
 for (const e of loaded.levels) (byCourse[e.courseId] = byCourse[e.courseId] || []).push(e);
 const declared = new Set(needHelp.map(c => c.id));
 for (const d of loaded.courseDirs) if (!declared.has(d)) ERR(d, `courses/${d} is not declared in course.config.json needHelp`);
-for (const c of needHelp) if (!(byCourse[c.id] || []).length) ERR(c.id, "declared in needHelp but has no level files in courses/" + c.id);
+// no levels yet is normal until phase 5b (the app hides such a course); --strict (the 5b exit gate) turns this warning into an error
+for (const c of needHelp) if (!(byCourse[c.id] || []).length) WARN(c.id, "declared in needHelp but has no level files in courses/" + c.id);
 
 for (const courseId of Object.keys(byCourse).sort()) {
   if (ONLY && ONLY !== courseId) continue;
