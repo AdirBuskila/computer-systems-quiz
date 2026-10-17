@@ -308,7 +308,8 @@ questions.append(Q(
          "`lui $s3, 0x123`", "`lui $t3, 0x123`"), "a",
     r"""`0x35730123` $=\ 001101\ |\ 01011\ |\ 10011\ |\ 0000\,0001\,0010\,0011$.
 opcode $=13=\text{ori}$ (I-type); $Rs=11=§t3$, $Rt=19=§s3$, $\text{imm}=\texttt{0x123}=291$.
-$\Rightarrow$ `ori §s3, §t3, 291`"""))
+$\Rightarrow$ `ori §s3, §t3, 291`""",
+    note="No circle is visible on this question page; the key (option a) is read from the lecturer's worked page and recomputed by script."))
 
 # ---------------------------------------------------------------- 20
 C20 = ["for(i=1;i<size;i++)", "{", "    tmp1=array[i];", "    tmp2=array[i-1];", "    if(tmp1>tmp2)", "    {",
