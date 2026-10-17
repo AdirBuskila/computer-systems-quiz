@@ -1,0 +1,1134 @@
+{
+ "courseId": "mips_trace",
+ "levels": [
+  {
+   "id": "C01",
+   "order": 1,
+   "boss": false,
+   "questions": [
+    {
+     "id": "C01-Q1",
+     "question": "מה ערך \\$6 בסוף הקטע?\n```asm\naddi $4,$0,9\naddi $5,$0,4\nsub $6,$4,$5\nadd $6,$6,$6\n```",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "5"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "13"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "10"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "18"
+      }
+     ]
+    },
+    {
+     "id": "C01-Q2",
+     "question": "מה ערך \\$5 בסוף הקטע?\n```asm\naddi $0,$0,5\naddi $4,$0,3\nadd $5,$4,$0\n```",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "3"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "8"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "13"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "5"
+      }
+     ]
+    },
+    {
+     "id": "C01-Q3",
+     "question": "בהתחלה \\$4 = 6 ו-\\$5 = 2. מה הערכים בסוף הקטע?\n```asm\nadd $4,$4,$5\nsub $5,$4,$5\nsub $4,$4,$5\n```",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "\\$4=6, \\$5=2"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "\\$4=8, \\$5=6"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "\\$4=2, \\$5=8"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "\\$4=2, \\$5=6"
+      }
+     ]
+    },
+    {
+     "id": "C01-Q4",
+     "question": "בהתחלה \\$4 = 10. מה ערך \\$5 בסוף הקטע?\n```asm\nadd $6,$4,$0\naddi $4,$4,1\nadd $5,$6,$4\n```",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "22"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "21"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "20"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "11"
+      }
+     ]
+    },
+    {
+     "id": "C01-Q5",
+     "question": "מה ערך \\$6 בסוף הקטע?\n```asm\naddi $4,$0,-3\nadd $5,$4,$4\nsub $6,$5,$4\n```",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "3"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "-9"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "-3"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "-6"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C02",
+   "order": 2,
+   "boss": false,
+   "questions": [
+    {
+     "id": "C02-Q1",
+     "question": "אוגר \\$4 מחזיק את a. איזה קטע מחשב `a = 4*a`?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "```asm\nadd $4,$4,$4\n```"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "```asm\nadd $4,$4,$4\nadd $4,$4,$4\n```"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "```asm\nadd $4,$4,$4\nadd $4,$4,$4\nadd $4,$4,$4\n```"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "```asm\nadd $4,$4,$5\nadd $4,$4,$5\n```"
+      }
+     ]
+    },
+    {
+     "id": "C02-Q2",
+     "question": "\\$4 הוא a ו-\\$5 הוא b. איזה קטע מחשב `a = 2*a + b` ומשאיר את b ללא שינוי?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "```asm\nadd $4,$4,$5\nadd $4,$4,$4\n```"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "```asm\nadd $5,$5,$4\nadd $4,$4,$5\n```"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "```asm\nadd $4,$4,$4\nsub $4,$4,$5\n```"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "```asm\nadd $4,$4,$4\nadd $4,$4,$5\n```"
+      }
+     ]
+    },
+    {
+     "id": "C02-Q3",
+     "question": "\\$4 הוא a ו-\\$5 הוא b, ומותר להשתמש ב-\\$1 כאוגר עזר. איזה קטע מחשב `a = 3*a - b` ומשאיר את b?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "```asm\nadd $1,$4,$4\nadd $4,$4,$1\nsub $4,$4,$5\n```"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "```asm\nadd $1,$4,$4\nadd $4,$4,$1\nadd $4,$4,$5\n```"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "```asm\nadd $4,$4,$4\nsub $4,$4,$5\nadd $4,$4,$4\n```"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "```asm\nadd $4,$4,$4\nadd $4,$4,$4\nsub $4,$4,$5\n```"
+      }
+     ]
+    },
+    {
+     "id": "C02-Q4",
+     "question": "\\$4 הוא a ו-\\$5 הוא b, ומותר להשתמש ב-\\$1. איזה קטע הוא תרגום **שגוי** של `a = 2*a - 2*b`?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "```asm\nsub $4,$4,$5\nadd $4,$4,$4\n```"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "```asm\nadd $1,$5,$5\nadd $4,$4,$4\nsub $4,$4,$1\n```"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "```asm\nadd $4,$4,$4\nadd $5,$5,$5\nsub $4,$4,$5\n```"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "```asm\nadd $4,$4,$4\nsub $4,$4,$5\nsub $4,$4,$5\n```"
+      }
+     ]
+    },
+    {
+     "id": "C02-Q5",
+     "question": "\\$4 הוא a. איזה קטע מחשב `a = 5*a`? מותר להשתמש ב-\\$1.",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "```asm\nadd $4,$4,$4\nadd $4,$4,$4\nadd $4,$4,$4\n```"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "```asm\nadd $1,$4,$4\nadd $4,$1,$1\n```"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "```asm\nadd $1,$4,$4\nadd $1,$1,$1\nadd $4,$4,$1\n```"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "```asm\nadd $1,$4,$4\nadd $4,$4,$1\n```"
+      }
+     ]
+    },
+    {
+     "id": "bank:24S-A-Q10",
+     "bankId": "24S-A-Q10"
+    }
+   ]
+  },
+  {
+   "id": "C03",
+   "order": 3,
+   "boss": false,
+   "questions": [
+    {
+     "id": "C03-Q1",
+     "question": "מה ערכי \\$6 ו-\\$7 בסוף הקטע?\n```asm\naddi $4,$0,-2\naddi $5,$0,3\nslt $6,$4,$5\nslt $7,$5,$4\n```",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "\\$6=0, \\$7=1"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "\\$6=1, \\$7=1"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "\\$6=1, \\$7=0"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "\\$6=0, \\$7=0"
+      }
+     ]
+    },
+    {
+     "id": "C03-Q2",
+     "question": "מה ערך \\$6 בסוף הקטע?\n```asm\naddi $4,$0,5\naddi $5,$0,5\nbeq $4,$5,L\naddi $6,$0,1\nL: addi $6,$6,10\n```",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "11"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "10"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "1"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "0"
+      }
+     ]
+    },
+    {
+     "id": "C03-Q3",
+     "question": "מה ערך \\$6 בסוף הקטע?\n```asm\naddi $4,$0,3\naddi $5,$0,8\nslt $1,$4,$5\nbne $1,$0,yes\naddi $6,$0,100\nj end\nyes: addi $6,$0,200\nend:\n```",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "100"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "300"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "0"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "200"
+      }
+     ]
+    },
+    {
+     "id": "C03-Q4",
+     "question": "כמה פקודות מתבצעות בפועל (לא כמה שורות יש בקטע)?\n```asm\naddi $4,$0,0\nbeq $4,$0,L\naddi $5,$0,1\naddi $5,$5,1\naddi $5,$5,1\nL: addi $6,$0,9\n```",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "3"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "4"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "5"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "6"
+      }
+     ]
+    },
+    {
+     "id": "C03-Q5",
+     "question": "מה ערך \\$7 בסוף הקטע?\n```asm\naddi $4,$0,5\naddi $5,$0,5\nslt $6,$4,$5\nbeq $6,$0,L\naddi $7,$0,1\nL: addi $7,$7,2\n```",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "3"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "2"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "1"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "0"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C04",
+   "order": 4,
+   "boss": false,
+   "questions": [
+    {
+     "id": "C04-Q1",
+     "question": "a ב-\\$4 ו-b ב-\\$5. איזה קטע מתרגם את `if (a == b) a = a+b; else a = a-b;`?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "```asm\nbeq $4,$5,L1\nadd $4,$4,$5\nbeq $0,$0,end\nL1: sub $4,$4,$5\nend:\n```"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "```asm\nbne $4,$5,L1\nadd $4,$4,$5\nL1: sub $4,$4,$5\nend:\n```"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "```asm\nbne $4,$5,L1\nadd $4,$4,$5\nbeq $0,$0,end\nL1: sub $4,$4,$5\nend:\n```"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "```asm\nbne $4,$5,L1\nsub $4,$4,$5\nbeq $0,$0,end\nL1: add $4,$4,$5\nend:\n```"
+      }
+     ]
+    },
+    {
+     "id": "C04-Q2",
+     "question": "a ב-\\$4 ו-b ב-\\$5. איזה קטע מתרגם את `if (a > b) a = 0;`?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "```asm\nslt $1,$5,$4\nbeq $1,$0,end\nadd $4,$0,$0\nend:\n```"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "```asm\nslt $1,$4,$5\nbeq $1,$0,end\nadd $4,$0,$0\nend:\n```"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "```asm\nslt $1,$5,$4\nbne $1,$0,end\nadd $4,$0,$0\nend:\n```"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "```asm\nslt $1,$4,$5\nbne $1,$0,end\nadd $4,$0,$0\nend:\n```"
+      }
+     ]
+    },
+    {
+     "id": "C04-Q3",
+     "question": "a ב-\\$4 ו-b ב-\\$5. מה קוד ה-C המתאים לקטע הבא?\n```asm\nslt $1,$4,$5\nbne $1,$0,L\nsub $4,$4,$5\nbeq $0,$0,end\nL: sub $5,$5,$4\nend:\n```",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "```c\nif (a < b) a = a - b;\nelse b = b - a;\n```"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "```c\nif (a < b) b = b - a;\nelse a = a - b;\n```"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "```c\nif (a >= b) b = b - a;\nelse a = a - b;\n```"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "```c\nif (a <= b) b = b - a;\nelse a = a - b;\n```"
+      }
+     ]
+    },
+    {
+     "id": "C04-Q4",
+     "question": "a ב-\\$7, b ב-\\$9, c ב-\\$5. איזה קטע מתרגם את `if (a <= b) c = a+b; else c = a-b;`?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "```asm\nslt $1,$7,$9\nbne $1,$0,L1\nadd $5,$7,$9\nbeq $0,$0,end\nL1: sub $5,$7,$9\nend:\n```"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "```asm\nslt $1,$9,$7\nbeq $1,$0,L1\nadd $5,$7,$9\nbeq $0,$0,end\nL1: sub $5,$7,$9\nend:\n```"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "```asm\nslt $1,$7,$9\nbeq $1,$0,L1\nadd $5,$7,$9\nbeq $0,$0,end\nL1: sub $5,$7,$9\nend:\n```"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "```asm\nslt $1,$9,$7\nbne $1,$0,L1\nadd $5,$7,$9\nbeq $0,$0,end\nL1: sub $5,$7,$9\nend:\n```"
+      }
+     ]
+    },
+    {
+     "id": "bank:22B-B-Q13",
+     "bankId": "22B-B-Q13"
+    },
+    {
+     "id": "bank:24B-A-Q13",
+     "bankId": "24B-A-Q13"
+    }
+   ]
+  },
+  {
+   "id": "C05",
+   "order": 5,
+   "boss": false,
+   "questions": [
+    {
+     "id": "C05-Q1",
+     "question": "מה ערך \\$4 בסוף הקטע?\n```asm\naddi $4,$0,0\naddi $5,$0,1\naddi $6,$0,6\nlp: slt $1,$5,$6\nbeq $1,$0,end\nadd $4,$4,$5\naddi $5,$5,1\nj lp\nend:\n```",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "21"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "15"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "10"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "6"
+      }
+     ]
+    },
+    {
+     "id": "C05-Q2",
+     "question": "כמה פקודות מתבצעות בסך הכול בקטע של השאלה הקודמת?\n```asm\naddi $4,$0,0\naddi $5,$0,1\naddi $6,$0,6\nlp: slt $1,$5,$6\nbeq $1,$0,end\nadd $4,$4,$5\naddi $5,$5,1\nj lp\nend:\n```",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "28"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "30"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "33"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "25"
+      }
+     ]
+    },
+    {
+     "id": "C05-Q3",
+     "question": "\\$6 מחזיק את n (מספר שלם אי-שלילי). מה מחשב הקטע ל-\\$4?\n```asm\naddi $4,$0,1\nlp: beq $6,$0,end\nadd $4,$4,$4\naddi $6,$6,-1\nj lp\nend:\n```",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "\\$4 = $2n$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "\\$4 = $n^2$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "\\$4 = $2^n$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "\\$4 = $n+1$"
+      }
+     ]
+    },
+    {
+     "id": "C05-Q4",
+     "question": "\\$5 מחזיק את n, ו-x ב-\\$4. איזו לולאת C שקולה לקטע (לכל n, גם 0 ושלילי)?\n```asm\naddi $4,$0,0\nlp: addi $4,$4,2\naddi $5,$5,-1\nslt $1,$0,$5\nbne $1,$0,lp\n```",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "```c\ndo { x = x + 2; n = n - 1; } while (n > 0);\n```"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "```c\nwhile (n > 0) { x = x + 2; n = n - 1; }\n```"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "```c\ndo { x = x + 2; n = n - 1; } while (n >= 0);\n```"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "```c\ndo { x = x + 2; n = n - 1; } while (n != 0);\n```"
+      }
+     ]
+    },
+    {
+     "id": "C05-Q5",
+     "question": "מה ערך \\$7 בסוף הקטע?\n```asm\naddi $5,$0,3\naddi $6,$0,20\nlp: slt $1,$0,$6\nbeq $1,$0,end\nsub $6,$6,$5\naddi $7,$7,1\nj lp\nend:\n```",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "7"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "6"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "8"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "3"
+      }
+     ]
+    },
+    {
+     "id": "bank:23A-A-Q10",
+     "bankId": "23A-A-Q10"
+    }
+   ]
+  },
+  {
+   "id": "C06",
+   "order": 6,
+   "boss": false,
+   "questions": [
+    {
+     "id": "C06-Q1",
+     "question": "בכתובת 1000 מתחיל מערך מילים: 10, 20, 30, 40, 50. בהתחלה \\$4 = 1000. מה ערך \\$8 בסוף הקטע?\n```asm\nlw $5,4($4)\nlw $6,8($4)\nadd $7,$5,$6\nsw $7,0($4)\nlw $8,0($4)\n```",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "40"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "50"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "30"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "60"
+      }
+     ]
+    },
+    {
+     "id": "C06-Q2",
+     "question": "\\$4 הוא כתובת התחלת מערך מילים ו-\\$6 הוא i. איזה קטע מתרגם את `array[i] = array[i] + 1;`?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "```asm\nadd $8,$6,$4\nlw $9,0($8)\naddi $9,$9,1\nsw $9,0($8)\n```"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "```asm\nadd $8,$6,$6\nadd $8,$8,$8\nadd $8,$8,$4\nlw $9,0($8)\naddi $9,$9,1\nsw $9,0($8)\n```"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "```asm\nadd $8,$6,$6\nadd $8,$8,$4\nlw $9,0($8)\naddi $9,$9,1\nsw $9,0($8)\n```"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "```asm\nadd $8,$6,$6\nadd $8,$8,$8\nadd $8,$8,$4\nlw $9,0($8)\naddi $8,$8,1\nsw $9,0($8)\n```"
+      }
+     ]
+    },
+    {
+     "id": "C06-Q3",
+     "question": "\\$4 = 2000 הוא כתובת מערך מילים בגודל \\$5 = 5 שאיבריו 3, 1, 4, 1, 5. מה ערך \\$2 בסוף?\n```asm\nadd $2,$0,$0\nadd $3,$0,$0\nadd $6,$4,$0\nloop: beq $3,$5,done\nlw $7,0($6)\nadd $2,$2,$7\naddi $6,$6,4\naddi $3,$3,1\nbeq $0,$0,loop\ndone:\n```",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "14"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "13"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "9"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "15"
+      }
+     ]
+    },
+    {
+     "id": "C06-Q4",
+     "question": "כמה פקודות מתבצעות בקטע של השאלה הקודמת (n = 5)?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "34"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "33"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "30"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "36"
+      }
+     ]
+    },
+    {
+     "id": "C06-Q5",
+     "question": "\\$6 הוא המצביע ptr על מערך מילים. איזה קטע מתרגם את `x = *ptr; ptr++; y = *ptr;` כאשר x ב-\\$7 ו-y ב-\\$8?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "```asm\nlw $7,0($6)\naddi $6,$6,1\nlw $8,0($6)\n```"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "```asm\nlw $7,0($6)\nlw $8,4($6)\n```"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "```asm\naddi $6,$6,4\nlw $7,0($6)\nlw $8,4($6)\n```"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "```asm\nlw $7,0($6)\naddi $6,$6,4\nlw $8,0($6)\n```"
+      }
+     ]
+    },
+    {
+     "id": "bank:25B-A-Q13",
+     "bankId": "25B-A-Q13"
+    }
+   ]
+  },
+  {
+   "id": "C07",
+   "order": 7,
+   "boss": false,
+   "questions": [
+    {
+     "id": "C07-Q1",
+     "question": "מה ערך \\$6 בסוף הקטע?\n```asm\naddi $4,$0,13\naddi $5,$0,6\nand $6,$4,$5\n```",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "6"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "4"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "15"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "19"
+      }
+     ]
+    },
+    {
+     "id": "C07-Q2",
+     "question": "מה ערך \\$6 בסוף הקטע?\n```asm\naddi $5,$0,1\nadd $5,$5,$5\nadd $5,$5,$5\nadd $5,$5,$5\naddi $4,$0,10\nand $6,$4,$5\n```",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "0"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "2"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "10"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "8"
+      }
+     ]
+    },
+    {
+     "id": "C07-Q3",
+     "question": "כמה פעמים מתבצעת הפקודה `add \\$5,\\$5,\\$5` עד שהלולאה מסתיימת?\n```asm\naddi $5,$0,1\naddi $9,$0,0\nlp: beq $5,$0,end\nadd $5,$5,$5\naddi $9,$9,1\nj lp\nend:\n```",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "31"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "33"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "32"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "64"
+      }
+     ]
+    },
+    {
+     "id": "C07-Q4",
+     "question": "בהתחלה \\$3 = 0x00FF00F0. מה ערך \\$8 בסוף הקטע?\n```asm\naddi $7,$0,1\naddi $8,$0,0\nlp: beq $0,$7,end\nand $10,$7,$3\nbne $10,$0,lab1\naddi $8,$8,1\nlab1: add $7,$7,$7\nj lp\nend:\n```",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "12"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "20"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "8"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "24"
+      }
+     ]
+    },
+    {
+     "id": "C07-Q5",
+     "question": "באיזה ערך התחלתי של \\$3 מתקבל \\$8 = 30 בסוף הקטע?\n```asm\naddi $7,$0,1\naddi $8,$0,0\nlp: beq $0,$7,end\nand $10,$7,$3\nbne $10,$0,lab1\naddi $8,$8,1\nlab1: add $7,$7,$7\nj lp\nend:\n```",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "0x80000003"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "0x0000FFFF"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "0x80000001"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "0x00000001"
+      }
+     ]
+    },
+    {
+     "id": "bank:25B-A-Q10",
+     "bankId": "25B-A-Q10"
+    }
+   ]
+  },
+  {
+   "id": "C08",
+   "order": 8,
+   "boss": false,
+   "questions": [
+    {
+     "id": "C08-Q1",
+     "question": "\\$4 הוא כתובת מערך מילים, \\$5 הוא size. הקטע מתרגם `cnt = 0; for (i=0;i<size;i++) if (array[i] > 0) cnt++;` כש-cnt ב-\\$7. מהן הפקודות החסרות (במקום @@@@@@@)?\n```asm\naddi $6,$0,0\naddi $7,$0,0\nlp: slt $8,$6,$5\nbeq $8,$0,end\nadd $9,$6,$6\nadd $9,$9,$9\nadd $9,$9,$4\nlw $10,0($9)\n@@@@@@@\nnxt: addi $6,$6,1\nj lp\nend:\n```",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "```asm\nslt $11,$10,$0\nbeq $11,$0,nxt\naddi $7,$7,1\n```"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "```asm\nslt $11,$0,$10\nbeq $11,$0,nxt\naddi $7,$7,1\n```"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "```asm\nslt $11,$0,$10\nbne $11,$0,nxt\naddi $7,$7,1\n```"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "```asm\nslt $11,$0,$10\nbeq $11,$0,nxt\nadd $7,$7,$10\n```"
+      }
+     ]
+    },
+    {
+     "id": "C08-Q2",
+     "question": "\\$4 הוא כתובת מערך מילים, \\$5 הוא size, \\$12 = 5. הקטע מתרגם `sum = 0; for (i=0;i<size;i++) if (array[i] > 5) sum += array[i];` כש-sum ב-\\$2. מהן הפקודות החסרות?\n```asm\naddi $6,$0,0\naddi $2,$0,0\naddi $12,$0,5\nlp: slt $8,$6,$5\nbeq $8,$0,end\nadd $9,$6,$6\nadd $9,$9,$9\nadd $9,$9,$4\nlw $10,0($9)\n@@@@@@@\nnxt: addi $6,$6,1\nj lp\nend:\n```",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "```asm\nslt $11,$10,$12\nbeq $11,$0,nxt\nadd $2,$2,$10\n```"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "```asm\nslt $11,$12,$10\nbne $11,$0,nxt\nadd $2,$2,$10\n```"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "```asm\nslt $11,$12,$10\nbeq $11,$0,nxt\nadd $2,$2,$10\n```"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "```asm\nslt $11,$12,$10\nbeq $11,$0,nxt\nadd $2,$2,$11\n```"
+      }
+     ]
+    },
+    {
+     "id": "C08-Q3",
+     "question": "\\$4 הוא כתובת מערך מילים לא ריק, \\$5 הוא size, \\$6 הוא מצביע ו-\\$7 הוא min. הקטע מתרגם `min = *ptr; for (i=0;i<size;i++) { if (*ptr < min) min = *ptr; ptr++; }`. מהן הפקודות החסרות?\n```asm\nadd $6,$4,$0\nlw $7,0($6)\naddi $8,$0,0\nlp: slt $1,$8,$5\nbeq $1,$0,end\nlw $9,0($6)\n@@@@@@@\nnxt: addi $6,$6,4\naddi $8,$8,1\nj lp\nend:\n```",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "```asm\nslt $1,$9,$7\nbeq $1,$0,nxt\nadd $7,$9,$0\n```"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "```asm\nslt $1,$7,$9\nbeq $1,$0,nxt\nadd $7,$9,$0\n```"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "```asm\nslt $1,$9,$7\nbne $1,$0,nxt\nadd $7,$9,$0\n```"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "```asm\nslt $1,$9,$7\nbeq $1,$0,nxt\nadd $9,$7,$0\n```"
+      }
+     ]
+    },
+    {
+     "id": "C08-Q4",
+     "question": "\\$4 הוא כתובת מערך מילים, \\$5 הוא size, ו-\\$8 מחזיק את הכתובת של array[i] (i מ-\\$6). הקטע מתרגם `for (i=1;i<size;i++) array[i] = array[i] + array[i-1];`. מהן הפקודות החסרות?\n```asm\naddi $6,$0,1\nlp: slt $1,$6,$5\nbeq $1,$0,end\nadd $8,$6,$6\nadd $8,$8,$8\nadd $8,$8,$4\n@@@@@@@\naddi $6,$6,1\nj lp\nend:\n```",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "```asm\nlw $9,4($8)\nlw $10,0($8)\nadd $10,$10,$9\nsw $10,0($8)\n```"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "```asm\nlw $9,-4($8)\nlw $10,0($8)\nadd $10,$10,$9\nsw $10,-4($8)\n```"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "```asm\nlw $9,-4($8)\nlw $10,0($8)\nadd $10,$10,$9\nsw $9,0($8)\n```"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "```asm\nlw $9,-4($8)\nlw $10,0($8)\nadd $10,$10,$9\nsw $10,0($8)\n```"
+      }
+     ]
+    },
+    {
+     "id": "C08-Q5",
+     "question": "\\$4 = 4000 הוא כתובת מערך מילים בגודל \\$5 = 5 שאיבריו 4, 7, 10, 3, 8. מה ערך \\$7 בסוף הקטע?\n```asm\naddi $6,$0,0\naddi $7,$0,0\naddi $12,$0,1\nlp: slt $8,$6,$5\nbeq $8,$0,end\nadd $9,$6,$6\nadd $9,$9,$9\nadd $9,$9,$4\nlw $10,0($9)\nand $11,$10,$12\nbne $11,$0,nxt\naddi $7,$7,1\nnxt: addi $6,$6,1\nj lp\nend:\n```",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "2"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "5"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "4"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "3"
+      }
+     ]
+    },
+    {
+     "id": "bank:24B-A-Q20",
+     "bankId": "24B-A-Q20"
+    }
+   ]
+  },
+  {
+   "id": "C09",
+   "order": 9,
+   "boss": true,
+   "questions": [
+    {
+     "id": "bank:23B-A-Q13",
+     "bankId": "23B-A-Q13"
+    },
+    {
+     "id": "bank:23A-A-Q13",
+     "bankId": "23A-A-Q13"
+    },
+    {
+     "id": "bank:23B-A-Q10",
+     "bankId": "23B-A-Q10"
+    },
+    {
+     "id": "bank:25A-A-Q10",
+     "bankId": "25A-A-Q10"
+    },
+    {
+     "id": "bank:22B-A-Q20",
+     "bankId": "22B-A-Q20"
+    },
+    {
+     "id": "bank:23B-B-Q13",
+     "bankId": "23B-B-Q13"
+    }
+   ]
+  }
+ ]
+}

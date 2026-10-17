@@ -4841,5 +4841,1604 @@ window.COURSES = {
     ]
    }
   ]
+ },
+ "mips_trace": {
+  "levels": [
+   {
+    "id": "C01",
+    "order": 1,
+    "icon": "🧭",
+    "title": "קוראים פקודות ועוקבים אחרי אוגרים",
+    "goal": "אחרי השלב הזה אפשר לבצע קטע של add, sub ו-addi ולכתוב את ערכי האוגרים בסופו.",
+    "source": "ai-verified",
+    "boss": false,
+    "lesson": {
+     "html": "<h3>אוגרים</h3>\n<p>במעבד MIPS יש 32 אוגרים, בשמות &#36;0 עד &#36;31. אוגר הוא תא קטן שמחזיק מספר של 32 ביט. האוגר &#36;0 תמיד שווה 0, וכל כתיבה אליו נזרקת.</p>\n<h3>שלוש פקודות</h3>\n<table><thead><tr><th>פקודה</th><th>משמעות</th></tr></thead><tbody>\n<tr><td><code>add &#36;d,&#36;s,&#36;t</code></td><td>&#36;d = &#36;s + &#36;t</td></tr>\n<tr><td><code>sub &#36;d,&#36;s,&#36;t</code></td><td>&#36;d = &#36;s - &#36;t</td></tr>\n<tr><td><code>addi &#36;d,&#36;s,k</code></td><td>&#36;d = &#36;s + k, כש-k קבוע (גם שלילי)</td></tr></tbody></table>\n<div class=\"lesson-rule\">🔑 האוגר הראשון בפקודה הוא היעד, ורק הוא משתנה. שני האחרים רק נקראים.</div>\n<p>טעינת קבוע: <code>addi &#36;4,&#36;0,7</code> נותן &#36;4 = 7. העתקה: <code>add &#36;6,&#36;4,&#36;0</code> מעתיק את &#36;4 אל &#36;6.</p>\n<h3>איך עוקבים</h3>\n<p>הפקודות מתבצעות לפי הסדר, אחת אחרי השנייה. כותבים טבלה עם עמודה לכל אוגר ושורה לכל פקודה, ובכל שורה מעדכנים רק את אוגר היעד.</p>\n<div class=\"lesson-ex\">דוגמה:\n<pre>addi &#36;4,&#36;0,6\naddi &#36;5,&#36;0,2\nsub  &#36;6,&#36;4,&#36;5\nadd  &#36;4,&#36;4,&#36;6</pre>\nאחרי השורות: &#36;4=6, &#36;5=2, &#36;6=4, ובשורה האחרונה &#36;4 = 6 + 4 = 10.</div>\n<div class=\"lesson-trap\">⚠️ פקודה כמו <code>add &#36;4,&#36;4,&#36;5</code> קוראת את &#36;4 הישן ורק אחר כך כותבת. אין \"מקביליות\" בין שורות: כל שורה רואה את התוצאה של קודמותיה.</div>"
+    },
+    "questions": [
+     {
+      "id": "C01-Q1",
+      "question": "מה ערך \\$6 בסוף הקטע?\n```asm\naddi $4,$0,9\naddi $5,$0,4\nsub $6,$4,$5\nadd $6,$6,$6\n```",
+      "options": [
+       {
+        "id": "a",
+        "value": "5",
+        "type": "text",
+        "html": "5"
+       },
+       {
+        "id": "b",
+        "value": "13",
+        "type": "text",
+        "html": "13"
+       },
+       {
+        "id": "c",
+        "value": "10",
+        "type": "text",
+        "html": "10"
+       },
+       {
+        "id": "d",
+        "value": "18",
+        "type": "text",
+        "html": "18"
+       }
+      ],
+      "correctId": "c",
+      "explanation": "אחרי `sub` מתקבל \\$6 = 9 - 4 = 5, ואז `add \\$6,\\$6,\\$6` מכפיל אותו ל-10. התשובה 5 היא הערך לפני ההכפלה, 13 הוא \\$4 + \\$5, ו-18 הוא 2 כפול \\$4.",
+      "recap": "קוראים שורה אחר שורה, וכל פקודה משתמשת בערכים העדכניים.",
+      "questionHtml": "מה ערך $6 בסוף הקטע?<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>addi $4,$0,9\naddi $5,$0,4\nsub $6,$4,$5\nadd $6,$6,$6</code></pre>",
+      "explanationHtml": "אחרי <code class=\"tok\" dir=\"ltr\">sub</code> מתקבל $6 = 9 - 4 = 5, ואז <code class=\"tok\" dir=\"ltr\">add $6,$6,$6</code> מכפיל אותו ל-10. התשובה 5 היא הערך לפני ההכפלה, 13 הוא $4 + $5, ו-18 הוא 2 כפול $4.",
+      "recapHtml": "קוראים שורה אחר שורה, וכל פקודה משתמשת בערכים העדכניים."
+     },
+     {
+      "id": "C01-Q2",
+      "question": "מה ערך \\$5 בסוף הקטע?\n```asm\naddi $0,$0,5\naddi $4,$0,3\nadd $5,$4,$0\n```",
+      "options": [
+       {
+        "id": "a",
+        "value": "3",
+        "type": "text",
+        "html": "3"
+       },
+       {
+        "id": "b",
+        "value": "8",
+        "type": "text",
+        "html": "8"
+       },
+       {
+        "id": "c",
+        "value": "13",
+        "type": "text",
+        "html": "13"
+       },
+       {
+        "id": "d",
+        "value": "5",
+        "type": "text",
+        "html": "5"
+       }
+      ],
+      "correctId": "a",
+      "explanation": "הכתיבה לאוגר \\$0 נזרקת, ו-\\$0 נשאר 0. לכן \\$4 = 0 + 3 = 3 ו-\\$5 = 3 + 0 = 3. התשובות 8 ו-13 נובעות מההנחה השגויה ש-\\$0 הפך ל-5.",
+      "recap": "אוגר \\$0 תמיד 0, כתיבה אליו לא משנה.",
+      "questionHtml": "מה ערך $5 בסוף הקטע?<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>addi $0,$0,5\naddi $4,$0,3\nadd $5,$4,$0</code></pre>",
+      "explanationHtml": "הכתיבה לאוגר $0 נזרקת, ו-$0 נשאר 0. לכן $4 = 0 + 3 = 3 ו-$5 = 3 + 0 = 3. התשובות 8 ו-13 נובעות מההנחה השגויה ש-$0 הפך ל-5.",
+      "recapHtml": "אוגר $0 תמיד 0, כתיבה אליו לא משנה."
+     },
+     {
+      "id": "C01-Q3",
+      "question": "בהתחלה \\$4 = 6 ו-\\$5 = 2. מה הערכים בסוף הקטע?\n```asm\nadd $4,$4,$5\nsub $5,$4,$5\nsub $4,$4,$5\n```",
+      "options": [
+       {
+        "id": "a",
+        "value": "\\$4=6, \\$5=2",
+        "type": "text",
+        "html": "$4=6, $5=2"
+       },
+       {
+        "id": "b",
+        "value": "\\$4=8, \\$5=6",
+        "type": "text",
+        "html": "$4=8, $5=6"
+       },
+       {
+        "id": "c",
+        "value": "\\$4=2, \\$5=8",
+        "type": "text",
+        "html": "$4=2, $5=8"
+       },
+       {
+        "id": "d",
+        "value": "\\$4=2, \\$5=6",
+        "type": "text",
+        "html": "$4=2, $5=6"
+       }
+      ],
+      "correctId": "d",
+      "explanation": "אחרי השורה הראשונה \\$4 = 8. אחריה \\$5 = 8 - 2 = 6. בשורה האחרונה \\$4 = 8 - 6 = 2. הקטע מחליף בין שני האוגרים. 6 ו-2 הם הערכים המקוריים (בלי לבצע את הקטע), והשאר שגיאות בעדכון באמצע.",
+      "recap": "כל פקודה רואה את הערכים שהפקודות שלפניה כבר שינו.",
+      "questionHtml": "בהתחלה $4 = 6 ו-$5 = 2. מה הערכים בסוף הקטע?<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>add $4,$4,$5\nsub $5,$4,$5\nsub $4,$4,$5</code></pre>",
+      "explanationHtml": "אחרי השורה הראשונה $4 = 8. אחריה $5 = 8 - 2 = 6. בשורה האחרונה $4 = 8 - 6 = 2. הקטע מחליף בין שני האוגרים. 6 ו-2 הם הערכים המקוריים (בלי לבצע את הקטע), והשאר שגיאות בעדכון באמצע.",
+      "recapHtml": "כל פקודה רואה את הערכים שהפקודות שלפניה כבר שינו."
+     },
+     {
+      "id": "C01-Q4",
+      "question": "בהתחלה \\$4 = 10. מה ערך \\$5 בסוף הקטע?\n```asm\nadd $6,$4,$0\naddi $4,$4,1\nadd $5,$6,$4\n```",
+      "options": [
+       {
+        "id": "a",
+        "value": "22",
+        "type": "text",
+        "html": "22"
+       },
+       {
+        "id": "b",
+        "value": "21",
+        "type": "text",
+        "html": "21"
+       },
+       {
+        "id": "c",
+        "value": "20",
+        "type": "text",
+        "html": "20"
+       },
+       {
+        "id": "d",
+        "value": "11",
+        "type": "text",
+        "html": "11"
+       }
+      ],
+      "correctId": "b",
+      "explanation": "\\$6 הוא עותק של \\$4 לפני השינוי, כלומר 10. אחר כך \\$4 = 11, ולכן \\$5 = 10 + 11 = 21. התשובה 22 מניחה ש-\\$6 גם הוא 11, והתשובה 20 מניחה ש-\\$4 לא השתנה.",
+      "recap": "העתקה עם \\$0 שומרת את הערך הישן.",
+      "questionHtml": "בהתחלה $4 = 10. מה ערך $5 בסוף הקטע?<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>add $6,$4,$0\naddi $4,$4,1\nadd $5,$6,$4</code></pre>",
+      "explanationHtml": "$6 הוא עותק של $4 לפני השינוי, כלומר 10. אחר כך $4 = 11, ולכן $5 = 10 + 11 = 21. התשובה 22 מניחה ש-$6 גם הוא 11, והתשובה 20 מניחה ש-$4 לא השתנה.",
+      "recapHtml": "העתקה עם $0 שומרת את הערך הישן."
+     },
+     {
+      "id": "C01-Q5",
+      "question": "מה ערך \\$6 בסוף הקטע?\n```asm\naddi $4,$0,-3\nadd $5,$4,$4\nsub $6,$5,$4\n```",
+      "options": [
+       {
+        "id": "a",
+        "value": "3",
+        "type": "text",
+        "html": "3"
+       },
+       {
+        "id": "b",
+        "value": "-9",
+        "type": "text",
+        "html": "-9"
+       },
+       {
+        "id": "c",
+        "value": "-3",
+        "type": "text",
+        "html": "-3"
+       },
+       {
+        "id": "d",
+        "value": "-6",
+        "type": "text",
+        "html": "-6"
+       }
+      ],
+      "correctId": "c",
+      "explanation": "\\$4 = -3, \\$5 = -6, ואז \\$6 = -6 - (-3) = -3. התשובה -9 מתקבלת מחיבור במקום חיסור, ו-3 היא שגיאת סימן.",
+      "recap": "קבוע ב-addi יכול להיות שלילי.",
+      "questionHtml": "מה ערך $6 בסוף הקטע?<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>addi $4,$0,-3\nadd $5,$4,$4\nsub $6,$5,$4</code></pre>",
+      "explanationHtml": "$4 = -3, $5 = -6, ואז $6 = -6 - (-3) = -3. התשובה -9 מתקבלת מחיבור במקום חיסור, ו-3 היא שגיאת סימן.",
+      "recapHtml": "קבוע ב-addi יכול להיות שלילי."
+     }
+    ]
+   },
+   {
+    "id": "C02",
+    "order": 2,
+    "icon": "✖️",
+    "title": "חשבון בלי פקודת כפל",
+    "goal": "אחרי השלב הזה אפשר לתרגם ביטוי כמו a = 3*a - 2*b לפקודות add ו-sub, בלי לשנות את b.",
+    "source": "ai-verified",
+    "boss": false,
+    "lesson": {
+     "html": "<p>בפקודות של הקורס אין כפל ואין הזזה. את הכפל ב-2 עושים בחיבור עצמי: <code>add &#36;4,&#36;4,&#36;4</code> נותן &#36;4 = 2 כפול &#36;4.</p>\n<h3>מתכון</h3>\n<ul><li>n הכפלות עצמיות ברצף נותנות פי <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">2^n</annotation></semantics></math></span>: פעמיים - פי 4, שלוש פעמים - פי 8.</li>\n<li>מקדם אחר מפרקים לסכום: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>3</mn><mi>a</mi><mo>=</mo><mn>2</mn><mi>a</mi><mo>+</mo><mi>a</mi></mrow><annotation encoding=\"application/x-tex\">3a = 2a + a</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>5</mn><mi>a</mi><mo>=</mo><mn>4</mn><mi>a</mi><mo>+</mo><mi>a</mi></mrow><annotation encoding=\"application/x-tex\">5a = 4a + a</annotation></semantics></math></span>.</li>\n<li>כשצריך כפולה של b בלי לשנות אותו, מחשבים אותה באוגר עזר: <code>add &#36;1,&#36;5,&#36;5</code> נותן &#36;1 = 2b ו-&#36;5 לא משתנה.</li>\n<li>הכפלה חלה על כל מה שכבר חושב עד אותו רגע, ולכן סדר הפקודות משנה את התוצאה.</li></ul>\n<div class=\"lesson-ex\">דוגמה: <code>a = 3*a - b</code> כש-a ב-&#36;4 ו-b ב-&#36;5:\n<pre>add &#36;1,&#36;4,&#36;4    # &#36;1 = 2a\nadd &#36;4,&#36;4,&#36;1    # a = 3a\nsub &#36;4,&#36;4,&#36;5    # a = 3a - b</pre></div>\n<div class=\"lesson-trap\">⚠️ <code>add &#36;5,&#36;5,&#36;5</code> משנה את b עצמו. בשאלות \"תרגום שגוי\" זו בדיוק הטעות: הערך של a נכון, אבל b נהרס.</div>"
+    },
+    "questions": [
+     {
+      "id": "C02-Q1",
+      "question": "אוגר \\$4 מחזיק את a. איזה קטע מחשב `a = 4*a`?",
+      "options": [
+       {
+        "id": "a",
+        "value": "```asm\nadd $4,$4,$4\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>add $4,$4,$4</code></pre>"
+       },
+       {
+        "id": "b",
+        "value": "```asm\nadd $4,$4,$4\nadd $4,$4,$4\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>add $4,$4,$4\nadd $4,$4,$4</code></pre>"
+       },
+       {
+        "id": "c",
+        "value": "```asm\nadd $4,$4,$4\nadd $4,$4,$4\nadd $4,$4,$4\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>add $4,$4,$4\nadd $4,$4,$4\nadd $4,$4,$4</code></pre>"
+       },
+       {
+        "id": "d",
+        "value": "```asm\nadd $4,$4,$5\nadd $4,$4,$5\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>add $4,$4,$5\nadd $4,$4,$5</code></pre>"
+       }
+      ],
+      "correctId": "b",
+      "explanation": "הכפלה כפולה: a -> 2a -> 4a. קטע עם הכפלה אחת נותן רק 2a, שלוש הכפלות נותנות 8a, והחיבור עם \\$5 מוסיף את b ולא מכפיל.",
+      "recap": "n הכפלות עצמיות נותנות פי $2^n$.",
+      "questionHtml": "אוגר $4 מחזיק את a. איזה קטע מחשב <code class=\"tok\" dir=\"ltr\">a = 4*a</code>?",
+      "explanationHtml": "הכפלה כפולה: a -&gt; 2a -&gt; 4a. קטע עם הכפלה אחת נותן רק 2a, שלוש הכפלות נותנות 8a, והחיבור עם $5 מוסיף את b ולא מכפיל.",
+      "recapHtml": "n הכפלות עצמיות נותנות פי <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">2^n</annotation></semantics></math></span>."
+     },
+     {
+      "id": "C02-Q2",
+      "question": "\\$4 הוא a ו-\\$5 הוא b. איזה קטע מחשב `a = 2*a + b` ומשאיר את b ללא שינוי?",
+      "options": [
+       {
+        "id": "a",
+        "value": "```asm\nadd $4,$4,$5\nadd $4,$4,$4\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>add $4,$4,$5\nadd $4,$4,$4</code></pre>"
+       },
+       {
+        "id": "b",
+        "value": "```asm\nadd $5,$5,$4\nadd $4,$4,$5\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>add $5,$5,$4\nadd $4,$4,$5</code></pre>"
+       },
+       {
+        "id": "c",
+        "value": "```asm\nadd $4,$4,$4\nsub $4,$4,$5\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>add $4,$4,$4\nsub $4,$4,$5</code></pre>"
+       },
+       {
+        "id": "d",
+        "value": "```asm\nadd $4,$4,$4\nadd $4,$4,$5\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>add $4,$4,$4\nadd $4,$4,$5</code></pre>"
+       }
+      ],
+      "correctId": "d",
+      "explanation": "קודם מכפילים את a ורק אחר כך מוסיפים את b. בסדר ההפוך מתקבל 2a + 2b, כי ההכפלה חלה גם על b שנוסף. הקטע השלישי משנה את b, והאחרון מחסר את b במקום לחבר.",
+      "recap": "אם מכפילים אחרי הפעולה, מכפילים גם את מה שכבר נוסף.",
+      "questionHtml": "$4 הוא a ו-$5 הוא b. איזה קטע מחשב <code class=\"tok\" dir=\"ltr\">a = 2*a + b</code> ומשאיר את b ללא שינוי?",
+      "explanationHtml": "קודם מכפילים את a ורק אחר כך מוסיפים את b. בסדר ההפוך מתקבל 2a + 2b, כי ההכפלה חלה גם על b שנוסף. הקטע השלישי משנה את b, והאחרון מחסר את b במקום לחבר.",
+      "recapHtml": "אם מכפילים אחרי הפעולה, מכפילים גם את מה שכבר נוסף."
+     },
+     {
+      "id": "C02-Q3",
+      "question": "\\$4 הוא a ו-\\$5 הוא b, ומותר להשתמש ב-\\$1 כאוגר עזר. איזה קטע מחשב `a = 3*a - b` ומשאיר את b?",
+      "options": [
+       {
+        "id": "a",
+        "value": "```asm\nadd $1,$4,$4\nadd $4,$4,$1\nsub $4,$4,$5\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>add $1,$4,$4\nadd $4,$4,$1\nsub $4,$4,$5</code></pre>"
+       },
+       {
+        "id": "b",
+        "value": "```asm\nadd $1,$4,$4\nadd $4,$4,$1\nadd $4,$4,$5\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>add $1,$4,$4\nadd $4,$4,$1\nadd $4,$4,$5</code></pre>"
+       },
+       {
+        "id": "c",
+        "value": "```asm\nadd $4,$4,$4\nsub $4,$4,$5\nadd $4,$4,$4\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>add $4,$4,$4\nsub $4,$4,$5\nadd $4,$4,$4</code></pre>"
+       },
+       {
+        "id": "d",
+        "value": "```asm\nadd $4,$4,$4\nadd $4,$4,$4\nsub $4,$4,$5\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>add $4,$4,$4\nadd $4,$4,$4\nsub $4,$4,$5</code></pre>"
+       }
+      ],
+      "correctId": "a",
+      "explanation": "\\$1 = 2a, אחר כך a + 2a = 3a, ולבסוף מחסרים b. הקטע השני מוסיף את b במקום לחסר (3a + b). בשלישי מתקבל 2(2a - b) = 4a - 2b, וברביעי 4a - b.",
+      "recap": "פירוק המקדם לסכום של כפולות של 2 ושימוש ב-\\$1 לשמירת ביניים.",
+      "questionHtml": "$4 הוא a ו-$5 הוא b, ומותר להשתמש ב-$1 כאוגר עזר. איזה קטע מחשב <code class=\"tok\" dir=\"ltr\">a = 3*a - b</code> ומשאיר את b?",
+      "explanationHtml": "$1 = 2a, אחר כך a + 2a = 3a, ולבסוף מחסרים b. הקטע השני מוסיף את b במקום לחסר (3a + b). בשלישי מתקבל 2(2a - b) = 4a - 2b, וברביעי 4a - b.",
+      "recapHtml": "פירוק המקדם לסכום של כפולות של 2 ושימוש ב-$1 לשמירת ביניים."
+     },
+     {
+      "id": "C02-Q4",
+      "question": "\\$4 הוא a ו-\\$5 הוא b, ומותר להשתמש ב-\\$1. איזה קטע הוא תרגום **שגוי** של `a = 2*a - 2*b`?",
+      "options": [
+       {
+        "id": "a",
+        "value": "```asm\nsub $4,$4,$5\nadd $4,$4,$4\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>sub $4,$4,$5\nadd $4,$4,$4</code></pre>"
+       },
+       {
+        "id": "b",
+        "value": "```asm\nadd $1,$5,$5\nadd $4,$4,$4\nsub $4,$4,$1\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>add $1,$5,$5\nadd $4,$4,$4\nsub $4,$4,$1</code></pre>"
+       },
+       {
+        "id": "c",
+        "value": "```asm\nadd $4,$4,$4\nadd $5,$5,$5\nsub $4,$4,$5\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>add $4,$4,$4\nadd $5,$5,$5\nsub $4,$4,$5</code></pre>"
+       },
+       {
+        "id": "d",
+        "value": "```asm\nadd $4,$4,$4\nsub $4,$4,$5\nsub $4,$4,$5\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>add $4,$4,$4\nsub $4,$4,$5\nsub $4,$4,$5</code></pre>"
+       }
+      ],
+      "correctId": "c",
+      "explanation": "בקטע הראשון a מקבל את הערך הנכון 2a - 2b, אבל `add \\$5,\\$5,\\$5` משנה את b עצמו, ולכן התרגום שגוי כשצריך לשמור על b. בשאר הקטעים b לא נכתב: $2(a-b)$, או 2b ב-\\$1, או $2a-b-b$.",
+      "recap": "כתיבה לאוגר של b הורסת את b גם אם הערך של a יצא נכון.",
+      "questionHtml": "$4 הוא a ו-$5 הוא b, ומותר להשתמש ב-$1. איזה קטע הוא תרגום <strong>שגוי</strong> של <code class=\"tok\" dir=\"ltr\">a = 2*a - 2*b</code>?",
+      "explanationHtml": "בקטע הראשון a מקבל את הערך הנכון 2a - 2b, אבל <code class=\"tok\" dir=\"ltr\">add $5,$5,$5</code> משנה את b עצמו, ולכן התרגום שגוי כשצריך לשמור על b. בשאר הקטעים b לא נכתב: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><mo stretchy=\"false\">(</mo><mi>a</mi><mo>−</mo><mi>b</mi><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">2(a-b)</annotation></semantics></math></span>, או 2b ב-$1, או <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><mi>a</mi><mo>−</mo><mi>b</mi><mo>−</mo><mi>b</mi></mrow><annotation encoding=\"application/x-tex\">2a-b-b</annotation></semantics></math></span>.",
+      "recapHtml": "כתיבה לאוגר של b הורסת את b גם אם הערך של a יצא נכון."
+     },
+     {
+      "id": "C02-Q5",
+      "question": "\\$4 הוא a. איזה קטע מחשב `a = 5*a`? מותר להשתמש ב-\\$1.",
+      "options": [
+       {
+        "id": "a",
+        "value": "```asm\nadd $4,$4,$4\nadd $4,$4,$4\nadd $4,$4,$4\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>add $4,$4,$4\nadd $4,$4,$4\nadd $4,$4,$4</code></pre>"
+       },
+       {
+        "id": "b",
+        "value": "```asm\nadd $1,$4,$4\nadd $4,$1,$1\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>add $1,$4,$4\nadd $4,$1,$1</code></pre>"
+       },
+       {
+        "id": "c",
+        "value": "```asm\nadd $1,$4,$4\nadd $1,$1,$1\nadd $4,$4,$1\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>add $1,$4,$4\nadd $1,$1,$1\nadd $4,$4,$1</code></pre>"
+       },
+       {
+        "id": "d",
+        "value": "```asm\nadd $1,$4,$4\nadd $4,$4,$1\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>add $1,$4,$4\nadd $4,$4,$1</code></pre>"
+       }
+      ],
+      "correctId": "c",
+      "explanation": "$5a = 4a + a$: \\$1 הופך ל-2a ואז ל-4a, ומוסיפים את a המקורי. הקטע השני נותן 8a, השלישי נותן 4a (שוכח להוסיף a), והאחרון נותן 3a.",
+      "recap": "$5a = 4a + a$, ומחשבים את 4a בעזרת אוגר עזר.",
+      "questionHtml": "$4 הוא a. איזה קטע מחשב <code class=\"tok\" dir=\"ltr\">a = 5*a</code>? מותר להשתמש ב-$1.",
+      "explanationHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>5</mn><mi>a</mi><mo>=</mo><mn>4</mn><mi>a</mi><mo>+</mo><mi>a</mi></mrow><annotation encoding=\"application/x-tex\">5a = 4a + a</annotation></semantics></math></span>: $1 הופך ל-2a ואז ל-4a, ומוסיפים את a המקורי. הקטע השני נותן 8a, השלישי נותן 4a (שוכח להוסיף a), והאחרון נותן 3a.",
+      "recapHtml": "<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>5</mn><mi>a</mi><mo>=</mo><mn>4</mn><mi>a</mi><mo>+</mo><mi>a</mi></mrow><annotation encoding=\"application/x-tex\">5a = 4a + a</annotation></semantics></math></span>, ומחשבים את 4a בעזרת אוגר עזר."
+     },
+     {
+      "bankId": "24S-A-Q10",
+      "recap": "מכפילים לפי הצורך ושומרים את b בלי כתיבה אליו.",
+      "recapHtml": "מכפילים לפי הצורך ושומרים את b בלי כתיבה אליו."
+     }
+    ]
+   },
+   {
+    "id": "C03",
+    "order": 3,
+    "icon": "🔀",
+    "title": "השוואה והסתעפות: slt, beq, bne, j",
+    "goal": "אחרי השלב הזה אפשר לעקוב אחרי קטע עם קפיצות ולדעת אילו שורות מתבצעות.",
+    "source": "ai-verified",
+    "boss": false,
+    "lesson": {
+     "html": "<table><thead><tr><th>פקודה</th><th>משמעות</th></tr></thead><tbody>\n<tr><td><code>slt &#36;d,&#36;s,&#36;t</code></td><td>&#36;d = 1 אם &#36;s &lt; &#36;t (עם סימן), אחרת 0</td></tr>\n<tr><td><code>beq &#36;s,&#36;t,L</code></td><td>אם &#36;s = &#36;t ממשיכים מהתווית L</td></tr>\n<tr><td><code>bne &#36;s,&#36;t,L</code></td><td>אם &#36;s &ne; &#36;t ממשיכים מהתווית L</td></tr>\n<tr><td><code>j L</code></td><td>קופצים תמיד אל L</td></tr></tbody></table>\n<p>תווית (למשל <code>L:</code> או <code>end:</code>) היא שם של שורה. הסתעפות שלא מתקיימת פשוט ממשיכה לשורה הבאה. קפיצה בלתי מותנית אפשר לכתוב גם <code>beq &#36;0,&#36;0,L</code>, כי &#36;0 שווה לעצמו תמיד.</p>\n<div class=\"lesson-rule\">🔑 את התנאי \"a &lt; b\" בודקים בשני שלבים: <code>slt &#36;1,a,b</code> ואז הסתעפות לפי &#36;1. כש-&#36;1 = 0 המשמעות היא \"לא קטן\", כלומר גדול או שווה.</div>\n<h3>איך עוקבים</h3>\n<p>מסמנים שורה נוכחית ומבצעים אותה. אם זו הסתעפות שהתקיימה, עוברים לשורת התווית, ואחרת לשורה הבאה. סופרים כל ביצוע של שורה.</p>\n<div class=\"lesson-ex\">דוגמה:\n<pre>addi &#36;4,&#36;0,0\nbeq  &#36;4,&#36;0,L    # מתקיימת\naddi &#36;5,&#36;0,1    # מדולגת\nL: addi &#36;6,&#36;0,9</pre>\nמתבצעות 3 פקודות, &#36;5 נשאר 0 ו-&#36;6 = 9.</div>\n<div class=\"lesson-trap\">⚠️ <code>slt</code> נותן 0 גם כשהערכים שווים, והוא מחשיב מספרים שליליים כקטנים ממספרים חיוביים.</div>"
+    },
+    "questions": [
+     {
+      "id": "C03-Q1",
+      "question": "מה ערכי \\$6 ו-\\$7 בסוף הקטע?\n```asm\naddi $4,$0,-2\naddi $5,$0,3\nslt $6,$4,$5\nslt $7,$5,$4\n```",
+      "options": [
+       {
+        "id": "a",
+        "value": "\\$6=0, \\$7=1",
+        "type": "text",
+        "html": "$6=0, $7=1"
+       },
+       {
+        "id": "b",
+        "value": "\\$6=1, \\$7=1",
+        "type": "text",
+        "html": "$6=1, $7=1"
+       },
+       {
+        "id": "c",
+        "value": "\\$6=1, \\$7=0",
+        "type": "text",
+        "html": "$6=1, $7=0"
+       },
+       {
+        "id": "d",
+        "value": "\\$6=0, \\$7=0",
+        "type": "text",
+        "html": "$6=0, $7=0"
+       }
+      ],
+      "correctId": "c",
+      "explanation": "`slt` משווה עם סימן: -2 < 3, ולכן \\$6 = 1, ו-3 < -2 לא נכון ולכן \\$7 = 0. התשובה השנייה מתקבלת אם מתייחסים ל-(-2) כאל מספר גדול חסר סימן.",
+      "recap": "slt נותן 1 כשהאוגר הראשון קטן מהשני, בהשוואה עם סימן.",
+      "questionHtml": "מה ערכי $6 ו-$7 בסוף הקטע?<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>addi $4,$0,-2\naddi $5,$0,3\nslt $6,$4,$5\nslt $7,$5,$4</code></pre>",
+      "explanationHtml": "<code class=\"tok\" dir=\"ltr\">slt</code> משווה עם סימן: -2 &lt; 3, ולכן $6 = 1, ו-3 &lt; -2 לא נכון ולכן $7 = 0. התשובה השנייה מתקבלת אם מתייחסים ל-(-2) כאל מספר גדול חסר סימן.",
+      "recapHtml": "slt נותן 1 כשהאוגר הראשון קטן מהשני, בהשוואה עם סימן."
+     },
+     {
+      "id": "C03-Q2",
+      "question": "מה ערך \\$6 בסוף הקטע?\n```asm\naddi $4,$0,5\naddi $5,$0,5\nbeq $4,$5,L\naddi $6,$0,1\nL: addi $6,$6,10\n```",
+      "options": [
+       {
+        "id": "a",
+        "value": "11",
+        "type": "text",
+        "html": "11"
+       },
+       {
+        "id": "b",
+        "value": "10",
+        "type": "text",
+        "html": "10"
+       },
+       {
+        "id": "c",
+        "value": "1",
+        "type": "text",
+        "html": "1"
+       },
+       {
+        "id": "d",
+        "value": "0",
+        "type": "text",
+        "html": "0"
+       }
+      ],
+      "correctId": "b",
+      "explanation": "\\$4 = \\$5, ולכן `beq` מתקיימת וקופצת אל L. השורה `addi \\$6,\\$0,1` מדולגת, \\$6 נשאר 0 ואז מקבל 10. התשובה 11 מניחה שהשורה בוצעה.",
+      "recap": "הסתעפות שמתקיימת מדלגת על השורות שבינה לבין התווית.",
+      "questionHtml": "מה ערך $6 בסוף הקטע?<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>addi $4,$0,5\naddi $5,$0,5\nbeq $4,$5,L\naddi $6,$0,1\nL: addi $6,$6,10</code></pre>",
+      "explanationHtml": "$4 = $5, ולכן <code class=\"tok\" dir=\"ltr\">beq</code> מתקיימת וקופצת אל L. השורה <code class=\"tok\" dir=\"ltr\">addi $6,$0,1</code> מדולגת, $6 נשאר 0 ואז מקבל 10. התשובה 11 מניחה שהשורה בוצעה.",
+      "recapHtml": "הסתעפות שמתקיימת מדלגת על השורות שבינה לבין התווית."
+     },
+     {
+      "id": "C03-Q3",
+      "question": "מה ערך \\$6 בסוף הקטע?\n```asm\naddi $4,$0,3\naddi $5,$0,8\nslt $1,$4,$5\nbne $1,$0,yes\naddi $6,$0,100\nj end\nyes: addi $6,$0,200\nend:\n```",
+      "options": [
+       {
+        "id": "a",
+        "value": "100",
+        "type": "text",
+        "html": "100"
+       },
+       {
+        "id": "b",
+        "value": "300",
+        "type": "text",
+        "html": "300"
+       },
+       {
+        "id": "c",
+        "value": "0",
+        "type": "text",
+        "html": "0"
+       },
+       {
+        "id": "d",
+        "value": "200",
+        "type": "text",
+        "html": "200"
+       }
+      ],
+      "correctId": "d",
+      "explanation": "3 < 8, לכן \\$1 = 1 ו-`bne` קופצת אל yes, שם \\$6 = 200. השורות `addi \\$6,\\$0,100` ו-`j end` לא מתבצעות. 300 הוא סכום של שני המסלולים, שאי אפשר לעבור בשניהם.",
+      "recap": "bne קופצת כשהאוגרים שונים, כלומר כש-\\$1 אינו 0.",
+      "questionHtml": "מה ערך $6 בסוף הקטע?<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>addi $4,$0,3\naddi $5,$0,8\nslt $1,$4,$5\nbne $1,$0,yes\naddi $6,$0,100\nj end\nyes: addi $6,$0,200\nend:</code></pre>",
+      "explanationHtml": "3 &lt; 8, לכן $1 = 1 ו-<code class=\"tok\" dir=\"ltr\">bne</code> קופצת אל yes, שם $6 = 200. השורות <code class=\"tok\" dir=\"ltr\">addi $6,$0,100</code> ו-<code class=\"tok\" dir=\"ltr\">j end</code> לא מתבצעות. 300 הוא סכום של שני המסלולים, שאי אפשר לעבור בשניהם.",
+      "recapHtml": "bne קופצת כשהאוגרים שונים, כלומר כש-$1 אינו 0."
+     },
+     {
+      "id": "C03-Q4",
+      "question": "כמה פקודות מתבצעות בפועל (לא כמה שורות יש בקטע)?\n```asm\naddi $4,$0,0\nbeq $4,$0,L\naddi $5,$0,1\naddi $5,$5,1\naddi $5,$5,1\nL: addi $6,$0,9\n```",
+      "options": [
+       {
+        "id": "a",
+        "value": "3",
+        "type": "text",
+        "html": "3"
+       },
+       {
+        "id": "b",
+        "value": "4",
+        "type": "text",
+        "html": "4"
+       },
+       {
+        "id": "c",
+        "value": "5",
+        "type": "text",
+        "html": "5"
+       },
+       {
+        "id": "d",
+        "value": "6",
+        "type": "text",
+        "html": "6"
+       }
+      ],
+      "correctId": "a",
+      "explanation": "מתבצעות `addi \\$4`, אחר כך `beq` שמתקיימת וקופצת, ואז `addi \\$6` בתווית L. שלוש השורות באמצע מדולגות. 6 הוא מספר השורות בקטע.",
+      "recap": "סופרים רק שורות שבאמת הורצו.",
+      "questionHtml": "כמה פקודות מתבצעות בפועל (לא כמה שורות יש בקטע)?<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>addi $4,$0,0\nbeq $4,$0,L\naddi $5,$0,1\naddi $5,$5,1\naddi $5,$5,1\nL: addi $6,$0,9</code></pre>",
+      "explanationHtml": "מתבצעות <code class=\"tok\" dir=\"ltr\">addi $4</code>, אחר כך <code class=\"tok\" dir=\"ltr\">beq</code> שמתקיימת וקופצת, ואז <code class=\"tok\" dir=\"ltr\">addi $6</code> בתווית L. שלוש השורות באמצע מדולגות. 6 הוא מספר השורות בקטע.",
+      "recapHtml": "סופרים רק שורות שבאמת הורצו."
+     },
+     {
+      "id": "C03-Q5",
+      "question": "מה ערך \\$7 בסוף הקטע?\n```asm\naddi $4,$0,5\naddi $5,$0,5\nslt $6,$4,$5\nbeq $6,$0,L\naddi $7,$0,1\nL: addi $7,$7,2\n```",
+      "options": [
+       {
+        "id": "a",
+        "value": "3",
+        "type": "text",
+        "html": "3"
+       },
+       {
+        "id": "b",
+        "value": "2",
+        "type": "text",
+        "html": "2"
+       },
+       {
+        "id": "c",
+        "value": "1",
+        "type": "text",
+        "html": "1"
+       },
+       {
+        "id": "d",
+        "value": "0",
+        "type": "text",
+        "html": "0"
+       }
+      ],
+      "correctId": "b",
+      "explanation": "5 אינו קטן מ-5, ולכן \\$6 = 0. אז `beq \\$6,\\$0,L` מתקיימת (שני האוגרים 0), השורה עם `addi \\$7,\\$0,1` מדולגת ו-\\$7 = 0 + 2 = 2. התשובה 3 מניחה ש-slt נותן 1 גם בשוויון.",
+      "recap": "slt הוא מחמיר: בשוויון התוצאה 0, ו-beq עם \\$0 קופצת.",
+      "questionHtml": "מה ערך $7 בסוף הקטע?<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>addi $4,$0,5\naddi $5,$0,5\nslt $6,$4,$5\nbeq $6,$0,L\naddi $7,$0,1\nL: addi $7,$7,2</code></pre>",
+      "explanationHtml": "5 אינו קטן מ-5, ולכן $6 = 0. אז <code class=\"tok\" dir=\"ltr\">beq $6,$0,L</code> מתקיימת (שני האוגרים 0), השורה עם <code class=\"tok\" dir=\"ltr\">addi $7,$0,1</code> מדולגת ו-$7 = 0 + 2 = 2. התשובה 3 מניחה ש-slt נותן 1 גם בשוויון.",
+      "recapHtml": "slt הוא מחמיר: בשוויון התוצאה 0, ו-beq עם $0 קופצת."
+     }
+    ]
+   },
+   {
+    "id": "C04",
+    "order": 4,
+    "icon": "🌿",
+    "title": "if ו-else בין C לאסמבלי",
+    "goal": "אחרי השלב הזה אפשר לתרגם if ו-if/else מ-C לאסמבלי ובחזרה.",
+    "source": "ai-verified",
+    "boss": false,
+    "lesson": {
+     "html": "<table><thead><tr><th>תנאי ב-C</th><th>בדיקה</th><th>קופצים לדלג כש...</th></tr></thead><tbody>\n<tr><td>a &lt; b</td><td><code>slt &#36;1,a,b</code></td><td>&#36;1 = 0 (<code>beq</code>)</td></tr>\n<tr><td>a &gt; b</td><td><code>slt &#36;1,b,a</code></td><td>&#36;1 = 0 (<code>beq</code>)</td></tr>\n<tr><td>a &ge; b</td><td><code>slt &#36;1,a,b</code></td><td>&#36;1 = 1 (<code>bne</code>)</td></tr>\n<tr><td>a &le; b</td><td><code>slt &#36;1,b,a</code></td><td>&#36;1 = 1 (<code>bne</code>)</td></tr>\n<tr><td>a == b</td><td>ישירות</td><td><code>bne a,b,skip</code></td></tr>\n<tr><td>a != b</td><td>ישירות</td><td><code>beq a,b,skip</code></td></tr></tbody></table>\n<div class=\"lesson-rule\">🔑 ההסתעפות קופצת מעל הגוף כשהתנאי לא מתקיים. לכן היא תמיד ההפוכה לתנאי שכתוב ב-C.</div>\n<p>מבנה של if/else:</p>\n<pre>    (בדיקה, קפיצה אל else כשהתנאי לא מתקיים)\n    (then)\n    beq &#36;0,&#36;0,end\nelse: (else)\nend:</pre>\n<div class=\"lesson-ex\">דוגמה: <code>if (a &gt; b) a = 0;</code> עם a ב-&#36;4 ו-b ב-&#36;5:\n<pre>slt &#36;1,&#36;5,&#36;4\nbeq &#36;1,&#36;0,end\nadd &#36;4,&#36;0,&#36;0\nend:</pre>\nכש-a = 2 ו-b = 2 מתקבל &#36;1 = 0, מדלגים ו-a נשאר 2. כש-a = 5 ו-b = 2, &#36;1 = 1 ו-a הופך ל-0.</div>\n<div class=\"lesson-trap\">⚠️ שוויון: a &ge; b ו-a &gt; b שונים רק כש-a = b, ולכן תמיד בודקים את מקרה השוויון. ואל תשכחו את ה-<code>beq &#36;0,&#36;0,end</code> בסוף ה-then, אחרת גם ה-else מתבצע.</div>\n<p>כשצריך לקרוא קוד אסמבלי ולחזור ל-C, ממפים את האוגרים למשתנים ומתרגמים את ההסתעפות ההפוכה בחזרה לתנאי.</p>"
+    },
+    "questions": [
+     {
+      "id": "C04-Q1",
+      "question": "a ב-\\$4 ו-b ב-\\$5. איזה קטע מתרגם את `if (a == b) a = a+b; else a = a-b;`?",
+      "options": [
+       {
+        "id": "a",
+        "value": "```asm\nbeq $4,$5,L1\nadd $4,$4,$5\nbeq $0,$0,end\nL1: sub $4,$4,$5\nend:\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>beq $4,$5,L1\nadd $4,$4,$5\nbeq $0,$0,end\nL1: sub $4,$4,$5\nend:</code></pre>"
+       },
+       {
+        "id": "b",
+        "value": "```asm\nbne $4,$5,L1\nadd $4,$4,$5\nL1: sub $4,$4,$5\nend:\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>bne $4,$5,L1\nadd $4,$4,$5\nL1: sub $4,$4,$5\nend:</code></pre>"
+       },
+       {
+        "id": "c",
+        "value": "```asm\nbne $4,$5,L1\nadd $4,$4,$5\nbeq $0,$0,end\nL1: sub $4,$4,$5\nend:\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>bne $4,$5,L1\nadd $4,$4,$5\nbeq $0,$0,end\nL1: sub $4,$4,$5\nend:</code></pre>"
+       },
+       {
+        "id": "d",
+        "value": "```asm\nbne $4,$5,L1\nsub $4,$4,$5\nbeq $0,$0,end\nL1: add $4,$4,$5\nend:\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>bne $4,$5,L1\nsub $4,$4,$5\nbeq $0,$0,end\nL1: add $4,$4,$5\nend:</code></pre>"
+       }
+      ],
+      "correctId": "c",
+      "explanation": "קופצים אל ה-else כשהתנאי לא מתקיים, כלומר `bne`. בסוף ה-then חייבים לדלג מעל ה-else (`beq \\$0,\\$0,end`). בקטע השני התנאי הפוך, בשלישי חסר הדילוג ולכן אחרי ה-then מתבצע גם ה-else, וברביעי ה-then וה-else הוחלפו.",
+      "recap": "קופצים אל ה-else בתנאי ההפוך, ובסוף ה-then מדלגים מעליו.",
+      "questionHtml": "a ב-$4 ו-b ב-$5. איזה קטע מתרגם את <code class=\"tok\" dir=\"ltr\">if (a == b) a = a+b; else a = a-b;</code>?",
+      "explanationHtml": "קופצים אל ה-else כשהתנאי לא מתקיים, כלומר <code class=\"tok\" dir=\"ltr\">bne</code>. בסוף ה-then חייבים לדלג מעל ה-else (<code class=\"tok\" dir=\"ltr\">beq $0,$0,end</code>). בקטע השני התנאי הפוך, בשלישי חסר הדילוג ולכן אחרי ה-then מתבצע גם ה-else, וברביעי ה-then וה-else הוחלפו.",
+      "recapHtml": "קופצים אל ה-else בתנאי ההפוך, ובסוף ה-then מדלגים מעליו."
+     },
+     {
+      "id": "C04-Q2",
+      "question": "a ב-\\$4 ו-b ב-\\$5. איזה קטע מתרגם את `if (a > b) a = 0;`?",
+      "options": [
+       {
+        "id": "a",
+        "value": "```asm\nslt $1,$5,$4\nbeq $1,$0,end\nadd $4,$0,$0\nend:\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>slt $1,$5,$4\nbeq $1,$0,end\nadd $4,$0,$0\nend:</code></pre>"
+       },
+       {
+        "id": "b",
+        "value": "```asm\nslt $1,$4,$5\nbeq $1,$0,end\nadd $4,$0,$0\nend:\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>slt $1,$4,$5\nbeq $1,$0,end\nadd $4,$0,$0\nend:</code></pre>"
+       },
+       {
+        "id": "c",
+        "value": "```asm\nslt $1,$5,$4\nbne $1,$0,end\nadd $4,$0,$0\nend:\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>slt $1,$5,$4\nbne $1,$0,end\nadd $4,$0,$0\nend:</code></pre>"
+       },
+       {
+        "id": "d",
+        "value": "```asm\nslt $1,$4,$5\nbne $1,$0,end\nadd $4,$0,$0\nend:\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>slt $1,$4,$5\nbne $1,$0,end\nadd $4,$0,$0\nend:</code></pre>"
+       }
+      ],
+      "correctId": "a",
+      "explanation": "a > b זה b < a, לכן `slt \\$1,\\$5,\\$4`. הגוף מבוצע כש-\\$1 = 1, ולכן מדלגים כש-\\$1 = 0 (`beq`). השני בודק a < b, השלישי מדלג בדיוק כשהתנאי מתקיים, והרביעי מבצע את הגוף גם בשוויון.",
+      "recap": "a > b הוא slt עם האוגרים מוחלפים, ומדלגים בהסתעפות ההפוכה.",
+      "questionHtml": "a ב-$4 ו-b ב-$5. איזה קטע מתרגם את <code class=\"tok\" dir=\"ltr\">if (a &gt; b) a = 0;</code>?",
+      "explanationHtml": "a &gt; b זה b &lt; a, לכן <code class=\"tok\" dir=\"ltr\">slt $1,$5,$4</code>. הגוף מבוצע כש-$1 = 1, ולכן מדלגים כש-$1 = 0 (<code class=\"tok\" dir=\"ltr\">beq</code>). השני בודק a &lt; b, השלישי מדלג בדיוק כשהתנאי מתקיים, והרביעי מבצע את הגוף גם בשוויון.",
+      "recapHtml": "a &gt; b הוא slt עם האוגרים מוחלפים, ומדלגים בהסתעפות ההפוכה."
+     },
+     {
+      "id": "C04-Q3",
+      "question": "a ב-\\$4 ו-b ב-\\$5. מה קוד ה-C המתאים לקטע הבא?\n```asm\nslt $1,$4,$5\nbne $1,$0,L\nsub $4,$4,$5\nbeq $0,$0,end\nL: sub $5,$5,$4\nend:\n```",
+      "options": [
+       {
+        "id": "a",
+        "value": "```c\nif (a < b) a = a - b;\nelse b = b - a;\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"c\"><code>if (a &lt; b) a = a - b;\nelse b = b - a;</code></pre>"
+       },
+       {
+        "id": "b",
+        "value": "```c\nif (a < b) b = b - a;\nelse a = a - b;\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"c\"><code>if (a &lt; b) b = b - a;\nelse a = a - b;</code></pre>"
+       },
+       {
+        "id": "c",
+        "value": "```c\nif (a >= b) b = b - a;\nelse a = a - b;\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"c\"><code>if (a &gt;= b) b = b - a;\nelse a = a - b;</code></pre>"
+       },
+       {
+        "id": "d",
+        "value": "```c\nif (a <= b) b = b - a;\nelse a = a - b;\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"c\"><code>if (a &lt;= b) b = b - a;\nelse a = a - b;</code></pre>"
+       }
+      ],
+      "correctId": "b",
+      "explanation": "`bne \\$1,\\$0,L` קופצת כש-a < b, ושם מבוצע b = b - a. אחרת (a >= b) מבוצע a = a - b. באפשרות השנייה הגופים מוחלפים, בשלישית התנאי הפוך, וברביעית התנאי כולל שוויון: כש-a = b הקטע המקורי מבצע a = a - b ולא b = b - a.",
+      "recap": "הסתעפות על \\$1 שאינו אפס אומרת שתנאי ה-slt התקיים.",
+      "questionHtml": "a ב-$4 ו-b ב-$5. מה קוד ה-C המתאים לקטע הבא?<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>slt $1,$4,$5\nbne $1,$0,L\nsub $4,$4,$5\nbeq $0,$0,end\nL: sub $5,$5,$4\nend:</code></pre>",
+      "explanationHtml": "<code class=\"tok\" dir=\"ltr\">bne $1,$0,L</code> קופצת כש-a &lt; b, ושם מבוצע b = b - a. אחרת (a &gt;= b) מבוצע a = a - b. באפשרות השנייה הגופים מוחלפים, בשלישית התנאי הפוך, וברביעית התנאי כולל שוויון: כש-a = b הקטע המקורי מבצע a = a - b ולא b = b - a.",
+      "recapHtml": "הסתעפות על $1 שאינו אפס אומרת שתנאי ה-slt התקיים."
+     },
+     {
+      "id": "C04-Q4",
+      "question": "a ב-\\$7, b ב-\\$9, c ב-\\$5. איזה קטע מתרגם את `if (a <= b) c = a+b; else c = a-b;`?",
+      "options": [
+       {
+        "id": "a",
+        "value": "```asm\nslt $1,$7,$9\nbne $1,$0,L1\nadd $5,$7,$9\nbeq $0,$0,end\nL1: sub $5,$7,$9\nend:\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>slt $1,$7,$9\nbne $1,$0,L1\nadd $5,$7,$9\nbeq $0,$0,end\nL1: sub $5,$7,$9\nend:</code></pre>"
+       },
+       {
+        "id": "b",
+        "value": "```asm\nslt $1,$9,$7\nbeq $1,$0,L1\nadd $5,$7,$9\nbeq $0,$0,end\nL1: sub $5,$7,$9\nend:\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>slt $1,$9,$7\nbeq $1,$0,L1\nadd $5,$7,$9\nbeq $0,$0,end\nL1: sub $5,$7,$9\nend:</code></pre>"
+       },
+       {
+        "id": "c",
+        "value": "```asm\nslt $1,$7,$9\nbeq $1,$0,L1\nadd $5,$7,$9\nbeq $0,$0,end\nL1: sub $5,$7,$9\nend:\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>slt $1,$7,$9\nbeq $1,$0,L1\nadd $5,$7,$9\nbeq $0,$0,end\nL1: sub $5,$7,$9\nend:</code></pre>"
+       },
+       {
+        "id": "d",
+        "value": "```asm\nslt $1,$9,$7\nbne $1,$0,L1\nadd $5,$7,$9\nbeq $0,$0,end\nL1: sub $5,$7,$9\nend:\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>slt $1,$9,$7\nbne $1,$0,L1\nadd $5,$7,$9\nbeq $0,$0,end\nL1: sub $5,$7,$9\nend:</code></pre>"
+       }
+      ],
+      "correctId": "d",
+      "explanation": "a <= b זה \"לא (b < a)\". לכן `slt \\$1,\\$9,\\$7`, וכשהוא 1 (כלומר a > b) קופצים אל ה-else. בשני הקטעים האחרונים נבדק a < b ולכן בשוויון נבחר הענף הלא נכון, ובשלישי הענפים מוחלפים.",
+      "recap": "a <= b: משווים b < a וקופצים ל-else כשהתוצאה 1.",
+      "questionHtml": "a ב-$7, b ב-$9, c ב-$5. איזה קטע מתרגם את <code class=\"tok\" dir=\"ltr\">if (a &lt;= b) c = a+b; else c = a-b;</code>?",
+      "explanationHtml": "a &lt;= b זה \"לא (b &lt; a)\". לכן <code class=\"tok\" dir=\"ltr\">slt $1,$9,$7</code>, וכשהוא 1 (כלומר a &gt; b) קופצים אל ה-else. בשני הקטעים האחרונים נבדק a &lt; b ולכן בשוויון נבחר הענף הלא נכון, ובשלישי הענפים מוחלפים.",
+      "recapHtml": "a &lt;= b: משווים b &lt; a וקופצים ל-else כשהתוצאה 1."
+     },
+     {
+      "bankId": "22B-B-Q13",
+      "recap": "קוראים slt ואת כיוון ההסתעפות כדי להחזיר את התנאי המקורי.",
+      "recapHtml": "קוראים slt ואת כיוון ההסתעפות כדי להחזיר את התנאי המקורי."
+     },
+     {
+      "bankId": "24B-A-Q13",
+      "recap": "הסתעפות על 0 אומרת \"התנאי לא התקיים\", וממנה מוצאים את ה-else.",
+      "recapHtml": "הסתעפות על 0 אומרת \"התנאי לא התקיים\", וממנה מוצאים את ה-else."
+     }
+    ]
+   },
+   {
+    "id": "C05",
+    "order": 5,
+    "icon": "🔁",
+    "title": "לולאות: מעקב וספירה",
+    "goal": "אחרי השלב הזה אפשר לעקוב אחרי לולאה, לדעת כמה פעמים הגוף רץ וכמה פקודות מתבצעות.",
+    "source": "ai-verified",
+    "boss": false,
+    "lesson": {
+     "html": "<p>לולאה היא תווית בראש, בדיקת יציאה, גוף, וקפיצה חזרה:</p>\n<pre>lp:  beq &#36;3,&#36;5,done    # יציאה אם i == n\n     (גוף)\n     addi &#36;3,&#36;3,1       # i++\n     j   lp\ndone:</pre>\n<ul><li><b>while / for:</b> הבדיקה בראש, ולכן הגוף עשוי לא להתבצע בכלל.</li>\n<li><b>do-while:</b> הגוף קודם ואז בדיקה עם הסתעפות חזרה אל התווית (<code>bne</code> חזרה), ולכן הגוף מתבצע לפחות פעם אחת.</li></ul>\n<h3>מעקב</h3>\n<p>טבלה עם שורה לכל איטרציה ועמודה לכל אוגר. מסיימים כשהבדיקה גורמת ליציאה, ואז קובעים מה הלולאה מחשבת (סכום, חזקה, ספירה).</p>\n<h3>ספירת פקודות</h3>\n<div class=\"lesson-rule\">🔑 מספר הפקודות = פקודות אתחול + (מספר איטרציות כפול פקודות בכל איטרציה, כולל הבדיקה והקפיצה חזרה) + פקודות הבדיקה האחרונה שיוצאת מהלולאה.</div>\n<div class=\"lesson-ex\">דוגמה: &#36;5 = 4 בהתחלה.\n<pre>addi &#36;4,&#36;0,0\nlp: beq &#36;5,&#36;0,end\naddi &#36;4,&#36;4,3\naddi &#36;5,&#36;5,-1\nj lp\nend:</pre>\nכל איטרציה: 4 פקודות, ויש 4 איטרציות. אתחול 1, ועוד beq אחרון שיוצא: 1 + 16 + 1 = 18. התוצאה &#36;4 = 12.</div>\n<div class=\"lesson-trap\">⚠️ שוכחים את הבדיקה האחרונה שיוצאת, ושוכחים לבדוק מה קורה כשהלולאה לא רצה בכלל (n = 0).</div>"
+    },
+    "questions": [
+     {
+      "id": "C05-Q1",
+      "question": "מה ערך \\$4 בסוף הקטע?\n```asm\naddi $4,$0,0\naddi $5,$0,1\naddi $6,$0,6\nlp: slt $1,$5,$6\nbeq $1,$0,end\nadd $4,$4,$5\naddi $5,$5,1\nj lp\nend:\n```",
+      "options": [
+       {
+        "id": "a",
+        "value": "21",
+        "type": "text",
+        "html": "21"
+       },
+       {
+        "id": "b",
+        "value": "15",
+        "type": "text",
+        "html": "15"
+       },
+       {
+        "id": "c",
+        "value": "10",
+        "type": "text",
+        "html": "10"
+       },
+       {
+        "id": "d",
+        "value": "6",
+        "type": "text",
+        "html": "6"
+       }
+      ],
+      "correctId": "b",
+      "explanation": "הלולאה רצה כל עוד \\$5 < 6, כלומר עבור \\$5 = 1,2,3,4,5, ו-\\$4 צובר 1+2+3+4+5 = 15. התשובה 21 כוללת גם את 6, ו-10 נעצרת מוקדם מדי.",
+      "recap": "מעקב אחרי לולאה: טבלה עם שורה לכל איטרציה.",
+      "questionHtml": "מה ערך $4 בסוף הקטע?<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>addi $4,$0,0\naddi $5,$0,1\naddi $6,$0,6\nlp: slt $1,$5,$6\nbeq $1,$0,end\nadd $4,$4,$5\naddi $5,$5,1\nj lp\nend:</code></pre>",
+      "explanationHtml": "הלולאה רצה כל עוד $5 &lt; 6, כלומר עבור $5 = 1,2,3,4,5, ו-$4 צובר 1+2+3+4+5 = 15. התשובה 21 כוללת גם את 6, ו-10 נעצרת מוקדם מדי.",
+      "recapHtml": "מעקב אחרי לולאה: טבלה עם שורה לכל איטרציה."
+     },
+     {
+      "id": "C05-Q2",
+      "question": "כמה פקודות מתבצעות בסך הכול בקטע של השאלה הקודמת?\n```asm\naddi $4,$0,0\naddi $5,$0,1\naddi $6,$0,6\nlp: slt $1,$5,$6\nbeq $1,$0,end\nadd $4,$4,$5\naddi $5,$5,1\nj lp\nend:\n```",
+      "options": [
+       {
+        "id": "a",
+        "value": "28",
+        "type": "text",
+        "html": "28"
+       },
+       {
+        "id": "b",
+        "value": "30",
+        "type": "text",
+        "html": "30"
+       },
+       {
+        "id": "c",
+        "value": "33",
+        "type": "text",
+        "html": "33"
+       },
+       {
+        "id": "d",
+        "value": "25",
+        "type": "text",
+        "html": "25"
+       }
+      ],
+      "correctId": "b",
+      "explanation": "שלוש פקודות אתחול. כל איטרציה מבצעת חמש פקודות (slt, beq, add, addi, j) ויש 5 איטרציות: 25. בסוף נעשים slt ו-beq אחרונים שיוצאים מהלולאה: 2. הסכום 3 + 25 + 2 = 30.",
+      "recap": "פקודות = אתחול + איטרציות כפול גוף + הבדיקה האחרונה.",
+      "questionHtml": "כמה פקודות מתבצעות בסך הכול בקטע של השאלה הקודמת?<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>addi $4,$0,0\naddi $5,$0,1\naddi $6,$0,6\nlp: slt $1,$5,$6\nbeq $1,$0,end\nadd $4,$4,$5\naddi $5,$5,1\nj lp\nend:</code></pre>",
+      "explanationHtml": "שלוש פקודות אתחול. כל איטרציה מבצעת חמש פקודות (slt, beq, add, addi, j) ויש 5 איטרציות: 25. בסוף נעשים slt ו-beq אחרונים שיוצאים מהלולאה: 2. הסכום 3 + 25 + 2 = 30.",
+      "recapHtml": "פקודות = אתחול + איטרציות כפול גוף + הבדיקה האחרונה."
+     },
+     {
+      "id": "C05-Q3",
+      "question": "\\$6 מחזיק את n (מספר שלם אי-שלילי). מה מחשב הקטע ל-\\$4?\n```asm\naddi $4,$0,1\nlp: beq $6,$0,end\nadd $4,$4,$4\naddi $6,$6,-1\nj lp\nend:\n```",
+      "options": [
+       {
+        "id": "a",
+        "value": "\\$4 = $2n$",
+        "type": "text",
+        "html": "$4 = <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><mi>n</mi></mrow><annotation encoding=\"application/x-tex\">2n</annotation></semantics></math></span>"
+       },
+       {
+        "id": "b",
+        "value": "\\$4 = $n^2$",
+        "type": "text",
+        "html": "$4 = <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>n</mi><mn>2</mn></msup></mrow><annotation encoding=\"application/x-tex\">n^2</annotation></semantics></math></span>"
+       },
+       {
+        "id": "c",
+        "value": "\\$4 = $2^n$",
+        "type": "text",
+        "html": "$4 = <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">2^n</annotation></semantics></math></span>"
+       },
+       {
+        "id": "d",
+        "value": "\\$4 = $n+1$",
+        "type": "text",
+        "html": "$4 = <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">n+1</annotation></semantics></math></span>"
+       }
+      ],
+      "correctId": "c",
+      "explanation": "\\$4 מתחיל ב-1 ומוכפל ב-2 בכל איטרציה, ויש n איטרציות. לכן $2^n$. בבדיקה ב-n = 3 מתקבל 8, ואילו $2n = 6$, $n^2 = 9$, $n+1 = 4$.",
+      "recap": "גוף שמכפיל פי 2 שחוזר n פעמים נותן $2^n$.",
+      "questionHtml": "$6 מחזיק את n (מספר שלם אי-שלילי). מה מחשב הקטע ל-$4?<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>addi $4,$0,1\nlp: beq $6,$0,end\nadd $4,$4,$4\naddi $6,$6,-1\nj lp\nend:</code></pre>",
+      "explanationHtml": "$4 מתחיל ב-1 ומוכפל ב-2 בכל איטרציה, ויש n איטרציות. לכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">2^n</annotation></semantics></math></span>. בבדיקה ב-n = 3 מתקבל 8, ואילו <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><mi>n</mi><mo>=</mo><mn>6</mn></mrow><annotation encoding=\"application/x-tex\">2n = 6</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mi>n</mi><mn>2</mn></msup><mo>=</mo><mn>9</mn></mrow><annotation encoding=\"application/x-tex\">n^2 = 9</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>n</mi><mo>+</mo><mn>1</mn><mo>=</mo><mn>4</mn></mrow><annotation encoding=\"application/x-tex\">n+1 = 4</annotation></semantics></math></span>.",
+      "recapHtml": "גוף שמכפיל פי 2 שחוזר n פעמים נותן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mi>n</mi></msup></mrow><annotation encoding=\"application/x-tex\">2^n</annotation></semantics></math></span>."
+     },
+     {
+      "id": "C05-Q4",
+      "question": "\\$5 מחזיק את n, ו-x ב-\\$4. איזו לולאת C שקולה לקטע (לכל n, גם 0 ושלילי)?\n```asm\naddi $4,$0,0\nlp: addi $4,$4,2\naddi $5,$5,-1\nslt $1,$0,$5\nbne $1,$0,lp\n```",
+      "options": [
+       {
+        "id": "a",
+        "value": "```c\ndo { x = x + 2; n = n - 1; } while (n > 0);\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"c\"><code>do { x = x + 2; n = n - 1; } while (n &gt; 0);</code></pre>"
+       },
+       {
+        "id": "b",
+        "value": "```c\nwhile (n > 0) { x = x + 2; n = n - 1; }\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"c\"><code>while (n &gt; 0) { x = x + 2; n = n - 1; }</code></pre>"
+       },
+       {
+        "id": "c",
+        "value": "```c\ndo { x = x + 2; n = n - 1; } while (n >= 0);\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"c\"><code>do { x = x + 2; n = n - 1; } while (n &gt;= 0);</code></pre>"
+       },
+       {
+        "id": "d",
+        "value": "```c\ndo { x = x + 2; n = n - 1; } while (n != 0);\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"c\"><code>do { x = x + 2; n = n - 1; } while (n != 0);</code></pre>"
+       }
+      ],
+      "correctId": "a",
+      "explanation": "הבדיקה נמצאת בסוף הגוף, ולכן הגוף מתבצע לפחות פעם אחת: do-while. התנאי הוא \\$5 > 0 (slt עם \\$0 משמאל ו-bne חזרה). ב-while רגיל עם n = 0 הגוף לא מתבצע בכלל. עם n >= 0 הלולאה מתבצעת פעם אחת יותר, ועם n != 0 היא לא נעצרת כש-n מתחיל ב-0 או שלילי.",
+      "recap": "בדיקה בסוף הגוף היא do-while: הגוף מתבצע לפחות פעם אחת.",
+      "questionHtml": "$5 מחזיק את n, ו-x ב-$4. איזו לולאת C שקולה לקטע (לכל n, גם 0 ושלילי)?<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>addi $4,$0,0\nlp: addi $4,$4,2\naddi $5,$5,-1\nslt $1,$0,$5\nbne $1,$0,lp</code></pre>",
+      "explanationHtml": "הבדיקה נמצאת בסוף הגוף, ולכן הגוף מתבצע לפחות פעם אחת: do-while. התנאי הוא $5 &gt; 0 (slt עם $0 משמאל ו-bne חזרה). ב-while רגיל עם n = 0 הגוף לא מתבצע בכלל. עם n &gt;= 0 הלולאה מתבצעת פעם אחת יותר, ועם n != 0 היא לא נעצרת כש-n מתחיל ב-0 או שלילי.",
+      "recapHtml": "בדיקה בסוף הגוף היא do-while: הגוף מתבצע לפחות פעם אחת."
+     },
+     {
+      "id": "C05-Q5",
+      "question": "מה ערך \\$7 בסוף הקטע?\n```asm\naddi $5,$0,3\naddi $6,$0,20\nlp: slt $1,$0,$6\nbeq $1,$0,end\nsub $6,$6,$5\naddi $7,$7,1\nj lp\nend:\n```",
+      "options": [
+       {
+        "id": "a",
+        "value": "7",
+        "type": "text",
+        "html": "7"
+       },
+       {
+        "id": "b",
+        "value": "6",
+        "type": "text",
+        "html": "6"
+       },
+       {
+        "id": "c",
+        "value": "8",
+        "type": "text",
+        "html": "8"
+       },
+       {
+        "id": "d",
+        "value": "3",
+        "type": "text",
+        "html": "3"
+       }
+      ],
+      "correctId": "a",
+      "explanation": "\\$6 עובר דרך 20, 17, 14, 11, 8, 5, 2, ואז -1. הגוף מתבצע בשבעת הערכים החיוביים, ולכן \\$7 = 7. הערך 6 הוא המנה 20 חלקי 3 בלי השארית, והלולאה מבצעת איטרציה אחת יותר.",
+      "recap": "מונה כמה פעמים הגוף רץ: סופרים עד שהתנאי נשבר.",
+      "questionHtml": "מה ערך $7 בסוף הקטע?<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>addi $5,$0,3\naddi $6,$0,20\nlp: slt $1,$0,$6\nbeq $1,$0,end\nsub $6,$6,$5\naddi $7,$7,1\nj lp\nend:</code></pre>",
+      "explanationHtml": "$6 עובר דרך 20, 17, 14, 11, 8, 5, 2, ואז -1. הגוף מתבצע בשבעת הערכים החיוביים, ולכן $7 = 7. הערך 6 הוא המנה 20 חלקי 3 בלי השארית, והלולאה מבצעת איטרציה אחת יותר.",
+      "recapHtml": "מונה כמה פעמים הגוף רץ: סופרים עד שהתנאי נשבר."
+     },
+     {
+      "bankId": "23A-A-Q10",
+      "recap": "משלבים: ערך התחלה, חזרות, וצבירה לאורך הלולאה.",
+      "recapHtml": "משלבים: ערך התחלה, חזרות, וצבירה לאורך הלולאה."
+     }
+    ]
+   },
+   {
+    "id": "C06",
+    "order": 6,
+    "icon": "🧱",
+    "title": "מערכים ומצביעים: lw, sw וכתובות",
+    "goal": "אחרי השלב הזה אפשר לחשב כתובת של איבר במערך מילים, לקרוא ולכתוב אליו ולקדם מצביע.",
+    "source": "ai-verified",
+    "boss": false,
+    "lesson": {
+     "html": "<p>הזיכרון מורכב ממילים של 4 בתים. הפקודות:</p>\n<table><thead><tr><th>פקודה</th><th>משמעות</th></tr></thead><tbody>\n<tr><td><code>lw &#36;t,k(&#36;s)</code></td><td>&#36;t = המילה שבכתובת &#36;s + k</td></tr>\n<tr><td><code>sw &#36;t,k(&#36;s)</code></td><td>המילה שבכתובת &#36;s + k מקבלת את &#36;t</td></tr></tbody></table>\n<div class=\"lesson-rule\">🔑 האיבר array[i] במערך מילים נמצא בכתובת בסיס + 4i. מחשבים 4i בשתי הכפלות עצמיות, ומוסיפים את הבסיס.</div>\n<pre>add &#36;8,&#36;6,&#36;6     # 2i\nadd &#36;8,&#36;8,&#36;8     # 4i\nadd &#36;8,&#36;8,&#36;4     # בסיס + 4i\nlw  &#36;9,0(&#36;8)     # array[i]</pre>\n<ul><li>array[i-1] נמצא בהיסט -4 מכתובת array[i], וכן array[i+1] בהיסט 4.</li>\n<li>array[4*i] נמצא בכתובת בסיס + 16i: ארבע הכפלות עצמיות של i.</li>\n<li>מצביע: ptr = &amp;array[0] הוא <code>add &#36;6,&#36;4,&#36;0</code>. הערך *ptr הוא <code>lw &#36;7,0(&#36;6)</code>, ו-ptr++ על מילים הוא <code>addi &#36;6,&#36;6,4</code>.</li></ul>\n<div class=\"lesson-ex\">דוגמה: בסיס &#36;4 = 1000, i = 2. אחרי שתי ההכפלות &#36;8 = 8, ואחרי החיבור &#36;8 = 1008, וזו כתובת האיבר השלישי (30 במערך 10, 20, 30, 40, 50).</div>\n<div class=\"lesson-trap\">⚠️ שוכחים להכפיל ב-4 (כתובת לא מיושרת), מקדמים מצביע ב-1 במקום ב-4, ומחליפים בין הכתובת לבין הערך שנקרא.</div>"
+    },
+    "questions": [
+     {
+      "id": "C06-Q1",
+      "question": "בכתובת 1000 מתחיל מערך מילים: 10, 20, 30, 40, 50. בהתחלה \\$4 = 1000. מה ערך \\$8 בסוף הקטע?\n```asm\nlw $5,4($4)\nlw $6,8($4)\nadd $7,$5,$6\nsw $7,0($4)\nlw $8,0($4)\n```",
+      "options": [
+       {
+        "id": "a",
+        "value": "40",
+        "type": "text",
+        "html": "40"
+       },
+       {
+        "id": "b",
+        "value": "50",
+        "type": "text",
+        "html": "50"
+       },
+       {
+        "id": "c",
+        "value": "30",
+        "type": "text",
+        "html": "30"
+       },
+       {
+        "id": "d",
+        "value": "60",
+        "type": "text",
+        "html": "60"
+       }
+      ],
+      "correctId": "b",
+      "explanation": "ההיסט 4 קורא את האיבר השני (20) וההיסט 8 את השלישי (30). הסכום 50 נכתב לתא הראשון, ואז נקרא חזרה: \\$8 = 50. התשובה 30 היא האיבר השלישי עצמו, ו-60 מניחה סכום של שלושה איברים.",
+      "recap": "lw מביאה מהכתובת בסיס + היסט, ו-sw כותבת אליה.",
+      "questionHtml": "בכתובת 1000 מתחיל מערך מילים: 10, 20, 30, 40, 50. בהתחלה $4 = 1000. מה ערך $8 בסוף הקטע?<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>lw $5,4($4)\nlw $6,8($4)\nadd $7,$5,$6\nsw $7,0($4)\nlw $8,0($4)</code></pre>",
+      "explanationHtml": "ההיסט 4 קורא את האיבר השני (20) וההיסט 8 את השלישי (30). הסכום 50 נכתב לתא הראשון, ואז נקרא חזרה: $8 = 50. התשובה 30 היא האיבר השלישי עצמו, ו-60 מניחה סכום של שלושה איברים.",
+      "recapHtml": "lw מביאה מהכתובת בסיס + היסט, ו-sw כותבת אליה."
+     },
+     {
+      "id": "C06-Q2",
+      "question": "\\$4 הוא כתובת התחלת מערך מילים ו-\\$6 הוא i. איזה קטע מתרגם את `array[i] = array[i] + 1;`?",
+      "options": [
+       {
+        "id": "a",
+        "value": "```asm\nadd $8,$6,$4\nlw $9,0($8)\naddi $9,$9,1\nsw $9,0($8)\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>add $8,$6,$4\nlw $9,0($8)\naddi $9,$9,1\nsw $9,0($8)</code></pre>"
+       },
+       {
+        "id": "b",
+        "value": "```asm\nadd $8,$6,$6\nadd $8,$8,$8\nadd $8,$8,$4\nlw $9,0($8)\naddi $9,$9,1\nsw $9,0($8)\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>add $8,$6,$6\nadd $8,$8,$8\nadd $8,$8,$4\nlw $9,0($8)\naddi $9,$9,1\nsw $9,0($8)</code></pre>"
+       },
+       {
+        "id": "c",
+        "value": "```asm\nadd $8,$6,$6\nadd $8,$8,$4\nlw $9,0($8)\naddi $9,$9,1\nsw $9,0($8)\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>add $8,$6,$6\nadd $8,$8,$4\nlw $9,0($8)\naddi $9,$9,1\nsw $9,0($8)</code></pre>"
+       },
+       {
+        "id": "d",
+        "value": "```asm\nadd $8,$6,$6\nadd $8,$8,$8\nadd $8,$8,$4\nlw $9,0($8)\naddi $8,$8,1\nsw $9,0($8)\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>add $8,$6,$6\nadd $8,$8,$8\nadd $8,$8,$4\nlw $9,0($8)\naddi $8,$8,1\nsw $9,0($8)</code></pre>"
+       }
+      ],
+      "correctId": "b",
+      "explanation": "הכתובת היא בסיס + 4i: שתי הכפלות עצמיות של i ואז חיבור הבסיס. בלי הכפלה (שני) מקבלים בסיס + i, כתובת לא מיושרת. עם הכפלה אחת (שלישי) מקבלים בסיס + 2i. ברביעי מגדילים את הכתובת ולא את הערך, ולכן נכתב הערך הישן.",
+      "recap": "אינדקס מילים כפול 4 (שתי הכפלות עצמיות) ואז מוסיפים את הבסיס.",
+      "questionHtml": "$4 הוא כתובת התחלת מערך מילים ו-$6 הוא i. איזה קטע מתרגם את <code class=\"tok\" dir=\"ltr\">array[i] = array[i] + 1;</code>?",
+      "explanationHtml": "הכתובת היא בסיס + 4i: שתי הכפלות עצמיות של i ואז חיבור הבסיס. בלי הכפלה (שני) מקבלים בסיס + i, כתובת לא מיושרת. עם הכפלה אחת (שלישי) מקבלים בסיס + 2i. ברביעי מגדילים את הכתובת ולא את הערך, ולכן נכתב הערך הישן.",
+      "recapHtml": "אינדקס מילים כפול 4 (שתי הכפלות עצמיות) ואז מוסיפים את הבסיס."
+     },
+     {
+      "id": "C06-Q3",
+      "question": "\\$4 = 2000 הוא כתובת מערך מילים בגודל \\$5 = 5 שאיבריו 3, 1, 4, 1, 5. מה ערך \\$2 בסוף?\n```asm\nadd $2,$0,$0\nadd $3,$0,$0\nadd $6,$4,$0\nloop: beq $3,$5,done\nlw $7,0($6)\nadd $2,$2,$7\naddi $6,$6,4\naddi $3,$3,1\nbeq $0,$0,loop\ndone:\n```",
+      "options": [
+       {
+        "id": "a",
+        "value": "14",
+        "type": "text",
+        "html": "14"
+       },
+       {
+        "id": "b",
+        "value": "13",
+        "type": "text",
+        "html": "13"
+       },
+       {
+        "id": "c",
+        "value": "9",
+        "type": "text",
+        "html": "9"
+       },
+       {
+        "id": "d",
+        "value": "15",
+        "type": "text",
+        "html": "15"
+       }
+      ],
+      "correctId": "a",
+      "explanation": "\\$6 הוא מצביע שמתקדם ב-4 בכל איטרציה, `lw` קורא את האיבר שהוא מצביע עליו, והלולאה מסכמת את כל חמשת האיברים: 3+1+4+1+5 = 14.",
+      "recap": "מצביע על מערך מילים מתקדם ב-4, ו-lw קוראת את *ptr.",
+      "questionHtml": "$4 = 2000 הוא כתובת מערך מילים בגודל $5 = 5 שאיבריו 3, 1, 4, 1, 5. מה ערך $2 בסוף?<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>add $2,$0,$0\nadd $3,$0,$0\nadd $6,$4,$0\nloop: beq $3,$5,done\nlw $7,0($6)\nadd $2,$2,$7\naddi $6,$6,4\naddi $3,$3,1\nbeq $0,$0,loop\ndone:</code></pre>",
+      "explanationHtml": "$6 הוא מצביע שמתקדם ב-4 בכל איטרציה, <code class=\"tok\" dir=\"ltr\">lw</code> קורא את האיבר שהוא מצביע עליו, והלולאה מסכמת את כל חמשת האיברים: 3+1+4+1+5 = 14.",
+      "recapHtml": "מצביע על מערך מילים מתקדם ב-4, ו-lw קוראת את *ptr."
+     },
+     {
+      "id": "C06-Q4",
+      "question": "כמה פקודות מתבצעות בקטע של השאלה הקודמת (n = 5)?",
+      "options": [
+       {
+        "id": "a",
+        "value": "34",
+        "type": "text",
+        "html": "34"
+       },
+       {
+        "id": "b",
+        "value": "33",
+        "type": "text",
+        "html": "33"
+       },
+       {
+        "id": "c",
+        "value": "30",
+        "type": "text",
+        "html": "30"
+       },
+       {
+        "id": "d",
+        "value": "36",
+        "type": "text",
+        "html": "36"
+       }
+      ],
+      "correctId": "a",
+      "explanation": "שלוש פקודות אתחול, שש פקודות בכל איטרציה (beq, lw, add, addi, addi, beq) כפול 5 הם 30, ועוד beq אחד בסוף שיוצא: 3 + 30 + 1 = 34, כלומר 6n + 4.",
+      "recap": "ספירת פקודות: 6n + 4.",
+      "questionHtml": "כמה פקודות מתבצעות בקטע של השאלה הקודמת (n = 5)?",
+      "explanationHtml": "שלוש פקודות אתחול, שש פקודות בכל איטרציה (beq, lw, add, addi, addi, beq) כפול 5 הם 30, ועוד beq אחד בסוף שיוצא: 3 + 30 + 1 = 34, כלומר 6n + 4.",
+      "recapHtml": "ספירת פקודות: 6n + 4."
+     },
+     {
+      "id": "C06-Q5",
+      "question": "\\$6 הוא המצביע ptr על מערך מילים. איזה קטע מתרגם את `x = *ptr; ptr++; y = *ptr;` כאשר x ב-\\$7 ו-y ב-\\$8?",
+      "options": [
+       {
+        "id": "a",
+        "value": "```asm\nlw $7,0($6)\naddi $6,$6,1\nlw $8,0($6)\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>lw $7,0($6)\naddi $6,$6,1\nlw $8,0($6)</code></pre>"
+       },
+       {
+        "id": "b",
+        "value": "```asm\nlw $7,0($6)\nlw $8,4($6)\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>lw $7,0($6)\nlw $8,4($6)</code></pre>"
+       },
+       {
+        "id": "c",
+        "value": "```asm\naddi $6,$6,4\nlw $7,0($6)\nlw $8,4($6)\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>addi $6,$6,4\nlw $7,0($6)\nlw $8,4($6)</code></pre>"
+       },
+       {
+        "id": "d",
+        "value": "```asm\nlw $7,0($6)\naddi $6,$6,4\nlw $8,0($6)\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>lw $7,0($6)\naddi $6,$6,4\nlw $8,0($6)</code></pre>"
+       }
+      ],
+      "correctId": "d",
+      "explanation": "ptr++ על מילים מקדם את המצביע ב-4 בתים, ואחרי כן קוראים. ב-`addi \\$6,\\$6,1` המצביע לא מיושר. בשלישי המצביע לא התקדם, וברביעי הקידום נעשה לפני הקריאה הראשונה ולכן x קיבל את האיבר הלא נכון.",
+      "recap": "ptr++ על מערך מילים הוא addi ptr,ptr,4.",
+      "questionHtml": "$6 הוא המצביע ptr על מערך מילים. איזה קטע מתרגם את <code class=\"tok\" dir=\"ltr\">x = *ptr; ptr++; y = *ptr;</code> כאשר x ב-$7 ו-y ב-$8?",
+      "explanationHtml": "ptr++ על מילים מקדם את המצביע ב-4 בתים, ואחרי כן קוראים. ב-<code class=\"tok\" dir=\"ltr\">addi $6,$6,1</code> המצביע לא מיושר. בשלישי המצביע לא התקדם, וברביעי הקידום נעשה לפני הקריאה הראשונה ולכן x קיבל את האיבר הלא נכון.",
+      "recapHtml": "ptr++ על מערך מילים הוא addi ptr,ptr,4."
+     },
+     {
+      "bankId": "25B-A-Q13",
+      "recap": "array[4*i] נמצא בבסיס + 16i: ארבע הכפלות עצמיות של i.",
+      "recapHtml": "array[4*i] נמצא בבסיס + 16i: ארבע הכפלות עצמיות של i."
+     }
+    ]
+   },
+   {
+    "id": "C07",
+    "order": 7,
+    "icon": "🎭",
+    "title": "מסכות וביטים: and, מסכה שמוכפלת, ספירת אפסים",
+    "goal": "אחרי השלב הזה אפשר לקרוא לולאת מסכה, לדעת מה היא סופרת ולמצוא ערך התחלתי מהתוצאה.",
+    "source": "ai-verified",
+    "boss": false,
+    "lesson": {
+     "html": "<p><code>and &#36;d,&#36;s,&#36;t</code> מחשבת וביט-ביט: ביט בתוצאה הוא 1 רק אם הוא 1 בשני האוגרים.</p>\n<ul><li>מסכה עם ביט יחיד דלוק בודקת ביט אחד: <code>and &#36;10,&#36;7,&#36;3</code> שווה 0 אם הביט כבוי ב-&#36;3, ושונה מ-0 אם דלוק.</li>\n<li>מסכה מתחילה ב-1, ובכל סיבוב <code>add &#36;7,&#36;7,&#36;7</code> מזיזה את הביט שמאלה. אחרי 32 סיבובים הביט נופל ו-&#36;7 = 0, וזה תנאי היציאה.</li></ul>\n<div class=\"lesson-rule\">🔑 בלולאה של 32 סיבובים, מונה שגדל כשהתוצאה היא 0 סופר **אפסים**, ומונה שגדל כשהיא שונה מ-0 סופר **אחדות**. מספר האפסים = 32 פחות מספר האחדות.</div>\n<pre>addi &#36;7,&#36;0,1\naddi &#36;8,&#36;0,0\nlp:   beq &#36;0,&#36;7,end\n      and &#36;10,&#36;7,&#36;3\n      bne &#36;10,&#36;0,lab1   # ביט דלוק: לא סופרים\n      addi &#36;8,&#36;8,1      # ביט כבוי: סופרים\nlab1: add &#36;7,&#36;7,&#36;7\n      j lp\nend:</pre>\n<div class=\"lesson-ex\">דוגמה: אם &#36;3 = 0xFF (שמונה ביטים דלוקים) אז &#36;8 = 32 - 8 = 24.</div>\n<h3>מציאת ערך התחלתי</h3>\n<p>עובדים לאחור: מהתוצאה (למשל 17 אפסים) מחשבים כמה ביטים דלוקים נדרשים (32 - 17 = 15), ובוחרים את הערך שמספר הביטים הדלוקים בו מתאים. ספירת ביטים בהקסדצימלי: כל ספרה היא ארבעה ביטים.</p>\n<div class=\"lesson-trap\">⚠️ מבלבלים בין ספירת אפסים לספירת אחדות. וגם שוכחים שהלולאה רצה על כל 32 הביטים, לא רק עד הביט הגבוה ביותר הדלוק.</div>"
+    },
+    "questions": [
+     {
+      "id": "C07-Q1",
+      "question": "מה ערך \\$6 בסוף הקטע?\n```asm\naddi $4,$0,13\naddi $5,$0,6\nand $6,$4,$5\n```",
+      "options": [
+       {
+        "id": "a",
+        "value": "6",
+        "type": "text",
+        "html": "6"
+       },
+       {
+        "id": "b",
+        "value": "4",
+        "type": "text",
+        "html": "4"
+       },
+       {
+        "id": "c",
+        "value": "15",
+        "type": "text",
+        "html": "15"
+       },
+       {
+        "id": "d",
+        "value": "19",
+        "type": "text",
+        "html": "19"
+       }
+      ],
+      "correctId": "b",
+      "explanation": "13 בבינארי הוא 1101 ו-6 הוא 0110. `and` משאיר ביט רק היכן ששניהם 1: 0100 = 4. 15 היא תוצאת or, ו-19 היא תוצאת add.",
+      "recap": "and משאיר 1 רק בביטים ששני האוגרים הדליקו.",
+      "questionHtml": "מה ערך $6 בסוף הקטע?<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>addi $4,$0,13\naddi $5,$0,6\nand $6,$4,$5</code></pre>",
+      "explanationHtml": "13 בבינארי הוא 1101 ו-6 הוא 0110. <code class=\"tok\" dir=\"ltr\">and</code> משאיר ביט רק היכן ששניהם 1: 0100 = 4. 15 היא תוצאת or, ו-19 היא תוצאת add.",
+      "recapHtml": "and משאיר 1 רק בביטים ששני האוגרים הדליקו."
+     },
+     {
+      "id": "C07-Q2",
+      "question": "מה ערך \\$6 בסוף הקטע?\n```asm\naddi $5,$0,1\nadd $5,$5,$5\nadd $5,$5,$5\nadd $5,$5,$5\naddi $4,$0,10\nand $6,$4,$5\n```",
+      "options": [
+       {
+        "id": "a",
+        "value": "0",
+        "type": "text",
+        "html": "0"
+       },
+       {
+        "id": "b",
+        "value": "2",
+        "type": "text",
+        "html": "2"
+       },
+       {
+        "id": "c",
+        "value": "10",
+        "type": "text",
+        "html": "10"
+       },
+       {
+        "id": "d",
+        "value": "8",
+        "type": "text",
+        "html": "8"
+       }
+      ],
+      "correctId": "d",
+      "explanation": "שלוש הכפלות הופכות את המסכה \\$5 ל-8, כלומר רק ביט מספר 3 דלוק. 10 הוא 1010, וביט 3 שלו דלוק, ולכן התוצאה 8 (ולא 1). התשובה 0 נכונה לביט שכבוי בלבד.",
+      "recap": "מסכה של ביט אחד מפיקה 0 (ביט כבוי) או את ערך המסכה (ביט דלוק).",
+      "questionHtml": "מה ערך $6 בסוף הקטע?<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>addi $5,$0,1\nadd $5,$5,$5\nadd $5,$5,$5\nadd $5,$5,$5\naddi $4,$0,10\nand $6,$4,$5</code></pre>",
+      "explanationHtml": "שלוש הכפלות הופכות את המסכה $5 ל-8, כלומר רק ביט מספר 3 דלוק. 10 הוא 1010, וביט 3 שלו דלוק, ולכן התוצאה 8 (ולא 1). התשובה 0 נכונה לביט שכבוי בלבד.",
+      "recapHtml": "מסכה של ביט אחד מפיקה 0 (ביט כבוי) או את ערך המסכה (ביט דלוק)."
+     },
+     {
+      "id": "C07-Q3",
+      "question": "כמה פעמים מתבצעת הפקודה `add \\$5,\\$5,\\$5` עד שהלולאה מסתיימת?\n```asm\naddi $5,$0,1\naddi $9,$0,0\nlp: beq $5,$0,end\nadd $5,$5,$5\naddi $9,$9,1\nj lp\nend:\n```",
+      "options": [
+       {
+        "id": "a",
+        "value": "31",
+        "type": "text",
+        "html": "31"
+       },
+       {
+        "id": "b",
+        "value": "33",
+        "type": "text",
+        "html": "33"
+       },
+       {
+        "id": "c",
+        "value": "32",
+        "type": "text",
+        "html": "32"
+       },
+       {
+        "id": "d",
+        "value": "64",
+        "type": "text",
+        "html": "64"
+       }
+      ],
+      "correctId": "c",
+      "explanation": "אחרי k הכפלות \\$5 = $2^k$. ברגע שהביט היחיד יוצא מ-32 הביטים, \\$5 = 0. זה קורה אחרי הכפלה מספר 32, כלומר 32 פעמים.",
+      "recap": "מסכה שמוכפלת פי 2 הופכת ל-0 אחרי 32 הכפלות.",
+      "questionHtml": "כמה פעמים מתבצעת הפקודה <code class=\"tok\" dir=\"ltr\">add $5,$5,$5</code> עד שהלולאה מסתיימת?<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>addi $5,$0,1\naddi $9,$0,0\nlp: beq $5,$0,end\nadd $5,$5,$5\naddi $9,$9,1\nj lp\nend:</code></pre>",
+      "explanationHtml": "אחרי k הכפלות $5 = <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mi>k</mi></msup></mrow><annotation encoding=\"application/x-tex\">2^k</annotation></semantics></math></span>. ברגע שהביט היחיד יוצא מ-32 הביטים, $5 = 0. זה קורה אחרי הכפלה מספר 32, כלומר 32 פעמים.",
+      "recapHtml": "מסכה שמוכפלת פי 2 הופכת ל-0 אחרי 32 הכפלות."
+     },
+     {
+      "id": "C07-Q4",
+      "question": "בהתחלה \\$3 = 0x00FF00F0. מה ערך \\$8 בסוף הקטע?\n```asm\naddi $7,$0,1\naddi $8,$0,0\nlp: beq $0,$7,end\nand $10,$7,$3\nbne $10,$0,lab1\naddi $8,$8,1\nlab1: add $7,$7,$7\nj lp\nend:\n```",
+      "options": [
+       {
+        "id": "a",
+        "value": "12",
+        "type": "text",
+        "html": "12"
+       },
+       {
+        "id": "b",
+        "value": "20",
+        "type": "text",
+        "html": "20"
+       },
+       {
+        "id": "c",
+        "value": "8",
+        "type": "text",
+        "html": "8"
+       },
+       {
+        "id": "d",
+        "value": "24",
+        "type": "text",
+        "html": "24"
+       }
+      ],
+      "correctId": "b",
+      "explanation": "הלולאה עוברת על כל 32 הביטים ומגדילה את \\$8 כשהביט כבוי, כלומר סופרת **אפסים**. ב-0x00FF00F0 יש 8 + 4 = 12 ביטים דלוקים, ולכן 32 - 12 = 20 אפסים. 12 הוא מספר האחדות.",
+      "recap": "הסתעפות על \"שונה מ-0\" שמדלגת על המונה סופרת אפסים.",
+      "questionHtml": "בהתחלה $3 = 0x00FF00F0. מה ערך $8 בסוף הקטע?<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>addi $7,$0,1\naddi $8,$0,0\nlp: beq $0,$7,end\nand $10,$7,$3\nbne $10,$0,lab1\naddi $8,$8,1\nlab1: add $7,$7,$7\nj lp\nend:</code></pre>",
+      "explanationHtml": "הלולאה עוברת על כל 32 הביטים ומגדילה את $8 כשהביט כבוי, כלומר סופרת <strong>אפסים</strong>. ב-0x00FF00F0 יש 8 + 4 = 12 ביטים דלוקים, ולכן 32 - 12 = 20 אפסים. 12 הוא מספר האחדות.",
+      "recapHtml": "הסתעפות על \"שונה מ-0\" שמדלגת על המונה סופרת אפסים."
+     },
+     {
+      "id": "C07-Q5",
+      "question": "באיזה ערך התחלתי של \\$3 מתקבל \\$8 = 30 בסוף הקטע?\n```asm\naddi $7,$0,1\naddi $8,$0,0\nlp: beq $0,$7,end\nand $10,$7,$3\nbne $10,$0,lab1\naddi $8,$8,1\nlab1: add $7,$7,$7\nj lp\nend:\n```",
+      "options": [
+       {
+        "id": "a",
+        "value": "0x80000003",
+        "type": "text",
+        "html": "0x80000003"
+       },
+       {
+        "id": "b",
+        "value": "0x0000FFFF",
+        "type": "text",
+        "html": "0x0000FFFF"
+       },
+       {
+        "id": "c",
+        "value": "0x80000001",
+        "type": "text",
+        "html": "0x80000001"
+       },
+       {
+        "id": "d",
+        "value": "0x00000001",
+        "type": "text",
+        "html": "0x00000001"
+       }
+      ],
+      "correctId": "c",
+      "explanation": "\\$8 סופר אפסים, לכן 30 אפסים פירושו שיש שני ביטים דלוקים מתוך 32. ל-0x80000001 יש שני ביטים (הראשון והאחרון). ל-0x80000003 יש שלושה (29 אפסים), ל-0x0000FFFF יש 16 ביטים (16 אפסים), ול-0x00000001 יש אחד (31 אפסים).",
+      "recap": "ספירת אפסים = 32 פחות מספר הביטים הדלוקים.",
+      "questionHtml": "באיזה ערך התחלתי של $3 מתקבל $8 = 30 בסוף הקטע?<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>addi $7,$0,1\naddi $8,$0,0\nlp: beq $0,$7,end\nand $10,$7,$3\nbne $10,$0,lab1\naddi $8,$8,1\nlab1: add $7,$7,$7\nj lp\nend:</code></pre>",
+      "explanationHtml": "$8 סופר אפסים, לכן 30 אפסים פירושו שיש שני ביטים דלוקים מתוך 32. ל-0x80000001 יש שני ביטים (הראשון והאחרון). ל-0x80000003 יש שלושה (29 אפסים), ל-0x0000FFFF יש 16 ביטים (16 אפסים), ול-0x00000001 יש אחד (31 אפסים).",
+      "recapHtml": "ספירת אפסים = 32 פחות מספר הביטים הדלוקים."
+     },
+     {
+      "bankId": "25B-A-Q10",
+      "recap": "בונים מהסוף: כמה אפסים צריך, וממנו כמה אחדות, ואז בוחרים ערך.",
+      "recapHtml": "בונים מהסוף: כמה אפסים צריך, וממנו כמה אחדות, ואז בוחרים ערך."
+     }
+    ]
+   },
+   {
+    "id": "C08",
+    "order": 8,
+    "icon": "🧩",
+    "title": "השלמת קוד חסר בלולאה על מערך",
+    "goal": "אחרי השלב הזה אפשר להשלים את הפקודות החסרות בתרגום של לולאה על מערך מ-C לאסמבלי.",
+    "source": "ai-verified",
+    "boss": false,
+    "lesson": {
+     "html": "<p>שאלת \"הפקודות החסרות\" נותנת תרגום שלם חוץ מגוף ה-if, ושואלת מה צריך להיכנס שם. שיטת עבודה:</p>\n<ol><li><b>מזהים תפקידי אוגרים</b> מהשורות שכבר כתובות: אינדקס i, כתובת האיבר, הערך שנקרא (<code>lw</code>), מונה או צובר.</li>\n<li><b>כותבים את התנאי ב-C</b> במשתנים של האוגרים. למשל array[i] &gt; 0 הוא \"&#36;10 &gt; &#36;0\".</li>\n<li><b>בודקים</b> עם <code>slt</code>: a &gt; b הוא slt עם האוגרים מוחלפים.</li>\n<li><b>מדלגים</b> בהסתעפות ההפוכה אל התווית שאחרי הגוף (למשל <code>nxt</code>), ולא אל תווית אחרת.</li>\n<li><b>גוף</b>: כותבים את ההשמה, שבה האוגר הראשון הוא הצד השמאלי.</li></ol>\n<div class=\"lesson-rule\">🔑 כדי לפסול אפשרות, בודקים אחד מאלה: סדר האוגרים ב-<code>slt</code>, beq מול bne, התווית שאליה קופצים, ואוגר היעד של ההשמה.</div>\n<div class=\"lesson-ex\">דוגמה: count positives. הרשימה קוראת את array[i] ל-&#36;10. התנאי 0 &lt; &#36;10 הוא <code>slt &#36;11,&#36;0,&#36;10</code>. מדלגים כש-&#36;11 = 0: <code>beq &#36;11,&#36;0,nxt</code>. הגוף: <code>addi &#36;7,&#36;7,1</code>.</div>\n<div class=\"lesson-trap\">⚠️ אפשרויות שגויות לרוב נכשלות רק בקלט מסוים, ולכן בודקים מקרי קצה: איבר 0, איבר שווה לסף, ומערך ריק.</div>"
+    },
+    "questions": [
+     {
+      "id": "C08-Q1",
+      "question": "\\$4 הוא כתובת מערך מילים, \\$5 הוא size. הקטע מתרגם `cnt = 0; for (i=0;i<size;i++) if (array[i] > 0) cnt++;` כש-cnt ב-\\$7. מהן הפקודות החסרות (במקום @@@@@@@)?\n```asm\naddi $6,$0,0\naddi $7,$0,0\nlp: slt $8,$6,$5\nbeq $8,$0,end\nadd $9,$6,$6\nadd $9,$9,$9\nadd $9,$9,$4\nlw $10,0($9)\n@@@@@@@\nnxt: addi $6,$6,1\nj lp\nend:\n```",
+      "options": [
+       {
+        "id": "a",
+        "value": "```asm\nslt $11,$10,$0\nbeq $11,$0,nxt\naddi $7,$7,1\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>slt $11,$10,$0\nbeq $11,$0,nxt\naddi $7,$7,1</code></pre>"
+       },
+       {
+        "id": "b",
+        "value": "```asm\nslt $11,$0,$10\nbeq $11,$0,nxt\naddi $7,$7,1\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>slt $11,$0,$10\nbeq $11,$0,nxt\naddi $7,$7,1</code></pre>"
+       },
+       {
+        "id": "c",
+        "value": "```asm\nslt $11,$0,$10\nbne $11,$0,nxt\naddi $7,$7,1\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>slt $11,$0,$10\nbne $11,$0,nxt\naddi $7,$7,1</code></pre>"
+       },
+       {
+        "id": "d",
+        "value": "```asm\nslt $11,$0,$10\nbeq $11,$0,nxt\nadd $7,$7,$10\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>slt $11,$0,$10\nbeq $11,$0,nxt\nadd $7,$7,$10</code></pre>"
+       }
+      ],
+      "correctId": "b",
+      "explanation": "הגוף מתבצע כש-0 < array[i]: `slt \\$11,\\$0,\\$10`, ומדלגים אל nxt בהסתעפות ההפוכה (`beq` על 0). השני בודק array[i] < 0 וסופר שליליים, השלישי מדלג כשהתנאי מתקיים ולכן סופר אפסים ושליליים, והרביעי מצרף לסכום במקום להגדיל ב-1.",
+      "recap": "תנאי ב-C = slt, ומדלגים בהסתעפות ההפוכה אל התווית שאחרי הגוף.",
+      "questionHtml": "$4 הוא כתובת מערך מילים, $5 הוא size. הקטע מתרגם <code class=\"tok\" dir=\"ltr\">cnt = 0; for (i=0;i&lt;size;i++) if (array[i] &gt; 0) cnt++;</code> כש-cnt ב-$7. מהן הפקודות החסרות (במקום @@@@@@@)?<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>addi $6,$0,0\naddi $7,$0,0\nlp: slt $8,$6,$5\nbeq $8,$0,end\nadd $9,$6,$6\nadd $9,$9,$9\nadd $9,$9,$4\nlw $10,0($9)\n@@@@@@@\nnxt: addi $6,$6,1\nj lp\nend:</code></pre>",
+      "explanationHtml": "הגוף מתבצע כש-0 &lt; array[i]: <code class=\"tok\" dir=\"ltr\">slt $11,$0,$10</code>, ומדלגים אל nxt בהסתעפות ההפוכה (<code class=\"tok\" dir=\"ltr\">beq</code> על 0). השני בודק array[i] &lt; 0 וסופר שליליים, השלישי מדלג כשהתנאי מתקיים ולכן סופר אפסים ושליליים, והרביעי מצרף לסכום במקום להגדיל ב-1.",
+      "recapHtml": "תנאי ב-C = slt, ומדלגים בהסתעפות ההפוכה אל התווית שאחרי הגוף."
+     },
+     {
+      "id": "C08-Q2",
+      "question": "\\$4 הוא כתובת מערך מילים, \\$5 הוא size, \\$12 = 5. הקטע מתרגם `sum = 0; for (i=0;i<size;i++) if (array[i] > 5) sum += array[i];` כש-sum ב-\\$2. מהן הפקודות החסרות?\n```asm\naddi $6,$0,0\naddi $2,$0,0\naddi $12,$0,5\nlp: slt $8,$6,$5\nbeq $8,$0,end\nadd $9,$6,$6\nadd $9,$9,$9\nadd $9,$9,$4\nlw $10,0($9)\n@@@@@@@\nnxt: addi $6,$6,1\nj lp\nend:\n```",
+      "options": [
+       {
+        "id": "a",
+        "value": "```asm\nslt $11,$10,$12\nbeq $11,$0,nxt\nadd $2,$2,$10\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>slt $11,$10,$12\nbeq $11,$0,nxt\nadd $2,$2,$10</code></pre>"
+       },
+       {
+        "id": "b",
+        "value": "```asm\nslt $11,$12,$10\nbne $11,$0,nxt\nadd $2,$2,$10\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>slt $11,$12,$10\nbne $11,$0,nxt\nadd $2,$2,$10</code></pre>"
+       },
+       {
+        "id": "c",
+        "value": "```asm\nslt $11,$12,$10\nbeq $11,$0,nxt\nadd $2,$2,$10\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>slt $11,$12,$10\nbeq $11,$0,nxt\nadd $2,$2,$10</code></pre>"
+       },
+       {
+        "id": "d",
+        "value": "```asm\nslt $11,$12,$10\nbeq $11,$0,nxt\nadd $2,$2,$11\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>slt $11,$12,$10\nbeq $11,$0,nxt\nadd $2,$2,$11</code></pre>"
+       }
+      ],
+      "correctId": "c",
+      "explanation": "התנאי array[i] > 5 הוא 5 < array[i], ולכן `slt \\$11,\\$12,\\$10`. מדלגים כש-\\$11 = 0, וצוברים את array[i] (\\$10). הקטע השני סוכם איברים קטנים מ-5, השלישי מדלג כשהתנאי מתקיים, והרביעי מוסיף את הדגל (0 או 1) במקום את הערך.",
+      "recap": "משווים לערך קבוע שנטען מראש לאוגר, וצוברים את הערך שנקרא ולא את הדגל.",
+      "questionHtml": "$4 הוא כתובת מערך מילים, $5 הוא size, $12 = 5. הקטע מתרגם <code class=\"tok\" dir=\"ltr\">sum = 0; for (i=0;i&lt;size;i++) if (array[i] &gt; 5) sum += array[i];</code> כש-sum ב-$2. מהן הפקודות החסרות?<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>addi $6,$0,0\naddi $2,$0,0\naddi $12,$0,5\nlp: slt $8,$6,$5\nbeq $8,$0,end\nadd $9,$6,$6\nadd $9,$9,$9\nadd $9,$9,$4\nlw $10,0($9)\n@@@@@@@\nnxt: addi $6,$6,1\nj lp\nend:</code></pre>",
+      "explanationHtml": "התנאי array[i] &gt; 5 הוא 5 &lt; array[i], ולכן <code class=\"tok\" dir=\"ltr\">slt $11,$12,$10</code>. מדלגים כש-$11 = 0, וצוברים את array[i] ($10). הקטע השני סוכם איברים קטנים מ-5, השלישי מדלג כשהתנאי מתקיים, והרביעי מוסיף את הדגל (0 או 1) במקום את הערך.",
+      "recapHtml": "משווים לערך קבוע שנטען מראש לאוגר, וצוברים את הערך שנקרא ולא את הדגל."
+     },
+     {
+      "id": "C08-Q3",
+      "question": "\\$4 הוא כתובת מערך מילים לא ריק, \\$5 הוא size, \\$6 הוא מצביע ו-\\$7 הוא min. הקטע מתרגם `min = *ptr; for (i=0;i<size;i++) { if (*ptr < min) min = *ptr; ptr++; }`. מהן הפקודות החסרות?\n```asm\nadd $6,$4,$0\nlw $7,0($6)\naddi $8,$0,0\nlp: slt $1,$8,$5\nbeq $1,$0,end\nlw $9,0($6)\n@@@@@@@\nnxt: addi $6,$6,4\naddi $8,$8,1\nj lp\nend:\n```",
+      "options": [
+       {
+        "id": "a",
+        "value": "```asm\nslt $1,$9,$7\nbeq $1,$0,nxt\nadd $7,$9,$0\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>slt $1,$9,$7\nbeq $1,$0,nxt\nadd $7,$9,$0</code></pre>"
+       },
+       {
+        "id": "b",
+        "value": "```asm\nslt $1,$7,$9\nbeq $1,$0,nxt\nadd $7,$9,$0\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>slt $1,$7,$9\nbeq $1,$0,nxt\nadd $7,$9,$0</code></pre>"
+       },
+       {
+        "id": "c",
+        "value": "```asm\nslt $1,$9,$7\nbne $1,$0,nxt\nadd $7,$9,$0\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>slt $1,$9,$7\nbne $1,$0,nxt\nadd $7,$9,$0</code></pre>"
+       },
+       {
+        "id": "d",
+        "value": "```asm\nslt $1,$9,$7\nbeq $1,$0,nxt\nadd $9,$7,$0\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>slt $1,$9,$7\nbeq $1,$0,nxt\nadd $9,$7,$0</code></pre>"
+       }
+      ],
+      "correctId": "a",
+      "explanation": "*ptr נמצא ב-\\$9 ו-min ב-\\$7. התנאי *ptr < min הוא `slt \\$1,\\$9,\\$7`, מדלגים כש-\\$1 = 0, ואחרת מעתיקים את \\$9 אל \\$7. השני מחשב מקסימום, השלישי מדלג בכיוון הלא נכון, והרביעי מעתיק בכיוון ההפוך ולכן min לא מתעדכן.",
+      "recap": "בהשמה ב-C הצד השמאלי הוא אוגר היעד, כלומר האוגר הראשון ב-add.",
+      "questionHtml": "$4 הוא כתובת מערך מילים לא ריק, $5 הוא size, $6 הוא מצביע ו-$7 הוא min. הקטע מתרגם <code class=\"tok\" dir=\"ltr\">min = *ptr; for (i=0;i&lt;size;i++) { if (*ptr &lt; min) min = *ptr; ptr++; }</code>. מהן הפקודות החסרות?<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>add $6,$4,$0\nlw $7,0($6)\naddi $8,$0,0\nlp: slt $1,$8,$5\nbeq $1,$0,end\nlw $9,0($6)\n@@@@@@@\nnxt: addi $6,$6,4\naddi $8,$8,1\nj lp\nend:</code></pre>",
+      "explanationHtml": "*ptr נמצא ב-$9 ו-min ב-$7. התנאי *ptr &lt; min הוא <code class=\"tok\" dir=\"ltr\">slt $1,$9,$7</code>, מדלגים כש-$1 = 0, ואחרת מעתיקים את $9 אל $7. השני מחשב מקסימום, השלישי מדלג בכיוון הלא נכון, והרביעי מעתיק בכיוון ההפוך ולכן min לא מתעדכן.",
+      "recapHtml": "בהשמה ב-C הצד השמאלי הוא אוגר היעד, כלומר האוגר הראשון ב-add."
+     },
+     {
+      "id": "C08-Q4",
+      "question": "\\$4 הוא כתובת מערך מילים, \\$5 הוא size, ו-\\$8 מחזיק את הכתובת של array[i] (i מ-\\$6). הקטע מתרגם `for (i=1;i<size;i++) array[i] = array[i] + array[i-1];`. מהן הפקודות החסרות?\n```asm\naddi $6,$0,1\nlp: slt $1,$6,$5\nbeq $1,$0,end\nadd $8,$6,$6\nadd $8,$8,$8\nadd $8,$8,$4\n@@@@@@@\naddi $6,$6,1\nj lp\nend:\n```",
+      "options": [
+       {
+        "id": "a",
+        "value": "```asm\nlw $9,4($8)\nlw $10,0($8)\nadd $10,$10,$9\nsw $10,0($8)\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>lw $9,4($8)\nlw $10,0($8)\nadd $10,$10,$9\nsw $10,0($8)</code></pre>"
+       },
+       {
+        "id": "b",
+        "value": "```asm\nlw $9,-4($8)\nlw $10,0($8)\nadd $10,$10,$9\nsw $10,-4($8)\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>lw $9,-4($8)\nlw $10,0($8)\nadd $10,$10,$9\nsw $10,-4($8)</code></pre>"
+       },
+       {
+        "id": "c",
+        "value": "```asm\nlw $9,-4($8)\nlw $10,0($8)\nadd $10,$10,$9\nsw $9,0($8)\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>lw $9,-4($8)\nlw $10,0($8)\nadd $10,$10,$9\nsw $9,0($8)</code></pre>"
+       },
+       {
+        "id": "d",
+        "value": "```asm\nlw $9,-4($8)\nlw $10,0($8)\nadd $10,$10,$9\nsw $10,0($8)\n```",
+        "type": "text",
+        "html": "<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>lw $9,-4($8)\nlw $10,0($8)\nadd $10,$10,$9\nsw $10,0($8)</code></pre>"
+       }
+      ],
+      "correctId": "d",
+      "explanation": "array[i-1] נמצא בהיסט -4 מכתובת array[i]. קוראים את שני האיברים, מחברים, וכותבים בחזרה אל array[i] (היסט 0). השני קורא את האיבר הבא, השלישי כותב על האיבר הקודם, והרביעי כותב את האיבר הקודם בלי לחבר.",
+      "recap": "היסט -4 הוא האיבר הקודם, והתוצאה נכתבת לכתובת של האיבר הנוכחי.",
+      "questionHtml": "$4 הוא כתובת מערך מילים, $5 הוא size, ו-$8 מחזיק את הכתובת של array[i] (i מ-$6). הקטע מתרגם <code class=\"tok\" dir=\"ltr\">for (i=1;i&lt;size;i++) array[i] = array[i] + array[i-1];</code>. מהן הפקודות החסרות?<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>addi $6,$0,1\nlp: slt $1,$6,$5\nbeq $1,$0,end\nadd $8,$6,$6\nadd $8,$8,$8\nadd $8,$8,$4\n@@@@@@@\naddi $6,$6,1\nj lp\nend:</code></pre>",
+      "explanationHtml": "array[i-1] נמצא בהיסט -4 מכתובת array[i]. קוראים את שני האיברים, מחברים, וכותבים בחזרה אל array[i] (היסט 0). השני קורא את האיבר הבא, השלישי כותב על האיבר הקודם, והרביעי כותב את האיבר הקודם בלי לחבר.",
+      "recapHtml": "היסט -4 הוא האיבר הקודם, והתוצאה נכתבת לכתובת של האיבר הנוכחי."
+     },
+     {
+      "id": "C08-Q5",
+      "question": "\\$4 = 4000 הוא כתובת מערך מילים בגודל \\$5 = 5 שאיבריו 4, 7, 10, 3, 8. מה ערך \\$7 בסוף הקטע?\n```asm\naddi $6,$0,0\naddi $7,$0,0\naddi $12,$0,1\nlp: slt $8,$6,$5\nbeq $8,$0,end\nadd $9,$6,$6\nadd $9,$9,$9\nadd $9,$9,$4\nlw $10,0($9)\nand $11,$10,$12\nbne $11,$0,nxt\naddi $7,$7,1\nnxt: addi $6,$6,1\nj lp\nend:\n```",
+      "options": [
+       {
+        "id": "a",
+        "value": "2",
+        "type": "text",
+        "html": "2"
+       },
+       {
+        "id": "b",
+        "value": "5",
+        "type": "text",
+        "html": "5"
+       },
+       {
+        "id": "c",
+        "value": "4",
+        "type": "text",
+        "html": "4"
+       },
+       {
+        "id": "d",
+        "value": "3",
+        "type": "text",
+        "html": "3"
+       }
+      ],
+      "correctId": "d",
+      "explanation": "`and` עם 1 בודק את הביט התחתון. `bne` מדלגת על המונה כשהביט דלוק (איבר אי-זוגי), ולכן \\$7 סופר את האיברים הזוגיים: 4, 10, 8, כלומר 3. 2 הוא מספר האי-זוגיים.",
+      "recap": "and עם 1 בודק זוגיות, והמונה סופר את מי שלא דילג עליו.",
+      "questionHtml": "$4 = 4000 הוא כתובת מערך מילים בגודל $5 = 5 שאיבריו 4, 7, 10, 3, 8. מה ערך $7 בסוף הקטע?<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>addi $6,$0,0\naddi $7,$0,0\naddi $12,$0,1\nlp: slt $8,$6,$5\nbeq $8,$0,end\nadd $9,$6,$6\nadd $9,$9,$9\nadd $9,$9,$4\nlw $10,0($9)\nand $11,$10,$12\nbne $11,$0,nxt\naddi $7,$7,1\nnxt: addi $6,$6,1\nj lp\nend:</code></pre>",
+      "explanationHtml": "<code class=\"tok\" dir=\"ltr\">and</code> עם 1 בודק את הביט התחתון. <code class=\"tok\" dir=\"ltr\">bne</code> מדלגת על המונה כשהביט דלוק (איבר אי-זוגי), ולכן $7 סופר את האיברים הזוגיים: 4, 10, 8, כלומר 3. 2 הוא מספר האי-זוגיים.",
+      "recapHtml": "and עם 1 בודק זוגיות, והמונה סופר את מי שלא דילג עליו."
+     },
+     {
+      "bankId": "24B-A-Q20",
+      "recap": "קוראים את הרשימה כדי לזהות תפקיד כל אוגר, ואז מתאימים את הפקודות החסרות.",
+      "recapHtml": "קוראים את הרשימה כדי לזהות תפקיד כל אוגר, ואז מתאימים את הפקודות החסרות."
+     }
+    ]
+   },
+   {
+    "id": "C09",
+    "order": 9,
+    "icon": "🏆",
+    "title": "בוס: שאלות מבחן אמיתיות",
+    "goal": "אחרי השלב הזה אפשר להתמודד עם השאלות מהסוג שמופיע במבחן: מעקב, תרגום והשלמת קוד.",
+    "source": "ai-verified",
+    "boss": true,
+    "lesson": {
+     "html": "<p>השלב הזה מורכב משאלות אמיתיות ממבחנים קודמים. רשימת בדיקה לפני שבוחרים תשובה:</p>\n<ul><li><b>מעקב:</b> טבלה עם עמודה לכל אוגר, שורה לכל איטרציה, והחוק הכללי שהלולאה מחשבת.</li>\n<li><b>תרגום C לאסמבלי:</b> תנאי הפוך בהסתעפות, slt עם האוגרים בסדר הנכון, ודילוג מעל ה-else.</li>\n<li><b>אסמבלי ל-C:</b> ממפים אוגרים למשתנים, וקובעים אם הבדיקה בראש (while) או בסוף (do-while).</li>\n<li><b>ערך התחלתי:</b> עובדים מהתוצאה לאחור.</li>\n<li><b>פקודות חסרות:</b> מזהים תפקידי אוגרים ופוסלים אפשרויות לפי slt, beq/bne, תווית ואוגר יעד.</li></ul>\n<div class=\"lesson-rule\">🔑 כשיש ספק, מריצים את הקטע על שתי דוגמאות קטנות, ביניהן מקרה שוויון.</div>"
+    },
+    "questions": [
+     {
+      "bankId": "23B-A-Q13",
+      "recap": "קוראים מהאסמבלי את סוג הלולאה: בדיקה בראש היא while.",
+      "recapHtml": "קוראים מהאסמבלי את סוג הלולאה: בדיקה בראש היא while."
+     },
+     {
+      "bankId": "23A-A-Q13",
+      "recap": "מבנה ה-if/else נקרא מהסתעפות ההפוכה ומהכיוון של slt.",
+      "recapHtml": "מבנה ה-if/else נקרא מהסתעפות ההפוכה ומהכיוון של slt."
+     },
+     {
+      "bankId": "23B-A-Q10",
+      "recap": "עוקבים אחרי הלולאה וקובעים מה המונה סופר.",
+      "recapHtml": "עוקבים אחרי הלולאה וקובעים מה המונה סופר."
+     },
+     {
+      "bankId": "25A-A-Q10",
+      "recap": "מהתוצאה מחשבים לאחור כמה ביטים דלוקים נדרשים.",
+      "recapHtml": "מהתוצאה מחשבים לאחור כמה ביטים דלוקים נדרשים."
+     },
+     {
+      "bankId": "22B-A-Q20",
+      "recap": "משלימים לפי תפקיד האוגרים, כיוון ה-slt וההסתעפות.",
+      "recapHtml": "משלימים לפי תפקיד האוגרים, כיוון ה-slt וההסתעפות."
+     },
+     {
+      "bankId": "23B-B-Q13",
+      "recap": "שני if נפרדים ברצף: כל אחד מקבל בדיקה והסתעפות משלו.",
+      "recapHtml": "שני if נפרדים ברצף: כל אחד מקבל בדיקה והסתעפות משלו."
+     }
+    ]
+   }
+  ]
  }
 };
