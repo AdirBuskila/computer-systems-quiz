@@ -10,7 +10,9 @@ def walk(x, where):
         for ch in "\t\r\x08\x0b\x0c\x07":
             if ch in x:
                 bad += 1; print(f"{where}: control char {ch!r}: ...{x[max(0,x.index(ch)-40):x.index(ch)+20]!r}")
-        for m in RX.finditer(x):
+        # fenced code blocks are literal (no math): drop them before looking for $...$ spans
+        scan = re.sub(r"^```[A-Za-z0-9+#_-]{0,12}[ \t]*\n.*?^```[ \t]*$", "", x, flags=re.S | re.M)
+        for m in RX.finditer(scan):
             span = m.group(1) or m.group(2)
             if "\n" in span:
                 bad += 1; print(f"{where}: newline inside math: {span[:80]!r}")
