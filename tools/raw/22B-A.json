@@ -1,0 +1,768 @@
+{
+ "examCode": "22B-A",
+ "examLabel": "2022 סמסטר א מועד ב",
+ "year": 2022,
+ "examDate": "03.03.2022",
+ "sourceFile": "sitting 22B-A (exam pages 2-22)",
+ "keyFile": "sitting 22B-A pp.2-22 (circled options + handwritten working below each question)",
+ "contexts": {},
+ "questions": [
+  {
+   "num": 1,
+   "topic": "boolean_algebra",
+   "question": "מי מהמשוואות הבאות אינה נכונה?",
+   "options": [
+    {
+     "id": "a",
+     "type": "math",
+     "value": "(A\\oplus B)\\cdot(A\\oplus C)=A\\oplus\\overline{(B\\oplus C)}"
+    },
+    {
+     "id": "b",
+     "type": "math",
+     "value": "(A\\oplus B)\\cdot\\overline{(A\\oplus C)}=\\bar A\\cdot\\bar C\\cdot B+\\bar B\\cdot C\\cdot A"
+    },
+    {
+     "id": "c",
+     "type": "math",
+     "value": "(A\\oplus B)\\oplus(C\\oplus\\bar E)\\oplus\\overline{(D\\oplus C)}\\oplus(\\bar B\\oplus D)=(\\bar A\\oplus C)\\oplus(\\bar C\\oplus E)"
+    },
+    {
+     "id": "d",
+     "type": "math",
+     "value": "\\overline{B\\cdot A}+\\overline{D\\cdot C}=A\\cdot(B\\cdot(C\\cdot\\bar D+\\bar C)+\\bar B)+\\bar A"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "א: $(A\\oplus B)(A\\oplus C)=(\\bar AB+A\\bar B)(\\bar AC+A\\bar C)=\\bar ABC+A\\bar B\\bar C$, ואילו $A\\oplus\\overline{B\\oplus C}=A\\oplus(\\bar B\\bar C+BC)=\\bar A\\bar B\\bar C+\\bar ABC+A\\bar BC+AB\\bar C$ - לא שווים, לכן א אינה נכונה.\nב: $(A\\oplus B)\\cdot\\overline{A\\oplus C}=(\\bar AB+A\\bar B)(\\bar A\\bar C+AC)=\\bar AB\\bar C+A\\bar BC$ - נכונה.\nג: אגף שמאל שווה ל-$\\overline{A\\oplus E}$ ואגף ימין $(\\bar A\\oplus C)\\oplus(\\bar C\\oplus E)=\\bar A\\oplus(C\\oplus\\bar C)\\oplus E=A\\oplus E$ - לא שווים, לכן ג אינה נכונה.\nד: $\\bar A+\\bar B+\\bar C+\\bar D$ משני האגפים (לפי $X+\\bar XY=X+Y$) - נכונה.",
+   "acceptedIds": [
+    "a",
+    "c"
+   ],
+   "note": "Two circles on the printed page (a and c) and the lecturer's note '2 correct answers'; both equations are false by exhaustive check, so both are accepted."
+  },
+  {
+   "num": 2,
+   "topic": "mips_machine_code",
+   "question": "מה יהיה באוגר \\$9 אחרי ביצוע הפקודות הבאות:\n```asm\naddi $7, $0, 0x8888\nlui  $9, 0x8888\nadd  $9, $9, $7\nadd  $9, $7, $9\n```",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "0x88871110"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "0x88870888"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "0x88881110"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "0x88880888"
+    },
+    {
+     "id": "e",
+     "type": "text",
+     "value": "0x88891110"
+    },
+    {
+     "id": "f",
+     "type": "text",
+     "value": "0x88890888"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "אחרי addi (הרחבת סימן): $\\$7=\\texttt{0xFFFF8888}$. אחרי lui: $\\$9=\\texttt{0x88880000}$.\nאחרי ה-add הראשון: $\\$9=\\texttt{0x88878888}$; אחרי השני: $\\$9=\\texttt{0xFFFF8888}+\\texttt{0x88878888}=\\texttt{0x88871110}$."
+  },
+  {
+   "num": 3,
+   "topic": "floating_point",
+   "question": "חיברנו שני מספרים המיוצגים ב- Single Precision Floating Point (1 סיבית סימן, 8 סיביות אקספוננט ו- 23 סיביות שבר). מהי התשובה השגויה?",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "נקבל מספר מנורמל רק אם שני המחוברים מנורמלים"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "אם שני המחוברים מנורמלים התוצאה לאו דווקא מנורמלת"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "אם שני המחוברים מנורמלים והתוצאה היא מספר לא מנורמל אזי אחד מהמספרים שלילי והשני חיובי"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "אם שני המחוברים מנורמלים ואחד מהם שלילי והשני חיובי לא ייתכן שהתוצאה היא אינסוף ($\\infty$)."
+    },
+    {
+     "id": "e",
+     "type": "text",
+     "value": "ייתכן שתוצאת החיבור היא 0."
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "א שגויה: אם נחבר שני מספרים לא מנורמלים הגדולים ביותר נקבל מספר מנורמל.\nב נכונה: למשל 1 + (-1) = 0, שאינו מנורמל.\nג נכונה: סכום של שני מנורמלים בעלי אותו סימן אינו יכול לקטון אל מתחת לתחום המנורמלים.\nד נכונה: בסימנים הפוכים התוצאה קטנה בערכה המוחלט ולכן אין גלישה לאינסוף.\nה נכונה (כמו ב)."
+  },
+  {
+   "num": 4,
+   "topic": "number_bases",
+   "question": "מהו ערכו העשרוני של השבר האינסופי $[0.240\\ 240\\ 240\\ 240\\ \\ldots]_7$ בבסיס 7?",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "7/19"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "11/30"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "35/97"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "23/64"
+    },
+    {
+     "id": "e",
+     "type": "text",
+     "value": "13/36"
+    },
+    {
+     "id": "f",
+     "type": "text",
+     "value": "126/343"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "$[0.240]_7=2\\cdot\\frac17+4\\cdot\\frac1{49}=\\frac{18}{49}=\\frac{126}{343}$, והמנה היא $q=\\frac1{7^3}=\\frac1{343}$.\n$S_\\infty=\\frac{A_1}{1-q}=\\frac{126/343}{1-1/343}=\\frac{126}{342}=\\frac{7}{19}$."
+  },
+  {
+   "num": 5,
+   "topic": "signed_twos_complement",
+   "question": "X הוא מספר 2's complement בן 13 סיביות מהן 6 הם מימין לנקודה הבינרית. כלומר:\n$X=\\langle X_6,X_5,X_4,X_3,X_2,X_1,X_0\\,.\\,X_{-1},X_{-2},X_{-3},X_{-4},X_{-5},X_{-6}\\rangle$\nסיביות $X_4$, $X_2$ ו- $X_{-2}$ הן \"1\".\nמה לא נכון:",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "$\\langle X\\rangle$ יכול להיות $-42\\frac{22}{64}$"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "$\\langle X\\rangle$ יכול להיות $-\\frac{3}{4}$"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "$\\langle X\\rangle$ יכול להיות $-42\\frac{43}{64}$"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "$\\langle X\\rangle$ לא יכול להיות $60\\frac{1}{2}$"
+    },
+    {
+     "id": "e",
+     "type": "text",
+     "value": "$\\langle X\\rangle$ לא יכול להיות $-30\\frac{1}{2}$"
+    },
+    {
+     "id": "f",
+     "type": "text",
+     "value": "$\\langle X\\rangle$ לא יכול להיות $\\frac{7}{64}$"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "א: $42\\frac{22}{64}=\\langle0101010.010110\\rangle$, ולכן $-42\\frac{22}{64}=\\langle1010101.101010\\rangle$ - הסיבית $X_{-2}$ היא 0, לכן המספר לא יכול להיות מייצג - הטענה לא נכונה.\nב: $-\\frac34=\\langle1111111.010000\\rangle$ - יכול להיות.\nג: $42\\frac{43}{64}=\\langle0101010.101011\\rangle$, ולכן $-42\\frac{43}{64}=\\langle1010101.010101\\rangle$ - יכול להיות.\nד: $60\\frac12$ מקבל $X_{-2}=0$ - לא יכול להיות (נכון).\nה: ב-$-30\\frac12$ הסיבית $X_{-2}$ היא 0 - לא יכול להיות (נכון).\nו: $\\frac7{64}=\\langle0000000.000111\\rangle$ - $X_{-2}=0$, לא יכול להיות (נכון)."
+  },
+  {
+   "num": 6,
+   "topic": "signed_twos_complement",
+   "question": "X הוא מספר בן 12 סיביות מהם 5 הם משמאל לנקודה הבינרית. כלומר: $X=X_4,X_3,X_2,X_1,X_0\\,.\\,X_{-1},X_{-2},X_{-3},X_{-4},X_{-5},X_{-6},X_{-7}$. עליכם למצוא את תחום המספרים אותו ניתן להציג כמספרים לא מכוונים (unsigned) וכמספרים מכוונים (2's complement signed).",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "כ-Unsigned מ-0 ועד $(2^5-2^{-7})$ וכ-Signed מ-$(-2^4)$ ועד $(2^4-2^{-7})$"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "כ-Unsigned מ-0 ועד $(2^5-2^{-8})$ וכ-Signed מ-$(-2^5)$ ועד $(2^4-2^{-8})$"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "כ-Unsigned מ-0 ועד $(2^5-2^{-7})$ וכ-Signed מ-$(-2^4)$ ועד $(2^5-2^{-7})$"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "כ-Unsigned מ-0 ועד $(2^4-2^{-8})$ וכ-Signed מ-$(-2^4)$ ועד $(2^4-2^{-8})$"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "ב-12 סיביות: signed $-2^{11}\\ \\ldots\\ (2^{11}-1)$ ו-unsigned $0\\ \\ldots\\ (2^{12}-1)$. מחלקים ב-$2^7$ (7 ספרות אחרי הנקודה) ומקבלים: signed מ-$-2^4$ ועד $2^4-2^{-7}$, unsigned מ-0 ועד $2^5-2^{-7}$."
+  },
+  {
+   "num": 7,
+   "topic": "floating_point",
+   "question": "ב Single Precision Floating Point (1 סיבית סימן, 8 סיביות אקספוננט ו- 23 סיביות שבר), באיזה קטע יש יותר מספרים?",
+   "options": [
+    {
+     "id": "a",
+     "type": "math",
+     "value": "[-1,-88]"
+    },
+    {
+     "id": "b",
+     "type": "math",
+     "value": "[100,352]"
+    },
+    {
+     "id": "c",
+     "type": "math",
+     "value": "[-100,-352]"
+    },
+    {
+     "id": "d",
+     "type": "math",
+     "value": "[25,255]"
+    },
+    {
+     "id": "e",
+     "type": "math",
+     "value": "[0.25,18]"
+    },
+    {
+     "id": "f",
+     "type": "math",
+     "value": "[0.125,10]"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "מספרי ה-floating point מפוזרים באופן אחיד בלוגריתם, ולכן מספר המספרים בקטע תלוי ביחס בין קצותיו.\nא: $\\frac{-88}{-1}=88$; ב: $\\frac{352}{100}=3.52$; ג: $\\frac{-352}{-100}=3.52$; ד: $\\frac{255}{25}=10.2$; ה: $\\frac{18}{0.25}=72$; ו: $\\frac{10}{0.125}=80$.\nהיחס הגדול ביותר הוא ב-א, ולכן שם יש הכי הרבה מספרים."
+  },
+  {
+   "num": 8,
+   "topic": "datapath_control",
+   "question": "אילו הוספנו למעבד ה-MIPS שמימשנו בפקודת xori, שמבצעת xor בין 16 bit imm ללא sign extension, לבין התוכן של אוגר Rs וכותבת את התוצאה ל- Rt. אילו שלבים היו מתבצעים במהלך ביצוע הפקודה הזו?\n(למשל xori \\$9, \\$3, 0xF101)",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "Fetch, Decode, ALU, Write-Back"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "Fetch, Decode, ALU, Memory, Write-Back"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "Fetch, Decode, Memory"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "Fetch, Decode, ALU"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "Fetch; Decode; ALU (שם מתבצע ה-xor); Write-Back (התוצאה נכתבת ל-Rt). אין גישה לזיכרון."
+  },
+  {
+   "num": 9,
+   "topic": "latches_flipflops",
+   "question": "לפניכם שלושה דלגלגים (FF-ים), המחוברים בצורת אוגר הזזה (Shift Register). הכניסה משמאל (ל-D2) מחוברת ליציאת שער XOR, המבצע פעולת XOR בין Q0 להיפוך של Q2. הערך באוגר ההזזה הוא: [Q2, Q1, Q0] = [0, 1, 1], כמצויר. מה היה הערך לפני 8 עליות שעון?",
+   "options": [
+    {
+     "id": "a",
+     "type": "math",
+     "value": "[Q_2,Q_1,Q_0]=[1,1,0]"
+    },
+    {
+     "id": "b",
+     "type": "math",
+     "value": "[Q_2,Q_1,Q_0]=[0,0,0]"
+    },
+    {
+     "id": "c",
+     "type": "math",
+     "value": "[Q_2,Q_1,Q_0]=[0,1,0]"
+    },
+    {
+     "id": "d",
+     "type": "math",
+     "value": "[Q_2,Q_1,Q_0]=[1,0,0]"
+    },
+    {
+     "id": "e",
+     "type": "math",
+     "value": "[Q_2,Q_1,Q_0]=[0,0,1]"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "$D_2=\\bar Q_2\\oplus Q_0$: שווה 1 אם $Q_2=Q_0$ ו-0 אם $Q_2\\ne Q_0$.\nהסדרה מחזורית באורך 7: $[0,1,1]\\to[0,0,1]\\to[0,0,0]\\to[1,0,0]\\to[0,1,0]\\to[1,0,1]\\to[1,1,0]\\to[0,1,1]$. לכן 8 עליות שעון לאחור שקולות לעלייה אחת לאחור, והמצב הקודם הוא $[1,1,0]$.",
+   "image": "images/exams/22B-A-Q9.png"
+  },
+  {
+   "num": 10,
+   "topic": "mips_assembly_c",
+   "question": "מהו תרגום שגוי באסמבלי של ה-MIPS לשורת ה- C הבאה:\na = 3*a - 4*b;",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "```asm\nadd $1, $5, $0\nadd $5, $5, $5\nadd $5, $5, $1\nadd $2, $2, $2\nadd $2, $2, $2\nsub $5, $5, $2\n```"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "```asm\nadd $1, $5, $0\nsub $5, $5, $2\nadd $5, $5, $5\nadd $5, $5, $5\nsub $5, $5, $1\n```"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "```asm\nsub $1, $1, $1\nadd $1, $1, $5\nadd $1, $1, $5\nadd $5, $1, $5\nsub $5, $5, $2\nsub $5, $5, $2\nsub $5, $5, $2\nsub $5, $5, $2\n```"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "```asm\nadd $1, $5, $5\nadd $1, $1, $1\nsub $1, $1, $2\nsub $1, $1, $2\nsub $1, $1, $2\nsub $1, $1, $2\nsub $5, $1, $5\n```"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "לפי הפתרון a נמצא ב-\\$5 ו-b ב-\\$2.\nא: \\$1=a; a=2a; a=3a; b=2b; b=4b; a=3a-4b - התוצאה המחושבת נכונה, אבל שינינו את b (\\$2), ולכן התרגום שגוי.\nב, ג, ד: מחשבים 3a-4b ו-b נשאר ללא שינוי - תרגומים נכונים.",
+   "note": "No circle on the page for this question: the lecturer ticks b, c, d and writes that the computed value of a is right but b was changed, so a is the wrong translation. Key a read from that note; script check confirms only a overwrites b."
+  },
+  {
+   "num": 11,
+   "topic": "number_bases",
+   "question": "המספר הבא $[326]_7$ שהוא מספר Unsigned בבסיס 7, הומר לבסיס 3. הערך הנכון הינו:",
+   "options": [
+    {
+     "id": "a",
+     "type": "math",
+     "value": "[20012]_3"
+    },
+    {
+     "id": "b",
+     "type": "math",
+     "value": "[21002]_3"
+    },
+    {
+     "id": "c",
+     "type": "math",
+     "value": "[20112]_3"
+    },
+    {
+     "id": "d",
+     "type": "math",
+     "value": "[20102]_3"
+    },
+    {
+     "id": "e",
+     "type": "math",
+     "value": "[21012]_3"
+    },
+    {
+     "id": "f",
+     "type": "math",
+     "value": "[20002]_3"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "$[326]_7=3\\cdot49+2\\cdot7+6=147+14+6=167$. חילוקים ב-3: $167=3\\cdot55+2$, $55=3\\cdot18+1$, $18=3\\cdot6+0$, $6=3\\cdot2+0$, $2=3\\cdot0+2$.\nלכן $[20012]_3$; בדיקה: $2\\cdot81+3+2=167$."
+  },
+  {
+   "num": 12,
+   "topic": "signed_twos_complement",
+   "question": "במחבר 2's Comp. של 8 ביט יש יציאה הנדלקת כאשר יש Overflow. באיזה מהחישובים הבאים לא תידלק יציאה זו?",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "`10110110 + 11010001`"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "`10110110 + 10111001`"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "`01011111 + 00110001`"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "`01010001 - 10010011`"
+    },
+    {
+     "id": "e",
+     "type": "text",
+     "value": "`10110110 + 10111010`"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "א: $(-74)+(-47)=-121$ - אין גלישה.\nב: $(-74)+(-57)=-131$ - גלישה.\nג: $95+49=144$ - גלישה.\nד: $81-(-109)=190$ - גלישה.\nה: $(-74)+(-70)=-144$ - גלישה."
+  },
+  {
+   "num": 13,
+   "topic": "mips_assembly_c",
+   "question": "רק אחד מהתרגומים הבאים בשפת אסמבלי של ה-MIPS לקטע ה-C הבא הוא נכון. מהו התרגום הנכון?\n```c\nif (a >= b) a = 2*a;\nelse  b=2*b;\n```",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "```asm\n      slt $1, $3, $4\n      beq $1, $0, lab1\n      add $4, $4, $4\n      beq $0, $0, end\nlab1: add $3, $3, $3\nend:\n```"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "```asm\n      slt $1, $3, $4\n      bne $1, $0, lab1\n      add $4, $4, $4\n      beq $0, $0, end\nlab1: add $3, $3, $3\nend:\n```"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "```asm\n      slt $1, $4, $3\n      bne $1, $0, lab1\n      add $3, $3, $3\n      beq $0, $0, end\nlab1: add $4, $4, $4\nend:\n```"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "```asm\n      slt $1, $3, $4\n      beq $1, $0, lab1\n      add $3, $3, $3\n      beq $0, $0, end\nlab1: add $4, $4, $4\nend:\n```"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "לפי הפתרון a הוא \\$3 ו-b הוא \\$4. `slt \\$1,\\$3,\\$4`: \\$1=1 אם a<b ו-\\$1=0 אם a>=b.\nא: `beq \\$1,\\$0,lab1` קופץ כש-a>=b ושם a=2a; אחרת b=2b - נכון.\nב: קופץ כש-a<b ושם a=2a - שגוי. ג: בודק b<a עם bne ומכפיל את הרגיסטר הלא נכון. ד: כש-a>=b מכפיל את b ולא את a - שגוי."
+  },
+  {
+   "num": 14,
+   "topic": "decoders_muxes",
+   "question": "איזו מהמשוואות מתארת נכון את המעגל הבא?",
+   "options": [
+    {
+     "id": "a",
+     "type": "math",
+     "value": "F=\\bar C\\cdot D+A\\cdot\\bar C+\\bar B\\cdot C"
+    },
+    {
+     "id": "b",
+     "type": "math",
+     "value": "F=A\\cdot\\bar C+\\bar C\\cdot D+\\bar A\\cdot C"
+    },
+    {
+     "id": "c",
+     "type": "math",
+     "value": "F=\\bar A\\cdot\\bar C+\\bar C\\cdot D+A\\cdot B"
+    },
+    {
+     "id": "d",
+     "type": "math",
+     "value": "F=A\\cdot\\bar C+\\bar A\\cdot B+\\bar A\\cdot C"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "פיתוח לפי כניסות המולטיפלקסר: $F=\\bar A\\bar B\\bar C\\cdot D+\\bar A\\bar BC\\cdot1+\\bar AB\\bar C\\cdot D+\\bar ABC\\cdot0+A\\bar B\\bar C\\cdot1+A\\bar BC\\cdot1+AB\\bar C\\cdot1+ABC\\cdot0=\\bar CD+A\\bar C+\\bar BC$.\nב: עבור $A=0,B=C=1$ הביטוי נותן 1 ואילו במעגל 0. ג: עבור $A=B=C=1$ הביטוי $AB$ נותן 1 ואילו במעגל 0. ד: עבור $A=0,B=C=1$ הביטוי נותן 1 ואילו במעגל 0.",
+   "image": "images/exams/22B-A-Q14.png"
+  },
+  {
+   "num": 15,
+   "topic": "decoders_muxes",
+   "question": "איזו מהמשוואות מתארת נכון את המעגל הבא?",
+   "options": [
+    {
+     "id": "a",
+     "type": "math",
+     "value": "F=B\\cdot\\bar C+A\\cdot\\bar B+\\bar B\\cdot D"
+    },
+    {
+     "id": "b",
+     "type": "math",
+     "value": "F=B\\cdot\\bar C+A\\cdot B+\\bar B\\cdot D"
+    },
+    {
+     "id": "c",
+     "type": "math",
+     "value": "F=B\\cdot\\bar C+A\\cdot\\bar B+C\\cdot D"
+    },
+    {
+     "id": "d",
+     "type": "math",
+     "value": "F=B\\cdot\\bar C+A\\cdot\\bar B+\\bar A\\cdot\\bar B\\cdot C"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "מהמעגל: $F=\\bar C\\bar D(B+A\\bar B)+\\bar CD\\cdot1+C\\bar D(A\\bar B)+CD(\\bar A\\bar B+A\\bar B)=B\\bar C+A\\bar B+\\bar BD$.\nב ו-ג: עבור $A=B=C=D=1$ המשוואה נותנת 1 ואילו במעגל 0. ד: עבור $A=B=D=0,\\ C=1$ הביטוי $\\bar A\\bar BC$ נותן 1 ואילו במעגל 0.",
+   "image": "images/exams/22B-A-Q15.png"
+  },
+  {
+   "num": 16,
+   "topic": "arithmetic_circuits",
+   "question": "בידנו מעגל הכופל את המספר השלם מטיפוס unsigned בן ארבע סיביות $[a_3,a_2,a_1,a_0]_2$ במספר 29 (גם כן unsigned). המכפל בנוי מרכיבי HA (כלומר Half-Adder) ורכיבי FA (כלומר Full-Adder). עלינו לספור את מספר הרכיבים ומספר היציאות. אנו כמובן מעדיפים מספר מינימלי של רכיבים (במקום FA לכאורה אפשר להשתמש בשני HA. אם יש כזה מקרה - נעדיף את ה- FA הבודד)\nמה נכון?",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "יש במכפל 3 רכיבי HA ו-7 רכיבי FA ויש לו 9 יציאות"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "יש במכפל 4 רכיבי HA ו-6 רכיבי FA ויש לו 9 יציאות"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "יש במכפל 5 רכיבי HA ו-5 רכיבי FA ויש לו 9 יציאות"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "יש במכפל 3 רכיבי HA ו-7 רכיבי FA ויש לו 8 יציאות"
+    },
+    {
+     "id": "e",
+     "type": "text",
+     "value": "יש במכפל 4 רכיבי HA ו-6 רכיבי FA ויש לו 8 יציאות"
+    },
+    {
+     "id": "f",
+     "type": "text",
+     "value": "יש במכפל 5 רכיבי HA ו-5 רכיבי FA ויש לו 8 יציאות"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "$29=[11101]_2$, ולכן מחברים ארבע שורות: $A\\cdot2^0,\\ A\\cdot2^2,\\ A\\cdot2^3,\\ A\\cdot2^4$. מתקבלים $3\\times$HA ו-$7\\times$FA, ויש 9 יציאות ($y_0\\ldots y_8$)."
+  },
+  {
+   "num": 17,
+   "topic": "mips_machine_code",
+   "question": "התרגום של הפקודה `bne $t7, $sp, cont` שנמצאת בכתובת `0x10000100` לשפת מכונה של ה-MIPS כאשר cont היא כתובת `0x10000180` הינו:",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "0x15FD001F"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "0x15FD0020"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "0x15FD0019"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "0x17AF001F"
+    },
+    {
+     "id": "e",
+     "type": "text",
+     "value": "0x17AF0020"
+    },
+    {
+     "id": "f",
+     "type": "text",
+     "value": "0x17AF0019"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "bne: opcode $=5$, $\\text{Rs}=\\$t7=\\$15$, $\\text{Rt}=\\$sp=\\$29$. $000101\\ |\\ 01111\\ |\\ 11101\\ |\\ \\text{imm}$.\nההפרש: $\\texttt{0x10000180}-\\texttt{0x10000100}=\\texttt{0x80}$ בתים $=\\texttt{0x20}$ מילים. כיוון ש-$PC=PC+4+4\\cdot\\text{sext}(\\text{imm})$, מתקבל $\\text{imm}=\\texttt{0x20}-1=\\texttt{0x1F}$.\n$\\Rightarrow\\texttt{0x15FD001F}$."
+  },
+  {
+   "num": 18,
+   "topic": "datapath_control",
+   "question": "במעבד ה- MIPS Single Cycle שלמדנו מי מהצירופים הרשומים מטה של אותות הבקרה נכון לפקודת xor?",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "ALUOp=10 (func); jump=0; MemtoReg =0; Branch=0"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "ALUOp=01 (sub); RegDst=1; MemtoReg =0; Branch=0"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "ALUOp=01 (sub); MemtoReg=0; RegWrite=1; Branch=0"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "ALUOp=10 (func); jump=0; RegWrite=1; Branch=1"
+    },
+    {
+     "id": "e",
+     "type": "text",
+     "value": "ALUOp=01 (sub); MemtoReg=0; RegWrite=1; Branch=1"
+    },
+    {
+     "id": "f",
+     "type": "text",
+     "value": "ALUOp=10 (func); MemtoReg=1; RegWrite=1; Branch=0"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "xor היא פקודת R-type: ALUOp=10 (func), ALUSrc=0, Jump=0, MemRead=MemWrite=0, MemtoReg=0, Branch=0, RegDst=1, RegWrite=1.\nב, ג, ה: ALUOp=01 (sub) אינו מתאים (שייך ל-beq). ד: Branch=1 אינו מתאים. ו: MemtoReg=1 שייך ל-lw.",
+   "image": "images/exams/22B-A-Q18.png",
+   "note": "Datapath figure printed on the page; its small control-signal labels are only partly legible in the source scan."
+  },
+  {
+   "num": 19,
+   "topic": "mips_machine_code",
+   "question": "הפקודה `0x03DD0822` בשפת מכונה של ה-MIPS הינה בעצם פקודת האסמבלי הבאה:",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "`sub $at, $fp, $sp`"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "`add $sp, $fp, 0x822`"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "`addi $sp, $fp, 2082`"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "`and $fp, $sp, $at`"
+    },
+    {
+     "id": "e",
+     "type": "text",
+     "value": "`sw $sp, 0x822($fp)`"
+    },
+    {
+     "id": "f",
+     "type": "text",
+     "value": "`sub $at, $sp, $fp`"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "$\\texttt{0x03DD0822}=000000\\ |\\ 11110\\ |\\ 11101\\ |\\ 00001\\ |\\ 00000\\ |\\ 100010$.\nopcode $=0$ (R-type), $\\text{Rs}=\\$30=\\$fp$, $\\text{Rt}=\\$29=\\$sp$, $\\text{Rd}=\\$1=\\$at$, funct $=34=\\text{sub}$ $\\Rightarrow$ `sub \\$at, \\$fp, \\$sp`"
+  },
+  {
+   "num": 20,
+   "topic": "mips_assembly_c",
+   "question": "קטע ה- C הבא תורגם לשפת הסף (אסמבלי) של מחשב MIPS. הנח כי כתובת ההתחלה של array נמצאת באוגר \\$5. הערך size שהוא גודל המערך נמצא באוגר \\$4. המערך הינו מערך של מילים (Words=4 bytes). אוגרים \\$4 ו- \\$5 צריכים להישאר ללא שינוי.\n```c\nsum=0;i=0;\ndo {\n    if (array[i]%2 == 1) sum += array[i];\n    i++;\n   } while(i<size)\n```\nלהלן התרגום:\n```asm\n    addi $6, $0, 0\n    addi $7, $0, 0\n    addi $8, $0, 1\nloop:\n    add $9,$7,$7\n    add $9,$9,$9\n    add $9,$9,$5\n    lw   $10,0($9)\n    @@@@@@@\nnxt: addi $7,$7,1\n    slt  $9,$7,$4\n    bne  $9,$0 loop\ncont:\n```\nמהתרגום נשמטו פקודות במקום המסומן ב- @@@@@@@.\nהפקודות החסרות הן:",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "```asm\nand $9,$10,$8\nbne $9,$8,nxt\nadd $6,$10,$6\n```"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "```asm\nsub $11,$10,$8\nbne $11,$0,nxt\nadd $6,$10,$9\n```"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "```asm\nand $10,$10,$8\nbne $10,$8,nxt\nadd $6,$10,$6\n```"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "```asm\nand $9,$10,$8\nbeq $9,$8, nxt\nadd $6,$10,$6\n```"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "\\$6=sum=0, \\$7=i=0, \\$8=1; \\$9=4i, \\$9=array+4i, \\$10=array[i]; בסוף i=i+1 וחוזרים ל-loop אם i<size.\nא: \\$9=1 אם array[i]%2==1; אם לא - מדלגים (bne \\$9,\\$8,nxt); אחרת sum += array[i].\nב: `sub` בודק רק אם array[i] שווה ל-1 (לא אם הוא אי-זוגי), וה-`add` מוסיף ל-sum את \\$9 (הכתובת) במקום את \\$10. ג: הפקודה הראשונה מוחקת את \\$10 (array[i]) ולכן ל-sum יתווסף ערך שגוי. ד: beq מדלג כשהמספר אי-זוגי - הפוך.",
+   "note": "This question is printed with the number '1.' (it is the 20th page of the exam). The stem says array is in $5 and size in $4, matching the code."
+  }
+ ]
+}
