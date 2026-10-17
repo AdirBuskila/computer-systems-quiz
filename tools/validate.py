@@ -104,9 +104,50 @@ def redact_problems(data, code, qid_of, names):
     return out
 
 
+FENCE_OPEN = re.compile(r"^```([A-Za-z0-9+#_-]{0,12})[ \t]*$")
+FENCE_CLOSE = re.compile(r"^```[ \t]*$")
+
+
+def split_fences(s):
+    """Yield (kind, payload): ('text', str) | ('fence', (lang, body)) | ('unclosed', str).
+    A fence opens on a line that is exactly ``` or ```lang and closes on a line that is exactly ```."""
+    s = str(s)
+    if "```" not in s:
+        yield "text", s
+        return
+    lines, buf, i = s.replace("\r\n", "\n").split("\n"), [], 0
+    while i < len(lines):
+        m = FENCE_OPEN.match(lines[i])
+        if not m:
+            buf.append(lines[i])
+            i += 1
+            continue
+        j = i + 1
+        while j < len(lines) and not FENCE_CLOSE.match(lines[j]):
+            j += 1
+        if buf:
+            yield "text", "\n".join(buf)
+            buf = []
+        if j >= len(lines):
+            yield "unclosed", "\n".join(lines[i:])
+            return
+        yield "fence", (m.group(1), "\n".join(lines[i + 1:j]))
+        i = j + 1
+    if buf:
+        yield "text", "\n".join(buf)
+
+
 def rich_problems(s, where):
     """Balanced $, no Hebrew inside math. Returns a list of problem strings."""
     out = []
+    if "```" in str(s):
+        keep = []
+        for fk, fp in split_fences(s):
+            if fk == "unclosed":
+                out.append(f"{where}: unclosed ``` code fence (close it with a line that is exactly ```)")
+            elif fk == "text":
+                keep.append(fp)
+        s = "\n".join(keep)
     s = str(s).replace("\\$", "")
     for part in TOKEN.split(s):
         if part.startswith("$$") and part.endswith("$$") and len(part) > 4:

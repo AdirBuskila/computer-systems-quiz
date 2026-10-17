@@ -26,7 +26,7 @@ const THEMES = ["dark", "light"];
 (async () => {
   const browser = await puppeteer.launch({ executablePath: CHROME, headless: "new",
     args: ["--no-sandbox", "--force-color-profile=srgb", "--hide-scrollbars", "--allow-file-access-from-files"] });
-  const errors = [], overflow = [];
+  const errors = [], overflow = [], clipped = [];
   for (const [vpName, vp] of VIEWPORTS) for (const theme of THEMES) {
     const page = await browser.newPage();
     page.on("pageerror", e => errors.push(`${vpName}/${theme} PAGEERROR: ${e.message}`));
@@ -40,6 +40,15 @@ const THEMES = ["dark", "light"];
       await sleep(250);
       const ov = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
       if (ov > 1) overflow.push(`${vpName}/${theme}/${name}: +${ov}px`);
+      const badCode = await page.evaluate(() => [...document.querySelectorAll(".code-block")].filter(c => c.offsetParent).flatMap(c => {
+        const r = c.getBoundingClientRect(), cs = getComputedStyle(c), out = [];
+        if (c.getAttribute("dir") !== "ltr" || cs.direction !== "ltr") out.push("code block not LTR");
+        if (cs.textAlign !== "left" && cs.textAlign !== "start") out.push("code block not left-aligned");
+        if (r.right > window.innerWidth + 1 || r.left < -1) out.push(`code block spans ${Math.round(r.left)}..${Math.round(r.right)} of ${window.innerWidth}px`);
+        if (c.scrollWidth > c.clientWidth + 1 && !(cs.overflowX === "auto" || cs.overflowX === "scroll")) out.push("wide code block without its own horizontal scroll");
+        return out;
+      }));
+      if (badCode.length) clipped.push(`${vpName}/${theme}/${name}: ${badCode.join("; ")}`);
       const f = `${vpName}-${theme}-${String(++n).padStart(2, "0")}-${name}.png`;
       await page.screenshot({ path: path.join(OUT, f), fullPage: true });
       console.log("shot:", f);
@@ -116,5 +125,6 @@ const THEMES = ["dark", "light"];
   await browser.close();
   console.log("\noverflow:", overflow.length ? overflow : "none");
   console.log("errors:", errors.length ? errors : "none");
-  process.exit(errors.length || overflow.length ? 1 : 0);
+  console.log("code blocks:", clipped.length ? clipped : "ok");
+  process.exit(errors.length || overflow.length || clipped.length ? 1 : 0);
 })().catch(e => { console.error(e); process.exit(1); });

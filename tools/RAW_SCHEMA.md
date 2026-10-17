@@ -48,6 +48,7 @@ lists them (id + reason) in `build_report.md`.
 - Inline math `$…$`, display math `$$…$$` — **TeX for KaTeX**, rendered to MathML at build time.
   **No Hebrew inside `$…$`** (split: `השפה $L$ ניתנת להכרעה`).
 - `**bold**`, `` `code` `` (LTR), `\n` = line break. Literal `$` → `\$`.
+- **Fenced code block** (multi-line code: C, MIPS, C++): a line that is exactly three backticks (optionally followed by a short language tag: `c`, `cpp`, `asm`) opens it and a line that is exactly three backticks closes it. The content is literal: HTML-escaped only, no `$` math, no `**`, no backtick parsing, indentation and blank lines preserved. It renders as an LTR, left-aligned `<pre class="code-block">` that scrolls sideways by itself. An unclosed fence fails `validate.py` and the build, naming the item id. Never write multi-line code as one `` `backtick span` `` per line.
 - Roman-numeral claims (I / II) stay as plain text lines.
 
 ## Notation

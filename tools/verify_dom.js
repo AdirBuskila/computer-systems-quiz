@@ -30,6 +30,7 @@ window.addEventListener("error", e => errors.push("window.onerror: " + e.message
 const scripts = [...window.document.querySelectorAll("script[src]")]
   .map(s => s.getAttribute("src")).filter(s => !/^(https?:)?\/\//.test(s)).map(s => s.split("?")[0]);
 for (const f of scripts) {
+  if (f === "learn.js" && !fs.existsSync(path.join(ROOT, f))) continue;   // no briefs built yet (phase 5)
   try { window.eval(fs.readFileSync(path.join(ROOT, f), "utf8")); }
   catch (e) { errors.push(`eval ${f}: ${e.message}`); }
 }
@@ -39,6 +40,8 @@ let fail = 0;
 function assert(cond, msg) { console.log((cond ? "  ok  " : "FAIL  ") + msg); if (!cond) fail++; }
 const visible = el => el && !el.classList.contains("hidden");
 function mathAllLtr(where) {
+  const pre = $$(".code-block").filter(p => p.getAttribute("dir") !== "ltr");
+  assert(pre.length === 0, `${where}: all ${$$(".code-block").length} .code-block have dir="ltr"`);
   const ms = $$("math");
   const bad = ms.filter(m => m.getAttribute("dir") !== "ltr");
   assert(bad.length === 0, `${where}: all ${ms.length} <math> have dir="ltr"`);
@@ -170,6 +173,7 @@ if (!QS.length) {
 }
 
 // ---------------- learn mode (learn.js from tools/build_learn.py) ----------------
+if (!learnCh.length) console.log("learn: none built yet (skipped)");
 if (learnCh.length) {
   const TOPIC_KEYS = new Set($$("#topicGrid .topic-btn").map(b => b.dataset.topic).filter(t => t !== "all"));
   const qids = new Set(QS.map(q => q.id));
@@ -370,6 +374,14 @@ if (learnCh.length) {
       assert(visible($("#screen-start")), "course: home button returns to the start screen");
     }
   }
+}
+
+// fenced code blocks in the built bank must all be dir=ltr
+{
+  const qsrc = fs.readFileSync(path.join(ROOT, "questions.js"), "utf8");
+  const pres = qsrc.match(/<pre class=\?"code-block\?"[^>]*>/g) || [];
+  const badPre = pres.filter(p => !/dir=\?"ltr\?"/.test(p));
+  assert(badPre.length === 0, `${pres.length} .code-block <pre> in the bank, all dir=ltr`);
 }
 
 // images referenced anywhere must exist

@@ -86,6 +86,18 @@ function textChecks(w, p, s) {
   redact.forEach((n, i) => { if (hasName(t, n)) ERR(w, `${p}: redact.txt entry #${i + 1} found (author names must not ship)`); });
 }
 function mathChecks(w, p, s) {
+  // fenced ``` code blocks are literal (no math); an unclosed fence is an error
+  if (s.includes("```")) {
+    const lines = s.replace(/\r\n/g, "\n").split("\n"), keep = [];
+    for (let i = 0; i < lines.length; i++) {
+      if (/^```[A-Za-z0-9+#_-]{0,12}[ \t]*$/.test(lines[i])) {
+        let j = i + 1; while (j < lines.length && !/^```[ \t]*$/.test(lines[j])) j++;
+        if (j >= lines.length) { ERR(w, `${p}: unclosed \`\`\` code fence`); break; }
+        i = j;
+      } else keep.push(lines[i]);
+    }
+    s = keep.join("\n");
+  }
   let m; MATH.lastIndex = 0;
   while ((m = MATH.exec(s))) {
     const tex = m[1] != null ? m[1] : m[2];

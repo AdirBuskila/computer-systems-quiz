@@ -64,8 +64,50 @@ ESC_DOLLAR = "\x00"
 TOKEN = re.compile(r"(\$\$.+?\$\$|\$[^$]+?\$|`[^`]+`)", re.S)
 
 
+FENCE_OPEN = re.compile(r"^```([A-Za-z0-9+#_-]{0,12})[ \t]*$")
+FENCE_CLOSE = re.compile(r"^```[ \t]*$")
+
+
+def split_fences(s):
+    """Yield (kind, payload): ('text', str) | ('fence', (lang, body)) | ('unclosed', str).
+    A fence opens on a line that is exactly ``` or ```lang and closes on a line that is exactly ```."""
+    s = str(s)
+    if "```" not in s:
+        yield "text", s
+        return
+    lines, buf, i = s.replace("\r\n", "\n").split("\n"), [], 0
+    while i < len(lines):
+        m = FENCE_OPEN.match(lines[i])
+        if not m:
+            buf.append(lines[i])
+            i += 1
+            continue
+        j = i + 1
+        while j < len(lines) and not FENCE_CLOSE.match(lines[j]):
+            j += 1
+        if buf:
+            yield "text", "\n".join(buf)
+            buf = []
+        if j >= len(lines):
+            yield "unclosed", "\n".join(lines[i:])
+            return
+        yield "fence", (m.group(1), "\n".join(lines[i + 1:j]))
+        i = j + 1
+    if buf:
+        yield "text", "\n".join(buf)
+
+
 def split_rich(s):
-    """Yield (kind, payload) for kind in text|imath|dmath|code. Literal \\$ -> '$'."""
+    """Yield (kind, payload) for kind in text|imath|dmath|code|fence|unclosed. Literal \\$ -> '$'.
+    Fenced blocks (a line of ```lang ... a line of ```) are literal: payload (lang, body)."""
+    for fk, fp in split_fences(s):
+        if fk != "text":
+            yield fk, fp
+        else:
+            yield from _split_inline(fp)
+
+
+def _split_inline(s):
     s = str(s).replace("\\$", ESC_DOLLAR)
     for part in TOKEN.split(s):
         if not part:
@@ -159,7 +201,7 @@ def unescape_quotes(x):
 
 def rich_html(s, bank, where, math_errors):
     """Rich text -> HTML with MATH placeholders (@@M<n>@@) resolved later."""
-    out = []
+    out, fences = [], []
     for kind, p in split_rich(s):
         if kind in ("imath", "dmath"):
             if HEB.search(p):
@@ -169,6 +211,13 @@ def rich_html(s, bank, where, math_errors):
             out.append(f"@@{'D' if kind == 'dmath' else 'M'}{i}@@")
         elif kind == "code":
             out.append(f'<code class="tok" dir="ltr">{html.escape(p, quote=False)}</code>')
+        elif kind == "fence":
+            lang, body = p
+            la = f' data-lang="{html.escape(lang, quote=True)}"' if lang else ""
+            fences.append(f'<pre class="code-block" dir="ltr"{la}><code>{html.escape(body, quote=False)}</code></pre>')
+            out.append(f"\x01F{len(fences) - 1}\x01")
+        elif kind == "unclosed":
+            math_errors.append((where, p[:40], "unclosed ``` code fence"))
         else:
             t = html.escape(p, quote=False)
             t = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", t, flags=re.S)
@@ -176,7 +225,8 @@ def rich_html(s, bank, where, math_errors):
     h = "".join(out)
     # bold may wrap math/code placeholders too: re-run across the joined string
     h = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", h, flags=re.S)
-    return h.replace("\r\n", "\n").replace("\n", "<br>")
+    h = h.replace("\r\n", "\n").replace("\n", "<br>")
+    return re.sub(r"\x01F(\d+)\x01", lambda m: fences[int(m.group(1))], h)
 
 
 def resolve(h, bank):
