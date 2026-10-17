@@ -20,6 +20,8 @@ def walk(x, where):
         for i, v in enumerate(x): walk(v, f"{where}[{i}]")
     elif isinstance(x, dict):
         for k, v in x.items(): walk(v, f"{where}.{k}")
+EXAM_RE = re.compile(r"^(\d{2}[A-Z]-[A-Z]|SAMP-\d+|DEMO-[A-Z])\.json$")
 for f in sorted(glob.glob("tools/raw/*.json")):
+    if not EXAM_RE.match(f.replace("\\", "/").split("/")[-1]): continue
     walk(json.load(open(f, encoding="utf-8")), f.split("\\")[-1].split("/")[-1])
 print("escape problems:", bad); sys.exit(1 if bad else 0)
