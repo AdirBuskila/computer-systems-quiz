@@ -1,0 +1,94 @@
+{
+  "slug": "computer-systems",
+  "titleHe": "מבוא למערכות מחשב",
+  "descriptionHe": "תרגול מבחנים - מבוא למערכות מחשב",
+  "accent": "#94a3b8",
+  "accent2": "#7c3aed",
+  "sourceFolder": "C:/Users/Adir/Desktop/BSC/שנה א/סמסטר א/מבוא למערכות מחשב",
+  "topics": [
+    [
+      "number_bases",
+      "המרה בין בסיסים"
+    ],
+    [
+      "unsigned_numbers",
+      "מספרים לא מכוונים"
+    ],
+    [
+      "signed_twos_complement",
+      "משלים ל-2 ו-overflow"
+    ],
+    [
+      "floating_point",
+      "נקודה צפה IEEE-754"
+    ],
+    [
+      "boolean_algebra",
+      "אלגברה בוליאנית"
+    ],
+    [
+      "logic_gates",
+      "שערים לוגיים"
+    ],
+    [
+      "decoders_muxes",
+      "מפענחים ורבבים"
+    ],
+    [
+      "combinational_design",
+      "תכנון מעגלים צירופיים"
+    ],
+    [
+      "arithmetic_circuits",
+      "מעגלי חיבור וכפל"
+    ],
+    [
+      "latches_flipflops",
+      "נועלים ודלגלגים"
+    ],
+    [
+      "datapath_control",
+      "נתיב נתונים ובקרה"
+    ],
+    [
+      "mips_machine_code",
+      "קידוד פקודות MIPS"
+    ],
+    [
+      "mips_assembly_c",
+      "אסמבלי MIPS ותרגום ל-C"
+    ]
+  ],
+  "briefs": [],
+  "needHelp": [
+    {
+      "id": "ieee754",
+      "titleHe": "נקודה צפה IEEE-754",
+      "icon": "🔢",
+      "topic": "floating_point",
+      "entryLabelHe": "צריך עזרה בנקודה צפה?"
+    },
+    {
+      "id": "boolean",
+      "titleHe": "אלגברה בוליאנית ושקילויות",
+      "icon": "🧮",
+      "topic": "boolean_algebra",
+      "entryLabelHe": "צריך עזרה באלגברה בוליאנית?"
+    },
+    {
+      "id": "mips_enc",
+      "titleHe": "קידוד פקודות MIPS",
+      "icon": "💾",
+      "topic": "mips_machine_code",
+      "entryLabelHe": "צריך עזרה בקידוד פקודות MIPS?"
+    },
+    {
+      "id": "mips_trace",
+      "titleHe": "מעקב MIPS ואסמבלי↔C",
+      "icon": "🧭",
+      "topic": "mips_assembly_c",
+      "entryLabelHe": "צריך עזרה במעקב MIPS ובאסמבלי?"
+    }
+  ],
+  "storePrefix": "computer-systems"
+}
