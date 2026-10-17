@@ -326,7 +326,9 @@ questions.append(Q(
     opts(alt20("$10, $9", "beq", "lab2"), alt20("$9, $10", "beq", "lab2"), alt20("$10, $9", "bne", "lab2"),
          alt20("$9, $10", "bne", "lab2"), alt20("$10, $9", "beq", "lab1"), alt20("$9, $10", "bne", "lab1")), "a",
     """`lw §9,0(§8)` טוען את `tmp1=array[i]` ו-`lw §10,-4(§8)` את `tmp2=array[i-1]`. הפקודה `slt §1,§10,§9` נותנת `§1=1` אם `tmp2<tmp1` (כלומר `tmp1>tmp2`); אם `§1==0` מדלגים על ההחלפה (`beq §1,§0,lab2`), אחרת מבצעים `sw` (SWAP).
-ב: ההשוואה הפוכה; ג: התנאי של הקפיצה הפוך (bne); ד: ההשוואה הפוכה והתנאי הפוך; ה: קפיצה ל-`lab1` מדלגת גם על `i++` ובדיקת התנאי; ו: ההשוואה הפוכה וגם קפיצה ל-lab1 - לא נכון."""))
+ב: ההשוואה הפוכה; ג: התנאי של הקפיצה הפוך (bne); ד: ראו הערה; ה: קפיצה ל-`lab1` מדלגת גם על `i++` ובדיקת התנאי; ו: ההשוואה הפוכה וגם קפיצה ל-lab1 - לא נכון.
+הערה: ד (`slt §1,§9,§10` עם `bne`) מדלגת על ההחלפה רק כאשר `tmp1<tmp2`, כלומר מחליפה גם כאשר `tmp1==tmp2`. תוצאת המערך זהה (החלפה של שני איברים שווים אינה משנה דבר), אבל זה תרגום של `>=` ולא של `>`, ולכן א היא התרגום הנאמן היחיד לקוד ה-C.""",
+    note="Arbiter 2026-10-17: key a right. d (slt $9,$10 ; bne lab2) swaps when tmp1>=tmp2 and differs from a only when the elements are equal (swap is a no-op), so the final array is the same, but it translates >= not >; a is the unique faithful translation (same standard as 24A-A Q20, 23B-B Q20)."))
 
 exam = {
     "examCode": "23A-B",

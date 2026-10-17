@@ -1,0 +1,122 @@
+{
+ "courseId": "mips_trace",
+ "answers": {
+  "C01-Q1": {
+   "correctId": "c"
+  },
+  "C01-Q2": {
+   "correctId": "a"
+  },
+  "C01-Q3": {
+   "correctId": "d"
+  },
+  "C01-Q4": {
+   "correctId": "b"
+  },
+  "C01-Q5": {
+   "correctId": "c"
+  },
+  "C02-Q1": {
+   "correctId": "b"
+  },
+  "C02-Q2": {
+   "correctId": "d"
+  },
+  "C02-Q3": {
+   "correctId": "a"
+  },
+  "C02-Q4": {
+   "correctId": "c"
+  },
+  "C02-Q5": {
+   "correctId": "c"
+  },
+  "C03-Q1": {
+   "correctId": "c"
+  },
+  "C03-Q2": {
+   "correctId": "b"
+  },
+  "C03-Q3": {
+   "correctId": "d"
+  },
+  "C03-Q4": {
+   "correctId": "a"
+  },
+  "C03-Q5": {
+   "correctId": "b"
+  },
+  "C04-Q1": {
+   "correctId": "c"
+  },
+  "C04-Q2": {
+   "correctId": "a"
+  },
+  "C04-Q3": {
+   "correctId": "b"
+  },
+  "C04-Q4": {
+   "correctId": "d"
+  },
+  "C05-Q1": {
+   "correctId": "b"
+  },
+  "C05-Q2": {
+   "correctId": "b"
+  },
+  "C05-Q3": {
+   "correctId": "c"
+  },
+  "C05-Q4": {
+   "correctId": "a"
+  },
+  "C05-Q5": {
+   "correctId": "a"
+  },
+  "C06-Q1": {
+   "correctId": "b"
+  },
+  "C06-Q2": {
+   "correctId": "b"
+  },
+  "C06-Q3": {
+   "correctId": "a"
+  },
+  "C06-Q4": {
+   "correctId": "a"
+  },
+  "C06-Q5": {
+   "correctId": "d"
+  },
+  "C07-Q1": {
+   "correctId": "b"
+  },
+  "C07-Q2": {
+   "correctId": "d"
+  },
+  "C07-Q3": {
+   "correctId": "c"
+  },
+  "C07-Q4": {
+   "correctId": "b"
+  },
+  "C07-Q5": {
+   "correctId": "c"
+  },
+  "C08-Q1": {
+   "correctId": "b"
+  },
+  "C08-Q2": {
+   "correctId": "c"
+  },
+  "C08-Q3": {
+   "correctId": "a"
+  },
+  "C08-Q4": {
+   "correctId": "d"
+  },
+  "C08-Q5": {
+   "correctId": "d"
+  }
+ }
+}

@@ -479,7 +479,7 @@
   {
    "num": 13,
    "topic": "mips_assembly_c",
-   "question": "הקטע הנתון בשפת C תורגם לשפת אסמבלי של ה-MIPS.\n```c\nif(a <= b)  c = a+b;\nelse        c = a-b;\n```\nמהו התרגום הנכון?",
+   "question": "הקטע הנתון בשפת C תורגם לשפת אסמבלי של ה-MIPS.\n```c\nif(a <= b)  c = a+b;\nelse        c = a-b;\n```\nמהו התרגום הנכון? (הנח: a ב-\\$9, b ב-\\$7, c ב-\\$5)",
    "options": [
     {
      "id": "a",
@@ -503,10 +503,11 @@
     }
    ],
    "correctId": "a",
-   "answerSource": "solution-pdf",
-   "official": true,
+   "answerSource": "solved",
+   "official": false,
    "confidence": "high",
-   "explanation": "כדי לבדוק $a\\le b$ בודקים אם $b<a$ (אם לא - אז כן). לכן `slt \\$1,\\$7,\\$9` כאשר \\$7 הוא b ו-\\$9 הוא a ($\\$1=1$ אם $b<a$, $\\$1=0$ אם $a\\le b$).\nא: אם $\\$1=0$ קופצים ל-`lb1` ומבצעים $c=a+b$; אחרת $c=a-b$ ו-`bne \\$1,\\$0,end` מדלג על החיבור - נכון.\nב: התנאי ההפוך - מבצע את הפעולות הפוכות. ג: $c=a+b$ ו-$c=a-b$ הפוכים. ד: אחרי $c=a-b$ ממשיך גם ל-`lb1` (התנאי `beq` אינו קופץ ל-end) - שגוי."
+   "explanation": "כדי לבדוק $a\\le b$ בודקים אם $b<a$ (אם לא - אז כן). לכן `slt \\$1,\\$7,\\$9` כאשר \\$7 הוא b ו-\\$9 הוא a ($\\$1=1$ אם $b<a$, $\\$1=0$ אם $a\\le b$).\nא: אם $\\$1=0$ קופצים ל-`lb1` ומבצעים $c=a+b$; אחרת $c=a-b$ ו-`bne \\$1,\\$0,end` מדלג על החיבור - נכון.\nב: התנאי ההפוך - מבצע את הפעולות הפוכות. ג: $c=a+b$ ו-$c=a-b$ הפוכים. ד: אחרי $c=a-b$ ממשיך גם ל-`lb1` (התנאי `beq` אינו קופץ ל-end) - שגוי.\nהערה: הגיליון אינו מציין באילו אוגרים נמצאים a, b ו-c. ההקצאה a ב-\\$9, b ב-\\$7, c ב-\\$5 היא היחידה שבה אחת האפשרויות נכונה (עם a ב-\\$7 ו-b ב-\\$9 האפשרות א מחשבת $b-a$ במקום $a-b$ ואף אפשרות אינה נכונה), ולכן ההקצאה נוספה לנוסח השאלה.",
+   "note": "Arbiter 2026-10-17: the exam gives no register mapping. With a=$9,b=$7,c=$5 exactly option a is correct (b,c,d are wrong); with a=$7,b=$9 no option is (a computes b-a). Mapping added to the stem, shipped as solved/official:false."
   },
   {
    "num": 14,

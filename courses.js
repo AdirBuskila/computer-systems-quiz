@@ -4163,16 +4163,16 @@ window.COURSES = {
        },
        {
         "id": "d",
-        "value": "`ori \\$t4, \\$t5, -32767`",
+        "value": "`ori \\$t4, \\$t5, 1`",
         "type": "text",
-        "html": "<code class=\"tok\" dir=\"ltr\">ori $t4, $t5, -32767</code>"
+        "html": "<code class=\"tok\" dir=\"ltr\">ori $t4, $t5, 1</code>"
        }
       ],
       "correctId": "a",
-      "explanation": "`001101 01101 01100 1000000000000001` = 0x35AC8001. op=13 הוא ori, rs=13 (`\\$t5`), rt=12 (`\\$t4`), imm=0x8001 שהוא 32769, כלומר `ori \\$t4, \\$t5, 32769`. המסיחים: `ori \\$t5, \\$t4, 32769` ← rs ו-rt הוחלפו. `addi \\$t4, \\$t5, 32769` ← opcode 13 הוא ori ולא addi. `ori \\$t4, \\$t5, -32767` ← ה-immediate נקרא עם סימן, אבל ori מורחב באפסים.",
+      "explanation": "`001101 01101 01100 1000000000000001` = 0x35AC8001. op=13 הוא ori, rs=13 (`\\$t5`), rt=12 (`\\$t4`), imm=0x8001 שהוא 32769, כלומר `ori \\$t4, \\$t5, 32769`. המסיחים: `ori \\$t5, \\$t4, 32769` ← rs ו-rt הוחלפו. `addi \\$t4, \\$t5, 32769` ← opcode 13 הוא ori ולא addi. `ori \\$t4, \\$t5, 1` ← נקרא רק הביט האחרון של ה-immediate, אבל ה-immediate הוא כל 16 הביטים (0x8001 = 32769).",
       "recap": "op קובע את הפקודה · addi/lw/sw: imm עם סימן · ori: בלי סימן",
       "questionHtml": "הפקודה <code class=\"tok\" dir=\"ltr\">0x35AC8001</code> בשפת מכונה היא בעצם פקודת האסמבלי:",
-      "explanationHtml": "<code class=\"tok\" dir=\"ltr\">001101 01101 01100 1000000000000001</code> = 0x35AC8001. op=13 הוא ori, rs=13 (<code class=\"tok\" dir=\"ltr\">$t5</code>), rt=12 (<code class=\"tok\" dir=\"ltr\">$t4</code>), imm=0x8001 שהוא 32769, כלומר <code class=\"tok\" dir=\"ltr\">ori $t4, $t5, 32769</code>. המסיחים: <code class=\"tok\" dir=\"ltr\">ori $t5, $t4, 32769</code> ← rs ו-rt הוחלפו. <code class=\"tok\" dir=\"ltr\">addi $t4, $t5, 32769</code> ← opcode 13 הוא ori ולא addi. <code class=\"tok\" dir=\"ltr\">ori $t4, $t5, -32767</code> ← ה-immediate נקרא עם סימן, אבל ori מורחב באפסים.",
+      "explanationHtml": "<code class=\"tok\" dir=\"ltr\">001101 01101 01100 1000000000000001</code> = 0x35AC8001. op=13 הוא ori, rs=13 (<code class=\"tok\" dir=\"ltr\">$t5</code>), rt=12 (<code class=\"tok\" dir=\"ltr\">$t4</code>), imm=0x8001 שהוא 32769, כלומר <code class=\"tok\" dir=\"ltr\">ori $t4, $t5, 32769</code>. המסיחים: <code class=\"tok\" dir=\"ltr\">ori $t5, $t4, 32769</code> ← rs ו-rt הוחלפו. <code class=\"tok\" dir=\"ltr\">addi $t4, $t5, 32769</code> ← opcode 13 הוא ori ולא addi. <code class=\"tok\" dir=\"ltr\">ori $t4, $t5, 1</code> ← נקרא רק הביט האחרון של ה-immediate, אבל ה-immediate הוא כל 16 הביטים (0x8001 = 32769).",
       "recapHtml": "op קובע את הפקודה · addi/lw/sw: imm עם סימן · ori: בלי סימן"
      },
      {
@@ -4755,38 +4755,38 @@ window.COURSES = {
      },
      {
       "id": "mips_enc-C07-Q6",
-      "question": "מה יהיה באוגר `\\$t0` אחרי ביצוע הפקודות הבאות?\n```asm\nlui $t0, 0x8000\naddi $t0, $t0, -1\n```",
+      "question": "מה יהיה באוגר `\\$t0` אחרי ביצוע הפקודות הבאות?\n```asm\nlui $t0, 0x4000\naddi $t0, $t0, -1\n```",
       "options": [
        {
         "id": "a",
-        "value": "0x8000FFFF",
+        "value": "0x4000FFFF",
         "type": "text",
-        "html": "0x8000FFFF"
+        "html": "0x4000FFFF"
        },
        {
         "id": "b",
-        "value": "0x00007FFF",
+        "value": "0x00003FFF",
         "type": "text",
-        "html": "0x00007FFF"
+        "html": "0x00003FFF"
        },
        {
         "id": "c",
-        "value": "0x7FFFFFFF",
+        "value": "0x3FFFFFFF",
         "type": "text",
-        "html": "0x7FFFFFFF"
+        "html": "0x3FFFFFFF"
        },
        {
         "id": "d",
-        "value": "0x7FFEFFFF",
+        "value": "0x3FFEFFFF",
         "type": "text",
-        "html": "0x7FFEFFFF"
+        "html": "0x3FFEFFFF"
        }
       ],
       "correctId": "c",
-      "explanation": "אחרי `lui \\$t0, 0x8000` ב-`\\$t0` יש 0x80000000; אחרי `addi \\$t0, \\$t0, -1` ב-`\\$t0` יש 0x7FFFFFFF. המסיחים: 0x8000FFFF ← addi הורחב באפסים, אבל addi מרחיב בסימן. 0x00007FFF ← lui הוכנס לחצי התחתון, אבל lui כותב לחצי העליון. 0x7FFEFFFF ← חצי עליון קטן ב-1.",
+      "explanation": "אחרי `lui \\$t0, 0x4000` ב-`\\$t0` יש 0x40000000; אחרי `addi \\$t0, \\$t0, -1` ב-`\\$t0` יש 0x3FFFFFFF. המסיחים: 0x4000FFFF ← addi הורחב באפסים, אבל addi מרחיב בסימן. 0x00003FFF ← lui הוכנס לחצי התחתון, אבל lui כותב לחצי העליון. 0x3FFEFFFF ← חצי עליון קטן ב-1.",
       "recap": "lui: חצי עליון · ori: בלי סימן · addi: מרחיב בסימן",
-      "questionHtml": "מה יהיה באוגר <code class=\"tok\" dir=\"ltr\">$t0</code> אחרי ביצוע הפקודות הבאות?<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>lui $t0, 0x8000\naddi $t0, $t0, -1</code></pre>",
-      "explanationHtml": "אחרי <code class=\"tok\" dir=\"ltr\">lui $t0, 0x8000</code> ב-<code class=\"tok\" dir=\"ltr\">$t0</code> יש 0x80000000; אחרי <code class=\"tok\" dir=\"ltr\">addi $t0, $t0, -1</code> ב-<code class=\"tok\" dir=\"ltr\">$t0</code> יש 0x7FFFFFFF. המסיחים: 0x8000FFFF ← addi הורחב באפסים, אבל addi מרחיב בסימן. 0x00007FFF ← lui הוכנס לחצי התחתון, אבל lui כותב לחצי העליון. 0x7FFEFFFF ← חצי עליון קטן ב-1.",
+      "questionHtml": "מה יהיה באוגר <code class=\"tok\" dir=\"ltr\">$t0</code> אחרי ביצוע הפקודות הבאות?<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>lui $t0, 0x4000\naddi $t0, $t0, -1</code></pre>",
+      "explanationHtml": "אחרי <code class=\"tok\" dir=\"ltr\">lui $t0, 0x4000</code> ב-<code class=\"tok\" dir=\"ltr\">$t0</code> יש 0x40000000; אחרי <code class=\"tok\" dir=\"ltr\">addi $t0, $t0, -1</code> ב-<code class=\"tok\" dir=\"ltr\">$t0</code> יש 0x3FFFFFFF. המסיחים: 0x4000FFFF ← addi הורחב באפסים, אבל addi מרחיב בסימן. 0x00003FFF ← lui הוכנס לחצי התחתון, אבל lui כותב לחצי העליון. 0x3FFEFFFF ← חצי עליון קטן ב-1.",
       "recapHtml": "lui: חצי עליון · ori: בלי סימן · addi: מרחיב בסימן"
      },
      {
@@ -5160,7 +5160,7 @@ window.COURSES = {
      },
      {
       "id": "C02-Q4",
-      "question": "\\$4 הוא a ו-\\$5 הוא b, ומותר להשתמש ב-\\$1. איזה קטע הוא תרגום **שגוי** של `a = 2*a - 2*b`?",
+      "question": "\\$4 הוא a ו-\\$5 הוא b, ומותר להשתמש ב-\\$1, אבל b צריך להישאר ללא שינוי. איזה קטע הוא תרגום **שגוי** של `a = 2*a - 2*b`?",
       "options": [
        {
         "id": "a",
@@ -5188,10 +5188,10 @@ window.COURSES = {
        }
       ],
       "correctId": "c",
-      "explanation": "בקטע הראשון a מקבל את הערך הנכון 2a - 2b, אבל `add \\$5,\\$5,\\$5` משנה את b עצמו, ולכן התרגום שגוי כשצריך לשמור על b. בשאר הקטעים b לא נכתב: $2(a-b)$, או 2b ב-\\$1, או $2a-b-b$.",
+      "explanation": "בקטע c (השלישי) a מקבל את הערך הנכון 2a - 2b, אבל `add \\$5,\\$5,\\$5` משנה את b עצמו, ולכן התרגום שגוי כשצריך לשמור על b. בשאר הקטעים b לא נכתב: $2(a-b)$, או 2b ב-\\$1, או $2a-b-b$.",
       "recap": "כתיבה לאוגר של b הורסת את b גם אם הערך של a יצא נכון.",
-      "questionHtml": "$4 הוא a ו-$5 הוא b, ומותר להשתמש ב-$1. איזה קטע הוא תרגום <strong>שגוי</strong> של <code class=\"tok\" dir=\"ltr\">a = 2*a - 2*b</code>?",
-      "explanationHtml": "בקטע הראשון a מקבל את הערך הנכון 2a - 2b, אבל <code class=\"tok\" dir=\"ltr\">add $5,$5,$5</code> משנה את b עצמו, ולכן התרגום שגוי כשצריך לשמור על b. בשאר הקטעים b לא נכתב: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><mo stretchy=\"false\">(</mo><mi>a</mi><mo>−</mo><mi>b</mi><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">2(a-b)</annotation></semantics></math></span>, או 2b ב-$1, או <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><mi>a</mi><mo>−</mo><mi>b</mi><mo>−</mo><mi>b</mi></mrow><annotation encoding=\"application/x-tex\">2a-b-b</annotation></semantics></math></span>.",
+      "questionHtml": "$4 הוא a ו-$5 הוא b, ומותר להשתמש ב-$1, אבל b צריך להישאר ללא שינוי. איזה קטע הוא תרגום <strong>שגוי</strong> של <code class=\"tok\" dir=\"ltr\">a = 2*a - 2*b</code>?",
+      "explanationHtml": "בקטע c (השלישי) a מקבל את הערך הנכון 2a - 2b, אבל <code class=\"tok\" dir=\"ltr\">add $5,$5,$5</code> משנה את b עצמו, ולכן התרגום שגוי כשצריך לשמור על b. בשאר הקטעים b לא נכתב: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><mo stretchy=\"false\">(</mo><mi>a</mi><mo>−</mo><mi>b</mi><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">2(a-b)</annotation></semantics></math></span>, או 2b ב-$1, או <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><mi>a</mi><mo>−</mo><mi>b</mi><mo>−</mo><mi>b</mi></mrow><annotation encoding=\"application/x-tex\">2a-b-b</annotation></semantics></math></span>.",
       "recapHtml": "כתיבה לאוגר של b הורסת את b גם אם הערך של a יצא נכון."
      },
      {

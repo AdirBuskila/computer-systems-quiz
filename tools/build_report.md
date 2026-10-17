@@ -4,7 +4,7 @@
 - **Final questions: 238** (unique by dedupKey: 219, duplicates kept: 19)
 - Excluded: **0** 
 - Shared context blocks: **0**
-- Math spans rendered (distinct): **1494**
+- Math spans rendered (distinct): **1495**
 - lockOrder: 0 · multiple accepted answers: 2
 
 - **On hold (not in bank, see docs/ASK_ADIR.md): 2**
@@ -57,10 +57,10 @@
 
 ## Official vs unofficial
 
-- official: 235
-- unofficial: 3
+- official: 234
+- unofficial: 4
 
 ## By answerSource
 
-- solution-pdf: 235
-- solved: 3
+- solution-pdf: 234
+- solved: 4
