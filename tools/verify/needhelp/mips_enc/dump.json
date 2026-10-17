@@ -1,0 +1,1201 @@
+{
+ "courseId": "mips_enc",
+ "levels": [
+  {
+   "id": "C01",
+   "order": 1,
+   "boss": false,
+   "questions": [
+    {
+     "id": "mips_enc-C01-Q1",
+     "question": "כמה ביטים תופס שדה rs (או rt) בקידוד פקודה?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "4 ביטים"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "5 ביטים"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "6 ביטים"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "16 ביטים"
+      }
+     ]
+    },
+    {
+     "id": "mips_enc-C01-Q2",
+     "question": "איזו מהפקודות הבאות היא פקודת R-type?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "`ori`"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "`lw`"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "`xor`"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "`j`"
+      }
+     ]
+    },
+    {
+     "id": "mips_enc-C01-Q3",
+     "question": "איזו מהפקודות הבאות היא פקודת I-type?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "`sw`"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "`slt`"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "`sub`"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "`j`"
+      }
+     ]
+    },
+    {
+     "id": "mips_enc-C01-Q4",
+     "question": "לאיזו פקודה יש שדה target של 26 ביט?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "`beq`"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "`sub`"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "`lui`"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "`j`"
+      }
+     ]
+    },
+    {
+     "id": "mips_enc-C01-Q5",
+     "question": "מהו המספר של האוגר `\\$t2` בחמישה ביטים?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "`00010`"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "`01010`"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "`10010`"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "`01100`"
+      }
+     ]
+    },
+    {
+     "id": "mips_enc-C01-Q6",
+     "question": "לאיזה אוגר יש מספר 22?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "`\\$t6`"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "`\\$s7`"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "`\\$s6`"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "`\\$t8`"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C02",
+   "order": 2,
+   "boss": false,
+   "questions": [
+    {
+     "id": "mips_enc-C02-Q1",
+     "question": "בפקודה `sub \\$t0, \\$t1, \\$t2`, מהו הערך שיופיע בשדה rs בקידוד?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "8"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "9"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "10"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "34"
+      }
+     ]
+    },
+    {
+     "id": "mips_enc-C02-Q2",
+     "question": "מהו הקידוד בשפת מכונה של הפקודה `or \\$s0, \\$t1, \\$t2`?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "0x02095025"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "0x01498025"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "0x012A8025"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "0x012A8024"
+      }
+     ]
+    },
+    {
+     "id": "mips_enc-C02-Q3",
+     "question": "מהו הקידוד בשפת מכונה של הפקודה `and \\$a0, \\$t0, \\$t1`?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "0x01092024"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "0x00884824"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "0x01282024"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "0x01092025"
+      }
+     ]
+    },
+    {
+     "id": "mips_enc-C02-Q4",
+     "question": "חמשת השדות הראשונים והשדה האחרון של פקודה הם `000000 01001 01010 10000 00000 100101`. מהי המילה בהקסה?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "`0x012A8020`"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "`0x01A28025`"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "`0x012A8052`"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "`0x012A8025`"
+      }
+     ]
+    },
+    {
+     "id": "mips_enc-C02-Q5",
+     "question": "מהו הקידוד בשפת מכונה של הפקודה `slt \\$t5, \\$s6, \\$a2`?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "0x01B6302A"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "0x00D6682A"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "0x02C66822"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "0x02C6682A"
+      }
+     ]
+    },
+    {
+     "id": "mips_enc-C02-Q6",
+     "question": "מהו הקידוד בשפת מכונה של הפקודה `xor \\$ra, \\$sp, \\$gp`?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "0x03FDE026"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "0x03BCF826"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "0x039DF826"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "0x03BCF825"
+      }
+     ]
+    },
+    {
+     "id": "bank:23A-A-Q17",
+     "bankId": "23A-A-Q17"
+    }
+   ]
+  },
+  {
+   "id": "C03",
+   "order": 3,
+   "boss": false,
+   "questions": [
+    {
+     "id": "mips_enc-C03-Q1",
+     "question": "הפקודה `0x02324022` בשפת מכונה היא בעצם פקודת האסמבלי:",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "`sub \\$t0, \\$s1, \\$s2`"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "`sub \\$s1, \\$s2, \\$t0`"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "`sub \\$t0, \\$s2, \\$s1`"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "`add \\$t0, \\$s1, \\$s2`"
+      }
+     ]
+    },
+    {
+     "id": "mips_enc-C03-Q2",
+     "question": "הפקודה `0x012A4025` בשפת מכונה היא בעצם פקודת האסמבלי:",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "`or \\$t1, \\$t2, \\$t0`"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "`or \\$t0, \\$t1, \\$t2`"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "`or \\$t0, \\$t2, \\$t1`"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "`and \\$t0, \\$t1, \\$t2`"
+      }
+     ]
+    },
+    {
+     "id": "mips_enc-C03-Q3",
+     "question": "הפקודה `0x0314182A` בשפת מכונה היא בעצם פקודת האסמבלי:",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "`slt \\$t8, \\$s4, \\$v1`"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "`slt \\$v1, \\$s4, \\$t8`"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "`slt \\$v1, \\$t8, \\$s4`"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "`sub \\$v1, \\$t8, \\$s4`"
+      }
+     ]
+    },
+    {
+     "id": "mips_enc-C03-Q4",
+     "question": "הפקודה `0x01B99826` בשפת מכונה היא בעצם פקודת האסמבלי:",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "`xor \\$t5, \\$t9, \\$s3`"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "`xor \\$s3, \\$t9, \\$t5`"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "`or \\$s3, \\$t5, \\$t9`"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "`xor \\$s3, \\$t5, \\$t9`"
+      }
+     ]
+    },
+    {
+     "id": "mips_enc-C03-Q5",
+     "question": "הפקודה `0x03A1F024` בשפת מכונה היא בעצם פקודת האסמבלי:",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "`and \\$sp, \\$at, \\$fp`"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "`and \\$fp, \\$sp, \\$at`"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "`and \\$fp, \\$at, \\$sp`"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "`or \\$fp, \\$sp, \\$at`"
+      }
+     ]
+    },
+    {
+     "id": "mips_enc-C03-Q6",
+     "question": "הפקודה `0x0178E022` בשפת מכונה היא בעצם פקודת האסמבלי:",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "`sub \\$gp, \\$t3, \\$t8`"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "`sub \\$t3, \\$t8, \\$gp`"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "`sub \\$gp, \\$t8, \\$t3`"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "`add \\$gp, \\$t3, \\$t8`"
+      }
+     ]
+    },
+    {
+     "id": "bank:22B-A-Q19",
+     "bankId": "22B-A-Q19"
+    }
+   ]
+  },
+  {
+   "id": "C04",
+   "order": 4,
+   "boss": false,
+   "questions": [
+    {
+     "id": "mips_enc-C04-Q1",
+     "question": "מהו הקידוד בשפת מכונה של הפקודה `addi \\$t0, \\$t1, 100`?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "0x21090064"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "0x21280064"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "0x35280064"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "0x2128FF9C"
+      }
+     ]
+    },
+    {
+     "id": "mips_enc-C04-Q2",
+     "question": "מהו הקידוד בשפת מכונה של הפקודה `addi \\$s1, \\$a0, -4`?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "0x2224FFFC"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "0x3491FFFC"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "0x20910004"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "0x2091FFFC"
+      }
+     ]
+    },
+    {
+     "id": "mips_enc-C04-Q3",
+     "question": "מהו הקידוד בשפת מכונה של הפקודה `lw \\$t2, 8(\\$s0)`?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "0x8E0A0008"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "0x8D500008"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "0xAE0A0008"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "0x8E0AFFF8"
+      }
+     ]
+    },
+    {
+     "id": "mips_enc-C04-Q4",
+     "question": "מהו הקידוד בשפת מכונה של הפקודה `sw \\$t3, 12(\\$sp)`?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "0xAD7D000C"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "0x8FAB000C"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "0xAFAB000C"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "0xAFABFFF4"
+      }
+     ]
+    },
+    {
+     "id": "mips_enc-C04-Q5",
+     "question": "מהו הקידוד בשפת מכונה של הפקודה `ori \\$s5, \\$t0, 0xFF0F`?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "0x36A8FF0F"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "0x3515FF0F"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "0x2115FF0F"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "0x351500F1"
+      }
+     ]
+    },
+    {
+     "id": "mips_enc-C04-Q6",
+     "question": "`\\$t6` מכיל את הכתובת של `array[0]` במערך של מילים (4 בתים כל אחת). איזו פקודה שומרת את `\\$fp` ב-`array[5]`?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "`sw \\$fp, 20(\\$t6)`"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "`sw \\$fp, 5(\\$t6)`"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "`lw \\$fp, 20(\\$t6)`"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "`sw \\$t6, 20(\\$fp)`"
+      }
+     ]
+    },
+    {
+     "id": "bank:23B-A-Q17",
+     "bankId": "23B-A-Q17"
+    }
+   ]
+  },
+  {
+   "id": "C05",
+   "order": 5,
+   "boss": false,
+   "questions": [
+    {
+     "id": "mips_enc-C05-Q1",
+     "question": "הפקודה `0x2128FFF0` בשפת מכונה היא בעצם פקודת האסמבלי:",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "`addi \\$t1, \\$t0, -16`"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "`ori \\$t0, \\$t1, -16`"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "`addi \\$t0, \\$t1, -16`"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "`addi \\$t0, \\$t1, 65520`"
+      }
+     ]
+    },
+    {
+     "id": "mips_enc-C05-Q2",
+     "question": "הפקודה `0x35AC8001` בשפת מכונה היא בעצם פקודת האסמבלי:",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "`ori \\$t4, \\$t5, 32769`"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "`ori \\$t5, \\$t4, 32769`"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "`addi \\$t4, \\$t5, 32769`"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "`ori \\$t4, \\$t5, -32767`"
+      }
+     ]
+    },
+    {
+     "id": "mips_enc-C05-Q3",
+     "question": "הפקודה `0xAC2B0010` בשפת מכונה היא בעצם פקודת האסמבלי:",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "`sw \\$at, 16(\\$t3)`"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "`sw \\$t3, 16(\\$at)`"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "`lw \\$t3, 16(\\$at)`"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "`sw \\$t3, 64(\\$at)`"
+      }
+     ]
+    },
+    {
+     "id": "mips_enc-C05-Q4",
+     "question": "הפקודה `0x8FA9FFFC` בשפת מכונה היא בעצם פקודת האסמבלי:",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "`lw \\$sp, -4(\\$t1)`"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "`sw \\$t1, -4(\\$sp)`"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "`lw \\$t1, 65532(\\$sp)`"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "`lw \\$t1, -4(\\$sp)`"
+      }
+     ]
+    },
+    {
+     "id": "mips_enc-C05-Q5",
+     "question": "הפקודה `0x20F600C8` בשפת מכונה היא בעצם פקודת האסמבלי:",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "`addi \\$s6, \\$a3, 200`"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "`addi \\$a3, \\$s6, 200`"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "`ori \\$s6, \\$a3, 200`"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "`addi \\$s6, \\$a3, 201`"
+      }
+     ]
+    },
+    {
+     "id": "mips_enc-C05-Q6",
+     "question": "מילה שמתחילה בספרות `8F` (למשל `0x8FA90010`) היא איזו פקודה?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "`sw`"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "`lw`"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "`addi`"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "`ori`"
+      }
+     ]
+    },
+    {
+     "id": "bank:24B-A-Q19",
+     "bankId": "24B-A-Q19"
+    }
+   ]
+  },
+  {
+   "id": "C06",
+   "order": 6,
+   "boss": false,
+   "questions": [
+    {
+     "id": "mips_enc-C06-Q1",
+     "question": "הפקודה `beq \\$t0, \\$t1, L` נמצאת בכתובת `0x00400100`, והתווית L נמצאת בכתובת `0x00400140`. מהו ערך ה-immediate (מספר המילים) שבקידוד?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "16"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "60"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "15"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "-15"
+      }
+     ]
+    },
+    {
+     "id": "mips_enc-C06-Q2",
+     "question": "הפקודה `bne \\$s1, \\$s3, L` נמצאת בכתובת `0x00400200`, והתווית L נמצאת בכתובת `0x00400180`. מהו ערך שדה ה-immediate (16 הביטים התחתונים של הקידוד), בהקסה?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "`0xFFDF`"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "`0xFFE0`"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "`0xFF7C`"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "`0x0021`"
+      }
+     ]
+    },
+    {
+     "id": "mips_enc-C06-Q3",
+     "question": "הפקודה `beq \\$s0, \\$s1, L` נמצאת בכתובת `0x00400400`, והתווית L נמצאת בכתובת `0x00400410`. מהו הקידוד בשפת מכונה של הפקודה?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "`0x12110004`"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "`0x1211000C`"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "`0x16110003`"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "`0x12110003`"
+      }
+     ]
+    },
+    {
+     "id": "mips_enc-C06-Q4",
+     "question": "הפקודה `0x1509FFFB` נמצאת בכתובת `0x00400050`. מה כתובת היעד של ההסתעפות (כתובת L)?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "`0x0040003C`"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "`0x00400040`"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "`0x0040004F`"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "`0x0040004B`"
+      }
+     ]
+    },
+    {
+     "id": "mips_enc-C06-Q5",
+     "question": "הפקודה `j L` נמצאת בכתובת `0x00400020`, והתווית L נמצאת בכתובת `0x00400100`. מהו הקידוד בשפת מכונה?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "`0x08400100`"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "`0x0C100040`"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "`0x08100040`"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "`0x08000037`"
+      }
+     ]
+    },
+    {
+     "id": "mips_enc-C06-Q6",
+     "question": "הפקודה `0x08000340` נמצאת בכתובת `0x10000200`. לאיזו כתובת היא קופצת?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "`0x10000D00`"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "`0x00000D00`"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "`0x00000340`"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "`0x10000F04`"
+      }
+     ]
+    },
+    {
+     "id": "bank:23A-B-Q17",
+     "bankId": "23A-B-Q17"
+    }
+   ]
+  },
+  {
+   "id": "C07",
+   "order": 7,
+   "boss": false,
+   "questions": [
+    {
+     "id": "mips_enc-C07-Q1",
+     "question": "מה יהיה באוגר `\\$t0` אחרי ביצוע הפקודות הבאות?\n```asm\nlui $t0, 0x1234\nori $t0, $t0, 0x5678\n```",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "0x12345678"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "0x0000567C"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "0x12355678"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "0x12335678"
+      }
+     ]
+    },
+    {
+     "id": "mips_enc-C07-Q2",
+     "question": "מה יהיה באוגר `\\$t1` אחרי ביצוע הפקודות הבאות?\n```asm\naddi $t1, $0, 0xAAAA\n```",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "0x0000AAAA"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "0xFFFEAAAA"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "0xFFFFAAAA"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "0xFFFF5555"
+      }
+     ]
+    },
+    {
+     "id": "mips_enc-C07-Q3",
+     "question": "מה יהיה באוגר `\\$t0` אחרי ביצוע הפקודות הבאות?\n```asm\nlui $t0, 0x00FF\naddi $t0, $t0, 0x8010\n```",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "0x00FF8010"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "0x00FE8010"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "0xFFFF810F"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "0x00FD8010"
+      }
+     ]
+    },
+    {
+     "id": "mips_enc-C07-Q4",
+     "question": "מה יהיה באוגר `\\$t0` אחרי ביצוע הפקודות הבאות?\n```asm\nlui $t0, 0x00FF\nori $t0, $t0, 0x8010\n```",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "0xFFFF8010"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "0x000080FF"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "0x01008010"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "0x00FF8010"
+      }
+     ]
+    },
+    {
+     "id": "mips_enc-C07-Q5",
+     "question": "איזה קטע קוד מכניס את הערך `0xABCD8000` לאוגר `\\$t0`? (הקטעים משתמשים ב-lui ואחריה addi.)",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "```asm\nlui  $t0, 0xABCE\naddi $t0, $t0, 0x8000\n```"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "```asm\nlui  $t0, 0xABCD\naddi $t0, $t0, 0x8000\n```"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "```asm\nlui  $t0, 0xABCC\naddi $t0, $t0, 0x8000\n```"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "```asm\nlui  $t0, 0xABCD\naddi $t0, $t0, 0x0800\n```"
+      }
+     ]
+    },
+    {
+     "id": "mips_enc-C07-Q6",
+     "question": "מה יהיה באוגר `\\$t0` אחרי ביצוע הפקודות הבאות?\n```asm\nlui $t0, 0x8000\naddi $t0, $t0, -1\n```",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "0x8000FFFF"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "0x00007FFF"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "0x7FFFFFFF"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "0x7FFEFFFF"
+      }
+     ]
+    },
+    {
+     "id": "bank:23B-B-Q2",
+     "bankId": "23B-B-Q2"
+    }
+   ]
+  },
+  {
+   "id": "C08",
+   "order": 8,
+   "boss": true,
+   "questions": [
+    {
+     "id": "bank:24A-A-Q2",
+     "bankId": "24A-A-Q2"
+    },
+    {
+     "id": "bank:24B-A-Q17",
+     "bankId": "24B-A-Q17"
+    },
+    {
+     "id": "bank:25B-A-Q17",
+     "bankId": "25B-A-Q17"
+    },
+    {
+     "id": "bank:24A-A-Q19",
+     "bankId": "24A-A-Q19"
+    },
+    {
+     "id": "bank:24S-A-Q17",
+     "bankId": "24S-A-Q17"
+    },
+    {
+     "id": "bank:23A-B-Q19",
+     "bankId": "23A-B-Q19"
+    }
+   ]
+  }
+ ]
+}
