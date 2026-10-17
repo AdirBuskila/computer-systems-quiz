@@ -1,0 +1,16 @@
+{
+ "examCode": "25B-A",
+ "arbiter": {
+  "2": {
+   "ruling": "ASK_ADIR (c): official key genuinely wrong; hold kept",
+   "derivation": "Page 2 transcription verified exact (0xAAAA, 0xAAAA, 0x0002; options a-f match). addi sign-extends: $1=0xFFFFAAAA; add -> 0xFFFF5554; addi $5,$1,0xAAAA -> 0xFFFF5554+0xFFFFAAAA = 0xFFFEFFFE; +2 -> 0xFFFF0000. Zero-extension reading gives 0x00020000, also absent. No option is correct. Page 19 working is correct through 0xFFFEFFFE and then writes 0xFFFEFFFE + 0x00000002 = 0xFFFE0000: a carry slip by the lecturer, not a transcription error."
+  }
+ },
+ "sample": [4, 11, 12, 17],
+ "answers": {
+  "4": {"answer": "a", "confident": true, "transcriptionIssues": "", "derivation": "2/5+2/25 = 288/600; 0.00(21)_5 = (1/25)(11/24) = 11/600; total 299/600."},
+  "11": {"answer": "a", "confident": true, "transcriptionIssues": "", "derivation": "a: 11.8125 vs 10.5+1.0625=11.5625, false. b: 423=364+59. c: 4231.1_8=2201.125. d: 160=7+153."},
+  "12": {"answer": "a", "confident": true, "transcriptionIssues": "", "derivation": "a: -93-25=-118 in range. b 95+55=150, c -81-71=-152, d -59-100=-159, e 79+61=140 all overflow."},
+  "17": {"answer": "a", "confident": true, "transcriptionIssues": "", "derivation": "op 4, rs=$s3=19, rt=$a1=5, imm=(0x400550-0x400334)/4=0x87 -> 0x12650087."}
+ }
+}
