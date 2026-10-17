@@ -379,8 +379,8 @@ if (learnCh.length) {
 // fenced code blocks in the built bank must all be dir=ltr
 {
   const qsrc = fs.readFileSync(path.join(ROOT, "questions.js"), "utf8");
-  const pres = qsrc.match(/<pre class=\?"code-block\?"[^>]*>/g) || [];
-  const badPre = pres.filter(p => !/dir=\?"ltr\?"/.test(p));
+  const pres = qsrc.match(/<pre class=\\?"code-block\\?"[^>]*>/g) || [];
+  const badPre = pres.filter(p => !/dir=\\?"ltr\\?"/.test(p));
   assert(badPre.length === 0, `${pres.length} .code-block <pre> in the bank, all dir=ltr`);
 }
 
