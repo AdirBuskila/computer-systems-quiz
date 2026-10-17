@@ -1,0 +1,1081 @@
+{
+ "courseId": "boolean",
+ "levels": [
+  {
+   "id": "C01",
+   "order": 1,
+   "boss": false,
+   "questions": [
+    {
+     "id": "C01-Q1",
+     "question": "מה ערך הביטוי $A + B\\cdot C$ בהצבה $A=1,\\ B=0,\\ C=0$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "1"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "0"
+      }
+     ]
+    },
+    {
+     "id": "C01-Q2",
+     "question": "בהצבה $A=1,\\ B=1,\\ C=0$, מה ערך הביטוי $\\bar A + B\\cdot C$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "0"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "1"
+      }
+     ]
+    },
+    {
+     "id": "C01-Q3",
+     "question": "באיזו הצבה של $(A,B,C)$ הביטוי $A\\cdot\\bar B\\cdot C$ שווה $1$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$(A,B,C)=(1,1,1)$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$(A,B,C)=(0,0,1)$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$(A,B,C)=(1,0,1)$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$(A,B,C)=(1,0,0)$"
+      }
+     ]
+    },
+    {
+     "id": "C01-Q4",
+     "question": "בטבלת אמת של ביטוי עם $4$ משתנים, כמה שורות יש?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "8"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "16"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "4"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "32"
+      }
+     ]
+    },
+    {
+     "id": "C01-Q5",
+     "question": "בטבלת אמת של הביטוי $A + B\\cdot C$ עם שלושה משתנים, בכמה מתוך $8$ השורות הביטוי שווה $1$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "3"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "4"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "5"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "6"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C02",
+   "order": 2,
+   "boss": false,
+   "questions": [
+    {
+     "id": "C02-Q1",
+     "question": "מה ערך הביטוי $1\\oplus 1\\oplus 1$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "0"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "1"
+      }
+     ]
+    },
+    {
+     "id": "C02-Q2",
+     "question": "הביטוי $A\\oplus 1$ שווה ל:",
+     "options": [
+      {
+       "id": "a",
+       "type": "math",
+       "value": "A"
+      },
+      {
+       "id": "b",
+       "type": "math",
+       "value": "\\bar A"
+      },
+      {
+       "id": "c",
+       "type": "math",
+       "value": "0"
+      },
+      {
+       "id": "d",
+       "type": "math",
+       "value": "1"
+      }
+     ]
+    },
+    {
+     "id": "C02-Q3",
+     "question": "הביטוי $A\\oplus \\bar A$ שווה ל:",
+     "options": [
+      {
+       "id": "a",
+       "type": "math",
+       "value": "0"
+      },
+      {
+       "id": "b",
+       "type": "math",
+       "value": "A"
+      },
+      {
+       "id": "c",
+       "type": "math",
+       "value": "\\bar A"
+      },
+      {
+       "id": "d",
+       "type": "math",
+       "value": "1"
+      }
+     ]
+    },
+    {
+     "id": "C02-Q4",
+     "question": "הביטוי $(A\\oplus B)\\oplus A$ שווה ל:",
+     "options": [
+      {
+       "id": "a",
+       "type": "math",
+       "value": "A"
+      },
+      {
+       "id": "b",
+       "type": "math",
+       "value": "A\\oplus B\\oplus A\\oplus A"
+      },
+      {
+       "id": "c",
+       "type": "math",
+       "value": "0"
+      },
+      {
+       "id": "d",
+       "type": "math",
+       "value": "B"
+      }
+     ]
+    },
+    {
+     "id": "C02-Q5",
+     "question": "בהצבה $A=1,\\ B=1,\\ C=1,\\ D=0$, מה ערך $A\\oplus B\\oplus C\\oplus D$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "0"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "1"
+      }
+     ]
+    },
+    {
+     "id": "C02-Q6",
+     "question": "הביטוי $A\\oplus B\\oplus A\\oplus C$ שווה ל:",
+     "options": [
+      {
+       "id": "a",
+       "type": "math",
+       "value": "B\\oplus C"
+      },
+      {
+       "id": "b",
+       "type": "math",
+       "value": "A\\oplus B\\oplus C"
+      },
+      {
+       "id": "c",
+       "type": "math",
+       "value": "A\\oplus C"
+      },
+      {
+       "id": "d",
+       "type": "math",
+       "value": "B+C"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C03",
+   "order": 3,
+   "boss": false,
+   "questions": [
+    {
+     "id": "C03-Q1",
+     "question": "הביטוי $\\overline{A+B}$ שווה ל:",
+     "options": [
+      {
+       "id": "a",
+       "type": "math",
+       "value": "\\bar A+\\bar B"
+      },
+      {
+       "id": "b",
+       "type": "math",
+       "value": "A\\cdot\\bar B"
+      },
+      {
+       "id": "c",
+       "type": "math",
+       "value": "\\bar A\\cdot\\bar B"
+      },
+      {
+       "id": "d",
+       "type": "math",
+       "value": "\\bar A+B"
+      }
+     ]
+    },
+    {
+     "id": "C03-Q2",
+     "question": "הביטוי $A+AB$ שווה ל:",
+     "options": [
+      {
+       "id": "a",
+       "type": "math",
+       "value": "A"
+      },
+      {
+       "id": "b",
+       "type": "math",
+       "value": "B"
+      },
+      {
+       "id": "c",
+       "type": "math",
+       "value": "AB"
+      },
+      {
+       "id": "d",
+       "type": "math",
+       "value": "A+B"
+      }
+     ]
+    },
+    {
+     "id": "C03-Q3",
+     "question": "הביטוי $A+\\bar A B$ שווה ל:",
+     "options": [
+      {
+       "id": "a",
+       "type": "math",
+       "value": "A\\cdot B"
+      },
+      {
+       "id": "b",
+       "type": "math",
+       "value": "A+B"
+      },
+      {
+       "id": "c",
+       "type": "math",
+       "value": "A"
+      },
+      {
+       "id": "d",
+       "type": "math",
+       "value": "\\bar A B"
+      }
+     ]
+    },
+    {
+     "id": "C03-Q4",
+     "question": "הביטוי $A\\cdot(\\bar A+B)$ שווה ל:",
+     "options": [
+      {
+       "id": "a",
+       "type": "math",
+       "value": "A\\cdot B"
+      },
+      {
+       "id": "b",
+       "type": "math",
+       "value": "A+B"
+      },
+      {
+       "id": "c",
+       "type": "math",
+       "value": "\\bar A"
+      },
+      {
+       "id": "d",
+       "type": "math",
+       "value": "A"
+      }
+     ]
+    },
+    {
+     "id": "C03-Q5",
+     "question": "איזו מהמשוואות הבאות **אינה** נכונה?",
+     "options": [
+      {
+       "id": "a",
+       "type": "math",
+       "value": "\\overline{AB}=\\bar A+\\bar B"
+      },
+      {
+       "id": "b",
+       "type": "math",
+       "value": "A+BC=(A+B)(A+C)"
+      },
+      {
+       "id": "c",
+       "type": "math",
+       "value": "\\overline{A+B}=\\bar A+\\bar B"
+      },
+      {
+       "id": "d",
+       "type": "math",
+       "value": "A+\\bar A B=A+B"
+      }
+     ]
+    },
+    {
+     "id": "C03-Q6",
+     "question": "הביטוי $\\overline{\\bar A\\cdot B}$ שווה ל:",
+     "options": [
+      {
+       "id": "a",
+       "type": "math",
+       "value": "A\\cdot\\bar B"
+      },
+      {
+       "id": "b",
+       "type": "math",
+       "value": "A+\\bar B"
+      },
+      {
+       "id": "c",
+       "type": "math",
+       "value": "\\bar A+B"
+      },
+      {
+       "id": "d",
+       "type": "math",
+       "value": "\\bar A\\cdot B"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C04",
+   "order": 4,
+   "boss": false,
+   "questions": [
+    {
+     "id": "C04-Q1",
+     "question": "הביטוי $\\overline{A\\oplus B}$ שווה ל:",
+     "options": [
+      {
+       "id": "a",
+       "type": "math",
+       "value": "\\bar A\\oplus\\bar B"
+      },
+      {
+       "id": "b",
+       "type": "math",
+       "value": "A\\oplus B"
+      },
+      {
+       "id": "c",
+       "type": "math",
+       "value": "A\\cdot\\bar B"
+      },
+      {
+       "id": "d",
+       "type": "math",
+       "value": "\\bar A\\oplus B"
+      }
+     ]
+    },
+    {
+     "id": "C04-Q2",
+     "question": "הביטוי $\\bar A\\oplus\\bar B$ שווה ל:",
+     "options": [
+      {
+       "id": "a",
+       "type": "math",
+       "value": "\\overline{A\\oplus B}"
+      },
+      {
+       "id": "b",
+       "type": "math",
+       "value": "A\\oplus B"
+      },
+      {
+       "id": "c",
+       "type": "math",
+       "value": "AB+\\bar A\\bar B"
+      },
+      {
+       "id": "d",
+       "type": "math",
+       "value": "\\bar A\\cdot\\bar B"
+      }
+     ]
+    },
+    {
+     "id": "C04-Q3",
+     "question": "הביטוי $\\bar A\\oplus B\\oplus\\bar C$ שווה ל:",
+     "options": [
+      {
+       "id": "a",
+       "type": "math",
+       "value": "\\overline{A\\oplus B\\oplus C}"
+      },
+      {
+       "id": "b",
+       "type": "math",
+       "value": "\\bar A\\oplus B\\oplus C"
+      },
+      {
+       "id": "c",
+       "type": "math",
+       "value": "A\\oplus B\\oplus C"
+      },
+      {
+       "id": "d",
+       "type": "math",
+       "value": "A\\oplus B\\oplus\\bar C"
+      }
+     ]
+    },
+    {
+     "id": "C04-Q4",
+     "question": "איזו מהמשוואות הבאות **אינה** נכונה?",
+     "options": [
+      {
+       "id": "a",
+       "type": "math",
+       "value": "A\\cdot(B\\oplus C)=A B\\oplus A C"
+      },
+      {
+       "id": "b",
+       "type": "math",
+       "value": "A+(A\\oplus B)=A"
+      },
+      {
+       "id": "c",
+       "type": "math",
+       "value": "\\overline{A\\oplus B}=A\\oplus B\\oplus 1"
+      },
+      {
+       "id": "d",
+       "type": "math",
+       "value": "A\\oplus A B=A\\cdot\\bar B"
+      }
+     ]
+    },
+    {
+     "id": "C04-Q5",
+     "question": "הביטוי $(A\\oplus B)\\cdot(A\\oplus\\bar B)$ שווה ל:",
+     "options": [
+      {
+       "id": "a",
+       "type": "math",
+       "value": "1"
+      },
+      {
+       "id": "b",
+       "type": "math",
+       "value": "A\\oplus B"
+      },
+      {
+       "id": "c",
+       "type": "math",
+       "value": "0"
+      },
+      {
+       "id": "d",
+       "type": "math",
+       "value": "A"
+      }
+     ]
+    },
+    {
+     "id": "C04-Q6",
+     "question": "הביטוי $\\overline{A\\oplus B}\\cdot C$ לא שווה ל-$\\bar A C\\oplus\\bar B C$. באיזו הצבה של $(A,B,C)$ הם שונים?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$(1,1,0)$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$(0,1,1)$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$(0,0,0)$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$(0,1,0)$"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C05",
+   "order": 5,
+   "boss": false,
+   "questions": [
+    {
+     "id": "C05-Q1",
+     "question": "המשוואה $(A\\oplus B)+(A\\oplus C)=A\\oplus(B+C)$ אינה נכונה. באיזו הצבה של $(A,B,C)$ הצדדים שונים?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$(0,0,0)$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$(1,1,1)$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$(0,1,1)$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$(1,0,1)$"
+      }
+     ]
+    },
+    {
+     "id": "C05-Q2",
+     "question": "המשוואה $A\\oplus(BC)=(A\\oplus B)(A\\oplus C)$ אינה נכונה. בכמה מתוך $8$ הצבות של $(A,B,C)$ שני הצדדים שונים?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "1"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "2"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "4"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "0"
+      }
+     ]
+    },
+    {
+     "id": "C05-Q3",
+     "question": "בכמה מתוך $8$ ההצבות של $(A,B,C)$ הביטוי $A\\oplus B\\oplus C$ שווה $1$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "3"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "4"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "5"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "2"
+      }
+     ]
+    },
+    {
+     "id": "C05-Q4",
+     "question": "איזו מהמשוואות הבאות **אינה** נכונה?",
+     "options": [
+      {
+       "id": "a",
+       "type": "math",
+       "value": "A\\oplus B=B\\oplus A"
+      },
+      {
+       "id": "b",
+       "type": "math",
+       "value": "A\\oplus A B=A B"
+      },
+      {
+       "id": "c",
+       "type": "math",
+       "value": "\\overline{A\\oplus B}=\\bar A\\bar B+AB"
+      },
+      {
+       "id": "d",
+       "type": "math",
+       "value": "A\\oplus B\\oplus AB=A+B"
+      }
+     ]
+    },
+    {
+     "id": "C05-Q5",
+     "question": "שני ביטויים שווים ב-$(0,0,0)$ וגם ב-$(1,1,1)$. האם אפשר להסיק שהם שקולים?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "כן, כי שתי הצבות קיצוניות מכסות את כל המקרים"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "כן, אבל רק אם אין בהם XOR"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "לא, ייתכן שהם שונים בהצבה מעורבת"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "לא, כי שני ביטויים בוליאניים אף פעם אינם שקולים"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C06",
+   "order": 6,
+   "boss": false,
+   "questions": [
+    {
+     "id": "C06-Q1",
+     "question": "מהו אינדקס המינטרם $A\\bar B C$ במשתנים $(A,B,C)$, כש-$A$ הספרה הגבוהה?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "5"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "3"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "6"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "2"
+      }
+     ]
+    },
+    {
+     "id": "C06-Q2",
+     "question": "הפונקציה $\\overline{A\\oplus B}$ במשתנים $(A,B)$ שווה:",
+     "options": [
+      {
+       "id": "a",
+       "type": "math",
+       "value": "\\Sigma(1,2)"
+      },
+      {
+       "id": "b",
+       "type": "math",
+       "value": "\\Sigma(0,3)"
+      },
+      {
+       "id": "c",
+       "type": "math",
+       "value": "\\Sigma(0,1)"
+      },
+      {
+       "id": "d",
+       "type": "math",
+       "value": "\\Sigma(3)"
+      }
+     ]
+    },
+    {
+     "id": "C06-Q3",
+     "question": "הפונקציה $A\\oplus B\\oplus C$ במשתנים $(A,B,C)$ שווה:",
+     "options": [
+      {
+       "id": "a",
+       "type": "math",
+       "value": "\\Sigma(0,3,5,6)"
+      },
+      {
+       "id": "b",
+       "type": "math",
+       "value": "\\Sigma(1,2,4,7)"
+      },
+      {
+       "id": "c",
+       "type": "math",
+       "value": "\\Sigma(1,2,3,4)"
+      },
+      {
+       "id": "d",
+       "type": "math",
+       "value": "\\Sigma(1,4,7)"
+      }
+     ]
+    },
+    {
+     "id": "C06-Q4",
+     "question": "הפונקציה $A+BC$ במשתנים $(A,B,C)$ שווה:",
+     "options": [
+      {
+       "id": "a",
+       "type": "math",
+       "value": "\\Sigma(3,4,5,6,7)"
+      },
+      {
+       "id": "b",
+       "type": "math",
+       "value": "\\Sigma(4,5,6,7)"
+      },
+      {
+       "id": "c",
+       "type": "math",
+       "value": "\\Sigma(1,3,5,7)"
+      },
+      {
+       "id": "d",
+       "type": "math",
+       "value": "\\Sigma(3,5,6,7)"
+      }
+     ]
+    },
+    {
+     "id": "C06-Q5",
+     "question": "כמה מינטרמים יש בסכום המינטרמים של $(A\\oplus B)\\cdot C$ במשתנים $(A,B,C)$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "1"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "2"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "3"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "4"
+      }
+     ]
+    },
+    {
+     "id": "C06-Q6",
+     "question": "הפונקציה $\\bar A\\oplus B$ במשתנים $(A,B)$ שווה:",
+     "options": [
+      {
+       "id": "a",
+       "type": "math",
+       "value": "\\Sigma(1,2)"
+      },
+      {
+       "id": "b",
+       "type": "math",
+       "value": "\\Sigma(0,3)"
+      },
+      {
+       "id": "c",
+       "type": "math",
+       "value": "\\Sigma(0,2)"
+      },
+      {
+       "id": "d",
+       "type": "math",
+       "value": "\\Sigma(1,3)"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C07",
+   "order": 7,
+   "boss": false,
+   "questions": [
+    {
+     "id": "C07-Q1",
+     "question": "הביטוי $(A\\oplus C)\\oplus(\\bar B\\oplus D)\\oplus\\overline{(C\\oplus D)}$ שווה ל:",
+     "options": [
+      {
+       "id": "a",
+       "type": "math",
+       "value": "\\overline{A\\oplus B}"
+      },
+      {
+       "id": "b",
+       "type": "math",
+       "value": "A\\oplus B\\oplus C\\oplus D"
+      },
+      {
+       "id": "c",
+       "type": "math",
+       "value": "A\\oplus D"
+      },
+      {
+       "id": "d",
+       "type": "math",
+       "value": "A\\oplus B"
+      }
+     ]
+    },
+    {
+     "id": "C07-Q2",
+     "question": "הביטוי $A+\\bar A\\,(B+\\bar B\\,(C+\\bar C D))$ שווה ל:",
+     "options": [
+      {
+       "id": "a",
+       "type": "math",
+       "value": "A+B+C+D"
+      },
+      {
+       "id": "b",
+       "type": "math",
+       "value": "A+B\\bar B+C"
+      },
+      {
+       "id": "c",
+       "type": "math",
+       "value": "ABCD"
+      },
+      {
+       "id": "d",
+       "type": "math",
+       "value": "A+\\bar A BCD"
+      }
+     ]
+    },
+    {
+     "id": "C07-Q3",
+     "question": "הביטוי $\\bar A\\oplus B\\oplus\\bar C\\oplus D\\oplus\\bar E$ שווה ל:",
+     "options": [
+      {
+       "id": "a",
+       "type": "math",
+       "value": "A\\oplus B\\oplus C\\oplus D\\oplus E"
+      },
+      {
+       "id": "b",
+       "type": "math",
+       "value": "\\overline{A\\oplus B\\oplus C\\oplus D\\oplus E}"
+      },
+      {
+       "id": "c",
+       "type": "math",
+       "value": "\\bar A\\oplus B\\oplus\\bar C\\oplus D\\oplus E"
+      },
+      {
+       "id": "d",
+       "type": "math",
+       "value": "\\bar A\\oplus\\bar B\\oplus\\bar C\\oplus\\bar D\\oplus E"
+      }
+     ]
+    },
+    {
+     "id": "C07-Q4",
+     "question": "איזו מהמשוואות הבאות **אינה** נכונה?",
+     "options": [
+      {
+       "id": "a",
+       "type": "math",
+       "value": "(A\\oplus B)+\\overline{(A\\oplus B)}\\cdot(C\\oplus D)=(A\\oplus B)+(C\\oplus D)"
+      },
+      {
+       "id": "b",
+       "type": "math",
+       "value": "(A\\oplus B)\\oplus(B\\oplus C)\\oplus(C\\oplus A)=0"
+      },
+      {
+       "id": "c",
+       "type": "math",
+       "value": "(A\\oplus B)\\cdot(B\\oplus C)=A\\bar B C+\\bar A B\\bar C"
+      },
+      {
+       "id": "d",
+       "type": "math",
+       "value": "(A\\oplus B)+(B\\oplus C)=A\\oplus C"
+      }
+     ]
+    },
+    {
+     "id": "C07-Q5",
+     "question": "הביטוי $(\\bar A\\oplus B)\\cdot(A\\oplus\\bar B)$ שווה ל:",
+     "options": [
+      {
+       "id": "a",
+       "type": "math",
+       "value": "A\\oplus B"
+      },
+      {
+       "id": "b",
+       "type": "math",
+       "value": "\\overline{A\\oplus B}"
+      },
+      {
+       "id": "c",
+       "type": "math",
+       "value": "0"
+      },
+      {
+       "id": "d",
+       "type": "math",
+       "value": "\\bar A\\bar B"
+      }
+     ]
+    },
+    {
+     "id": "C07-Q6",
+     "question": "איזו מהמשוואות הבאות **אינה** נכונה?",
+     "options": [
+      {
+       "id": "a",
+       "type": "math",
+       "value": "(A\\oplus B)\\cdot C=A C\\oplus B C"
+      },
+      {
+       "id": "b",
+       "type": "math",
+       "value": "\\overline{A\\oplus B}\\cdot C=\\bar A C\\oplus\\bar B C"
+      },
+      {
+       "id": "c",
+       "type": "math",
+       "value": "\\overline{A\\oplus B}\\cdot C=C\\cdot(\\bar A\\oplus B)"
+      },
+      {
+       "id": "d",
+       "type": "math",
+       "value": "A+\\overline{A+B}=A+\\bar B"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C08",
+   "order": 8,
+   "boss": true,
+   "questions": [
+    {
+     "id": "bank:22A-A-Q1",
+     "bankId": "22A-A-Q1"
+    },
+    {
+     "id": "bank:23A-A-Q1",
+     "bankId": "23A-A-Q1"
+    },
+    {
+     "id": "bank:23B-A-Q1",
+     "bankId": "23B-A-Q1"
+    },
+    {
+     "id": "bank:24S-A-Q1",
+     "bankId": "24S-A-Q1"
+    },
+    {
+     "id": "bank:25B-A-Q1",
+     "bankId": "25B-A-Q1"
+    }
+   ]
+  }
+ ]
+}
