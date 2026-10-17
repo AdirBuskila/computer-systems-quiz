@@ -1540,7 +1540,7 @@ window.COURSES = {
     "icon": "🧱",
     "title": "מבנה 32 הביטים",
     "goal": "לפרק מילה של 32 ביטים (הקסה) לשלושת השדות: סימן, אקספוננט ושבר.",
-    "source": "ai-draft",
+    "source": "ai-verified",
     "boss": false,
     "lesson": {
      "html": "\n    <p>מספר נקודה צפה בדיוק יחיד (Single Precision) הוא מילה של <b>32 ביטים</b>, שמחולקת לשלושה שדות לפי הסדר משמאל לימין:</p>\n    <table><thead><tr><th>שדה</th><th>שם</th><th>כמה ביטים</th></tr></thead>\n    <tbody><tr><td><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>S</mi></mrow><annotation encoding=\"application/x-tex\">S</annotation></semantics></math></span></td><td>סימן (Sign)</td><td>1 (ביט 31)</td></tr>\n    <tr><td><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>E</mi></mrow><annotation encoding=\"application/x-tex\">E</annotation></semantics></math></span></td><td>אקספוננט (Exponent)</td><td>8 (ביטים 30..23)</td></tr>\n    <tr><td><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>F</mi></mrow><annotation encoding=\"application/x-tex\">F</annotation></semantics></math></span></td><td>שבר (Fraction)</td><td>23 (ביטים 22..0)</td></tr></tbody></table>\n    <p>המילה נכתבת בדרך כלל בהקסה: כל ספרה הקסדצימלית היא בדיוק <b>4 ביטים</b>, כך ש-8 ספרות הקסה הן 32 ביטים. כדי לפרק, כותבים כל ספרה ב-4 ביטים וקוראים: הביט הראשון הוא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>S</mi></mrow><annotation encoding=\"application/x-tex\">S</annotation></semantics></math></span>, 8 הבאים הם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>E</mi></mrow><annotation encoding=\"application/x-tex\">E</annotation></semantics></math></span>, ו-23 האחרונים הם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>F</mi></mrow><annotation encoding=\"application/x-tex\">F</annotation></semantics></math></span>.</p>\n    <div class=\"lesson-ex\">דוגמה: <code>0x41200000</code>. הספרות: 4=0100, 1=0001, 2=0010, 0=0000, ...<br>\n    הביטים: <code>0100 0001 0010 0000 ...</code>. מקבצים 1+8+23: <code>0 | 10000010 | 01000000000000000000000</code>.<br>\n    לכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>S</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">S=0</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>E</mi><mo>=</mo><msub><mn>10000010</mn><mn>2</mn></msub><mo>=</mo><mn>130</mn></mrow><annotation encoding=\"application/x-tex\">E=10000010_2=130</annotation></semantics></math></span>, ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>F</mi></mrow><annotation encoding=\"application/x-tex\">F</annotation></semantics></math></span> מתחיל ב-<code>01</code>.</div>\n    <div class=\"lesson-rule\">🔑 את <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>E</mi></mrow><annotation encoding=\"application/x-tex\">E</annotation></semantics></math></span> קוראים כמספר <b>לא מכוונן</b> (unsigned) מ-0 עד 255. אם הספרה הראשונה בהקסה היא 8 או יותר, הסימן הוא 1 (המספר שלילי).</div>\n    <div class=\"lesson-trap\">⚠️ ביט הסימן הוא הביט הראשון בלבד. הביט השני של הספרה הראשונה כבר שייך ל-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>E</mi></mrow><annotation encoding=\"application/x-tex\">E</annotation></semantics></math></span>.</div>"
@@ -1734,7 +1734,7 @@ window.COURSES = {
     "icon": "🔓",
     "title": "פענוח מספר נורמלי",
     "goal": "לחשב את הערך של מילה כשהאקספוננט אינו 0 ואינו 255, לפי הנוסחה עם ה-1 הסמוי וההטיה.",
-    "source": "ai-draft",
+    "source": "ai-verified",
     "boss": false,
     "lesson": {
      "html": "\n    <p>כשהאקספוננט <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>E</mi></mrow><annotation encoding=\"application/x-tex\">E</annotation></semantics></math></span> אינו 0 ואינו 255 המספר נקרא <b>נורמלי</b>, והערך שלו הוא:</p>\n    <div class=\"lesson-formula\"><span class=\"math-block\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\" display=\"block\"><semantics><mrow><mi>X</mi><mo>=</mo><mo stretchy=\"false\">(</mo><mo>−</mo><mn>1</mn><msup><mo stretchy=\"false\">)</mo><mi>S</mi></msup><mo>⋅</mo><msup><mn>2</mn><mrow><mi>E</mi><mo>−</mo><mn>127</mn></mrow></msup><mo>⋅</mo><mo stretchy=\"false\">(</mo><mn>1</mn><mo>+</mo><mi>F</mi><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">X=(-1)^S\\cdot 2^{E-127}\\cdot(1+F)</annotation></semantics></math></span></div>\n    <p>כאן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>F</mi></mrow><annotation encoding=\"application/x-tex\">F</annotation></semantics></math></span> הוא השבר שמתקבל מ-23 הביטים כאילו כתבנו אותם אחרי נקודה בינארית: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>0.</mn><msub><mi>F</mi><mn>22</mn></msub><msub><mi>F</mi><mn>21</mn></msub><mo>…</mo></mrow><annotation encoding=\"application/x-tex\">0.F_{22}F_{21}\\ldots</annotation></semantics></math></span>. הביט הראשון שלו שווה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow><annotation encoding=\"application/x-tex\">\\frac12</annotation></semantics></math></span>, השני <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mfrac><mn>1</mn><mn>4</mn></mfrac></mrow><annotation encoding=\"application/x-tex\">\\frac14</annotation></semantics></math></span> וכן הלאה. המספר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>1</mn><mo>+</mo><mi>F</mi></mrow><annotation encoding=\"application/x-tex\">1+F</annotation></semantics></math></span> נקרא <b>המנטיסה</b>, וה-1 שלפני הנקודה הוא ה\"1 הסמוי\": הוא לא נשמר במילה. המספר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>127</mn></mrow><annotation encoding=\"application/x-tex\">127</annotation></semantics></math></span> הוא ה<b>הטיה</b> (bias), ולכן האקספוננט האמיתי הוא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>e</mi><mo>=</mo><mi>E</mi><mo>−</mo><mn>127</mn></mrow><annotation encoding=\"application/x-tex\">e=E-127</annotation></semantics></math></span>.</p>\n    <div class=\"lesson-rule\">🔑 מתכון: (1) מפרקים ל-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>S</mi><mtext> </mtext><mi mathvariant=\"normal\">∣</mi><mtext> </mtext><mi>E</mi><mtext> </mtext><mi mathvariant=\"normal\">∣</mi><mtext> </mtext><mi>F</mi></mrow><annotation encoding=\"application/x-tex\">S\\,|\\,E\\,|\\,F</annotation></semantics></math></span>. (2) <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>e</mi><mo>=</mo><mi>E</mi><mo>−</mo><mn>127</mn></mrow><annotation encoding=\"application/x-tex\">e=E-127</annotation></semantics></math></span>. (3) מנטיסה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo>=</mo><mn>1.</mn><mi>F</mi></mrow><annotation encoding=\"application/x-tex\">=1.F</annotation></semantics></math></span> בבינארי. (4) <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>X</mi><mo>=</mo><mo>±</mo><mn>1.</mn><mi>F</mi><mo>⋅</mo><msup><mn>2</mn><mi>e</mi></msup></mrow><annotation encoding=\"application/x-tex\">X=\\pm 1.F\\cdot 2^e</annotation></semantics></math></span>, כלומר מזיזים את הנקודה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>e</mi></mrow><annotation encoding=\"application/x-tex\">e</annotation></semantics></math></span> מקומות ימינה (אם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>e</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">e&gt;0</annotation></semantics></math></span>) או שמאלה.</div>\n    <div class=\"lesson-ex\">דוגמה: <code>0x41200000</code> = <code>0 | 10000010 | 0100...</code>. <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>E</mi><mo>=</mo><mn>130</mn></mrow><annotation encoding=\"application/x-tex\">E=130</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>e</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding=\"application/x-tex\">e=3</annotation></semantics></math></span>, המנטיסה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msub><mn>1.01</mn><mn>2</mn></msub><mo>=</mo><mn>1.25</mn></mrow><annotation encoding=\"application/x-tex\">1.01_2=1.25</annotation></semantics></math></span>. הערך: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>1.25</mn><mo>⋅</mo><msup><mn>2</mn><mn>3</mn></msup><mo>=</mo><mn>10</mn></mrow><annotation encoding=\"application/x-tex\">1.25\\cdot 2^3=10</annotation></semantics></math></span>.</div>\n    <div class=\"lesson-trap\">⚠️ המנטיסה היא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>1.</mn><mi>F</mi></mrow><annotation encoding=\"application/x-tex\">1.F</annotation></semantics></math></span> ולא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>0.</mn><mi>F</mi></mrow><annotation encoding=\"application/x-tex\">0.F</annotation></semantics></math></span>. ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>e</mi><mo>=</mo><mi>E</mi><mo>−</mo><mn>127</mn></mrow><annotation encoding=\"application/x-tex\">e=E-127</annotation></semantics></math></span>: אקספוננט קטן מ-127 נותן חזקה שלילית, כלומר מספר קטן מ-1 בערכו המוחלט.</div>"
@@ -1964,7 +1964,7 @@ window.COURSES = {
     "icon": "♾️",
     "title": "אפס, דנורמלים, אינסוף ו-NaN",
     "goal": "לזהות מילים מיוחדות (E=0 או E=255) ולחשב את הערכים הקיצוניים של הפורמט.",
-    "source": "ai-draft",
+    "source": "ai-verified",
     "boss": false,
     "lesson": {
      "html": "\n    <p>שני ערכי האקספוננט הקיצוניים שמורים למקרים מיוחדים:</p>\n    <table><thead><tr><th><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>E</mi></mrow><annotation encoding=\"application/x-tex\">E</annotation></semantics></math></span></th><th><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>F</mi></mrow><annotation encoding=\"application/x-tex\">F</annotation></semantics></math></span></th><th>משמעות</th><th>ערך</th></tr></thead>\n    <tbody>\n    <tr><td><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">0</annotation></semantics></math></span></td><td><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">0</annotation></semantics></math></span></td><td>אפס</td><td><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo>±</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">\\pm 0</annotation></semantics></math></span> (שני אפסים, לפי <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>S</mi></mrow><annotation encoding=\"application/x-tex\">S</annotation></semantics></math></span>)</td></tr>\n    <tr><td><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">0</annotation></semantics></math></span></td><td><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo mathvariant=\"normal\">≠</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">\\ne 0</annotation></semantics></math></span></td><td>דנורמלי (לא מנורמל)</td><td><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">(</mo><mo>−</mo><mn>1</mn><msup><mo stretchy=\"false\">)</mo><mi>S</mi></msup><mo>⋅</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>126</mn></mrow></msup><mo>⋅</mo><mi>F</mi></mrow><annotation encoding=\"application/x-tex\">(-1)^S\\cdot 2^{-126}\\cdot F</annotation></semantics></math></span></td></tr>\n    <tr><td><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>1..254</mn></mrow><annotation encoding=\"application/x-tex\">1..254</annotation></semantics></math></span></td><td>כלשהו</td><td>נורמלי</td><td><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">(</mo><mo>−</mo><mn>1</mn><msup><mo stretchy=\"false\">)</mo><mi>S</mi></msup><mo>⋅</mo><msup><mn>2</mn><mrow><mi>E</mi><mo>−</mo><mn>127</mn></mrow></msup><mo stretchy=\"false\">(</mo><mn>1</mn><mo>+</mo><mi>F</mi><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">(-1)^S\\cdot 2^{E-127}(1+F)</annotation></semantics></math></span></td></tr>\n    <tr><td><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>255</mn></mrow><annotation encoding=\"application/x-tex\">255</annotation></semantics></math></span></td><td><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">0</annotation></semantics></math></span></td><td>אינסוף</td><td><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo>±</mo><mi mathvariant=\"normal\">∞</mi></mrow><annotation encoding=\"application/x-tex\">\\pm\\infty</annotation></semantics></math></span></td></tr>\n    <tr><td><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>255</mn></mrow><annotation encoding=\"application/x-tex\">255</annotation></semantics></math></span></td><td><span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo mathvariant=\"normal\">≠</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">\\ne 0</annotation></semantics></math></span></td><td>NaN (לא מספר)</td><td>אין ערך</td></tr>\n    </tbody></table>\n    <p>בדנורמלי אין \"1 סמוי\" והאקספוננט האמיתי קבוע <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo>−</mo><mn>126</mn></mrow><annotation encoding=\"application/x-tex\">-126</annotation></semantics></math></span> (לא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo>−</mo><mn>127</mn></mrow><annotation encoding=\"application/x-tex\">-127</annotation></semantics></math></span>). זה מה שמאפשר מעבר חלק מהנורמלי הקטן ביותר אל האפס.</p>\n    <div class=\"lesson-rule\">🔑 ערכים חשובים לשינון:\n    <ul><li>הנורמלי החיובי הקטן ביותר: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>E</mi><mo>=</mo><mn>1</mn><mo separator=\"true\">,</mo><mi>F</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">E=1,F=0</annotation></semantics></math></span>, הערך <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mrow><mo>−</mo><mn>126</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">2^{-126}</annotation></semantics></math></span>.</li>\n    <li>הדנורמלי החיובי הקטן ביותר: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>F</mi><mo>=</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>23</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">F=2^{-23}</annotation></semantics></math></span>, הערך <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mrow><mo>−</mo><mn>126</mn></mrow></msup><mo>⋅</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>23</mn></mrow></msup><mo>=</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>149</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">2^{-126}\\cdot 2^{-23}=2^{-149}</annotation></semantics></math></span>.</li>\n    <li>הדנורמלי הגדול ביותר: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>F</mi><mo>=</mo><mn>1</mn><mo>−</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>23</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">F=1-2^{-23}</annotation></semantics></math></span>, הערך <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">(</mo><mn>1</mn><mo>−</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>23</mn></mrow></msup><mo stretchy=\"false\">)</mo><mo>⋅</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>126</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">(1-2^{-23})\\cdot 2^{-126}</annotation></semantics></math></span>.</li>\n    <li>הסופי הגדול ביותר: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>E</mi><mo>=</mo><mn>254</mn></mrow><annotation encoding=\"application/x-tex\">E=254</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>F</mi><mo>=</mo><mn>1</mn><mo>−</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>23</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">F=1-2^{-23}</annotation></semantics></math></span>, הערך <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">(</mo><mn>2</mn><mo>−</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>23</mn></mrow></msup><mo stretchy=\"false\">)</mo><mo>⋅</mo><msup><mn>2</mn><mn>127</mn></msup></mrow><annotation encoding=\"application/x-tex\">(2-2^{-23})\\cdot 2^{127}</annotation></semantics></math></span>.</li></ul></div>\n    <div class=\"lesson-ex\">דוגמה: <code>0x00000001</code> הוא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>E</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">E=0</annotation></semantics></math></span> ו-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>F</mi><mo>=</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>23</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">F=2^{-23}</annotation></semantics></math></span> (רק הביט האחרון), ולכן הערך <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mrow><mo>−</mo><mn>149</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">2^{-149}</annotation></semantics></math></span>. לעומתו <code>0x00800000</code> הוא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>E</mi><mo>=</mo><mn>1</mn><mo separator=\"true\">,</mo><mi>F</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">E=1,F=0</annotation></semantics></math></span>, כלומר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mrow><mo>−</mo><mn>126</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">2^{-126}</annotation></semantics></math></span>.</div>\n    <div class=\"lesson-trap\">⚠️ לא להשתמש בנוסחה הרגילה עבור <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>E</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">E=0</annotation></semantics></math></span>: אין 1 סמוי, והחזקה היא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mrow><mo>−</mo><mn>126</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">2^{-126}</annotation></semantics></math></span> ולא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mrow><mo>−</mo><mn>127</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">2^{-127}</annotation></semantics></math></span>.</div>"
@@ -2194,7 +2194,7 @@ window.COURSES = {
     "icon": "🔒",
     "title": "קידוד מספר פשוט",
     "goal": "להפוך מספר עשרוני עם כתיב בינארי סופי להקסה של 32 ביטים.",
-    "source": "ai-draft",
+    "source": "ai-verified",
     "boss": false,
     "lesson": {
      "html": "\n    <p>קידוד הוא ההפך מפענוח. מתכון:</p>\n    <ol>\n    <li><b>סימן:</b> <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>S</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">S=1</annotation></semantics></math></span> אם המספר שלילי. ממשיכים עם הערך המוחלט.</li>\n    <li><b>בינארי:</b> כותבים את הערך בבסיס 2. חלק שלם: מחלקים ב-2. חלק שברירי: כופלים ב-2 שוב ושוב ורושמים את הספרה השלמה.</li>\n    <li><b>נירמול:</b> מזיזים את הנקודה עד שיש בדיוק ספרת 1 אחת משמאלה: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>1.</mn><mi>x</mi><mi>x</mi><mi>x</mi><mo>×</mo><msup><mn>2</mn><mi>e</mi></msup></mrow><annotation encoding=\"application/x-tex\">1.xxx\\times 2^{e}</annotation></semantics></math></span>.</li>\n    <li><b>אקספוננט:</b> <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>E</mi><mo>=</mo><mi>e</mi><mo>+</mo><mn>127</mn></mrow><annotation encoding=\"application/x-tex\">E=e+127</annotation></semantics></math></span>, כתוב ב-8 ביטים.</li>\n    <li><b>שבר:</b> הספרות אחרי הנקודה, משלימים באפסים עד 23 ביטים (ה-1 הסמוי לא נשמר).</li>\n    <li>מרכיבים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>S</mi><mtext> </mtext><mi mathvariant=\"normal\">∣</mi><mtext> </mtext><mi>E</mi><mtext> </mtext><mi mathvariant=\"normal\">∣</mi><mtext> </mtext><mi>F</mi></mrow><annotation encoding=\"application/x-tex\">S\\,|\\,E\\,|\\,F</annotation></semantics></math></span> וקובצים לארבעות לקריאה בהקסה.</li></ol>\n    <div class=\"lesson-ex\">דוגמה: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo>−</mo><mn>6.625</mn></mrow><annotation encoding=\"application/x-tex\">-6.625</annotation></semantics></math></span>. הערך המוחלט: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>6.625</mn><mo>=</mo><msub><mn>110.101</mn><mn>2</mn></msub><mo>=</mo><msub><mn>1.10101</mn><mn>2</mn></msub><mo>⋅</mo><msup><mn>2</mn><mn>2</mn></msup></mrow><annotation encoding=\"application/x-tex\">6.625=110.101_2=1.10101_2\\cdot 2^{2}</annotation></semantics></math></span>. <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>E</mi><mo>=</mo><mn>2</mn><mo>+</mo><mn>127</mn><mo>=</mo><mn>129</mn><mo>=</mo><msub><mn>10000001</mn><mn>2</mn></msub></mrow><annotation encoding=\"application/x-tex\">E=2+127=129=10000001_2</annotation></semantics></math></span>. הביטים: <code>1 | 10000001 | 10101000000000000000000</code>, כלומר <code>0xC0D40000</code>.</div>\n    <div class=\"lesson-rule\">🔑 <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>E</mi><mo>=</mo><mi>e</mi><mo>+</mo><mn>127</mn></mrow><annotation encoding=\"application/x-tex\">E=e+127</annotation></semantics></math></span> בקידוד, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>e</mi><mo>=</mo><mi>E</mi><mo>−</mo><mn>127</mn></mrow><annotation encoding=\"application/x-tex\">e=E-127</annotation></semantics></math></span> בפענוח. עבור מספר קטן מ-1 האקספוננט <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>e</mi></mrow><annotation encoding=\"application/x-tex\">e</annotation></semantics></math></span> שלילי ולכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>E</mi><mo>&lt;</mo><mn>127</mn></mrow><annotation encoding=\"application/x-tex\">E&lt;127</annotation></semantics></math></span>.</div>\n    <div class=\"lesson-trap\">⚠️ מספרים כמו <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>0.75</mn></mrow><annotation encoding=\"application/x-tex\">0.75</annotation></semantics></math></span> או <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>12.5</mn></mrow><annotation encoding=\"application/x-tex\">12.5</annotation></semantics></math></span> הם סכום של חזקות 2 ולכן הקידוד מדויק. מספרים כמו <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>0.1</mn></mrow><annotation encoding=\"application/x-tex\">0.1</annotation></semantics></math></span> אינם, ואותם נלמד בשלב הבא.</div>"
@@ -2424,7 +2424,7 @@ window.COURSES = {
     "icon": "🔁",
     "title": "שברים מחזוריים ועיגול",
     "goal": "לקודד מספר שהכתיב הבינארי שלו אינסופי, ולעגל נכון (כולל תיקו) את 23 ביטי השבר.",
-    "source": "ai-draft",
+    "source": "ai-verified",
     "boss": false,
     "lesson": {
      "html": "\n    <p>מספרים כמו <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mfrac><mn>1</mn><mn>3</mn></mfrac></mrow><annotation encoding=\"application/x-tex\">\\frac13</annotation></semantics></math></span> או <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>0.1</mn></mrow><annotation encoding=\"application/x-tex\">0.1</annotation></semantics></math></span> הם שברים בינאריים אינסופיים. ל-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>F</mi></mrow><annotation encoding=\"application/x-tex\">F</annotation></semantics></math></span> יש רק 23 ביטים, ולכן חותכים וצריך להחליט איך. הכלל הוא <b>עיגול לקרוב</b>:</p>\n    <ul>\n    <li>מסתכלים על הביטים שנחתכו (ביט 24 ואילך) כעל שבר של \"יחידה אחרונה\" (היחידה האחרונה היא הביט ה-23).</li>\n    <li>אם החתוך <b>גדול מחצי</b>: מוסיפים 1 לביט האחרון (עיגול למעלה).</li>\n    <li>אם החתוך <b>קטן מחצי</b>: משאירים (עיגול למטה).</li>\n    <li><b>בדיוק חצי</b> (תיקו): בוחרים מבין שני השכנים את זה שביטו האחרון 0 (\"לזוגי\").</li></ul>\n    <p>בפועל מספיק להסתכל על ביט 24: אם הוא 1 וקיים 1 כלשהו אחריו, עיגול למעלה; אם הוא 1 ואחריו רק אפסים, תיקו; אם הוא 0, עיגול למטה.</p>\n    <div class=\"lesson-ex\">דוגמה: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mfrac><mn>1</mn><mn>3</mn></mfrac><mo>=</mo><mn>0.010101</mn><msub><mo>…</mo><mn>2</mn></msub><mo>=</mo><mn>1.0101</mn><msub><mo>…</mo><mn>2</mn></msub><mo>⋅</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>2</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">\\frac13=0.010101\\ldots_2=1.0101\\ldots_2\\cdot 2^{-2}</annotation></semantics></math></span>, כלומר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>E</mi><mo>=</mo><mn>125</mn></mrow><annotation encoding=\"application/x-tex\">E=125</annotation></semantics></math></span>. 23 ביטי השבר הם <code>01010101010101010101010</code>, והחתוך מתחיל ב-<code>1010...</code>, יותר מחצי. לכן מעגלים למעלה והשבר מסתיים ב-<code>...011</code>. המילה: <code>0x3EAAAAAB</code>.</div>\n    <div class=\"lesson-rule\">🔑 <b>כפל בחזקת 2 משנה רק את האקספוננט.</b> <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mfrac><mn>1</mn><mn>12</mn></mfrac><mo>=</mo><mfrac><mn>1</mn><mn>3</mn></mfrac><mo>⋅</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>2</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">\\frac1{12}=\\frac13\\cdot 2^{-2}</annotation></semantics></math></span> ולכן יש לו אותו שבר של <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mfrac><mn>1</mn><mn>3</mn></mfrac></mrow><annotation encoding=\"application/x-tex\">\\frac13</annotation></semantics></math></span> עם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>E</mi></mrow><annotation encoding=\"application/x-tex\">E</annotation></semantics></math></span> קטן ב-2. כך מקודדים גם שבר כמו <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo>−</mo><mfrac><mn>1</mn><mn>384</mn></mfrac></mrow><annotation encoding=\"application/x-tex\">-\\frac1{384}</annotation></semantics></math></span> (<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo>=</mo><mfrac><mn>1</mn><mn>3</mn></mfrac><mo>⋅</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>7</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">=\\frac13\\cdot 2^{-7}</annotation></semantics></math></span>): מוציאים את חזקות ה-2 ונשאר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mfrac><mn>1</mn><mn>3</mn></mfrac></mrow><annotation encoding=\"application/x-tex\">\\frac13</annotation></semantics></math></span>.</div>\n    <div class=\"lesson-trap\">⚠️ כשהתשובות נבדלות רק בספרה האחרונה (...AAAA מול ...AAAB), ההכרעה היא בעיגול. בודקים את הביטים החתוכים לפני שבוחרים.</div>"
@@ -2654,7 +2654,7 @@ window.COURSES = {
     "icon": "📏",
     "title": "מרווחים, יחסים וספירה",
     "goal": "לחשב את המרחק בין מספרים סמוכים, את היחס בתוך אקספוננט אחד, ולספור קבוצות של מספרים במרחק קבוע.",
-    "source": "ai-draft",
+    "source": "ai-verified",
     "boss": false,
     "lesson": {
      "html": "\n    <p>נקבע אקספוננט <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>E</mi></mrow><annotation encoding=\"application/x-tex\">E</annotation></semantics></math></span> (מספר נורמלי, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>e</mi><mo>=</mo><mi>E</mi><mo>−</mo><mn>127</mn></mrow><annotation encoding=\"application/x-tex\">e=E-127</annotation></semantics></math></span>). המספרים עם אקספוננט זה הם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mi>e</mi></msup><mo>⋅</mo><mo stretchy=\"false\">(</mo><mn>1</mn><mo>+</mo><mi>F</mi><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">2^e\\cdot(1+F)</annotation></semantics></math></span> כש-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>F</mi></mrow><annotation encoding=\"application/x-tex\">F</annotation></semantics></math></span> עובר על <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mn>23</mn></msup></mrow><annotation encoding=\"application/x-tex\">2^{23}</annotation></semantics></math></span> ערכים, מ-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">0</annotation></semantics></math></span> ועד <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>1</mn><mo>−</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>23</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">1-2^{-23}</annotation></semantics></math></span> בקפיצות של <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mrow><mo>−</mo><mn>23</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">2^{-23}</annotation></semantics></math></span>. מכאן:</p>\n    <div class=\"lesson-rule\">🔑 <b>המרווח בין שני מספרים סמוכים</b> עם אקספוננט <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>e</mi></mrow><annotation encoding=\"application/x-tex\">e</annotation></semantics></math></span> הוא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mi>e</mi></msup><mo>⋅</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>23</mn></mrow></msup><mo>=</mo><msup><mn>2</mn><mrow><mi>e</mi><mo>−</mo><mn>23</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">2^{e}\\cdot 2^{-23}=2^{e-23}</annotation></semantics></math></span>. כל פעם שהאקספוננט עולה ב-1 המרווח מוכפל ב-2.</div>\n    <ul>\n    <li><b>המספר הקטן ביותר</b> באקספוננט: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mi>e</mi></msup></mrow><annotation encoding=\"application/x-tex\">2^e</annotation></semantics></math></span> (<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>F</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">F=0</annotation></semantics></math></span>). <b>הגדול ביותר</b>: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mi>e</mi></msup><mo stretchy=\"false\">(</mo><mn>2</mn><mo>−</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>23</mn></mrow></msup><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">2^e(2-2^{-23})</annotation></semantics></math></span> (<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>F</mi></mrow><annotation encoding=\"application/x-tex\">F</annotation></semantics></math></span> כולו 1). <b>היחס</b> ביניהם: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><mo>−</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>23</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">2-2^{-23}</annotation></semantics></math></span>, בלי תלות ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>e</mi></mrow><annotation encoding=\"application/x-tex\">e</annotation></semantics></math></span>.</li>\n    <li>באקספוננט אחד יש <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mn>23</mn></msup></mrow><annotation encoding=\"application/x-tex\">2^{23}</annotation></semantics></math></span> מספרים חיוביים. אם מוסיפים את המספר הבא, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mrow><mi>e</mi><mo>+</mo><mn>1</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">2^{e+1}</annotation></semantics></math></span>, מקבלים <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mn>23</mn></msup><mo>+</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">2^{23}+1</annotation></semantics></math></span> מספרים רצופים, והמרווח ביניהם קבוע <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mrow><mi>e</mi><mo>−</mo><mn>23</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">2^{e-23}</annotation></semantics></math></span> (<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mn>23</mn></msup></mrow><annotation encoding=\"application/x-tex\">2^{23}</annotation></semantics></math></span> מרווחים).</li>\n    <li>לכל סימן יש קבוצה משלה, ולכן המספר הכולל של קבוצות עם מרווח נתון הוא <b>שתי קבוצות</b> (חיובית ושלילית).</li></ul>\n    <div class=\"lesson-ex\">דוגמה: בין <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mn>24</mn></msup></mrow><annotation encoding=\"application/x-tex\">2^{24}</annotation></semantics></math></span> ל-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mn>25</mn></msup></mrow><annotation encoding=\"application/x-tex\">2^{25}</annotation></semantics></math></span> (<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>e</mi><mo>=</mo><mn>24</mn></mrow><annotation encoding=\"application/x-tex\">e=24</annotation></semantics></math></span>) המרווח הוא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mrow><mn>24</mn><mo>−</mo><mn>23</mn></mrow></msup><mo>=</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">2^{24-23}=2</annotation></semantics></math></span>, ולכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mn>24</mn></msup><mo>+</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">2^{24}+1</annotation></semantics></math></span> כבר אינו מיוצג: הוא באמצע בין <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mn>24</mn></msup></mrow><annotation encoding=\"application/x-tex\">2^{24}</annotation></semantics></math></span> ל-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mn>24</mn></msup><mo>+</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">2^{24}+2</annotation></semantics></math></span>.</div>\n    <div class=\"lesson-trap\">⚠️ היחס <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><mo>−</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>23</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">2-2^{-23}</annotation></semantics></math></span> נכון רק לאקספוננט נורמלי. בדנורמלים (<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>E</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">E=0</annotation></semantics></math></span>) ההגדרה שונה, כי אין 1 סמוי.</div>"
@@ -2884,7 +2884,7 @@ window.COURSES = {
     "icon": "➕",
     "title": "חיבור, שגיאת עיגול ודנורמלים",
     "goal": "לדעת מתי חיבור נקודה צפה מדויק, מתי הוא מעוגל, ומתי התוצאה אינסוף, אפס או לא מנורמלת.",
-    "source": "ai-draft",
+    "source": "ai-verified",
     "boss": false,
     "lesson": {
      "html": "\n    <p>חיבור מתבצע כך: מיישרים את האקספוננטים, מחברים את המנטיסות, מנרמלים, ו<b>מעגלים</b> ל-23 ביטי שבר (עיגול לקרוב, תיקו לזוגי, כמו בשלב 5). התוצאה היא המספר הקרוב ביותר לסכום המדויק שניתן לייצוג. ההפרש ביניהם הוא <b>שגיאת העיגול</b>.</p>\n    <ul>\n    <li><b>סכום מדויק:</b> אם הסכום המדויק עצמו מיוצג, אין שגיאה. למשל חיסור של שני מספרים קרובים מאוד לרוב מדויק.</li>\n    <li><b>הקטן \"נבלע\":</b> אם הסכום המדויק נופל בין שני מספרים מיוצגים, הוא מעוגל. מעל <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mn>24</mn></msup></mrow><annotation encoding=\"application/x-tex\">2^{24}</annotation></semantics></math></span> המרווח כבר <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo>≥</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">\\ge 2</annotation></semantics></math></span> ולכן <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mn>24</mn></msup><mo>+</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">2^{24}+1</annotation></semantics></math></span> מעוגל.</li>\n    <li><b>אינסוף:</b> אם הסכום גדול מהגדול שניתן לייצוג, מתקבל <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi mathvariant=\"normal\">∞</mi></mrow><annotation encoding=\"application/x-tex\">\\infty</annotation></semantics></math></span> (גלישה).</li>\n    <li><b>אפס:</b> <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>x</mi><mo>+</mo><mo stretchy=\"false\">(</mo><mo>−</mo><mi>x</mi><mo stretchy=\"false\">)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">x+(-x)=0</annotation></semantics></math></span>.</li>\n    <li><b>דנורמלי:</b> חיסור של שני נורמלים קרובים יכול להיפול מתחת ל-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mrow><mo>−</mo><mn>126</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">2^{-126}</annotation></semantics></math></span>, והתוצאה דנורמלית (ומדויקת).</li>\n    <li><b>נורמלי מדנורמלים:</b> חיבור שני דנורמלים יכול לעבור את <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mrow><mo>−</mo><mn>126</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">2^{-126}</annotation></semantics></math></span> ולתת נורמלי.</li></ul>\n    <div class=\"lesson-ex\">דוגמה: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mn>24</mn></msup><mo>+</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">2^{24}+1</annotation></semantics></math></span>. הסכום המדויק באמצע בין <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mn>24</mn></msup></mrow><annotation encoding=\"application/x-tex\">2^{24}</annotation></semantics></math></span> (ביט אחרון 0) ל-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mn>24</mn></msup><mo>+</mo><mn>2</mn></mrow><annotation encoding=\"application/x-tex\">2^{24}+2</annotation></semantics></math></span> (ביט אחרון 1). תיקו, לזוגי: התוצאה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mn>24</mn></msup></mrow><annotation encoding=\"application/x-tex\">2^{24}</annotation></semantics></math></span>. השגיאה <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">-1</annotation></semantics></math></span>.</div>\n    <div class=\"lesson-trap\">⚠️ חיבור נקודה צפה <b>אינו קיבוצי</b>: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mo stretchy=\"false\">(</mo><mi>a</mi><mo>+</mo><mi>b</mi><mo stretchy=\"false\">)</mo><mo>+</mo><mi>c</mi></mrow><annotation encoding=\"application/x-tex\">(a+b)+c</annotation></semantics></math></span> יכול להיות שונה מ-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>a</mi><mo>+</mo><mo stretchy=\"false\">(</mo><mi>b</mi><mo>+</mo><mi>c</mi><mo stretchy=\"false\">)</mo></mrow><annotation encoding=\"application/x-tex\">a+(b+c)</annotation></semantics></math></span> כי העיגול מתבצע אחרי כל פעולה.</div>"
@@ -3114,7 +3114,7 @@ window.COURSES = {
     "icon": "🏆",
     "title": "בוס: שאלות מבחן אמיתיות",
     "goal": "לפתור שאלות נקודה צפה כפי שהן מופיעות במבחן: קידוד, פענוח, מרווחים, יחסים וחיבור.",
-    "source": "ai-draft",
+    "source": "ai-verified",
     "boss": true,
     "lesson": {
      "html": "\n    <p>זה השלב האחרון: שש שאלות אמיתיות. כל הכלים כבר אצלכם. סיכום קצר לפני שמתחילים:</p>\n    <div class=\"lesson-rule\">🔑 <b>קידוד:</b> סימן, ערך מוחלט בבינארי, נירמול <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>1.</mn><mi>F</mi><mo>⋅</mo><msup><mn>2</mn><mi>e</mi></msup></mrow><annotation encoding=\"application/x-tex\">1.F\\cdot 2^e</annotation></semantics></math></span>, <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>E</mi><mo>=</mo><mi>e</mi><mo>+</mo><mn>127</mn></mrow><annotation encoding=\"application/x-tex\">E=e+127</annotation></semantics></math></span>, עיגול. אם יש גורם <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mi>k</mi></msup></mrow><annotation encoding=\"application/x-tex\">2^k</annotation></semantics></math></span> מוציאים אותו כדי שישאר שבר פשוט כמו <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mfrac><mn>1</mn><mn>3</mn></mfrac></mrow><annotation encoding=\"application/x-tex\">\\frac13</annotation></semantics></math></span>. כשהאפשרויות נבדלות בספרה האחרונה, בדקו את הביטים החתוכים.</div>\n    <div class=\"lesson-rule\">🔑 <b>פענוח:</b> <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>X</mi><mo>=</mo><mo stretchy=\"false\">(</mo><mo>−</mo><mn>1</mn><msup><mo stretchy=\"false\">)</mo><mi>S</mi></msup><mo>⋅</mo><msup><mn>2</mn><mrow><mi>E</mi><mo>−</mo><mn>127</mn></mrow></msup><mo>⋅</mo><mn>1.</mn><mi>F</mi></mrow><annotation encoding=\"application/x-tex\">X=(-1)^S\\cdot 2^{E-127}\\cdot 1.F</annotation></semantics></math></span>. את <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>1.</mn><mi>F</mi></mrow><annotation encoding=\"application/x-tex\">1.F</annotation></semantics></math></span> מחשבים כסכום חזקות 2 (<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo separator=\"true\">,</mo><mfrac><mn>1</mn><mn>4</mn></mfrac><mo separator=\"true\">,</mo><mfrac><mn>1</mn><mn>8</mn></mfrac><mo separator=\"true\">,</mo><mo>…</mo></mrow><annotation encoding=\"application/x-tex\">\\frac12,\\frac14,\\frac18,\\ldots</annotation></semantics></math></span>) ואז מכפילים בחזקה.</div>\n    <div class=\"lesson-rule\">🔑 <b>מרווחים וספירה:</b> מרווח באקספוננט <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>e</mi></mrow><annotation encoding=\"application/x-tex\">e</annotation></semantics></math></span> הוא <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mrow><mi>e</mi><mo>−</mo><mn>23</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">2^{e-23}</annotation></semantics></math></span>. קבוצה של מרווח קבוע: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mn>23</mn></msup><mo>+</mo><mn>1</mn></mrow><annotation encoding=\"application/x-tex\">2^{23}+1</annotation></semantics></math></span> מספרים, לכל סימן קבוצה משלה. יחס גדול-קטן באקספוננט אחד: <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mn>2</mn><mo>−</mo><msup><mn>2</mn><mrow><mo>−</mo><mn>23</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">2-2^{-23}</annotation></semantics></math></span>.</div>\n    <div class=\"lesson-rule\">🔑 <b>דנורמלים:</b> <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><mi>E</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding=\"application/x-tex\">E=0</annotation></semantics></math></span>, בלי 1 סמוי, מרווח קבוע <span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mrow><mo>−</mo><mn>149</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">2^{-149}</annotation></semantics></math></span>. הגדול שבהם קטן ב-<span class=\"math-inline\"><math dir=\"ltr\" xmlns=\"http://www.w3.org/1998/Math/MathML\"><semantics><mrow><msup><mn>2</mn><mrow><mo>−</mo><mn>149</mn></mrow></msup></mrow><annotation encoding=\"application/x-tex\">2^{-149}</annotation></semantics></math></span> מהנורמלי הקטן ביותר.</div>\n    <div class=\"lesson-trap\">⚠️ בשאלות \"מה נכון\" בדקו כל אפשרות מול דוגמה קונקרטית. בשאלות מספריות הכינו את הערך לפני שאתם מסתכלים על האפשרויות, כי המסיחים בנויים מטעויות נפוצות.</div>"
@@ -3314,7 +3314,7 @@ window.COURSES = {
      },
      {
       "id": "mips_enc-C01-Q5",
-      "question": "מהו המספר של האוגר `$t2` בחמישה ביטים?",
+      "question": "מהו המספר של האוגר `\\$t2` בחמישה ביטים?",
       "options": [
        {
         "id": "a",
@@ -3342,7 +3342,7 @@ window.COURSES = {
        }
       ],
       "correctId": "b",
-      "explanation": "`$t0` הוא 8, ולכן `$t2` הוא 10, ובחמישה ביטים 01010. המסיחים: `00010` ← זה המספר של `$v0`, בלי להוסיף את ההיסט 8. `10010` ← זה המספר 18, כלומר `$s2`. `01100` ← זה המספר 12, כלומר `$t4`.",
+      "explanation": "`\\$t0` הוא 8, ולכן `\\$t2` הוא 10, ובחמישה ביטים 01010. המסיחים: `00010` ← זה המספר של `\\$v0`, בלי להוסיף את ההיסט 8. `10010` ← זה המספר 18, כלומר `\\$s2`. `01100` ← זה המספר 12, כלומר `\\$t4`.",
       "recap": "t0 = 8, ואז מוסיפים את המספר",
       "questionHtml": "מהו המספר של האוגר <code class=\"tok\" dir=\"ltr\">$t2</code> בחמישה ביטים?",
       "explanationHtml": "<code class=\"tok\" dir=\"ltr\">$t0</code> הוא 8, ולכן <code class=\"tok\" dir=\"ltr\">$t2</code> הוא 10, ובחמישה ביטים 01010. המסיחים: <code class=\"tok\" dir=\"ltr\">00010</code> ← זה המספר של <code class=\"tok\" dir=\"ltr\">$v0</code>, בלי להוסיף את ההיסט 8. <code class=\"tok\" dir=\"ltr\">10010</code> ← זה המספר 18, כלומר <code class=\"tok\" dir=\"ltr\">$s2</code>. <code class=\"tok\" dir=\"ltr\">01100</code> ← זה המספר 12, כלומר <code class=\"tok\" dir=\"ltr\">$t4</code>.",
@@ -3354,31 +3354,31 @@ window.COURSES = {
       "options": [
        {
         "id": "a",
-        "value": "`$t6`",
+        "value": "`\\$t6`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">$t6</code>"
        },
        {
         "id": "b",
-        "value": "`$s7`",
+        "value": "`\\$s7`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">$s7</code>"
        },
        {
         "id": "c",
-        "value": "`$s6`",
+        "value": "`\\$s6`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">$s6</code>"
        },
        {
         "id": "d",
-        "value": "`$t8`",
+        "value": "`\\$t8`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">$t8</code>"
        }
       ],
       "correctId": "c",
-      "explanation": "`$s0` הוא 16, ולכן 22 הוא `$s6`. המסיחים: `$t6` ← `$t6` הוא 14. `$s7` ← `$s7` הוא 23. `$t8` ← `$t8` הוא 24.",
+      "explanation": "`\\$s0` הוא 16, ולכן 22 הוא `\\$s6`. המסיחים: `\\$t6` ← `\\$t6` הוא 14. `\\$s7` ← `\\$s7` הוא 23. `\\$t8` ← `\\$t8` הוא 24.",
       "recap": "s0 = 16, t0 = 8, a0 = 4",
       "questionHtml": "לאיזה אוגר יש מספר 22?",
       "explanationHtml": "<code class=\"tok\" dir=\"ltr\">$s0</code> הוא 16, ולכן 22 הוא <code class=\"tok\" dir=\"ltr\">$s6</code>. המסיחים: <code class=\"tok\" dir=\"ltr\">$t6</code> ← <code class=\"tok\" dir=\"ltr\">$t6</code> הוא 14. <code class=\"tok\" dir=\"ltr\">$s7</code> ← <code class=\"tok\" dir=\"ltr\">$s7</code> הוא 23. <code class=\"tok\" dir=\"ltr\">$t8</code> ← <code class=\"tok\" dir=\"ltr\">$t8</code> הוא 24.",
@@ -3400,7 +3400,7 @@ window.COURSES = {
     "questions": [
      {
       "id": "mips_enc-C02-Q1",
-      "question": "בפקודה `sub $t0, $t1, $t2`, מהו הערך שיופיע בשדה rs בקידוד?",
+      "question": "בפקודה `sub \\$t0, \\$t1, \\$t2`, מהו הערך שיופיע בשדה rs בקידוד?",
       "options": [
        {
         "id": "a",
@@ -3428,7 +3428,7 @@ window.COURSES = {
        }
       ],
       "correctId": "b",
-      "explanation": "rs הוא האוגר הראשון מבין המקורות, כלומר `$t1`, שהוא 9. היעד `$t0` הוא rd. המסיחים: 8 ← זה האוגר `$t0`, שהוא היעד rd. 10 ← זה האוגר `$t2`, שהוא rt. 34 ← זה ה-funct של sub.",
+      "explanation": "rs הוא האוגר הראשון מבין המקורות, כלומר `\\$t1`, שהוא 9. היעד `\\$t0` הוא rd. המסיחים: 8 ← זה האוגר `\\$t0`, שהוא היעד rd. 10 ← זה האוגר `\\$t2`, שהוא rt. 34 ← זה ה-funct של sub.",
       "recap": "כתיבה rd, rs, rt · קידוד rs, rt, rd",
       "questionHtml": "בפקודה <code class=\"tok\" dir=\"ltr\">sub $t0, $t1, $t2</code>, מהו הערך שיופיע בשדה rs בקידוד?",
       "explanationHtml": "rs הוא האוגר הראשון מבין המקורות, כלומר <code class=\"tok\" dir=\"ltr\">$t1</code>, שהוא 9. היעד <code class=\"tok\" dir=\"ltr\">$t0</code> הוא rd. המסיחים: 8 ← זה האוגר <code class=\"tok\" dir=\"ltr\">$t0</code>, שהוא היעד rd. 10 ← זה האוגר <code class=\"tok\" dir=\"ltr\">$t2</code>, שהוא rt. 34 ← זה ה-funct של sub.",
@@ -3436,7 +3436,7 @@ window.COURSES = {
      },
      {
       "id": "mips_enc-C02-Q2",
-      "question": "מהו הקידוד בשפת מכונה של הפקודה `or $s0, $t1, $t2`?",
+      "question": "מהו הקידוד בשפת מכונה של הפקודה `or \\$s0, \\$t1, \\$t2`?",
       "options": [
        {
         "id": "a",
@@ -3472,7 +3472,7 @@ window.COURSES = {
      },
      {
       "id": "mips_enc-C02-Q3",
-      "question": "מהו הקידוד בשפת מכונה של הפקודה `and $a0, $t0, $t1`?",
+      "question": "מהו הקידוד בשפת מכונה של הפקודה `and \\$a0, \\$t0, \\$t1`?",
       "options": [
        {
         "id": "a",
@@ -3544,7 +3544,7 @@ window.COURSES = {
      },
      {
       "id": "mips_enc-C02-Q5",
-      "question": "מהו הקידוד בשפת מכונה של הפקודה `slt $t5, $s6, $a2`?",
+      "question": "מהו הקידוד בשפת מכונה של הפקודה `slt \\$t5, \\$s6, \\$a2`?",
       "options": [
        {
         "id": "a",
@@ -3580,7 +3580,7 @@ window.COURSES = {
      },
      {
       "id": "mips_enc-C02-Q6",
-      "question": "מהו הקידוד בשפת מכונה של הפקודה `xor $ra, $sp, $gp`?",
+      "question": "מהו הקידוד בשפת מכונה של הפקודה `xor \\$ra, \\$sp, \\$gp`?",
       "options": [
        {
         "id": "a",
@@ -3613,6 +3613,11 @@ window.COURSES = {
       "questionHtml": "מהו הקידוד בשפת מכונה של הפקודה <code class=\"tok\" dir=\"ltr\">xor $ra, $sp, $gp</code>?",
       "explanationHtml": "ב-R-type הסדר בקידוד הוא rs, rt, rd. כאן rs=29, rt=28, rd=31, funct=38: <code class=\"tok\" dir=\"ltr\">000000 11101 11100 11111 00000 100110</code> = 0x03BCF826. המסיחים: 0x03FDE026 ← הוצבו האוגרים לפי סדר הכתיבה rd, rs, rt במקום rs, rt, rd. 0x039DF826 ← rs ו-rt הוחלפו. 0x03BCF825 ← funct של or ולא של xor.",
       "recapHtml": "R: קידוד rs, rt, rd, funct · כתיבה rd, rs, rt"
+     },
+     {
+      "bankId": "23A-A-Q17",
+      "recap": "R: rs, rt, rd, funct (slt = 42)",
+      "recapHtml": "R: rs, rt, rd, funct (slt = 42)"
      }
     ]
    },
@@ -3634,31 +3639,31 @@ window.COURSES = {
       "options": [
        {
         "id": "a",
-        "value": "`sub $t0, $s1, $s2`",
+        "value": "`sub \\$t0, \\$s1, \\$s2`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">sub $t0, $s1, $s2</code>"
        },
        {
         "id": "b",
-        "value": "`sub $s1, $s2, $t0`",
+        "value": "`sub \\$s1, \\$s2, \\$t0`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">sub $s1, $s2, $t0</code>"
        },
        {
         "id": "c",
-        "value": "`sub $t0, $s2, $s1`",
+        "value": "`sub \\$t0, \\$s2, \\$s1`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">sub $t0, $s2, $s1</code>"
        },
        {
         "id": "d",
-        "value": "`add $t0, $s1, $s2`",
+        "value": "`add \\$t0, \\$s1, \\$s2`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">add $t0, $s1, $s2</code>"
        }
       ],
       "correctId": "a",
-      "explanation": "`000000 10001 10010 01000 00000 100010` = 0x02324022. op=0 ולכן R-type, ו-funct=34 הוא sub. rs=17 (`$s1`), rt=18 (`$s2`), rd=8 (`$t0`), והכתיבה היא rd, rs, rt. המסיחים: `sub $s1, $s2, $t0` ← קריאת השדות לפי סדר הכתיבה (הראשון נלקח כיעד). `sub $t0, $s2, $s1` ← rs ו-rt הוחלפו. `add $t0, $s1, $s2` ← funct 34 הוא sub ולא add.",
+      "explanation": "`000000 10001 10010 01000 00000 100010` = 0x02324022. op=0 ולכן R-type, ו-funct=34 הוא sub. rs=17 (`\\$s1`), rt=18 (`\\$s2`), rd=8 (`\\$t0`), והכתיבה היא rd, rs, rt. המסיחים: `sub \\$s1, \\$s2, \\$t0` ← קריאת השדות לפי סדר הכתיבה (הראשון נלקח כיעד). `sub \\$t0, \\$s2, \\$s1` ← rs ו-rt הוחלפו. `add \\$t0, \\$s1, \\$s2` ← funct 34 הוא sub ולא add.",
       "recap": "op=0: funct קובע · rs, rt, rd ← כותבים rd, rs, rt",
       "questionHtml": "הפקודה <code class=\"tok\" dir=\"ltr\">0x02324022</code> בשפת מכונה היא בעצם פקודת האסמבלי:",
       "explanationHtml": "<code class=\"tok\" dir=\"ltr\">000000 10001 10010 01000 00000 100010</code> = 0x02324022. op=0 ולכן R-type, ו-funct=34 הוא sub. rs=17 (<code class=\"tok\" dir=\"ltr\">$s1</code>), rt=18 (<code class=\"tok\" dir=\"ltr\">$s2</code>), rd=8 (<code class=\"tok\" dir=\"ltr\">$t0</code>), והכתיבה היא rd, rs, rt. המסיחים: <code class=\"tok\" dir=\"ltr\">sub $s1, $s2, $t0</code> ← קריאת השדות לפי סדר הכתיבה (הראשון נלקח כיעד). <code class=\"tok\" dir=\"ltr\">sub $t0, $s2, $s1</code> ← rs ו-rt הוחלפו. <code class=\"tok\" dir=\"ltr\">add $t0, $s1, $s2</code> ← funct 34 הוא sub ולא add.",
@@ -3670,31 +3675,31 @@ window.COURSES = {
       "options": [
        {
         "id": "a",
-        "value": "`or $t1, $t2, $t0`",
+        "value": "`or \\$t1, \\$t2, \\$t0`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">or $t1, $t2, $t0</code>"
        },
        {
         "id": "b",
-        "value": "`or $t0, $t1, $t2`",
+        "value": "`or \\$t0, \\$t1, \\$t2`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">or $t0, $t1, $t2</code>"
        },
        {
         "id": "c",
-        "value": "`or $t0, $t2, $t1`",
+        "value": "`or \\$t0, \\$t2, \\$t1`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">or $t0, $t2, $t1</code>"
        },
        {
         "id": "d",
-        "value": "`and $t0, $t1, $t2`",
+        "value": "`and \\$t0, \\$t1, \\$t2`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">and $t0, $t1, $t2</code>"
        }
       ],
       "correctId": "b",
-      "explanation": "`000000 01001 01010 01000 00000 100101` = 0x012A4025. op=0 ולכן R-type, ו-funct=37 הוא or. rs=9 (`$t1`), rt=10 (`$t2`), rd=8 (`$t0`), והכתיבה היא rd, rs, rt. המסיחים: `or $t1, $t2, $t0` ← קריאת השדות לפי סדר הכתיבה (הראשון נלקח כיעד). `or $t0, $t2, $t1` ← rs ו-rt הוחלפו. `and $t0, $t1, $t2` ← funct 37 הוא or ולא and.",
+      "explanation": "`000000 01001 01010 01000 00000 100101` = 0x012A4025. op=0 ולכן R-type, ו-funct=37 הוא or. rs=9 (`\\$t1`), rt=10 (`\\$t2`), rd=8 (`\\$t0`), והכתיבה היא rd, rs, rt. המסיחים: `or \\$t1, \\$t2, \\$t0` ← קריאת השדות לפי סדר הכתיבה (הראשון נלקח כיעד). `or \\$t0, \\$t2, \\$t1` ← rs ו-rt הוחלפו. `and \\$t0, \\$t1, \\$t2` ← funct 37 הוא or ולא and.",
       "recap": "op=0: funct קובע · rs, rt, rd ← כותבים rd, rs, rt",
       "questionHtml": "הפקודה <code class=\"tok\" dir=\"ltr\">0x012A4025</code> בשפת מכונה היא בעצם פקודת האסמבלי:",
       "explanationHtml": "<code class=\"tok\" dir=\"ltr\">000000 01001 01010 01000 00000 100101</code> = 0x012A4025. op=0 ולכן R-type, ו-funct=37 הוא or. rs=9 (<code class=\"tok\" dir=\"ltr\">$t1</code>), rt=10 (<code class=\"tok\" dir=\"ltr\">$t2</code>), rd=8 (<code class=\"tok\" dir=\"ltr\">$t0</code>), והכתיבה היא rd, rs, rt. המסיחים: <code class=\"tok\" dir=\"ltr\">or $t1, $t2, $t0</code> ← קריאת השדות לפי סדר הכתיבה (הראשון נלקח כיעד). <code class=\"tok\" dir=\"ltr\">or $t0, $t2, $t1</code> ← rs ו-rt הוחלפו. <code class=\"tok\" dir=\"ltr\">and $t0, $t1, $t2</code> ← funct 37 הוא or ולא and.",
@@ -3706,31 +3711,31 @@ window.COURSES = {
       "options": [
        {
         "id": "a",
-        "value": "`slt $t8, $s4, $v1`",
+        "value": "`slt \\$t8, \\$s4, \\$v1`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">slt $t8, $s4, $v1</code>"
        },
        {
         "id": "b",
-        "value": "`slt $v1, $s4, $t8`",
+        "value": "`slt \\$v1, \\$s4, \\$t8`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">slt $v1, $s4, $t8</code>"
        },
        {
         "id": "c",
-        "value": "`slt $v1, $t8, $s4`",
+        "value": "`slt \\$v1, \\$t8, \\$s4`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">slt $v1, $t8, $s4</code>"
        },
        {
         "id": "d",
-        "value": "`sub $v1, $t8, $s4`",
+        "value": "`sub \\$v1, \\$t8, \\$s4`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">sub $v1, $t8, $s4</code>"
        }
       ],
       "correctId": "c",
-      "explanation": "`000000 11000 10100 00011 00000 101010` = 0x0314182A. op=0 ולכן R-type, ו-funct=42 הוא slt. rs=24 (`$t8`), rt=20 (`$s4`), rd=3 (`$v1`), והכתיבה היא rd, rs, rt. המסיחים: `slt $t8, $s4, $v1` ← קריאת השדות לפי סדר הכתיבה (הראשון נלקח כיעד). `slt $v1, $s4, $t8` ← rs ו-rt הוחלפו. `sub $v1, $t8, $s4` ← funct 42 הוא slt ולא sub.",
+      "explanation": "`000000 11000 10100 00011 00000 101010` = 0x0314182A. op=0 ולכן R-type, ו-funct=42 הוא slt. rs=24 (`\\$t8`), rt=20 (`\\$s4`), rd=3 (`\\$v1`), והכתיבה היא rd, rs, rt. המסיחים: `slt \\$t8, \\$s4, \\$v1` ← קריאת השדות לפי סדר הכתיבה (הראשון נלקח כיעד). `slt \\$v1, \\$s4, \\$t8` ← rs ו-rt הוחלפו. `sub \\$v1, \\$t8, \\$s4` ← funct 42 הוא slt ולא sub.",
       "recap": "op=0: funct קובע · rs, rt, rd ← כותבים rd, rs, rt",
       "questionHtml": "הפקודה <code class=\"tok\" dir=\"ltr\">0x0314182A</code> בשפת מכונה היא בעצם פקודת האסמבלי:",
       "explanationHtml": "<code class=\"tok\" dir=\"ltr\">000000 11000 10100 00011 00000 101010</code> = 0x0314182A. op=0 ולכן R-type, ו-funct=42 הוא slt. rs=24 (<code class=\"tok\" dir=\"ltr\">$t8</code>), rt=20 (<code class=\"tok\" dir=\"ltr\">$s4</code>), rd=3 (<code class=\"tok\" dir=\"ltr\">$v1</code>), והכתיבה היא rd, rs, rt. המסיחים: <code class=\"tok\" dir=\"ltr\">slt $t8, $s4, $v1</code> ← קריאת השדות לפי סדר הכתיבה (הראשון נלקח כיעד). <code class=\"tok\" dir=\"ltr\">slt $v1, $s4, $t8</code> ← rs ו-rt הוחלפו. <code class=\"tok\" dir=\"ltr\">sub $v1, $t8, $s4</code> ← funct 42 הוא slt ולא sub.",
@@ -3742,31 +3747,31 @@ window.COURSES = {
       "options": [
        {
         "id": "a",
-        "value": "`xor $t5, $t9, $s3`",
+        "value": "`xor \\$t5, \\$t9, \\$s3`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">xor $t5, $t9, $s3</code>"
        },
        {
         "id": "b",
-        "value": "`xor $s3, $t9, $t5`",
+        "value": "`xor \\$s3, \\$t9, \\$t5`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">xor $s3, $t9, $t5</code>"
        },
        {
         "id": "c",
-        "value": "`or $s3, $t5, $t9`",
+        "value": "`or \\$s3, \\$t5, \\$t9`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">or $s3, $t5, $t9</code>"
        },
        {
         "id": "d",
-        "value": "`xor $s3, $t5, $t9`",
+        "value": "`xor \\$s3, \\$t5, \\$t9`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">xor $s3, $t5, $t9</code>"
        }
       ],
       "correctId": "d",
-      "explanation": "`000000 01101 11001 10011 00000 100110` = 0x01B99826. op=0 ולכן R-type, ו-funct=38 הוא xor. rs=13 (`$t5`), rt=25 (`$t9`), rd=19 (`$s3`), והכתיבה היא rd, rs, rt. המסיחים: `xor $t5, $t9, $s3` ← קריאת השדות לפי סדר הכתיבה (הראשון נלקח כיעד). `xor $s3, $t9, $t5` ← rs ו-rt הוחלפו. `or $s3, $t5, $t9` ← funct 38 הוא xor ולא or.",
+      "explanation": "`000000 01101 11001 10011 00000 100110` = 0x01B99826. op=0 ולכן R-type, ו-funct=38 הוא xor. rs=13 (`\\$t5`), rt=25 (`\\$t9`), rd=19 (`\\$s3`), והכתיבה היא rd, rs, rt. המסיחים: `xor \\$t5, \\$t9, \\$s3` ← קריאת השדות לפי סדר הכתיבה (הראשון נלקח כיעד). `xor \\$s3, \\$t9, \\$t5` ← rs ו-rt הוחלפו. `or \\$s3, \\$t5, \\$t9` ← funct 38 הוא xor ולא or.",
       "recap": "op=0: funct קובע · rs, rt, rd ← כותבים rd, rs, rt",
       "questionHtml": "הפקודה <code class=\"tok\" dir=\"ltr\">0x01B99826</code> בשפת מכונה היא בעצם פקודת האסמבלי:",
       "explanationHtml": "<code class=\"tok\" dir=\"ltr\">000000 01101 11001 10011 00000 100110</code> = 0x01B99826. op=0 ולכן R-type, ו-funct=38 הוא xor. rs=13 (<code class=\"tok\" dir=\"ltr\">$t5</code>), rt=25 (<code class=\"tok\" dir=\"ltr\">$t9</code>), rd=19 (<code class=\"tok\" dir=\"ltr\">$s3</code>), והכתיבה היא rd, rs, rt. המסיחים: <code class=\"tok\" dir=\"ltr\">xor $t5, $t9, $s3</code> ← קריאת השדות לפי סדר הכתיבה (הראשון נלקח כיעד). <code class=\"tok\" dir=\"ltr\">xor $s3, $t9, $t5</code> ← rs ו-rt הוחלפו. <code class=\"tok\" dir=\"ltr\">or $s3, $t5, $t9</code> ← funct 38 הוא xor ולא or.",
@@ -3778,31 +3783,31 @@ window.COURSES = {
       "options": [
        {
         "id": "a",
-        "value": "`and $sp, $at, $fp`",
+        "value": "`and \\$sp, \\$at, \\$fp`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">and $sp, $at, $fp</code>"
        },
        {
         "id": "b",
-        "value": "`and $fp, $sp, $at`",
+        "value": "`and \\$fp, \\$sp, \\$at`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">and $fp, $sp, $at</code>"
        },
        {
         "id": "c",
-        "value": "`and $fp, $at, $sp`",
+        "value": "`and \\$fp, \\$at, \\$sp`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">and $fp, $at, $sp</code>"
        },
        {
         "id": "d",
-        "value": "`or $fp, $sp, $at`",
+        "value": "`or \\$fp, \\$sp, \\$at`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">or $fp, $sp, $at</code>"
        }
       ],
       "correctId": "b",
-      "explanation": "`000000 11101 00001 11110 00000 100100` = 0x03A1F024. op=0 ולכן R-type, ו-funct=36 הוא and. rs=29 (`$sp`), rt=1 (`$at`), rd=30 (`$fp`), והכתיבה היא rd, rs, rt. המסיחים: `and $sp, $at, $fp` ← קריאת השדות לפי סדר הכתיבה (הראשון נלקח כיעד). `and $fp, $at, $sp` ← rs ו-rt הוחלפו. `or $fp, $sp, $at` ← funct 36 הוא and ולא or.",
+      "explanation": "`000000 11101 00001 11110 00000 100100` = 0x03A1F024. op=0 ולכן R-type, ו-funct=36 הוא and. rs=29 (`\\$sp`), rt=1 (`\\$at`), rd=30 (`\\$fp`), והכתיבה היא rd, rs, rt. המסיחים: `and \\$sp, \\$at, \\$fp` ← קריאת השדות לפי סדר הכתיבה (הראשון נלקח כיעד). `and \\$fp, \\$at, \\$sp` ← rs ו-rt הוחלפו. `or \\$fp, \\$sp, \\$at` ← funct 36 הוא and ולא or.",
       "recap": "op=0: funct קובע · rs, rt, rd ← כותבים rd, rs, rt",
       "questionHtml": "הפקודה <code class=\"tok\" dir=\"ltr\">0x03A1F024</code> בשפת מכונה היא בעצם פקודת האסמבלי:",
       "explanationHtml": "<code class=\"tok\" dir=\"ltr\">000000 11101 00001 11110 00000 100100</code> = 0x03A1F024. op=0 ולכן R-type, ו-funct=36 הוא and. rs=29 (<code class=\"tok\" dir=\"ltr\">$sp</code>), rt=1 (<code class=\"tok\" dir=\"ltr\">$at</code>), rd=30 (<code class=\"tok\" dir=\"ltr\">$fp</code>), והכתיבה היא rd, rs, rt. המסיחים: <code class=\"tok\" dir=\"ltr\">and $sp, $at, $fp</code> ← קריאת השדות לפי סדר הכתיבה (הראשון נלקח כיעד). <code class=\"tok\" dir=\"ltr\">and $fp, $at, $sp</code> ← rs ו-rt הוחלפו. <code class=\"tok\" dir=\"ltr\">or $fp, $sp, $at</code> ← funct 36 הוא and ולא or.",
@@ -3814,35 +3819,40 @@ window.COURSES = {
       "options": [
        {
         "id": "a",
-        "value": "`sub $gp, $t3, $t8`",
+        "value": "`sub \\$gp, \\$t3, \\$t8`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">sub $gp, $t3, $t8</code>"
        },
        {
         "id": "b",
-        "value": "`sub $t3, $t8, $gp`",
+        "value": "`sub \\$t3, \\$t8, \\$gp`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">sub $t3, $t8, $gp</code>"
        },
        {
         "id": "c",
-        "value": "`sub $gp, $t8, $t3`",
+        "value": "`sub \\$gp, \\$t8, \\$t3`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">sub $gp, $t8, $t3</code>"
        },
        {
         "id": "d",
-        "value": "`add $gp, $t3, $t8`",
+        "value": "`add \\$gp, \\$t3, \\$t8`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">add $gp, $t3, $t8</code>"
        }
       ],
       "correctId": "a",
-      "explanation": "`000000 01011 11000 11100 00000 100010` = 0x0178E022. op=0 ולכן R-type, ו-funct=34 הוא sub. rs=11 (`$t3`), rt=24 (`$t8`), rd=28 (`$gp`), והכתיבה היא rd, rs, rt. המסיחים: `sub $t3, $t8, $gp` ← קריאת השדות לפי סדר הכתיבה (הראשון נלקח כיעד). `sub $gp, $t8, $t3` ← rs ו-rt הוחלפו. `add $gp, $t3, $t8` ← funct 34 הוא sub ולא add.",
+      "explanation": "`000000 01011 11000 11100 00000 100010` = 0x0178E022. op=0 ולכן R-type, ו-funct=34 הוא sub. rs=11 (`\\$t3`), rt=24 (`\\$t8`), rd=28 (`\\$gp`), והכתיבה היא rd, rs, rt. המסיחים: `sub \\$t3, \\$t8, \\$gp` ← קריאת השדות לפי סדר הכתיבה (הראשון נלקח כיעד). `sub \\$gp, \\$t8, \\$t3` ← rs ו-rt הוחלפו. `add \\$gp, \\$t3, \\$t8` ← funct 34 הוא sub ולא add.",
       "recap": "op=0: funct קובע · rs, rt, rd ← כותבים rd, rs, rt",
       "questionHtml": "הפקודה <code class=\"tok\" dir=\"ltr\">0x0178E022</code> בשפת מכונה היא בעצם פקודת האסמבלי:",
       "explanationHtml": "<code class=\"tok\" dir=\"ltr\">000000 01011 11000 11100 00000 100010</code> = 0x0178E022. op=0 ולכן R-type, ו-funct=34 הוא sub. rs=11 (<code class=\"tok\" dir=\"ltr\">$t3</code>), rt=24 (<code class=\"tok\" dir=\"ltr\">$t8</code>), rd=28 (<code class=\"tok\" dir=\"ltr\">$gp</code>), והכתיבה היא rd, rs, rt. המסיחים: <code class=\"tok\" dir=\"ltr\">sub $t3, $t8, $gp</code> ← קריאת השדות לפי סדר הכתיבה (הראשון נלקח כיעד). <code class=\"tok\" dir=\"ltr\">sub $gp, $t8, $t3</code> ← rs ו-rt הוחלפו. <code class=\"tok\" dir=\"ltr\">add $gp, $t3, $t8</code> ← funct 34 הוא sub ולא add.",
       "recapHtml": "op=0: funct קובע · rs, rt, rd ← כותבים rd, rs, rt"
+     },
+     {
+      "bankId": "22B-A-Q19",
+      "recap": "op=0 ו-funct 0x22: sub, והכתיבה rd, rs, rt",
+      "recapHtml": "op=0 ו-funct 0x22: sub, והכתיבה rd, rs, rt"
      }
     ]
    },
@@ -3860,7 +3870,7 @@ window.COURSES = {
     "questions": [
      {
       "id": "mips_enc-C04-Q1",
-      "question": "מהו הקידוד בשפת מכונה של הפקודה `addi $t0, $t1, 100`?",
+      "question": "מהו הקידוד בשפת מכונה של הפקודה `addi \\$t0, \\$t1, 100`?",
       "options": [
        {
         "id": "a",
@@ -3896,7 +3906,7 @@ window.COURSES = {
      },
      {
       "id": "mips_enc-C04-Q2",
-      "question": "מהו הקידוד בשפת מכונה של הפקודה `addi $s1, $a0, -4`?",
+      "question": "מהו הקידוד בשפת מכונה של הפקודה `addi \\$s1, \\$a0, -4`?",
       "options": [
        {
         "id": "a",
@@ -3932,7 +3942,7 @@ window.COURSES = {
      },
      {
       "id": "mips_enc-C04-Q3",
-      "question": "מהו הקידוד בשפת מכונה של הפקודה `lw $t2, 8($s0)`?",
+      "question": "מהו הקידוד בשפת מכונה של הפקודה `lw \\$t2, 8(\\$s0)`?",
       "options": [
        {
         "id": "a",
@@ -3968,7 +3978,7 @@ window.COURSES = {
      },
      {
       "id": "mips_enc-C04-Q4",
-      "question": "מהו הקידוד בשפת מכונה של הפקודה `sw $t3, 12($sp)`?",
+      "question": "מהו הקידוד בשפת מכונה של הפקודה `sw \\$t3, 12(\\$sp)`?",
       "options": [
        {
         "id": "a",
@@ -4004,7 +4014,7 @@ window.COURSES = {
      },
      {
       "id": "mips_enc-C04-Q5",
-      "question": "מהו הקידוד בשפת מכונה של הפקודה `ori $s5, $t0, 0xFF0F`?",
+      "question": "מהו הקידוד בשפת מכונה של הפקודה `ori \\$s5, \\$t0, 0xFF0F`?",
       "options": [
        {
         "id": "a",
@@ -4040,39 +4050,44 @@ window.COURSES = {
      },
      {
       "id": "mips_enc-C04-Q6",
-      "question": "`$t6` מכיל את הכתובת של `array[0]` במערך של מילים (4 בתים כל אחת). איזו פקודה שומרת את `$fp` ב-`array[5]`?",
+      "question": "`\\$t6` מכיל את הכתובת של `array[0]` במערך של מילים (4 בתים כל אחת). איזו פקודה שומרת את `\\$fp` ב-`array[5]`?",
       "options": [
        {
         "id": "a",
-        "value": "`sw $fp, 20($t6)`",
+        "value": "`sw \\$fp, 20(\\$t6)`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">sw $fp, 20($t6)</code>"
        },
        {
         "id": "b",
-        "value": "`sw $fp, 5($t6)`",
+        "value": "`sw \\$fp, 5(\\$t6)`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">sw $fp, 5($t6)</code>"
        },
        {
         "id": "c",
-        "value": "`lw $fp, 20($t6)`",
+        "value": "`lw \\$fp, 20(\\$t6)`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">lw $fp, 20($t6)</code>"
        },
        {
         "id": "d",
-        "value": "`sw $t6, 20($fp)`",
+        "value": "`sw \\$t6, 20(\\$fp)`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">sw $t6, 20($fp)</code>"
        }
       ],
       "correctId": "a",
-      "explanation": "כתובת array[5] היא בסיס + 20. שמירה היא sw, האוגר ששומרים הוא `$fp` והבסיס הוא `$t6`. המסיחים: `sw $fp, 5($t6)` ← ה-offset הוא בבתים, ולכן צריך 5 * 4. `lw $fp, 20($t6)` ← lw טוענת מהזיכרון ולא שומרת. `sw $t6, 20($fp)` ← האוגרים הוחלפו: הבסיס צריך להיות `$t6`.",
+      "explanation": "כתובת array[5] היא בסיס + 20. שמירה היא sw, האוגר ששומרים הוא `\\$fp` והבסיס הוא `\\$t6`. המסיחים: `sw \\$fp, 5(\\$t6)` ← ה-offset הוא בבתים, ולכן צריך 5 * 4. `lw \\$fp, 20(\\$t6)` ← lw טוענת מהזיכרון ולא שומרת. `sw \\$t6, 20(\\$fp)` ← האוגרים הוחלפו: הבסיס צריך להיות `\\$t6`.",
       "recap": "איבר i = offset של 4 * i",
       "questionHtml": "<code class=\"tok\" dir=\"ltr\">$t6</code> מכיל את הכתובת של <code class=\"tok\" dir=\"ltr\">array[0]</code> במערך של מילים (4 בתים כל אחת). איזו פקודה שומרת את <code class=\"tok\" dir=\"ltr\">$fp</code> ב-<code class=\"tok\" dir=\"ltr\">array[5]</code>?",
       "explanationHtml": "כתובת array[5] היא בסיס + 20. שמירה היא sw, האוגר ששומרים הוא <code class=\"tok\" dir=\"ltr\">$fp</code> והבסיס הוא <code class=\"tok\" dir=\"ltr\">$t6</code>. המסיחים: <code class=\"tok\" dir=\"ltr\">sw $fp, 5($t6)</code> ← ה-offset הוא בבתים, ולכן צריך 5 * 4. <code class=\"tok\" dir=\"ltr\">lw $fp, 20($t6)</code> ← lw טוענת מהזיכרון ולא שומרת. <code class=\"tok\" dir=\"ltr\">sw $t6, 20($fp)</code> ← האוגרים הוחלפו: הבסיס צריך להיות <code class=\"tok\" dir=\"ltr\">$t6</code>.",
       "recapHtml": "איבר i = offset של 4 * i"
+     },
+     {
+      "bankId": "23B-A-Q17",
+      "recap": "addi שלילי: משלים ל-2 ב-16 ביט",
+      "recapHtml": "addi שלילי: משלים ל-2 ב-16 ביט"
      }
     ]
    },
@@ -4094,31 +4109,31 @@ window.COURSES = {
       "options": [
        {
         "id": "a",
-        "value": "`addi $t1, $t0, -16`",
+        "value": "`addi \\$t1, \\$t0, -16`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">addi $t1, $t0, -16</code>"
        },
        {
         "id": "b",
-        "value": "`ori $t0, $t1, -16`",
+        "value": "`ori \\$t0, \\$t1, -16`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">ori $t0, $t1, -16</code>"
        },
        {
         "id": "c",
-        "value": "`addi $t0, $t1, -16`",
+        "value": "`addi \\$t0, \\$t1, -16`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">addi $t0, $t1, -16</code>"
        },
        {
         "id": "d",
-        "value": "`addi $t0, $t1, 65520`",
+        "value": "`addi \\$t0, \\$t1, 65520`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">addi $t0, $t1, 65520</code>"
        }
       ],
       "correctId": "c",
-      "explanation": "`001000 01001 01000 1111111111110000` = 0x2128FFF0. op=8 הוא addi, rs=9 (`$t1`), rt=8 (`$t0`), imm=0xFFF0 שהוא -16, כלומר `addi $t0, $t1, -16`. המסיחים: `addi $t1, $t0, -16` ← rs ו-rt הוחלפו. `ori $t0, $t1, -16` ← opcode 8 הוא addi ולא ori. `addi $t0, $t1, 65520` ← ה-immediate נקרא בלי סימן, אבל addi מרחיב בסימן.",
+      "explanation": "`001000 01001 01000 1111111111110000` = 0x2128FFF0. op=8 הוא addi, rs=9 (`\\$t1`), rt=8 (`\\$t0`), imm=0xFFF0 שהוא -16, כלומר `addi \\$t0, \\$t1, -16`. המסיחים: `addi \\$t1, \\$t0, -16` ← rs ו-rt הוחלפו. `ori \\$t0, \\$t1, -16` ← opcode 8 הוא addi ולא ori. `addi \\$t0, \\$t1, 65520` ← ה-immediate נקרא בלי סימן, אבל addi מרחיב בסימן.",
       "recap": "op קובע את הפקודה · addi/lw/sw: imm עם סימן · ori: בלי סימן",
       "questionHtml": "הפקודה <code class=\"tok\" dir=\"ltr\">0x2128FFF0</code> בשפת מכונה היא בעצם פקודת האסמבלי:",
       "explanationHtml": "<code class=\"tok\" dir=\"ltr\">001000 01001 01000 1111111111110000</code> = 0x2128FFF0. op=8 הוא addi, rs=9 (<code class=\"tok\" dir=\"ltr\">$t1</code>), rt=8 (<code class=\"tok\" dir=\"ltr\">$t0</code>), imm=0xFFF0 שהוא -16, כלומר <code class=\"tok\" dir=\"ltr\">addi $t0, $t1, -16</code>. המסיחים: <code class=\"tok\" dir=\"ltr\">addi $t1, $t0, -16</code> ← rs ו-rt הוחלפו. <code class=\"tok\" dir=\"ltr\">ori $t0, $t1, -16</code> ← opcode 8 הוא addi ולא ori. <code class=\"tok\" dir=\"ltr\">addi $t0, $t1, 65520</code> ← ה-immediate נקרא בלי סימן, אבל addi מרחיב בסימן.",
@@ -4130,31 +4145,31 @@ window.COURSES = {
       "options": [
        {
         "id": "a",
-        "value": "`ori $t4, $t5, 32769`",
+        "value": "`ori \\$t4, \\$t5, 32769`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">ori $t4, $t5, 32769</code>"
        },
        {
         "id": "b",
-        "value": "`ori $t5, $t4, 32769`",
+        "value": "`ori \\$t5, \\$t4, 32769`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">ori $t5, $t4, 32769</code>"
        },
        {
         "id": "c",
-        "value": "`addi $t4, $t5, 32769`",
+        "value": "`addi \\$t4, \\$t5, 32769`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">addi $t4, $t5, 32769</code>"
        },
        {
         "id": "d",
-        "value": "`ori $t4, $t5, -32767`",
+        "value": "`ori \\$t4, \\$t5, -32767`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">ori $t4, $t5, -32767</code>"
        }
       ],
       "correctId": "a",
-      "explanation": "`001101 01101 01100 1000000000000001` = 0x35AC8001. op=13 הוא ori, rs=13 (`$t5`), rt=12 (`$t4`), imm=0x8001 שהוא 32769, כלומר `ori $t4, $t5, 32769`. המסיחים: `ori $t5, $t4, 32769` ← rs ו-rt הוחלפו. `addi $t4, $t5, 32769` ← opcode 13 הוא ori ולא addi. `ori $t4, $t5, -32767` ← ה-immediate נקרא עם סימן, אבל ori מורחב באפסים.",
+      "explanation": "`001101 01101 01100 1000000000000001` = 0x35AC8001. op=13 הוא ori, rs=13 (`\\$t5`), rt=12 (`\\$t4`), imm=0x8001 שהוא 32769, כלומר `ori \\$t4, \\$t5, 32769`. המסיחים: `ori \\$t5, \\$t4, 32769` ← rs ו-rt הוחלפו. `addi \\$t4, \\$t5, 32769` ← opcode 13 הוא ori ולא addi. `ori \\$t4, \\$t5, -32767` ← ה-immediate נקרא עם סימן, אבל ori מורחב באפסים.",
       "recap": "op קובע את הפקודה · addi/lw/sw: imm עם סימן · ori: בלי סימן",
       "questionHtml": "הפקודה <code class=\"tok\" dir=\"ltr\">0x35AC8001</code> בשפת מכונה היא בעצם פקודת האסמבלי:",
       "explanationHtml": "<code class=\"tok\" dir=\"ltr\">001101 01101 01100 1000000000000001</code> = 0x35AC8001. op=13 הוא ori, rs=13 (<code class=\"tok\" dir=\"ltr\">$t5</code>), rt=12 (<code class=\"tok\" dir=\"ltr\">$t4</code>), imm=0x8001 שהוא 32769, כלומר <code class=\"tok\" dir=\"ltr\">ori $t4, $t5, 32769</code>. המסיחים: <code class=\"tok\" dir=\"ltr\">ori $t5, $t4, 32769</code> ← rs ו-rt הוחלפו. <code class=\"tok\" dir=\"ltr\">addi $t4, $t5, 32769</code> ← opcode 13 הוא ori ולא addi. <code class=\"tok\" dir=\"ltr\">ori $t4, $t5, -32767</code> ← ה-immediate נקרא עם סימן, אבל ori מורחב באפסים.",
@@ -4166,31 +4181,31 @@ window.COURSES = {
       "options": [
        {
         "id": "a",
-        "value": "`sw $at, 16($t3)`",
+        "value": "`sw \\$at, 16(\\$t3)`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">sw $at, 16($t3)</code>"
        },
        {
         "id": "b",
-        "value": "`sw $t3, 16($at)`",
+        "value": "`sw \\$t3, 16(\\$at)`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">sw $t3, 16($at)</code>"
        },
        {
         "id": "c",
-        "value": "`lw $t3, 16($at)`",
+        "value": "`lw \\$t3, 16(\\$at)`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">lw $t3, 16($at)</code>"
        },
        {
         "id": "d",
-        "value": "`sw $t3, 64($at)`",
+        "value": "`sw \\$t3, 64(\\$at)`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">sw $t3, 64($at)</code>"
        }
       ],
       "correctId": "b",
-      "explanation": "`101011 00001 01011 0000000000010000` = 0xAC2B0010. op=43 הוא sw, rs=1 (`$at`), rt=11 (`$t3`), imm=0x0010 שהוא 16, כלומר `sw $t3, 16($at)`. המסיחים: `sw $at, 16($t3)` ← rs ו-rt הוחלפו. `lw $t3, 16($at)` ← opcode 43 הוא sw ולא lw. `sw $t3, 64($at)` ← ה-offset כבר בבתים, אין להכפיל.",
+      "explanation": "`101011 00001 01011 0000000000010000` = 0xAC2B0010. op=43 הוא sw, rs=1 (`\\$at`), rt=11 (`\\$t3`), imm=0x0010 שהוא 16, כלומר `sw \\$t3, 16(\\$at)`. המסיחים: `sw \\$at, 16(\\$t3)` ← rs ו-rt הוחלפו. `lw \\$t3, 16(\\$at)` ← opcode 43 הוא sw ולא lw. `sw \\$t3, 64(\\$at)` ← ה-offset כבר בבתים, אין להכפיל.",
       "recap": "op קובע את הפקודה · addi/lw/sw: imm עם סימן · ori: בלי סימן",
       "questionHtml": "הפקודה <code class=\"tok\" dir=\"ltr\">0xAC2B0010</code> בשפת מכונה היא בעצם פקודת האסמבלי:",
       "explanationHtml": "<code class=\"tok\" dir=\"ltr\">101011 00001 01011 0000000000010000</code> = 0xAC2B0010. op=43 הוא sw, rs=1 (<code class=\"tok\" dir=\"ltr\">$at</code>), rt=11 (<code class=\"tok\" dir=\"ltr\">$t3</code>), imm=0x0010 שהוא 16, כלומר <code class=\"tok\" dir=\"ltr\">sw $t3, 16($at)</code>. המסיחים: <code class=\"tok\" dir=\"ltr\">sw $at, 16($t3)</code> ← rs ו-rt הוחלפו. <code class=\"tok\" dir=\"ltr\">lw $t3, 16($at)</code> ← opcode 43 הוא sw ולא lw. <code class=\"tok\" dir=\"ltr\">sw $t3, 64($at)</code> ← ה-offset כבר בבתים, אין להכפיל.",
@@ -4202,31 +4217,31 @@ window.COURSES = {
       "options": [
        {
         "id": "a",
-        "value": "`lw $sp, -4($t1)`",
+        "value": "`lw \\$sp, -4(\\$t1)`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">lw $sp, -4($t1)</code>"
        },
        {
         "id": "b",
-        "value": "`sw $t1, -4($sp)`",
+        "value": "`sw \\$t1, -4(\\$sp)`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">sw $t1, -4($sp)</code>"
        },
        {
         "id": "c",
-        "value": "`lw $t1, 65532($sp)`",
+        "value": "`lw \\$t1, 65532(\\$sp)`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">lw $t1, 65532($sp)</code>"
        },
        {
         "id": "d",
-        "value": "`lw $t1, -4($sp)`",
+        "value": "`lw \\$t1, -4(\\$sp)`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">lw $t1, -4($sp)</code>"
        }
       ],
       "correctId": "d",
-      "explanation": "`100011 11101 01001 1111111111111100` = 0x8FA9FFFC. op=35 הוא lw, rs=29 (`$sp`), rt=9 (`$t1`), imm=0xFFFC שהוא -4, כלומר `lw $t1, -4($sp)`. המסיחים: `lw $sp, -4($t1)` ← rs ו-rt הוחלפו. `sw $t1, -4($sp)` ← opcode 35 הוא lw ולא sw. `lw $t1, 65532($sp)` ← ה-offset נקרא בלי סימן.",
+      "explanation": "`100011 11101 01001 1111111111111100` = 0x8FA9FFFC. op=35 הוא lw, rs=29 (`\\$sp`), rt=9 (`\\$t1`), imm=0xFFFC שהוא -4, כלומר `lw \\$t1, -4(\\$sp)`. המסיחים: `lw \\$sp, -4(\\$t1)` ← rs ו-rt הוחלפו. `sw \\$t1, -4(\\$sp)` ← opcode 35 הוא lw ולא sw. `lw \\$t1, 65532(\\$sp)` ← ה-offset נקרא בלי סימן.",
       "recap": "op קובע את הפקודה · addi/lw/sw: imm עם סימן · ori: בלי סימן",
       "questionHtml": "הפקודה <code class=\"tok\" dir=\"ltr\">0x8FA9FFFC</code> בשפת מכונה היא בעצם פקודת האסמבלי:",
       "explanationHtml": "<code class=\"tok\" dir=\"ltr\">100011 11101 01001 1111111111111100</code> = 0x8FA9FFFC. op=35 הוא lw, rs=29 (<code class=\"tok\" dir=\"ltr\">$sp</code>), rt=9 (<code class=\"tok\" dir=\"ltr\">$t1</code>), imm=0xFFFC שהוא -4, כלומר <code class=\"tok\" dir=\"ltr\">lw $t1, -4($sp)</code>. המסיחים: <code class=\"tok\" dir=\"ltr\">lw $sp, -4($t1)</code> ← rs ו-rt הוחלפו. <code class=\"tok\" dir=\"ltr\">sw $t1, -4($sp)</code> ← opcode 35 הוא lw ולא sw. <code class=\"tok\" dir=\"ltr\">lw $t1, 65532($sp)</code> ← ה-offset נקרא בלי סימן.",
@@ -4238,31 +4253,31 @@ window.COURSES = {
       "options": [
        {
         "id": "a",
-        "value": "`addi $s6, $a3, 200`",
+        "value": "`addi \\$s6, \\$a3, 200`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">addi $s6, $a3, 200</code>"
        },
        {
         "id": "b",
-        "value": "`addi $a3, $s6, 200`",
+        "value": "`addi \\$a3, \\$s6, 200`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">addi $a3, $s6, 200</code>"
        },
        {
         "id": "c",
-        "value": "`ori $s6, $a3, 200`",
+        "value": "`ori \\$s6, \\$a3, 200`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">ori $s6, $a3, 200</code>"
        },
        {
         "id": "d",
-        "value": "`addi $s6, $a3, 201`",
+        "value": "`addi \\$s6, \\$a3, 201`",
         "type": "text",
         "html": "<code class=\"tok\" dir=\"ltr\">addi $s6, $a3, 201</code>"
        }
       ],
       "correctId": "a",
-      "explanation": "`001000 00111 10110 0000000011001000` = 0x20F600C8. op=8 הוא addi, rs=7 (`$a3`), rt=22 (`$s6`), imm=0x00C8 שהוא 200, כלומר `addi $s6, $a3, 200`. המסיחים: `addi $a3, $s6, 200` ← rs ו-rt הוחלפו. `ori $s6, $a3, 200` ← opcode 8 הוא addi ולא ori. `addi $s6, $a3, 201` ← טעות בקריאת ה-immediate.",
+      "explanation": "`001000 00111 10110 0000000011001000` = 0x20F600C8. op=8 הוא addi, rs=7 (`\\$a3`), rt=22 (`\\$s6`), imm=0x00C8 שהוא 200, כלומר `addi \\$s6, \\$a3, 200`. המסיחים: `addi \\$a3, \\$s6, 200` ← rs ו-rt הוחלפו. `ori \\$s6, \\$a3, 200` ← opcode 8 הוא addi ולא ori. `addi \\$s6, \\$a3, 201` ← טעות בקריאת ה-immediate.",
       "recap": "op קובע את הפקודה · addi/lw/sw: imm עם סימן · ori: בלי סימן",
       "questionHtml": "הפקודה <code class=\"tok\" dir=\"ltr\">0x20F600C8</code> בשפת מכונה היא בעצם פקודת האסמבלי:",
       "explanationHtml": "<code class=\"tok\" dir=\"ltr\">001000 00111 10110 0000000011001000</code> = 0x20F600C8. op=8 הוא addi, rs=7 (<code class=\"tok\" dir=\"ltr\">$a3</code>), rt=22 (<code class=\"tok\" dir=\"ltr\">$s6</code>), imm=0x00C8 שהוא 200, כלומר <code class=\"tok\" dir=\"ltr\">addi $s6, $a3, 200</code>. המסיחים: <code class=\"tok\" dir=\"ltr\">addi $a3, $s6, 200</code> ← rs ו-rt הוחלפו. <code class=\"tok\" dir=\"ltr\">ori $s6, $a3, 200</code> ← opcode 8 הוא addi ולא ori. <code class=\"tok\" dir=\"ltr\">addi $s6, $a3, 201</code> ← טעות בקריאת ה-immediate.",
@@ -4303,6 +4318,11 @@ window.COURSES = {
       "questionHtml": "מילה שמתחילה בספרות <code class=\"tok\" dir=\"ltr\">8F</code> (למשל <code class=\"tok\" dir=\"ltr\">0x8FA90010</code>) היא איזו פקודה?",
       "explanationHtml": "0x8F = 1000 1111, ששת הביטים הראשונים 100011 = 35, שהוא lw. המסיחים: <code class=\"tok\" dir=\"ltr\">sw</code> ← sw היא op=43, כלומר מתחילה ב-AC עד AF. <code class=\"tok\" dir=\"ltr\">addi</code> ← addi היא op=8, כלומר 20 עד 23. <code class=\"tok\" dir=\"ltr\">ori</code> ← ori היא op=13, כלומר 34 עד 37.",
       "recapHtml": "שתי הספרות הראשונות קובעות את op"
+     },
+     {
+      "bankId": "24B-A-Q19",
+      "recap": "op=13: ori, ו-imm בלי סימן",
+      "recapHtml": "op=13: ori, ו-imm בלי סימן"
      }
     ]
    },
@@ -4320,7 +4340,7 @@ window.COURSES = {
     "questions": [
      {
       "id": "mips_enc-C06-Q1",
-      "question": "הפקודה `beq $t0, $t1, L` נמצאת בכתובת `0x00400100`, והתווית L נמצאת בכתובת `0x00400140`. מהו ערך ה-immediate (מספר המילים) שבקידוד?",
+      "question": "הפקודה `beq \\$t0, \\$t1, L` נמצאת בכתובת `0x00400100`, והתווית L נמצאת בכתובת `0x00400140`. מהו ערך ה-immediate (מספר המילים) שבקידוד?",
       "options": [
        {
         "id": "a",
@@ -4356,7 +4376,7 @@ window.COURSES = {
      },
      {
       "id": "mips_enc-C06-Q2",
-      "question": "הפקודה `bne $s1, $s3, L` נמצאת בכתובת `0x00400200`, והתווית L נמצאת בכתובת `0x00400180`. מהו ערך שדה ה-immediate (16 הביטים התחתונים של הקידוד), בהקסה?",
+      "question": "הפקודה `bne \\$s1, \\$s3, L` נמצאת בכתובת `0x00400200`, והתווית L נמצאת בכתובת `0x00400180`. מהו ערך שדה ה-immediate (16 הביטים התחתונים של הקידוד), בהקסה?",
       "options": [
        {
         "id": "a",
@@ -4392,7 +4412,7 @@ window.COURSES = {
      },
      {
       "id": "mips_enc-C06-Q3",
-      "question": "הפקודה `beq $s0, $s1, L` נמצאת בכתובת `0x00400400`, והתווית L נמצאת בכתובת `0x00400410`. מהו הקידוד בשפת מכונה של הפקודה?",
+      "question": "הפקודה `beq \\$s0, \\$s1, L` נמצאת בכתובת `0x00400400`, והתווית L נמצאת בכתובת `0x00400410`. מהו הקידוד בשפת מכונה של הפקודה?",
       "options": [
        {
         "id": "a",
@@ -4533,6 +4553,11 @@ window.COURSES = {
       "questionHtml": "הפקודה <code class=\"tok\" dir=\"ltr\">0x08000340</code> נמצאת בכתובת <code class=\"tok\" dir=\"ltr\">0x10000200</code>. לאיזו כתובת היא קופצת?",
       "explanationHtml": "op=2 הוא j. כתובת היעד: ארבעת הביטים העליונים של PC+4 (0x10000204), ואחריהם target * 4 = 0x0000D00: 0x10000D00. המסיחים: 0x00000D00 ← הביטים העליונים של PC+4 נשכחו. 0x00000340 ← שדה ה-target לא הוכפל ב-4. 0x10000F04 ← חישוב יחסי כמו בהסתעפות.",
       "recapHtml": "יעד j = ביטים עליונים של PC+4 ואחריהם target * 4"
+     },
+     {
+      "bankId": "23A-B-Q17",
+      "recap": "imm = (יעד - (PC+4)) / 4, שלילי במשלים ל-2",
+      "recapHtml": "imm = (יעד - (PC+4)) / 4, שלילי במשלים ל-2"
      }
     ]
    },
@@ -4550,7 +4575,7 @@ window.COURSES = {
     "questions": [
      {
       "id": "mips_enc-C07-Q1",
-      "question": "מה יהיה באוגר `$t0` אחרי ביצוע הפקודות הבאות?\n```asm\nlui $t0, 0x1234\nori $t0, $t0, 0x5678\n```",
+      "question": "מה יהיה באוגר `\\$t0` אחרי ביצוע הפקודות הבאות?\n```asm\nlui $t0, 0x1234\nori $t0, $t0, 0x5678\n```",
       "options": [
        {
         "id": "a",
@@ -4578,7 +4603,7 @@ window.COURSES = {
        }
       ],
       "correctId": "a",
-      "explanation": "אחרי `lui $t0, 0x1234` ב-`$t0` יש 0x12340000; אחרי `ori $t0, $t0, 0x5678` ב-`$t0` יש 0x12345678. המסיחים: 0x0000567C ← lui הוכנס לחצי התחתון, אבל lui כותב לחצי העליון. 0x12355678 ← חצי עליון גדול ב-1. 0x12335678 ← חצי עליון קטן ב-1.",
+      "explanation": "אחרי `lui \\$t0, 0x1234` ב-`\\$t0` יש 0x12340000; אחרי `ori \\$t0, \\$t0, 0x5678` ב-`\\$t0` יש 0x12345678. המסיחים: 0x0000567C ← lui הוכנס לחצי התחתון, אבל lui כותב לחצי העליון. 0x12355678 ← חצי עליון גדול ב-1. 0x12335678 ← חצי עליון קטן ב-1.",
       "recap": "lui: חצי עליון · ori: בלי סימן · addi: מרחיב בסימן",
       "questionHtml": "מה יהיה באוגר <code class=\"tok\" dir=\"ltr\">$t0</code> אחרי ביצוע הפקודות הבאות?<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>lui $t0, 0x1234\nori $t0, $t0, 0x5678</code></pre>",
       "explanationHtml": "אחרי <code class=\"tok\" dir=\"ltr\">lui $t0, 0x1234</code> ב-<code class=\"tok\" dir=\"ltr\">$t0</code> יש 0x12340000; אחרי <code class=\"tok\" dir=\"ltr\">ori $t0, $t0, 0x5678</code> ב-<code class=\"tok\" dir=\"ltr\">$t0</code> יש 0x12345678. המסיחים: 0x0000567C ← lui הוכנס לחצי התחתון, אבל lui כותב לחצי העליון. 0x12355678 ← חצי עליון גדול ב-1. 0x12335678 ← חצי עליון קטן ב-1.",
@@ -4586,7 +4611,7 @@ window.COURSES = {
      },
      {
       "id": "mips_enc-C07-Q2",
-      "question": "מה יהיה באוגר `$t1` אחרי ביצוע הפקודות הבאות?\n```asm\naddi $t1, $0, 0xAAAA\n```",
+      "question": "מה יהיה באוגר `\\$t1` אחרי ביצוע הפקודות הבאות?\n```asm\naddi $t1, $0, 0xAAAA\n```",
       "options": [
        {
         "id": "a",
@@ -4614,7 +4639,7 @@ window.COURSES = {
        }
       ],
       "correctId": "c",
-      "explanation": "אחרי `addi $t1, $0, 0xAAAA` ב-`$t1` יש 0xFFFFAAAA. המסיחים: 0x0000AAAA ← addi הורחב באפסים, אבל addi מרחיב בסימן. 0xFFFEAAAA ← חצי עליון קטן ב-1. 0xFFFF5555 ← החצי התחתון הפוך.",
+      "explanation": "אחרי `addi \\$t1, \\$0, 0xAAAA` ב-`\\$t1` יש 0xFFFFAAAA. המסיחים: 0x0000AAAA ← addi הורחב באפסים, אבל addi מרחיב בסימן. 0xFFFEAAAA ← חצי עליון קטן ב-1. 0xFFFF5555 ← החצי התחתון הפוך.",
       "recap": "lui: חצי עליון · ori: בלי סימן · addi: מרחיב בסימן",
       "questionHtml": "מה יהיה באוגר <code class=\"tok\" dir=\"ltr\">$t1</code> אחרי ביצוע הפקודות הבאות?<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>addi $t1, $0, 0xAAAA</code></pre>",
       "explanationHtml": "אחרי <code class=\"tok\" dir=\"ltr\">addi $t1, $0, 0xAAAA</code> ב-<code class=\"tok\" dir=\"ltr\">$t1</code> יש 0xFFFFAAAA. המסיחים: 0x0000AAAA ← addi הורחב באפסים, אבל addi מרחיב בסימן. 0xFFFEAAAA ← חצי עליון קטן ב-1. 0xFFFF5555 ← החצי התחתון הפוך.",
@@ -4622,7 +4647,7 @@ window.COURSES = {
      },
      {
       "id": "mips_enc-C07-Q3",
-      "question": "מה יהיה באוגר `$t0` אחרי ביצוע הפקודות הבאות?\n```asm\nlui $t0, 0x00FF\naddi $t0, $t0, 0x8010\n```",
+      "question": "מה יהיה באוגר `\\$t0` אחרי ביצוע הפקודות הבאות?\n```asm\nlui $t0, 0x00FF\naddi $t0, $t0, 0x8010\n```",
       "options": [
        {
         "id": "a",
@@ -4650,7 +4675,7 @@ window.COURSES = {
        }
       ],
       "correctId": "b",
-      "explanation": "אחרי `lui $t0, 0x00FF` ב-`$t0` יש 0x00FF0000; אחרי `addi $t0, $t0, 0x8010` ב-`$t0` יש 0x00FE8010. המסיחים: 0x00FF8010 ← addi הורחב באפסים, אבל addi מרחיב בסימן. 0xFFFF810F ← lui הוכנס לחצי התחתון, אבל lui כותב לחצי העליון. 0x00FD8010 ← חצי עליון קטן ב-1.",
+      "explanation": "אחרי `lui \\$t0, 0x00FF` ב-`\\$t0` יש 0x00FF0000; אחרי `addi \\$t0, \\$t0, 0x8010` ב-`\\$t0` יש 0x00FE8010. המסיחים: 0x00FF8010 ← addi הורחב באפסים, אבל addi מרחיב בסימן. 0xFFFF810F ← lui הוכנס לחצי התחתון, אבל lui כותב לחצי העליון. 0x00FD8010 ← חצי עליון קטן ב-1.",
       "recap": "lui: חצי עליון · ori: בלי סימן · addi: מרחיב בסימן",
       "questionHtml": "מה יהיה באוגר <code class=\"tok\" dir=\"ltr\">$t0</code> אחרי ביצוע הפקודות הבאות?<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>lui $t0, 0x00FF\naddi $t0, $t0, 0x8010</code></pre>",
       "explanationHtml": "אחרי <code class=\"tok\" dir=\"ltr\">lui $t0, 0x00FF</code> ב-<code class=\"tok\" dir=\"ltr\">$t0</code> יש 0x00FF0000; אחרי <code class=\"tok\" dir=\"ltr\">addi $t0, $t0, 0x8010</code> ב-<code class=\"tok\" dir=\"ltr\">$t0</code> יש 0x00FE8010. המסיחים: 0x00FF8010 ← addi הורחב באפסים, אבל addi מרחיב בסימן. 0xFFFF810F ← lui הוכנס לחצי התחתון, אבל lui כותב לחצי העליון. 0x00FD8010 ← חצי עליון קטן ב-1.",
@@ -4658,7 +4683,7 @@ window.COURSES = {
      },
      {
       "id": "mips_enc-C07-Q4",
-      "question": "מה יהיה באוגר `$t0` אחרי ביצוע הפקודות הבאות?\n```asm\nlui $t0, 0x00FF\nori $t0, $t0, 0x8010\n```",
+      "question": "מה יהיה באוגר `\\$t0` אחרי ביצוע הפקודות הבאות?\n```asm\nlui $t0, 0x00FF\nori $t0, $t0, 0x8010\n```",
       "options": [
        {
         "id": "a",
@@ -4686,7 +4711,7 @@ window.COURSES = {
        }
       ],
       "correctId": "d",
-      "explanation": "אחרי `lui $t0, 0x00FF` ב-`$t0` יש 0x00FF0000; אחרי `ori $t0, $t0, 0x8010` ב-`$t0` יש 0x00FF8010. המסיחים: 0xFFFF8010 ← ori הורחב בסימן, אבל ori מורחב באפסים. 0x000080FF ← lui הוכנס לחצי התחתון, אבל lui כותב לחצי העליון. 0x01008010 ← חצי עליון גדול ב-1.",
+      "explanation": "אחרי `lui \\$t0, 0x00FF` ב-`\\$t0` יש 0x00FF0000; אחרי `ori \\$t0, \\$t0, 0x8010` ב-`\\$t0` יש 0x00FF8010. המסיחים: 0xFFFF8010 ← ori הורחב בסימן, אבל ori מורחב באפסים. 0x000080FF ← lui הוכנס לחצי התחתון, אבל lui כותב לחצי העליון. 0x01008010 ← חצי עליון גדול ב-1.",
       "recap": "lui: חצי עליון · ori: בלי סימן · addi: מרחיב בסימן",
       "questionHtml": "מה יהיה באוגר <code class=\"tok\" dir=\"ltr\">$t0</code> אחרי ביצוע הפקודות הבאות?<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>lui $t0, 0x00FF\nori $t0, $t0, 0x8010</code></pre>",
       "explanationHtml": "אחרי <code class=\"tok\" dir=\"ltr\">lui $t0, 0x00FF</code> ב-<code class=\"tok\" dir=\"ltr\">$t0</code> יש 0x00FF0000; אחרי <code class=\"tok\" dir=\"ltr\">ori $t0, $t0, 0x8010</code> ב-<code class=\"tok\" dir=\"ltr\">$t0</code> יש 0x00FF8010. המסיחים: 0xFFFF8010 ← ori הורחב בסימן, אבל ori מורחב באפסים. 0x000080FF ← lui הוכנס לחצי התחתון, אבל lui כותב לחצי העליון. 0x01008010 ← חצי עליון גדול ב-1.",
@@ -4694,7 +4719,7 @@ window.COURSES = {
      },
      {
       "id": "mips_enc-C07-Q5",
-      "question": "איזה קטע קוד מכניס את הערך `0xABCD8000` לאוגר `$t0`? (הקטעים משתמשים ב-lui ואחריה addi.)",
+      "question": "איזה קטע קוד מכניס את הערך `0xABCD8000` לאוגר `\\$t0`? (הקטעים משתמשים ב-lui ואחריה addi.)",
       "options": [
        {
         "id": "a",
@@ -4722,7 +4747,7 @@ window.COURSES = {
        }
       ],
       "correctId": "a",
-      "explanation": "addi עם 0x8000 מוסיף 0xFFFF8000, ולכן צריך להגדיל את החצי העליון ב-1: 0xABCE0000 + 0xFFFF8000 = 0xABCD8000. המסיחים: ```asm\nlui  $t0, 0xABCD\naddi $t0, $t0, 0x8000\n``` ← התוצאה 0xABCC8000: ה-addi מחסיר 0x10000 מהחצי העליון. ```asm\nlui  $t0, 0xABCC\naddi $t0, $t0, 0x8000\n``` ← התוצאה 0xABCB8000, רחוק יותר. ```asm\nlui  $t0, 0xABCD\naddi $t0, $t0, 0x0800\n``` ← התוצאה 0xABCD0800: החצי התחתון שגוי.",
+      "explanation": "addi עם 0x8000 מוסיף 0xFFFF8000, ולכן צריך להגדיל את החצי העליון ב-1: 0xABCE0000 + 0xFFFF8000 = 0xABCD8000. המסיחים: ```asm\nlui  \\$t0, 0xABCD\naddi \\$t0, \\$t0, 0x8000\n``` ← התוצאה 0xABCC8000: ה-addi מחסיר 0x10000 מהחצי העליון. ```asm\nlui  $t0, 0xABCC\naddi $t0, $t0, 0x8000\n``` ← התוצאה 0xABCB8000, רחוק יותר. ```asm\nlui  \\$t0, 0xABCD\naddi \\$t0, \\$t0, 0x0800\n``` ← התוצאה 0xABCD0800: החצי התחתון שגוי.",
       "recap": "addi עם ביט 15 דולק ← מגדילים את ה-lui ב-1",
       "questionHtml": "איזה קטע קוד מכניס את הערך <code class=\"tok\" dir=\"ltr\">0xABCD8000</code> לאוגר <code class=\"tok\" dir=\"ltr\">$t0</code>? (הקטעים משתמשים ב-lui ואחריה addi.)",
       "explanationHtml": "addi עם 0x8000 מוסיף 0xFFFF8000, ולכן צריך להגדיל את החצי העליון ב-1: 0xABCE0000 + 0xFFFF8000 = 0xABCD8000. המסיחים: ``<code class=\"tok\" dir=\"ltr\">asm<br>lui  $t0, 0xABCD<br>addi $t0, $t0, 0x8000<br></code>`<code class=\"tok\" dir=\"ltr\"> ← התוצאה 0xABCC8000: ה-addi מחסיר 0x10000 מהחצי העליון. </code>`<code class=\"tok\" dir=\"ltr\">asm<br>lui  $t0, 0xABCC<br>addi $t0, $t0, 0x8000<br></code>`<code class=\"tok\" dir=\"ltr\"> ← התוצאה 0xABCB8000, רחוק יותר. </code>`<code class=\"tok\" dir=\"ltr\">asm<br>lui  $t0, 0xABCD<br>addi $t0, $t0, 0x0800<br></code>`` ← התוצאה 0xABCD0800: החצי התחתון שגוי.",
@@ -4730,7 +4755,7 @@ window.COURSES = {
      },
      {
       "id": "mips_enc-C07-Q6",
-      "question": "מה יהיה באוגר `$t0` אחרי ביצוע הפקודות הבאות?\n```asm\nlui $t0, 0x8000\naddi $t0, $t0, -1\n```",
+      "question": "מה יהיה באוגר `\\$t0` אחרי ביצוע הפקודות הבאות?\n```asm\nlui $t0, 0x8000\naddi $t0, $t0, -1\n```",
       "options": [
        {
         "id": "a",
@@ -4758,11 +4783,16 @@ window.COURSES = {
        }
       ],
       "correctId": "c",
-      "explanation": "אחרי `lui $t0, 0x8000` ב-`$t0` יש 0x80000000; אחרי `addi $t0, $t0, -1` ב-`$t0` יש 0x7FFFFFFF. המסיחים: 0x8000FFFF ← addi הורחב באפסים, אבל addi מרחיב בסימן. 0x00007FFF ← lui הוכנס לחצי התחתון, אבל lui כותב לחצי העליון. 0x7FFEFFFF ← חצי עליון קטן ב-1.",
+      "explanation": "אחרי `lui \\$t0, 0x8000` ב-`\\$t0` יש 0x80000000; אחרי `addi \\$t0, \\$t0, -1` ב-`\\$t0` יש 0x7FFFFFFF. המסיחים: 0x8000FFFF ← addi הורחב באפסים, אבל addi מרחיב בסימן. 0x00007FFF ← lui הוכנס לחצי התחתון, אבל lui כותב לחצי העליון. 0x7FFEFFFF ← חצי עליון קטן ב-1.",
       "recap": "lui: חצי עליון · ori: בלי סימן · addi: מרחיב בסימן",
       "questionHtml": "מה יהיה באוגר <code class=\"tok\" dir=\"ltr\">$t0</code> אחרי ביצוע הפקודות הבאות?<pre class=\"code-block\" dir=\"ltr\" data-lang=\"asm\"><code>lui $t0, 0x8000\naddi $t0, $t0, -1</code></pre>",
       "explanationHtml": "אחרי <code class=\"tok\" dir=\"ltr\">lui $t0, 0x8000</code> ב-<code class=\"tok\" dir=\"ltr\">$t0</code> יש 0x80000000; אחרי <code class=\"tok\" dir=\"ltr\">addi $t0, $t0, -1</code> ב-<code class=\"tok\" dir=\"ltr\">$t0</code> יש 0x7FFFFFFF. המסיחים: 0x8000FFFF ← addi הורחב באפסים, אבל addi מרחיב בסימן. 0x00007FFF ← lui הוכנס לחצי התחתון, אבל lui כותב לחצי העליון. 0x7FFEFFFF ← חצי עליון קטן ב-1.",
       "recapHtml": "lui: חצי עליון · ori: בלי סימן · addi: מרחיב בסימן"
+     },
+     {
+      "bankId": "23B-B-Q2",
+      "recap": "lui, ואז addi שמרחיב בסימן",
+      "recapHtml": "lui, ואז addi שמרחיב בסימן"
      }
     ]
    },

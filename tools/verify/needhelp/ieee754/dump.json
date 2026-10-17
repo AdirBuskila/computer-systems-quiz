@@ -1,0 +1,1151 @@
+{
+ "courseId": "ieee754",
+ "levels": [
+  {
+   "id": "C01",
+   "order": 1,
+   "boss": false,
+   "questions": [
+    {
+     "id": "C01-Q1",
+     "question": "מהו ביט הסימן $S$ של המילה `0xC0D40000`?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$S=0$, המספר חיובי"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$S=1$, המספר שלילי"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$S=12$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "אי אפשר לדעת בלי לחשב את כל הביטים"
+      }
+     ]
+    },
+    {
+     "id": "C01-Q2",
+     "question": "מהו שדה האקספוננט $E$ (כמספר לא מכוונן) במילה `0x41200000`?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$65$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$129$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$130$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$131$"
+      }
+     ]
+    },
+    {
+     "id": "C01-Q3",
+     "question": "כמה ביטים שווים 1 בשדה השבר $F$ של `0x41200000`?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "0"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "1"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "2"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "3"
+      }
+     ]
+    },
+    {
+     "id": "C01-Q4",
+     "question": "איזו מבין המילים הבאות מייצגת מספר שלילי?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "`0x3F800000`"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "`0x40000000`"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "`0xBF800000`"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "`0x7F800000`"
+      }
+     ]
+    },
+    {
+     "id": "C01-Q5",
+     "question": "מהו שדה האקספוננט $E$ (לא מכוונן) במילה `0x40490FDB`?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$64$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$127$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$129$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$128$"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C02",
+   "order": 2,
+   "boss": false,
+   "questions": [
+    {
+     "id": "C02-Q1",
+     "question": "מהו הערך העשרוני של `0x40400000`?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$1.5$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$3$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$-3$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$6$"
+      }
+     ]
+    },
+    {
+     "id": "C02-Q2",
+     "question": "מהו הערך העשרוני של `0xC0A00000`?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$5$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$-2.5$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$-5$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$-10$"
+      }
+     ]
+    },
+    {
+     "id": "C02-Q3",
+     "question": "מהו הערך של `0x3F000000`?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$0.5$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$1$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$2$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$0.25$"
+      }
+     ]
+    },
+    {
+     "id": "C02-Q4",
+     "question": "מהו הערך של `0x41580000`?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$13.5$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$27$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$6.75$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$11.5$"
+      }
+     ]
+    },
+    {
+     "id": "C02-Q5",
+     "question": "מהו הערך של `0x3E200000`?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$0.3125$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$1.25$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$0.15625$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$0.625$"
+      }
+     ]
+    },
+    {
+     "id": "C02-Q6",
+     "question": "בשדה אקספוננט $E=100$ של מספר נורמלי, כמה הוא $e$ (האקספוננט האמיתי)?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$100$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$27$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$-27$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$227$"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C03",
+   "order": 3,
+   "boss": false,
+   "questions": [
+    {
+     "id": "C03-Q1",
+     "question": "מהו הערך של המילה `0x80000000`?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$-\\infty$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$-2^{-127}$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$-0$, כלומר אפס (עם סימן שלילי)"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "NaN"
+      }
+     ]
+    },
+    {
+     "id": "C03-Q2",
+     "question": "מהו הערך של המילה `0x7F800000`?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "NaN"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$2^{128}$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$-\\infty$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$+\\infty$"
+      }
+     ]
+    },
+    {
+     "id": "C03-Q3",
+     "question": "מהו הערך של המילה `0x7FC00000`?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "NaN"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$+\\infty$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$1.5\\cdot 2^{128}$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "0"
+      }
+     ]
+    },
+    {
+     "id": "C03-Q4",
+     "question": "מהו הערך של המילה `0x00000001`?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$2^{-127}$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$2^{-126}$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$2^{-23}$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$2^{-149}$"
+      }
+     ]
+    },
+    {
+     "id": "C03-Q5",
+     "question": "מהו הערך של המילה `0x007FFFFF`, הדנורמלי הגדול ביותר?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$2^{-126}$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$(1-2^{-23})\\cdot 2^{-126}$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$(2-2^{-23})\\cdot 2^{-126}$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$2^{-126}-2^{-127}$"
+      }
+     ]
+    },
+    {
+     "id": "C03-Q6",
+     "question": "כמה צירופי ביטים שונים של 32 ביטים מייצגים NaN?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$1$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$2^{23}-1$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$2^{24}-2$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$2^{24}$"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C04",
+   "order": 4,
+   "boss": false,
+   "questions": [
+    {
+     "id": "C04-Q1",
+     "question": "איך נראה $12.5$ אחרי נירמול ($1.xxx\\times 2^{e}$)?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$1.1001_2\\cdot 2^{3}$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$1.1001_2\\cdot 2^{4}$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$1.0011_2\\cdot 2^{3}$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$0.11001_2\\cdot 2^{4}$"
+      }
+     ]
+    },
+    {
+     "id": "C04-Q2",
+     "question": "מהו שדה האקספוננט $E$ בקידוד של $12.5$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$3$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$124$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$130$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$131$"
+      }
+     ]
+    },
+    {
+     "id": "C04-Q3",
+     "question": "מהי המילה של $12.5$ בפורמט Single Precision?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "`0xC1480000`"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "`0x41C80000`"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "`0x40C80000`"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "`0x41480000`"
+      }
+     ]
+    },
+    {
+     "id": "C04-Q4",
+     "question": "מהי המילה של $-0.75$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "`0x3F400000`"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "`0xBF400000`"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "`0xBF000000`"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "`0xC0400000`"
+      }
+     ]
+    },
+    {
+     "id": "C04-Q5",
+     "question": "מהי המילה של $100$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "`0x42C80000`"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "`0x42480000`"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "`0x43480000`"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "`0xC2C80000`"
+      }
+     ]
+    },
+    {
+     "id": "C04-Q6",
+     "question": "מהי המילה של $0.15625=\\frac{5}{32}$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "`0x41200000`"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "`0x3F200000`"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "`0x3E200000`"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "`0x3D200000`"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C05",
+   "order": 5,
+   "boss": false,
+   "questions": [
+    {
+     "id": "C05-Q1",
+     "question": "בקידוד של $\\frac13=1.0101\\ldots_2\\cdot 2^{-2}$, איך מעגלים את 23 ביטי השבר?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "למעלה, כי החתוך הוא $0.1010\\ldots$ מהיחידה האחרונה, יותר מחצי"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "למטה, כי הביט החתוך הראשון הוא 1"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "תיקו, ולכן לזוגי"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "אין צורך בעיגול, הקידוד מדויק"
+      }
+     ]
+    },
+    {
+     "id": "C05-Q2",
+     "question": "מהי המילה של $\\frac13$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "`0x3EAAAAAA`"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "`0x3EAAAAAB`"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "`0x3F2AAAAB`"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "`0x3E2AAAAB`"
+      }
+     ]
+    },
+    {
+     "id": "C05-Q3",
+     "question": "מהי המילה של $0.1$? (רמז: $0.1=1.100110011\\ldots_2\\cdot 2^{-4}$)",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "`0x3DCCCCCC`"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "`0x3DCCCCCD`"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "`0x3ECCCCCD`"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "`0x3CCCCCCD`"
+      }
+     ]
+    },
+    {
+     "id": "C05-Q4",
+     "question": "ל-$1+2^{-24}$ אין ייצוג מדויק. מהי המילה שמתקבלת אחרי עיגול?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "`0x3F800000`"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "`0x3F800001`"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "`0x3F800002`"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "`0x3F7FFFFF`"
+      }
+     ]
+    },
+    {
+     "id": "C05-Q5",
+     "question": "מהי המילה שמתקבלת מעיגול של $1+3\\cdot 2^{-24}$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "`0x3F800001`"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "`0x3F800002`"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "`0x3F800003`"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "`0x3F800000`"
+      }
+     ]
+    },
+    {
+     "id": "C05-Q6",
+     "question": "מהי המילה של $\\frac1{12}$?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "`0x3DAAAAAA`"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "`0x3DAAAAAB`"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "`0x3E2AAAAB`"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "`0x3EAAAAAB`"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C06",
+   "order": 6,
+   "boss": false,
+   "questions": [
+    {
+     "id": "C06-Q1",
+     "question": "מהו המרווח בין שני מספרים סמוכים בתחום $[1,2)$ (כלומר $e=0$)?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$2^{-24}$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$2^{-23}$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$2^{-22}$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$2^{-127}$"
+      }
+     ]
+    },
+    {
+     "id": "C06-Q2",
+     "question": "מה ההפרש בין שני המספרים הסופיים החיוביים הגדולים ביותר (מתחת ל-$\\infty$)?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$2^{104}$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$2^{127}$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$2^{-23}$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$2^{150}$"
+      }
+     ]
+    },
+    {
+     "id": "C06-Q3",
+     "question": "מהו השלם החיובי הקטן ביותר שאינו ניתן לייצוג מדויק ב-Single Precision?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$2^{23}+1=8388609$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$2^{24}=16777216$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$2^{24}+1=16777217$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$2^{32}$"
+      }
+     ]
+    },
+    {
+     "id": "C06-Q4",
+     "question": "מהו היחס בין המספר החיובי הגדול ביותר לקטן ביותר שיש להם אותו אקספוננט נורמלי?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$2$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$1-2^{-23}$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$2-2^{-23}$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "תלוי בערך האקספוננט"
+      }
+     ]
+    },
+    {
+     "id": "C06-Q5",
+     "question": "אילו שדות אקספוננט $E$ נותנים מרווח $2^{-100}$ בין מספרים סמוכים?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$E=27$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$E=50$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$E=77$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$E=100$"
+      }
+     ]
+    },
+    {
+     "id": "C06-Q6",
+     "question": "כמה קבוצות של מספרים רצופים שהמרחק ביניהם $2^{-100}$ קיימות, וכמה מספרים בכל קבוצה?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "קבוצה אחת של $2^{23}+1$ מספרים"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "שתי קבוצות של $2^{23}+1$ מספרים"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "שתי קבוצות של $2^{24}+1$ מספרים"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "ארבע קבוצות של $2^{23}+1$ מספרים"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C07",
+   "order": 7,
+   "boss": false,
+   "questions": [
+    {
+     "id": "C07-Q1",
+     "question": "מה התוצאה של $16777216+1$ בחיבור Single Precision (כלומר $2^{24}+1$)?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$16777217$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$16777216$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$16777218$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$\\infty$"
+      }
+     ]
+    },
+    {
+     "id": "C07-Q2",
+     "question": "מה התוצאה של $16777216+3$ בחיבור Single Precision?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$16777219$"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$16777218$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$16777220$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$16777216$"
+      }
+     ]
+    },
+    {
+     "id": "C07-Q3",
+     "question": "חיברנו שני מספרים מנורמלים. איזו טענה נכונה?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "התוצאה תמיד מנורמלת"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "אם אחד שלילי והשני חיובי, התוצאה יכולה להיות לא מנורמלת"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "התוצאה לעולם אינה אינסוף"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "התוצאה לעולם אינה 0"
+      }
+     ]
+    },
+    {
+     "id": "C07-Q4",
+     "question": "מהמספר המנורמל החיובי הקטן ביותר מחסירים את המספר החיובי הלא מנורמל הגדול ביותר. מה התוצאה?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "$2^{-149}$, מדויקת, והיא המספר החיובי הקטן ביותר"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "$0$"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "$2^{-126}$"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "$2^{-149}$ אבל עם שגיאת עיגול"
+      }
+     ]
+    },
+    {
+     "id": "C07-Q5",
+     "question": "נחשב ב-Single Precision את $(16777216+1)+1$ ואת $16777216+(1+1)$. מה מתקבל?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "שניהם 16777218"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "הראשון 16777216, השני 16777218"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "הראשון 16777218, השני 16777216"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "שניהם 16777216"
+      }
+     ]
+    },
+    {
+     "id": "C07-Q6",
+     "question": "מחברים שני מספרים חיוביים לא מנורמלים ($E=0$ בשניהם). מה נכון?",
+     "options": [
+      {
+       "id": "a",
+       "type": "text",
+       "value": "התוצאה לעולם אינה מנורמלת"
+      },
+      {
+       "id": "b",
+       "type": "text",
+       "value": "התוצאה יכולה להיות מנורמלת"
+      },
+      {
+       "id": "c",
+       "type": "text",
+       "value": "התוצאה תמיד 0"
+      },
+      {
+       "id": "d",
+       "type": "text",
+       "value": "התוצאה תמיד אינסוף"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "C08",
+   "order": 8,
+   "boss": true,
+   "questions": [
+    {
+     "id": "bank:25B-A-Q3",
+     "bankId": "25B-A-Q3"
+    },
+    {
+     "id": "bank:22B-B-Q3",
+     "bankId": "22B-B-Q3"
+    },
+    {
+     "id": "bank:24B-A-Q7",
+     "bankId": "24B-A-Q7"
+    },
+    {
+     "id": "bank:25A-A-Q7",
+     "bankId": "25A-A-Q7"
+    },
+    {
+     "id": "bank:23B-A-Q7",
+     "bankId": "23B-A-Q7"
+    },
+    {
+     "id": "bank:24S-A-Q3",
+     "bankId": "24S-A-Q3"
+    }
+   ]
+  }
+ ]
+}
