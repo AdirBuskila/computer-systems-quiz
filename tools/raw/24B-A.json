@@ -1,0 +1,788 @@
+{
+ "examCode": "24B-A",
+ "examLabel": "2024 סמסטר א מועד ב",
+ "year": 2024,
+ "examDate": "16.4.2024",
+ "sourceFile": "sitting 24B-A (exam pages 2-16)",
+ "keyFile": "sitting 24B-A pp.2-16 (circled options) + pp.18-33 (handwritten solution)",
+ "contexts": {},
+ "questions": [
+  {
+   "num": 1,
+   "topic": "boolean_algebra",
+   "question": "מי מהמשוואות הבאות אינה נכונה?",
+   "options": [
+    {
+     "id": "a",
+     "type": "math",
+     "value": "(A\\oplus B)\\cdot(A\\oplus C)=A\\oplus\\overline{(B\\oplus C)}"
+    },
+    {
+     "id": "b",
+     "type": "math",
+     "value": "(A\\oplus B)\\cdot\\overline{(A\\oplus C)}=\\bar A\\cdot\\bar C\\cdot B+\\bar B\\cdot C\\cdot A"
+    },
+    {
+     "id": "c",
+     "type": "math",
+     "value": "(A\\oplus B)\\oplus(C\\oplus E)\\oplus\\overline{(D\\oplus C)}\\oplus(\\bar B\\oplus D)=(\\bar A\\oplus C)\\oplus(\\bar C\\oplus E)"
+    },
+    {
+     "id": "d",
+     "type": "math",
+     "value": "\\overline{B\\cdot A}+\\overline{D\\cdot C}=A\\cdot(B\\cdot(C\\cdot\\bar D+\\bar C)+\\bar B)+\\bar A"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "א: $(A\\oplus B)(A\\oplus C)=(\\bar AB+A\\bar B)(\\bar AC+A\\bar C)=\\bar ABC+A\\bar B\\bar C$, ואילו $A\\oplus\\overline{(B\\oplus C)}=A(B\\oplus C)+\\bar A\\,\\overline{(B\\oplus C)}=A\\bar BC+AB\\bar C+\\bar A\\bar B\\bar C+\\bar ABC$. למשל עבור $ABC=100$ האגף השמאלי הוא 1 והאגף הימני הוא 0 - המשוואה אינה נכונה.\nב: $(A\\oplus B)\\cdot\\overline{(A\\oplus C)}=(\\bar AB+A\\bar B)(\\bar A\\bar C+AC)=\\bar AB\\bar C+A\\bar BC$ - נכונה.\nג: $A\\oplus B\\oplus C\\oplus E\\oplus\\bar D\\oplus C\\oplus\\bar B\\oplus D=A\\oplus(B\\oplus\\bar B)\\oplus(C\\oplus C)\\oplus(D\\oplus\\bar D)\\oplus E=A\\oplus E$, וגם $\\bar A\\oplus C\\oplus\\bar C\\oplus E=A\\oplus E$ - נכונה.\nד: $\\overline{AB}+\\overline{CD}=\\bar A+\\bar B+\\bar C+\\bar D$ ומנגד $\\bar A+A(\\bar B+B(\\bar C+C\\bar D))=\\bar A+\\bar B+\\bar C+\\bar D$ (לפי $x+\\bar xy=x+y$) - נכונה."
+  },
+  {
+   "num": 2,
+   "topic": "mips_machine_code",
+   "question": "מה יהיה באוגר \\$4 אחרי ביצוע הפקודות הבאות:\n```asm\nlui  $4, 0x2468\naddi $4, $4, 0xFDB9\naddi $4, $4, 0x1357\n```",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "0x24681110"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "0x24671110"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "0x24683210"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "0x24673210"
+    },
+    {
+     "id": "e",
+     "type": "text",
+     "value": "0x24661111"
+    },
+    {
+     "id": "f",
+     "type": "text",
+     "value": "0x24661116"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "`lui` נותן $\\$4=\\texttt{0x24680000}$. ב-`addi` הקבוע 0xFDB9 עובר הרחבת סימן ל-0xFFFFFDB9, ולכן $\\$4=\\texttt{0x24680000}+\\texttt{0xFFFFFDB9}=\\texttt{0x2467FDB9}$.\nלאחר מכן $\\texttt{0x2467FDB9}+\\texttt{0x00001357}=\\texttt{0x24681110}$."
+  },
+  {
+   "num": 3,
+   "topic": "floating_point",
+   "question": "המספר $\\frac{2}{3}$ בבסיס 2 הוא השבר הבינארי האינסופי:\n$[0.10\\ 10\\ 10\\ 10\\ 10\\ 10\\ 10\\ \\ldots]_2$\nכיצד ייוצג המספר $1000\\frac{2}{3}$ בייצוג Single Precision Floating Point (1 סיבית סימן, 8 סיביות אקספוננט ו- 23 סיביות שבר) ?",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "0x447A2AAB"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "0x447A2AAA"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "0x447B2A2B"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "0x447B2A2A"
+    },
+    {
+     "id": "e",
+     "type": "text",
+     "value": "0x447D1555"
+    },
+    {
+     "id": "f",
+     "type": "text",
+     "value": "0x447D1556"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "$1000\\frac{2}{3}=2^0\\cdot 1111101000.101010\\ldots_2=(-1)^0\\cdot 2^9\\cdot 1.111101000101010\\ldots$ (כי $1000=31\\cdot 32+8$).\n$S=0$, $E=9+127=136$, השבר $F=111101000\\,1010101010101\\,010\\ldots$\nעיגול של 23 הסיביות כלפי מעלה (הסיביות הנגרעות הן $1010\\ldots$, יותר ממחצית), ולכן הנייבל האחרון $1010$ הופך ל-$1011$:\n$0\\,|\\,10001000\\,|\\,11110100010101010101011\\Rightarrow\\texttt{0x447A2AAB}$."
+  },
+  {
+   "num": 4,
+   "topic": "number_bases",
+   "question": "מהו ערכו העשרוני של השבר האינסופי $[0.23\\ 10\\ 10\\ 10\\ 10\\ 10\\ \\ldots]_5$ בבסיס 5?",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "317/600"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "53/102"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "319/604"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "159/301"
+    },
+    {
+     "id": "e",
+     "type": "text",
+     "value": "158/299"
+    },
+    {
+     "id": "f",
+     "type": "text",
+     "value": "25/47"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "$X=[0.23\\ 101010\\ldots]_5=[0.13]_5+Y$, כאשר $Y=[0.10\\ 10\\ 10\\ldots]_5$.\n$5^2Y=[10]_5+Y\\Rightarrow 25Y=5+Y\\Rightarrow Y=\\frac{5}{24}$.\n$X=1\\cdot\\frac{1}{5}+3\\cdot\\frac{1}{25}+\\frac{5}{24}=\\frac{8}{25}+\\frac{5}{24}=\\frac{8\\cdot 24+25\\cdot 5}{600}=\\frac{192+125}{600}=\\frac{317}{600}$."
+  },
+  {
+   "num": 5,
+   "topic": "signed_twos_complement",
+   "question": "$X$ הוא מספר 2's complement בן 13 סיביות מהן 6 הם מימין לנקודה הבינרית. כלומר:\n$X=\\langle X_6,X_5,X_4,X_3,X_2,X_1,X_0\\,.\\,X_{-1},X_{-2},X_{-3},X_{-4},X_{-5},X_{-6}\\rangle$\nסיביות $X_4$ , $X_2$ ו- $X_{-2}$ הן \"1\". מה לא נכון:",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "$\\langle X\\rangle$ יכול להיות $-42\\frac{22}{64}$"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "$\\langle X\\rangle$ יכול להיות $-\\frac{3}{4}$"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "$\\langle X\\rangle$ יכול להיות $-42\\frac{43}{64}$"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "$\\langle X\\rangle$ לא יכול להיות $60\\frac{1}{2}$"
+    },
+    {
+     "id": "e",
+     "type": "text",
+     "value": "$\\langle X\\rangle$ לא יכול להיות $-30\\frac{1}{2}$"
+    },
+    {
+     "id": "f",
+     "type": "text",
+     "value": "$\\langle X\\rangle$ לא יכול להיות $\\frac{7}{64}$"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "$42\\frac{22}{64}=\\langle 0101010.010110\\rangle\\Rightarrow -42\\frac{22}{64}=\\langle 1010101.101010\\rangle$: כאן $X_4=1$ ו-$X_2=1$ אבל $X_{-2}=0$, ולכן המספר לא יכול להיות $-42\\frac{22}{64}$ - הטענה \"יכול\" לא נכונה.\n$-\\frac{3}{4}=\\langle 1111111.010000\\rangle$ ו-$-42\\frac{43}{64}=\\langle 1010101.010101\\rangle$ - שניהם מקיימים את שלושת התנאים (יכולים).\n$60\\frac{1}{2}$, $-30\\frac{1}{2}$ (שבר $.100000$) ו-$\\frac{7}{64}=0.000111$ - בכולם $X_{-2}=0$, ולכן לא יכולים (הטענות \"לא יכול\" נכונות)."
+  },
+  {
+   "num": 6,
+   "topic": "unsigned_numbers",
+   "question": "$X$ הוא שבר unsigned עם 7 סיביות מימין לנקודה הבינרית. לפיכך אפשר להציג בו רק $2^7$ של שברים. אם מבקשים להציג שבר כלשהו ואי אפשר להציגו במדויק, או שנקצץ סיביות מימין לסיבית השביעית או שנעגל ל-7 סיביות שבר. מה מהתשובות נכון לגבי השגיאה (עבור ערך שבר כלשהו):",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "השגיאה בערכה המוחלט תהיה תמיד קטנה או שווה ל- $\\frac{1}{256}$ אם נעגל"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "השגיאה בערכה המוחלט תהיה תמיד גדולה מ- $\\frac{1}{256}$ אם נעגל"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "השגיאה בערכה המוחלט תהיה תמיד גדולה מ- $\\frac{1}{128}$ אם נקצץ"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "השגיאה בערכה המוחלט תהיה תמיד קטנה או שווה ל- $\\frac{1}{512}$ אם נעגל"
+    },
+    {
+     "id": "e",
+     "type": "text",
+     "value": "השגיאה בערכה המוחלט תהיה תמיד גדולה מ- $\\frac{1}{512}$ אם נקצץ"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "כדי לעגל מוסיפים $\\frac{1}{256}=\\frac{1}{2^8}$ וקוצצים מימין לספרה השביעית, ולכן הטעות היא בתחום $[-\\frac{1}{256},\\frac{1}{256}]$; כלומר השגיאה בעיגול היא תמיד קטנה או שווה ל-$\\frac{1}{256}$ - תשובה א נכונה.\nב: שגוי, כי השגיאה בעיגול אינה תמיד גדולה מ-$\\frac{1}{256}$ (היא קטנה או שווה לו).\nג: בקיצוץ תחום השגיאה הוא $[0,\\frac{1}{128})$, כלומר השגיאה יכולה להיות קטנה מ-$\\frac{1}{128}$ - לכן ג שגוי.\nד: $\\frac{1}{512}<\\frac{1}{256}$ - הגבול הזה אינו נכון, כי השגיאה בעיגול יכולה להגיע ל-$\\frac{1}{256}$.\nה: בקיצוץ השגיאה יכולה להיות 0, ולכן היא לא תמיד גדולה מ-$\\frac{1}{512}$."
+  },
+  {
+   "num": 7,
+   "topic": "floating_point",
+   "question": "אנו עוסקים במספרים המיוצגים ב- Single Precision Floating Point (1 סיבית סימן, 8 סיביות אקספוננט ו- 23 סיביות שבר, Fraction). כמה מספרים רצופים יש שהמרחק ביניהם הוא $2^{-100}$?\nמה נכון:",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "יש שתי קבוצות של $2^{23}+1$ מספרים רצופים כאלה"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "יש קבוצה אחת של $2^{23}+1$ מספרים רצופים כאלה"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "יש שתי קבוצות של $2^{24}+1$ מספרים רצופים כאלה"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "יש קבוצה אחת של $2^{24}+1$ מספרים רצופים כאלה"
+    },
+    {
+     "id": "e",
+     "type": "text",
+     "value": "יש קבוצה אחת של $2^{23}-1$ מספרים רצופים כאלה וקבוצה נוספת של $2^{23}+1$ מספרים רצופים כאלה"
+    },
+    {
+     "id": "f",
+     "type": "text",
+     "value": "יש קבוצה אחת של $2^{24}-1$ מספרים רצופים כאלה וקבוצה נוספת של $2^{24}+1$ מספרים רצופים כאלה"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "המרחק בין שני מספרים עם אותו אקספוננט $E$ (שאינם דנורמליים) הוא $2^{E-127}\\cdot 2^{-23}=2^{E-150}$.\nבמקרה שלנו $2^{E-150}=2^{-100}$, ולכן $E=50$.\nיש 2 קבוצות של מספרים עם $E=50$: כשהסימן הוא (+) וכשהסימן הוא (-). בכל קבוצה יש את כל הקומבינציות של $F$; ל-$F$ יש 23 סיביות, ולכן בכל קבוצה $2^{23}$ מספרים (ועוד אחד, המספר הראשון של האקספוננט הבא, באותו מרחק).\nלכן התשובה הנכונה היא א.",
+   "note": "Printed '1+2^23' etc. read as the counts 2^23+1, 2^23-1, 2^24+1, 2^24-1 (RTL layout puts the 1 on the other side). Key a checked by mini-float enumeration (one run of 2^F+1 per sign)."
+  },
+  {
+   "num": 8,
+   "topic": "number_bases",
+   "question": "הערך של המנה של שני השברים הבאים $[0.44444\\ldots]_7\\ /\\ [0.44444\\ldots]_9$ הוא:",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "4/3"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "1/3"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "7/8"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "8/7"
+    },
+    {
+     "id": "e",
+     "type": "text",
+     "value": "1/5"
+    },
+    {
+     "id": "f",
+     "type": "text",
+     "value": "5/4"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "$X=[0.444\\ldots]_7\\Rightarrow 7X=4+X\\Rightarrow 6X=4\\Rightarrow X=\\frac{2}{3}$.\n$Y=[0.444\\ldots]_9\\Rightarrow 9Y=4+Y\\Rightarrow 8Y=4\\Rightarrow Y=\\frac{1}{2}$.\n$\\frac{X}{Y}=\\frac{2/3}{1/2}=\\frac{4}{3}$.",
+   "note": "The bidi layout prints the base-9 fraction on the right; read left to right as the lecturer's solution does (numerator base 7, denominator base 9); 3/4 is not an option."
+  },
+  {
+   "num": 9,
+   "topic": "latches_flipflops",
+   "question": "לפניכם שלושה דלגלגים (FF-ים), המחוברים בצורת אוגר הזזה (Shift Register). הכניסה משמאל (ל-D2) מחוברת ליציאת שער XOR, המבצע פעולת XOR בין Q0 להיפוך של Q2.\nהערך באוגר ההזזה הוא: [Q2, Q1, Q0] = [0, 1, 1], כמצויר. מה היה הערך לפני 8 עליות שעון?",
+   "options": [
+    {
+     "id": "a",
+     "type": "math",
+     "value": "[Q_2,Q_1,Q_0]=[1,1,0]"
+    },
+    {
+     "id": "b",
+     "type": "math",
+     "value": "[Q_2,Q_1,Q_0]=[0,0,0]"
+    },
+    {
+     "id": "c",
+     "type": "math",
+     "value": "[Q_2,Q_1,Q_0]=[0,1,0]"
+    },
+    {
+     "id": "d",
+     "type": "math",
+     "value": "[Q_2,Q_1,Q_0]=[1,0,0]"
+    },
+    {
+     "id": "e",
+     "type": "math",
+     "value": "[Q_2,Q_1,Q_0]=[0,0,1]"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "$D_2=1$ אם $Q_2=Q_0$, ו-$D_2=0$ אם $Q_2\\ne Q_0$ (כלומר $D_2=Q_0\\oplus\\bar Q_2$); כל עלייה מזיזה: $Q_2\\leftarrow D_2$, $Q_1\\leftarrow Q_2$, $Q_0\\leftarrow Q_1$.\nבונים טבלה של המצבים העוקבים; מתקבל מחזור של 7 מצבים:\n$[0,1,1]\\to[0,0,1]\\to[0,0,0]\\to[1,0,0]\\to[0,1,0]\\to[1,0,1]\\to[1,1,0]\\to[0,1,1]$.\n8 עליות שעון אחורה = (7 + 1), כלומר המצב לפני עלייה אחת: $[1,1,0]$.",
+   "image": "images/exams/24B-A-Q9.png"
+  },
+  {
+   "num": 10,
+   "topic": "mips_assembly_c",
+   "question": "מהו התרגום השגוי באסמבלי של ה-MIPS לשורת ה-C:  `a = a - 3*b;`\nהנח שמותר להשתמש באוגר \\$1.",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "```asm\nsub $5, $5, $6\nadd $6, $6, $6\nsub $5, $5, $6\n```"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "```asm\nsub $5, $5, $6\nsub $5, $5, $6\nsub $5, $5, $6\n```"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "```asm\nadd $1, $6, $6\nsub $5, $5, $6\nsub $5, $5, $1\n```"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "```asm\nadd $1, $6, $6\nadd $1, $1, $1\nadd $5, $5, $6\nsub $5, $5, $1\n```"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "(ההנחה: a הוא \\$5 ו-b הוא \\$6.)\nא: `sub \\$5,\\$5,\\$6` ($a=a-b$); `add \\$6,\\$6,\\$6` ($b=2b$); `sub \\$5,\\$5,\\$6` ($a=a-b-2b=a-3b$). הערך של a נכון, אך התרגום הרס את b (\\$6 הוכפל) - לכן הוא השגוי.\nב: $a=a-b-b-b=a-3b$ ✓. ג: $\\$1=2b$; $a=a-b$; $a=a-b-2b=a-3b$ ✓. ד: $\\$1=2b$, $\\$1=4b$; $a=a+b$; $a=a+b-4b=a-3b$ ✓."
+  },
+  {
+   "num": 11,
+   "topic": "number_bases",
+   "question": "מה נכון ?",
+   "options": [
+    {
+     "id": "a",
+     "type": "math",
+     "value": "[1324.31]_9=[1100211.1001]_3"
+    },
+    {
+     "id": "b",
+     "type": "math",
+     "value": "[1324.31]_9=[11110100.1101]_3"
+    },
+    {
+     "id": "c",
+     "type": "math",
+     "value": "[1324.31]_9=[11110201.111]_3"
+    },
+    {
+     "id": "d",
+     "type": "math",
+     "value": "[1324.31]_9=[1102020.2001]_3"
+    },
+    {
+     "id": "e",
+     "type": "math",
+     "value": "[1324.31]_9=[110211.1001]_3"
+    },
+    {
+     "id": "f",
+     "type": "math",
+     "value": "[1324.31]_9=[111020.1011]_3"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "כל ספרה בבסיס 9 היא שתי ספרות בבסיס 3: $[0]_9=[00]_3$, $[1]_9=[01]_3$, $[2]_9=[02]_3$, $[3]_9=[10]_3$, $[4]_9=[11]_3$, ...\n$[1324.31]_9=[01\\ 10\\ 02\\ 11\\ .\\ 10\\ 01]_3=[1100211.1001]_3$."
+  },
+  {
+   "num": 12,
+   "topic": "signed_twos_complement",
+   "question": "במחבר 2's Comp. של 8 ביט יש יציאה הנדלקת כאשר יש Overflow. באיזה מהחישובים הבאים לא תידלק יציאה זו?",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "`10100111 - 00011101`"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "`10010111 - 00110010`"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "`10110101 + 11000101`"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "`01001101 + 00110111`"
+    },
+    {
+     "id": "e",
+     "type": "text",
+     "value": "`01000101 - 10111010`"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "התחום ב-8 ביט הוא $-128\\le ASLT\\le 127$ ויש Overflow אם התוצאה מחוץ לתחום.\nא: $10100111-00011101=(-89)-29=-118$ - אין גלישה.\nב: $10010111-00110010=(-105)-50=-155$ - יש גלישה.\nג: $10110101+11000101=(-75)+(-59)=-134$ - יש גלישה.\nד: $01001101+00110111=77+55=132$ - יש גלישה.\nה: $01000101-10111010=69-(-70)=139$ - יש גלישה.",
+   "note": "In the lecturer's working option b is written (-103)-50=-153; the exact values are (-105)-50=-155. Both overflow, so the key is unaffected."
+  },
+  {
+   "num": 13,
+   "topic": "mips_assembly_c",
+   "question": "רק אחד מהתרגומים הבאים בשפת אסמבלי של ה-MIPS לקטע ה-C הבא הוא נכון. מהו התרגום הנכון?\n```c\nif (a >= b) a = 2*a;\nelse  b = 2*b;\n```",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "```asm\n      slt  $1, $3, $4\n      beq  $1, $0, lab1\n      add  $4, $4, $4\n      beq  $0, $0, end\nlab1: add  $3, $3, $3\nend:\n```"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "```asm\n      slt  $1, $3, $4\n      bne  $1, $0, lab1\n      add  $4, $4, $4\n      beq  $0, $0, end\nlab1: add  $3, $3, $3\nend:\n```"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "```asm\n      slt  $1, $4, $3\n      bne  $1, $0, lab1\n      add  $3, $3, $3\n      beq  $0, $0, end\nlab1: add  $4, $4, $4\nend:\n```"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "```asm\n      slt  $1, $3, $4\n      beq  $1, $0, lab1\n      add  $3, $3, $3\n      beq  $0, $0, end\nlab1: add  $4, $4, $4\nend:\n```"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "(a הוא \\$3 ו-b הוא \\$4.) `slt \\$1,a,b` נותן $\\$1=1$ אם $a<b$ ו-$\\$1=0$ אם $a\\ge b$.\nא: אם $a\\ge b$ (כלומר $\\$1=0$) קופצים ל-`lab1` ומבצעים $a=2a$; אחרת $b=2b$ - נכון.\nב: מבצע $a=2a$ כאשר $a<b$ - שגוי.\nג: `slt \\$1,b,a` ו-`bne` - מבצע $a=2a$ כאשר $a<b$ (ובמקרה $a>b$ מכפיל את b) - שגוי.\nד: כאשר $a\\ge b$ מבצע $b=2b$ - הפוך, ולכן שגוי."
+  },
+  {
+   "num": 14,
+   "topic": "decoders_muxes",
+   "question": "איזו מהמשוואות מתארת נכון את המעגל הבא?",
+   "options": [
+    {
+     "id": "a",
+     "type": "math",
+     "value": "F=A\\cdot\\bar B+\\bar C\\cdot D+A\\cdot C\\cdot\\bar D+\\bar A\\cdot B\\cdot\\bar C"
+    },
+    {
+     "id": "b",
+     "type": "math",
+     "value": "F=A\\cdot\\bar B+\\bar C\\cdot D+\\bar A\\cdot B+A\\cdot C\\cdot\\bar D"
+    },
+    {
+     "id": "c",
+     "type": "math",
+     "value": "F=A\\cdot\\bar B+C\\cdot D+A\\cdot C\\cdot\\bar D+\\bar A\\cdot B\\cdot\\bar C"
+    },
+    {
+     "id": "d",
+     "type": "math",
+     "value": "F=A\\cdot\\bar B+\\bar C\\cdot D+A\\cdot C"
+    },
+    {
+     "id": "e",
+     "type": "math",
+     "value": "F=A\\cdot\\bar B+\\bar C\\cdot D+A\\cdot C\\cdot\\bar D"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "פיתוח לפי כניסות הנתונים של המולטיפלקסר ($[ABC]$ הם הבוררים):\n$F=(\\bar A\\bar B\\bar C)D+(\\bar A\\bar BC)\\cdot 0+(\\bar AB\\bar C)\\cdot 1+(\\bar ABC)\\cdot 0+(A\\bar B\\bar C)\\cdot 1+(A\\bar BC)\\cdot 1+(AB\\bar C)D+(ABC)\\bar D$\n$=\\sum(1,4,5,8,9,10,11,13,14)=A\\bar B+\\bar CD+AC\\bar D+\\bar AB\\bar C$.\nב: עבור $ABCD=011X$ מתקבל $F=0$ במעגל, אך בב $F=1$ (בגלל $\\bar AB$). ג: עבור $ABCD=0011$ המעגל נותן 0 ובג $F=1$ (בגלל $CD$). ד: עבור $ABCD=1111$ המעגל נותן 0 ובד $F=1$ (בגלל $AC$). ה: עבור $ABCD=0100$ המעגל נותן 1 ובה $F=0$.",
+   "image": "images/exams/24B-A-Q14.png",
+   "note": "In option e a stray speck sits above C in the scan; read as A*C*Dbar (the other reading A*Cbar*Dbar also differs from the circuit, so the key is unaffected)."
+  },
+  {
+   "num": 15,
+   "topic": "decoders_muxes",
+   "question": "איזו מהמשוואות מתארת נכון את המעגל הבא?",
+   "options": [
+    {
+     "id": "a",
+     "type": "math",
+     "value": "F=\\bar A\\cdot C+A\\cdot B\\cdot(\\bar C\\cdot D+C\\cdot\\bar D)+A\\cdot\\bar B\\cdot D"
+    },
+    {
+     "id": "b",
+     "type": "math",
+     "value": "F=A\\cdot\\bar C+A\\cdot B\\cdot(\\bar C\\cdot D+C\\cdot\\bar D)+A\\cdot\\bar B\\cdot(C\\cdot D+\\bar C\\cdot\\bar D)"
+    },
+    {
+     "id": "c",
+     "type": "math",
+     "value": "F=\\bar A\\cdot C+A\\cdot B\\cdot(\\bar C\\cdot D+C\\cdot\\bar D)+A\\cdot\\bar B\\cdot(C\\cdot D+\\bar C\\cdot\\bar D)"
+    },
+    {
+     "id": "d",
+     "type": "math",
+     "value": "F=\\bar A\\cdot C+A\\cdot\\bar B\\cdot(\\bar C\\cdot D+C\\cdot\\bar D)+\\bar A\\cdot B\\cdot D"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "מהמעגל: ערכי הבוררים לפי $AB$: $AB=00\\to XY=00$, $AB=01\\to XY=00$, $AB=10\\to XY=10$, $AB=11\\to XY=01$ (קו ה-$AB=01$ מוביל לכניסה שאינה נבחרת).\n$F=(\\bar A\\bar B+\\bar AB)\\cdot C+A\\bar B\\cdot(\\bar CD+CD)+AB\\cdot(\\bar CD+C\\bar D)$, כאשר $\\bar A\\bar B+\\bar AB=\\bar A$ ו-$\\bar CD+CD=D$.\n$\\Rightarrow F=\\bar AC+A\\bar BD+AB(\\bar CD+C\\bar D)$ - תשובה א.",
+   "image": "images/exams/24B-A-Q15.png"
+  },
+  {
+   "num": 16,
+   "topic": "arithmetic_circuits",
+   "question": "בידנו מעגל הכופל את המספר השלם מטיפוס unsigned בן חמש סיביות $[a_4,a_3,a_2,a_1,a_0]_2$ במספר 23 (גם כן unsigned) המיוצג על ידי $[10111]_2$. המכפל בנוי מרכיבי HA (כלומר Half-Adder) ורכיבי FA (כלומר Full-Adder). עלינו לספור את מספר הרכיבים ומספר היציאות. אנו כמובן מעדיפים מספר מינימלי של רכיבים (במקום FA לכאורה אפשר להשתמש בשני HA. אם יש כזה מקרה – נעדיף את ה- FA הבודד)\nמה נכון?",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "יש במכפל 5 רכיבי HA ו-10 רכיבי FA ויש לו 10 יציאות"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "יש במכפל 5 רכיבי HA ו-10 רכיבי FA ויש לו 9 יציאות"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "יש במכפל 6 רכיבי HA ו-9 רכיבי FA ויש לו 10 יציאות"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "יש במכפל 6 רכיבי HA ו-9 רכיבי FA ויש לו 9 יציאות"
+    },
+    {
+     "id": "e",
+     "type": "text",
+     "value": "יש במכפל 7 רכיבי HA ו-8 רכיבי FA ויש לו 10 יציאות"
+    },
+    {
+     "id": "f",
+     "type": "text",
+     "value": "יש במכפל 7 רכיבי HA ו-8 רכיבי FA ויש לו 9 יציאות"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "$23=[10111]_2$, ולכן מחברים ארבע שורות של $A$ (מוזזות ב-0, 1, 2 ו-4 מקומות), ומתקבלת רשת של $10$ רכיבי FA ו-$5$ רכיבי HA.\nמספר היציאות: $511<23\\times 31=713<1023$, ולכן 10 יציאות ($y_0\\ldots y_9$)."
+  },
+  {
+   "num": 17,
+   "topic": "mips_machine_code",
+   "question": "מהו התרגום של הפקודה `addi \\$sp, \\$fp, -4120` לשפת המכונה של ה-MIPS ?",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "0x23DDEFE8"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "0x23DDF018"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "0x23BEEFE8"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "0x23BEF018"
+    },
+    {
+     "id": "e",
+     "type": "text",
+     "value": "0x23DD4120"
+    },
+    {
+     "id": "f",
+     "type": "text",
+     "value": "0x23BE4120"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "$\\text{ADDI}=8=001000$; $\\text{Rs}=\\$fp=\\$30=11110$; $\\text{Rt}=\\$sp=\\$29=11101$; $\\text{imm}=-4120$.\n$4120=\\texttt{0x1018}$ ($4096+16+8$), ולכן $-4120=\\texttt{0xEFE8}$.\n$001000\\ |\\ 11110\\ |\\ 11101\\ |\\ 1110111111101000\\Rightarrow\\texttt{0x23DDEFE8}$."
+  },
+  {
+   "num": 18,
+   "topic": "signed_twos_complement",
+   "question": "$X$ הוא מספר בן 12 ביט מהם 7 הם מימין לנקודה הבינרית. כלומר:\n$X=X_4,X_3,X_2,X_1,X_0\\,.\\,X_{-1},X_{-2},X_{-3},X_{-4},X_{-5},X_{-6},X_{-7}$\nעליכם למצוא את תחום המספרים אותו ניתן להציג כמספרים לא מכוונים (unsigned) וכמספרים מכוונים (2's complement signed).",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "כ-Signed מ- $(-2^4)$ ועד $(2^4-2^{-7})$ וכ-Unsigned מ-0 ועד $(2^5-2^{-7})$"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "כ-Signed מ- $(-2^5)$ ועד $(2^5-2^{-7})$ וכ-Unsigned מ-0 ועד $(2^5-2^{-7})$"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "כ-Signed מ- $(-2^5)$ ועד $(2^5-2^{-8})$ וכ-Unsigned מ-0 ועד $(2^4-2^{-8})$"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "כ-Signed מ- $(-2^4)$ ועד $(2^4-2^{-8})$ וכ-Unsigned מ-0 ועד $(2^5-2^{-8})$"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "$[n.m]=[5.7]$ (5 סיביות לחלק השלם ו-7 לשבר).\nUnsigned: $0\\ \\ldots\\ (2^n-2^{-m})=(2^5-2^{-7})$.\nSigned: $-2^{n-1}\\ \\ldots\\ (2^{n-1}-2^{-m})=-2^4\\ \\ldots\\ (2^4-2^{-7})$."
+  },
+  {
+   "num": 19,
+   "topic": "mips_machine_code",
+   "question": "הפקודה `0x37971234` בשפת מכונה של ה-MIPS הינה בעצם פקודת האסמבלי הבאה:",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "`ori $s7, $gp, 4660`"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "`ori $gp, $s7, 4660`"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "`ori $s7, $gp, 1234`"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "`ori $gp, $s7, 1234`"
+    },
+    {
+     "id": "e",
+     "type": "text",
+     "value": "`addi $s7, $gp, 4660`"
+    },
+    {
+     "id": "f",
+     "type": "text",
+     "value": "`addi $gp, $s7, 1234`"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "`0x37971234` $=\\ 0011\\,01\\,|\\,11100\\,|\\,10111\\,|\\,0001\\,0010\\,0011\\,0100$.\n$\\text{OPCOD}=13\\Rightarrow\\text{ORI}$; $\\text{Rs}=\\$28=\\$gp$; $\\text{Rt}=\\$23=\\$s7$; $\\text{imm}=\\texttt{0x1234}=4096+512+48+4=4660$.\n$\\Rightarrow$ `ori \\$s7, \\$gp, 4660`"
+  },
+  {
+   "num": 20,
+   "topic": "mips_assembly_c",
+   "question": "קטע ה- C הבא תורגם לשפת הסף (אסמבלי) של מחשב MIPS. הנח כי כתובת ההתחלה של array נמצאת באוגר \\$4. הערך size שהוא גודל המערך נמצא באוגר \\$5. המערך הינו מערך של מילים (1 word = 4 bytes). אוגרים \\$4 ו- \\$5 צריכים להישאר ללא שינוי.\n```c\nm = -999;\nfor(i=0; i<size; i++)\n{\nif (m < array[i])   m = array[i];\n}\n```\nלהלן התרגום:\n```asm\n        addi $8, $0, -999\n        addi $7, $0, 0\nlb1:    slt  $11, $7, $5\n        beq  $11, $0, lb2\n        add  $9, $7, $7\n        add  $9, $9, $9\n@@@@@@@\nlb3:    addi $7, $7, 1\n        beq  $11, $11, lb1\nlb2:\n```\nמהתרגום נשמטו פקודות במקום המסומן ב- @@@@@@@.\nהפקודות החסרות הן:",
+   "options": [
+    {
+     "id": "a",
+     "type": "text",
+     "value": "```asm\nadd $9, $4, $9\nlw  $10, 0($9)\nslt $11, $8, $10\nbeq $0, $11, lb3\nadd $8, $0, $10\n```"
+    },
+    {
+     "id": "b",
+     "type": "text",
+     "value": "```asm\nadd $9, $4, $9\nlw  $10, 0($9)\nslt $11, $8, $10\nbne $0, $11, lb3\nadd $8, $10, $0\n```"
+    },
+    {
+     "id": "c",
+     "type": "text",
+     "value": "```asm\nadd $9, $9, $4\nlw  $10, 0($9)\nslt $11, $8, $10\nbeq $0, $11, lb3\nadd $8, $10, $8\n```"
+    },
+    {
+     "id": "d",
+     "type": "text",
+     "value": "```asm\nadd $9, $9, $4\nlw  $10, 0($9)\nslt $11, $10, $8\nbeq $0, $11, lb3\nadd $8, $0, $10\n```"
+    },
+    {
+     "id": "e",
+     "type": "text",
+     "value": "```asm\nadd $9, $4, $9\nlw  $10, 0($9)\nslt $11, $10, $8\nbeq $10, $11, lb3\nadd $10, $0, $8\n```"
+    },
+    {
+     "id": "f",
+     "type": "text",
+     "value": "```asm\nadd $9, $4, $9\nlw  $10, 0($9)\nslt $11, $8, $10\nbeq $10, $11, lb3\nadd $10, $8, $0\n```"
+    }
+   ],
+   "correctId": "a",
+   "answerSource": "solution-pdf",
+   "official": true,
+   "confidence": "high",
+   "explanation": "התרגום: `add \\$9,\\$4,\\$9` ($\\$9=\\&\\text{array}[i]$ כלומר $\\text{array}+4i$); `lw \\$10,0(\\$9)` ($\\$10=\\text{array}[i]$); `slt \\$11,\\$8,\\$10` בודק האם $m<\\text{array}[i]$; אם לא - מדלגים ל-`lb3` (`beq \\$0,\\$11,lb3`); אם כן - `add \\$8,\\$0,\\$10`, כלומר $m=\\text{array}[i]$.\nב: התנאי הפוך (`bne` במקום `beq`), וההצבה מתבצעת כשלא צריך.\nג: `add \\$8,\\$10,\\$8` מציב $m=\\text{array}[i]+m$ ולא $m=\\text{array}[i]$.\nד: ההשוואה `slt \\$11,\\$10,\\$8` שמאלה הפוכה, ולכן התנאי שגוי.\nה, ו: `beq \\$10,\\$11,lb3` אינו הבדיקה הנדרשת וההצבה ל-\\$10 היא הפוכה ממה שצריך (צריך להציב ל-\\$8)."
+  }
+ ]
+}
