@@ -272,7 +272,7 @@ def rich_html(s, bank, where, math_errors):
 
 
 _INL = r'<span class="math-inline">(?:(?!</span>).)*</span>'
-_RUN = r'<span class="math-run" dir="ltr">(?:(?!</span></span>).)*</span></span>'
+_RUN = r'<span class="math-run" dir="rtl">(?:(?!</span></span>).)*</span></span>'
 
 
 def join_math_runs(h):
@@ -286,7 +286,7 @@ def join_math_runs(h):
         unit, punct = m.group(1), m.group(2)
         if unit.startswith('<span class="math-run"'):
             return unit[:-len("</span>")] + punct + "</span>"
-        return f'<span class="math-run" dir="ltr">{unit}{punct}</span>'
+        return f'<span class="math-run" dir="rtl">{unit}{punct}</span>'
     return re.sub(rf'({_RUN}|{_INL})([.,;:]+)(?=<br>|</[a-z]+>|$)', tail, h, flags=re.S)
 
 
