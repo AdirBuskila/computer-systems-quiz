@@ -98,12 +98,14 @@ function contextHtml(ctx){
 function extrasHtml(q){
   return q.image ? `<figure class="q-fig"><img class="q-img" src="${escapeHtml(q.image)}" alt="" loading="lazy"></figure>` : "";
 }
-function questionHtml(q){ return q.questionHtml || escapeHtml(q.question||""); }
+/* bidi: isolate Latin/number runs inside Hebrew prose (crsIsolate lives in course-ui.js, loaded after this file) */
+function iso(h){ return typeof window.crsIsolate === "function" ? window.crsIsolate(h) : h; }
+function questionHtml(q){ return iso(q.questionHtml || escapeHtml(q.question||"")); }
 function optionHtml(o){
   if(!o) return "";
   const type = o.type || "text";
   if(type==="image") return `<img class="opt-img" src="${escapeHtml(o.value)}" alt="" loading="lazy">`;
-  const body = o.html || escapeHtml(o.value);
+  const body = type==="math" ? (o.html || escapeHtml(o.value)) : iso(o.html || escapeHtml(o.value));
   if(type==="math") return body;                                   // already an LTR .opt-math span
   if(!hasHebrew(o.value)) return `<span class="opt-ltr" dir="ltr">${body}</span>`;
   return body;
@@ -346,7 +348,7 @@ function paintAnswered(v){
   const multi = acceptedIdsOf(q).length>1;
   fb.innerHTML = `<div class="verdict">${correct?"✓ נכון":"✗ לא נכון"}</div>`+
     (shuffled && q.explanationHtml ? `<span class="note">האותיות בהסבר מתייחסות לסדר המקורי במבחן (מסומן "במקור" ליד כל תשובה).</span>` : "")+
-    (q.explanationHtml ? `<div class="expl">${q.explanationHtml}</div>` : `<div class="expl expl-none">אין הסבר במקור.</div>`)+
+    (q.explanationHtml ? `<div class="expl">${iso(q.explanationHtml)}</div>` : `<div class="expl expl-none">אין הסבר במקור.</div>`)+
     (multi?`<span class="accept-note">בשאלה זו התקבלה יותר מתשובה אחת כנכונה.</span>`:"")+
     (q.official?"":`<span class="note">⚠ תשובה לא רשמית — מומלץ לאמת מול המקור.</span>`)+
     (q.confidence==="low"?`<span class="note">⚠ רמת ביטחון נמוכה בתשובה המסומנת.</span>`:"")+
@@ -425,7 +427,7 @@ function renderResults(correct, byTopic, review){
       ${extrasHtml(v)}
       <div class="ra"><span class="${r.ok?"good":"miss"}">תשובתך: ${chosenTxt}</span>`+
       (r.ok?"":` · <span class="good">${acc.length>1?"נכונות":"הנכונה"}: ${correctTxt}</span>`)+
-      (v.explanationHtml?`<br>${v.explanationHtml}`:"")+(v.official?"":" (לא רשמי)")+`</div></div>`;
+      (v.explanationHtml?`<br>${iso(v.explanationHtml)}`:"")+(v.official?"":" (לא רשמי)")+`</div></div>`;
   }).join("");
 }
 
@@ -531,7 +533,7 @@ let openLearnAt = null;   // set by initLearn; used by the ?learn= deep link
     const n = s.topic ? countFor(s.topic,{officialOnly:false,mistakesOnly:false}) : 0;
     const drill = n ? `<button type="button" class="btn primary learn-drill" data-topic="${escapeHtml(s.topic)}">תרגל נושא זה ▶ <span class="n">${n}</span></button>` : "";
     const kind = s.kind==="cheat" ? `<span class="learn-kind">דף עזר</span>` : "";
-    content.innerHTML = `<div class="learn-head"><h2 class="learn-h">${labelHtml(s.title)}${kind}</h2>${drill}</div>` + (s.html||"");
+    content.innerHTML = `<div class="learn-head"><h2 class="learn-h">${labelHtml(s.title)}${kind}</h2>${drill}</div>` + iso(s.html||"");
     content.dataset.chapter = s.id || "";
     toc.querySelectorAll("button").forEach((b,j)=> b.classList.toggle("active", j===idx));
     const active=toc.querySelector("button.active"); if(active) active.scrollIntoView({block:"nearest"});
@@ -588,7 +590,7 @@ let openLearnAt = null;   // set by initLearn; used by the ?learn= deep link
       `<ol class="qpeek-opts">` + (q.options||[]).map((o,i)=>
         `<li class="${isAccepted(q,o.id)?"right":""}" data-oid="${escapeHtml(o.id)}"><span class="key">${HE_KEYS[i]||i+1}</span>`+
         `<span class="txt">${optionHtml(o)}</span></li>`).join("") + `</ol>` +
-      (q.explanationHtml ? `<div class="qpeek-exp"><strong>הסבר:</strong> ${q.explanationHtml}</div>` : "");
+      (q.explanationHtml ? `<div class="qpeek-exp"><strong>הסבר:</strong> ${iso(q.explanationHtml)}</div>` : "");
     peekTopic=q.topic;
     peekDrill.classList.toggle("hidden", !countFor(q.topic,{officialOnly:false,mistakesOnly:false}));
     peek.classList.remove("hidden");

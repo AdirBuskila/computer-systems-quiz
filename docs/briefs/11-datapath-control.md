@@ -51,6 +51,20 @@
 
 האם אפשרות עם `ALUOp=10; RegDst=1; MemRead=0; RegWrite=1` מתאימה ל-`beq`? לא. ב-beq: RegWrite=0 ו-Branch=1 ו-ALUOp=01. שילוב כזה מתאים ל-R-type.
 
+## פקודות חדשות שמוסיפים למעבד
+
+| פקודה | שלבים | הסבר |
+|---|---|---|
+| `bge`, `blt` | Fetch, Decode, ALU | ה-ALU מחסר או מבצע `slt`. אין Memory ואין Write-Back |
+| `beqal` | Fetch, Decode, ALU, Write-Back | כמו beq, ובנוסף כותבת PC+4 לאוגר 31 (ra) |
+| `xori`, `andi`, `ori` | Fetch, Decode, ALU, Write-Back | כמו addi, אבל ה-imm מורחב באפסים |
+| `jr` | Fetch, Decode | אין ALU. `GPR[Rs]` נכנס ל-PC ישירות |
+| `jalr` | Fetch, Decode, Write-Back | כמו jr, ובנוסף כותבת PC+4 לאוגר 31 (ra) |
+| `jal` | Fetch, Decode, Write-Back | כמו j, ובנוסף כותבת PC+4 לאוגר 31 (ra). אין ALU |
+| השוואה לאפס (למשל `brifz`) | Fetch, Decode, ALU | ה-ALU נחוץ כדי לבדוק אם הערך הוא 0 |
+
+הכלל: ALU נדרש כשיש חישוב או השוואה. Memory רק אם קוראים או כותבים בזיכרון הנתונים. Write-Back רק אם נכתב אוגר.
+
 ## מלכודות
 
 > 🪤 **X בטבלה.** אם אפשרות במבחן נותנת ערך מוגדר לאות שהוא X (למשל RegDst בהסתעפות), אין זו בהכרח טעות. בודקים רק אותות שחייבים.

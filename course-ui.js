@@ -55,8 +55,8 @@
      isolate. A run may span inline tags (<b>3</b>) as long as they open and close inside it; text inside
      code / MathML / formulas / existing isolates is left alone. */
   const INLINE = /^<\/?(b|strong|i|em|u|sub|sup|code)\b[^>]*>$/i;
-  const SKIP = /^<(code|bdi|pre|math)\b|class="[^"]*\b(lesson-formula|qref|math-inline|math-block|opt-ltr)\b|\bdir="ltr"/i;
-  const START = /[A-Za-z0-9(\[|√‖Σ∑−ŷȳα-ωΔΣθ]/, END = /[A-Za-z0-9)\]|²³‖%∞'"₀-₉ᵢⱼₙₖŷȳ̄α-ω]/;
+  const SKIP = /^<(code|bdi|pre|math)\b|class="[^"]*\b(lesson-formula|qref|math-inline|math-block|math-run|opt-ltr)\b|\bdir="ltr"/i;
+  const START = /[A-Za-z0-9$"(\[|√‖Σ∑−ŷȳα-ωΔΣθ]/, END = /[A-Za-z0-9)\]|²³‖%∞'"₀-₉ᵢⱼₙₖŷȳ̄α-ω]/;
   const isTag = p => p[0] === "<", chr = p => (isTag(p) || p[0] === "&" && p.length > 1) ? "" : p;
   function isolate(html){
     const toks = String(html).match(/<[^>]+>|[^<]+/g) || [];
@@ -68,6 +68,7 @@
       let a = 0, b = parts.length - 1;
       while(a <= b && !START.test(chr(parts[a]))) a++;
       while(b >= a && !END.test(chr(parts[b]))) b--;
+      { const tail = parts.slice(b + 1).join(""), m = tail.match(/^[,;]?\s*(\.\.\.|…)$/); if(m && b >= a) b = parts.length - 1; }   // a trailing ellipsis stays with its list
       while(a > 0 && isTag(parts[a - 1]) && !/^<\//.test(parts[a - 1])) a--;     // pull in tags hugging the core: <b>3</b>
       while(b < parts.length - 1 && /^<\//.test(parts[b + 1])) b++;
       const core = parts.slice(a, b + 1), st = [];

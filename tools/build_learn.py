@@ -30,7 +30,7 @@ OUT_JS = ROOT / "learn.js"
 QJSON = ROOT / "questions.json"
 
 sys.path.insert(0, str(TOOLS))
-from build_questions import CFG, TOPIC_LABEL, fix_overlines, exam_order  # noqa: E402  (single source)
+from build_questions import CFG, TOPIC_LABEL, fix_overlines, exam_order, join_math_runs  # noqa: E402  (single source)
 
 # (file, chapter id, topic key, kind) comes from course.config.json "briefs". Order == study order.
 # kind "topic": a per-topic brief (gets the auto question list); "cheat": a cross-topic
@@ -116,7 +116,7 @@ def inject_math(h, rendered):
             return '<code class="math-fail">?</code>'
         cls = "math-block" if 'display="block"' in frag else "math-inline"
         return f'<span class="{cls}">{frag}</span>'
-    return re.sub(r"@@MATH(\d+)@@", sub, h)
+    return join_math_runs(re.sub(r"@@MATH(\d+)@@", sub, h))
 
 
 # ---------------------------------------------------------------- markdown prep

@@ -280,6 +280,10 @@ math .ovl{border-top:.065em solid currentColor;padding-top:.07em;margin-top:.06e
   -webkit-overflow-scrolling:touch}
 .math-block math{font-size:1.12em}
 .opt-math{direction:ltr;unicode-bidi:isolate;display:inline-block}
+/* a chain of inline formulas joined by punctuation ("$a$, $b$") stays in reading order; a line-final "." / ";" sits inside it */
+.math-run{direction:ltr;unicode-bidi:isolate;display:inline;text-align:left}
+.math-run>.math-inline{max-width:calc(100% - 1.1em)}
+@media(max-width:560px){.expl .math-inline math,.rev .math-inline math,.qpeek-exp .math-inline math{font-size:.9em}.opt .opt-math math{font-size:.92em}.opt .opt-math{overflow-x:auto}}
 .opt .opt-math math{font-size:1.14em}
 .feedback .math-block,.ctx .math-block{background:color-mix(in srgb,var(--ink) 4%,transparent);border-radius:8px}
 

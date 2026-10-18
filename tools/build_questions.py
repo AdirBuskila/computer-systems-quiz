@@ -271,13 +271,34 @@ def rich_html(s, bank, where, math_errors):
     return re.sub(r"\x01F(\d+)\x01", lambda m: fences[int(m.group(1))], h)
 
 
+_INL = r'<span class="math-inline">(?:(?!</span>).)*</span>'
+_RUN = r'<span class="math-run" dir="ltr">(?:(?!</span></span>).)*</span></span>'
+
+
+def join_math_runs(h):
+    """Bidi root fix. In an RTL paragraph two inline formulas separated only by punctuation
+    ("$a$, $b$") swap places, and a trailing "." or ";" after the last formula of a line lands at the
+    visual line start. So: (1) a chain of inline formulas joined by punctuation/space becomes ONE LTR
+    isolate (.math-run); (2) punctuation that ends a line (before <br>, a closing tag or the end) moves
+    inside that isolate, next to the formula it follows."""
+    h = re.sub(rf'{_INL}(?:(?:[ ,;.:]|&nbsp;)+{_INL})+',
+               lambda m: f'<span class="math-run" dir="ltr">{m.group(0)}</span>', h, flags=re.S)
+
+    def tail(m):
+        unit, punct = m.group(1), m.group(2)
+        if unit.startswith('<span class="math-run"'):
+            return unit[:-len("</span>")] + punct + "</span>"
+        return f'<span class="math-run" dir="ltr">{unit}{punct}</span>'
+    return re.sub(rf'({_RUN}|{_INL})([.,;:]+)(?=<br>|</[a-z]+>|$)', tail, h, flags=re.S)
+
+
 def resolve(h, bank):
     def sub(m):
         kind, i = m.group(1), int(m.group(2))
         mm = bank.html[i]
         cls = "math-block" if kind == "D" else "math-inline"
         return f'<span class="{cls}">{mm}</span>'
-    return re.sub(r"@@([MD])(\d+)@@", sub, h)
+    return join_math_runs(re.sub(r"@@([MD])(\d+)@@", sub, h))
 
 
 # ---------------------------------------------------------------- validation (light)
