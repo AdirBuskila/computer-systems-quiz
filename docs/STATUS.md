@@ -11,7 +11,7 @@ Gates 1, 2 and 7 always stop for Adir.
 - [x] Phase 0 - intake
   - [ ] registry entry exists
   - [ ] source folder exists and is non-empty
-- [x] Phase 1 - triage  (GATE 1: Adir approves format, cutoff, topics)
+- [ ] Phase 1 - triage  (GATE 1: Adir approves format, cutoff, topics)
   - [x] triager run per subfolder
   - [x] format_triage.md merged (verdict, cutoff, topics, engine choice)
   - [x] Adir approved
@@ -19,10 +19,10 @@ Gates 1, 2 and 7 always stop for Adir.
 - [x] Phase 2 - flagship  (GATE 2: Adir tries it in the browser)
   - [x] topic taxonomy chosen
   - [x] flagship sitting transcribed + validated (25B-A: 20 MCQ read, 19 in bank, Q2 held - see ASK_ADIR)
-  - [x] steps (if open questions) + refuter pass
+  - [ ] steps (if open questions) + refuter pass
   - [x] smoke / verify_dom green (verify_dom needs a learn.js; a stub was used until phase 5 briefs exist)
-  - [x] Adir tried it
-- [x] Phase 3 - bank
+  - [ ] Adir tried it
+- [ ] Phase 3 - bank
   - [ ] all in-scope sittings transcribed (batches of <=4)
   - [ ] validate.py clean
   - [ ] solver run for questions with no trustworthy solution
@@ -45,7 +45,7 @@ Gates 1, 2 and 7 always stop for Adir.
   - [x] validate, build_questions, build_learn, smoke, verify_dom green
   - [x] shoot.js screenshots taken
   - [x] render-checker sweep clean
-- [x] Phase 7 - ship  (GATE 3: Adir OKs going public)
+- [ ] Phase 7 - ship  (GATE 3: Adir OKs going public)
   - [ ] deck redesign done (else stop and tell Adir)
   - [ ] .gitignore excludes raw PNGs, favicon, GoatCounter, .nojekyll
   - [ ] year range checked against data
