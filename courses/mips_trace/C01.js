@@ -11,9 +11,9 @@ COURSE_LEVEL("mips_trace", {
 <p>במעבד MIPS יש 32 אוגרים, בשמות &#36;0 עד &#36;31. אוגר הוא תא קטן שמחזיק מספר של 32 ביט. האוגר &#36;0 תמיד שווה 0, וכל כתיבה אליו נזרקת.</p>
 <h3>שלוש פקודות</h3>
 <table><thead><tr><th>פקודה</th><th>משמעות</th></tr></thead><tbody>
-<tr><td><code>add &#36;d,&#36;s,&#36;t</code></td><td>&#36;d = &#36;s + &#36;t</td></tr>
-<tr><td><code>sub &#36;d,&#36;s,&#36;t</code></td><td>&#36;d = &#36;s - &#36;t</td></tr>
-<tr><td><code>addi &#36;d,&#36;s,k</code></td><td>&#36;d = &#36;s + k, כש-k קבוע (גם שלילי)</td></tr></tbody></table>
+<tr><td><code>add &#36;d,&#36;s,&#36;t</code></td><td><code>&#36;d = &#36;s + &#36;t</code></td></tr>
+<tr><td><code>sub &#36;d,&#36;s,&#36;t</code></td><td><code>&#36;d = &#36;s - &#36;t</code></td></tr>
+<tr><td><code>addi &#36;d,&#36;s,k</code></td><td><code>&#36;d = &#36;s + k</code>, כש-<code>k</code> קבוע (גם שלילי)</td></tr></tbody></table>
 <div class="lesson-rule">🔑 האוגר הראשון בפקודה הוא היעד, ורק הוא משתנה. שני האחרים רק נקראים.</div>
 <p>טעינת קבוע: <code>addi &#36;4,&#36;0,7</code> נותן &#36;4 = 7. העתקה: <code>add &#36;6,&#36;4,&#36;0</code> מעתיק את &#36;4 אל &#36;6.</p>
 <h3>איך עוקבים</h3>

@@ -88,10 +88,10 @@ function countFor(topic, opts){ return filteredPool(topic, opts).length; }
 function contextHtml(ctx){
   if(!ctx) return "";
   let h = `<div class="ctx ctx-${escapeHtml(ctx.kind||"text")}">`;
-  if(ctx.title) h += `<div class="ctx-title">${ctx.titleHtml || escapeHtml(ctx.title)}</div>`;
+  if(ctx.title) h += `<div class="ctx-title">${iso(ctx.titleHtml || escapeHtml(ctx.title))}</div>`;
   if(ctx.image) h += `<figure class="ctx-fig"><img class="q-img ctx-img" src="${escapeHtml(ctx.image)}" alt="${escapeHtml(ctx.caption||ctx.title||"")}" loading="lazy">`+
-                     (ctx.caption?`<figcaption>${ctx.captionHtml || escapeHtml(ctx.caption)}</figcaption>`:"")+`</figure>`;
-  if(ctx.text) h += `<div class="ctx-text">${ctx.textHtml || escapeHtml(ctx.text)}</div>`;
+                     (ctx.caption?`<figcaption>${iso(ctx.captionHtml || escapeHtml(ctx.caption))}</figcaption>`:"")+`</figure>`;
+  if(ctx.text) h += `<div class="ctx-text">${iso(ctx.textHtml || escapeHtml(ctx.text))}</div>`;
   h += `</div>`;
   return h;
 }

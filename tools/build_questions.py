@@ -276,13 +276,11 @@ _RUN = r'<span class="math-run" dir="ltr">(?:(?!</span></span>).)*</span></span>
 
 
 def join_math_runs(h):
-    """Bidi root fix. In an RTL paragraph two inline formulas separated only by punctuation
-    ("$a$, $b$") swap places, and a trailing "." or ";" after the last formula of a line lands at the
-    visual line start. So: (1) a chain of inline formulas joined by punctuation/space becomes ONE LTR
-    isolate (.math-run); (2) punctuation that ends a line (before <br>, a closing tag or the end) moves
-    inside that isolate, next to the formula it follows."""
-    h = re.sub(rf'{_INL}(?:(?:[ ,;.:]|&nbsp;)+{_INL})+',
-               lambda m: f'<span class="math-run" dir="ltr">{m.group(0)}</span>', h, flags=re.S)
+    """Bidi: a trailing "." or ";" after the last formula of a line lands at the visual line start, so
+    punctuation that ends a line (before <br>, a closing tag or the end) moves inside an LTR isolate
+    (.math-run) with the formula it follows.
+    Formulas separated by punctuation are NOT joined: each .math-inline is already its own isolate, and
+    one LTR run over "$a$, $b$" or "$n=1$: $3=3$" put the second formula first for an RTL reader."""
 
     def tail(m):
         unit, punct = m.group(1), m.group(2)
