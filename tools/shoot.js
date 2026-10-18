@@ -108,9 +108,11 @@ const THEMES = ["dark", "light"];
       const total = await page.evaluate(c => window.CC_QUIZ.questions.filter(q => q.examCode === c).length, code);
       for (let i = 0; i < total; i++) {
         if (i < MAX_Q) await shot(`exam-q${i + 1}`);
+        await sleep(150);
         await page.click('#optionsList .opt[data-disp="0"]');
         if (i < total - 1) await page.click("#nextBtn");
       }
+      await sleep(200);
       await page.click("#submitExamBtn");
       await shot("results");
       await page.click("#backHomeBtn");
