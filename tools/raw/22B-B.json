@@ -37,7 +37,7 @@
    "answerSource": "solution-pdf",
    "official": true,
    "confidence": "high",
-   "explanation": "א: $\\bar A\\oplus B\\oplus\\bar C=A\\oplus B\\oplus C=\\bar A(\\bar B C+B\\bar C)+A(\\bar B\\bar C+BC)=\\bar A\\bar BC+\\bar AB\\bar C+A\\bar B\\bar C+ABC$. המכפלה השלישית היא $A\\bar B\\bar C$ ולא $A\\bar BC$ - לכן המשוואה לא נכונה.\nב: המשלים של סכום המכפלות לעיל - נכונה.\nג: $A\\oplus(A+B+C)=\\bar A(A+B+C)+A\\cdot\\bar A\\bar B\\bar C=\\bar AB+\\bar AC$; אגף ימין: $\\bar AB+(A+\\bar B)C\\bar A=\\bar AB+\\bar B C\\bar A$, ולפי $X+\\bar XY=X+Y$ מתקבל $\\bar AB+\\bar AC$ - נכונה.\nד: $A\\oplus\\overline{A+B+C}=\\bar A\\bar B\\bar C+A(A+B+C)=\\bar B\\bar C+A$ (לפי $X+\\bar XY=X+Y$), ואגף ימין $\\bar B\\bar C+(B+C)A=\\bar B\\bar C+A$ - נכונה."
+   "explanation": "במשוואה הנכונה $\\bar A\\oplus B\\oplus\\bar C=A\\oplus B\\oplus C=\\bar A(\\bar B C+B\\bar C)+A(\\bar B\\bar C+BC)=\\bar A\\bar BC+\\bar AB\\bar C+A\\bar B\\bar C+ABC$. המכפלה השלישית היא $A\\bar B\\bar C$ ולא $A\\bar BC$ - לכן המשוואה לא נכונה.\nבמשוואה עם $\\overline{\\bar A\\oplus B\\oplus\\bar C}$: המשלים של סכום המכפלות לעיל - נכונה.\nבמשוואה עם $A\\oplus(C+B+A)$: $A\\oplus(A+B+C)=\\bar A(A+B+C)+A\\cdot\\bar A\\bar B\\bar C=\\bar AB+\\bar AC$; אגף ימין: $\\bar AB+(A+\\bar B)C\\bar A=\\bar AB+\\bar B C\\bar A$, ולפי $X+\\bar XY=X+Y$ מתקבל $\\bar AB+\\bar AC$ - נכונה.\nבמשוואה עם $A\\oplus\\overline{(C+B+A)}$: $A\\oplus\\overline{A+B+C}=\\bar A\\bar B\\bar C+A(A+B+C)=\\bar B\\bar C+A$ (לפי $X+\\bar XY=X+Y$), ואגף ימין $\\bar B\\bar C+(B+C)A=\\bar B\\bar C+A$ - נכונה."
   },
   {
    "num": 2,
@@ -490,7 +490,7 @@
    "answerSource": "solution-pdf",
    "official": true,
    "confidence": "high",
-   "explanation": "לפי הפתרון a הוא \\$3 ו-b הוא \\$4. `slt \\$1,\\$3,\\$4`: \\$1=1 אם a<b, \\$1=0 אם a>=b.\n`beq \\$1,\\$0,lab1` קופץ ל-lab1 אם a>=b, ושם a=2a (`add \\$3,\\$3,\\$3`); אחרת b=2b ואז `beq \\$0,\\$0,end` קופץ לסוף.\nלכן: if (a>=b) a=2*a; else b=2*b - תשובה א."
+   "explanation": "לפי הפתרון a הוא \\$3 ו-b הוא \\$4. `slt \\$1,\\$3,\\$4`: \\$1=1 אם a<b, \\$1=0 אם a>=b.\n`beq \\$1,\\$0,lab1` קופץ ל-lab1 אם a>=b, ושם a=2a (`add \\$3,\\$3,\\$3`); אחרת b=2b ואז `beq \\$0,\\$0,end` קופץ לסוף.\nלכן: if (a>=b) a=2*a; else b=2*b."
   },
   {
    "num": 14,

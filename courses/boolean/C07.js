@@ -43,7 +43,7 @@ COURSE_LEVEL("boolean", {
         { id: "c", type: "math", value: "\\bar A\\oplus B\\oplus\\bar C\\oplus D\\oplus E" },
         { id: "d", type: "math", value: "\\bar A\\oplus\\bar B\\oplus\\bar C\\oplus\\bar D\\oplus E" }],
       correctId: "b",
-      explanation: "יש שלושה קווים (על $A$, $C$, $E$): זוג מהם מתבטל והשלישי נשאר, כלומר שקול לקו אחד על כל השרשרת. $\\overline{A\\oplus B\\oplus C\\oplus D\\oplus E}$ הוא התשובה. הראשונה היא התוצאה אילו מספר הקווים היה זוגי. בשלישית יש שני קווים ובאחרונה ארבעה, מספר זוגי, ולכן שתיהן שקולות ל-$A\\oplus B\\oplus C\\oplus D\\oplus E$ בלי קו.",
+      explanation: "יש שלושה קווים (על $A$, $C$, $E$): זוג מהם מתבטל והשלישי נשאר, כלומר שקול לקו אחד על כל השרשרת. $\\overline{A\\oplus B\\oplus C\\oplus D\\oplus E}$ הוא התשובה. התשובה $A\\oplus B\\oplus C\\oplus D\\oplus E$ היא התוצאה אילו מספר הקווים היה זוגי. ב-$\\bar A\\oplus B\\oplus\\bar C\\oplus D\\oplus E$ יש שני קווים וב-$\\bar A\\oplus\\bar B\\oplus\\bar C\\oplus\\bar D\\oplus E$ ארבעה, מספר זוגי, ולכן שתיהן שקולות ל-$A\\oplus B\\oplus C\\oplus D\\oplus E$ בלי קו.",
       recap: "מספר אי זוגי של קווים = קו אחד על כל השרשרת" },
     { id: "C07-Q4", question: "איזו מהמשוואות הבאות **אינה** נכונה?",
       options: [
@@ -52,7 +52,7 @@ COURSE_LEVEL("boolean", {
         { id: "c", type: "math", value: "(A\\oplus B)\\cdot(B\\oplus C)=A\\bar B C+\\bar A B\\bar C" },
         { id: "d", type: "math", value: "(A\\oplus B)+(B\\oplus C)=A\\oplus C" }],
       correctId: "d",
-      explanation: "ב-$(1,0,1)$: משמאל $1+1=1$, ומימין $1\\oplus1=0$. הצדדים שונים. האחרות נכונות: (א) לפי $X+\\bar XY=X+Y$; (ב) כל משתנה מופיע פעמיים ומתבטל; (ג) כש-$B=1$ המכפלה היא $\\bar A\\cdot\\bar C$, וכש-$B=0$ היא $A C$, כלומר $\\bar A B\\bar C+A\\bar B C$.",
+      explanation: "ב-$(1,0,1)$: משמאל $1+1=1$, ומימין $1\\oplus1=0$. הצדדים שונים. האחרות נכונות: המשוואה $(A\\oplus B)+\\overline{(A\\oplus B)}\\cdot(C\\oplus D)=(A\\oplus B)+(C\\oplus D)$ לפי $X+\\bar XY=X+Y$; במשוואה $(A\\oplus B)\\oplus(B\\oplus C)\\oplus(C\\oplus A)=0$ כל משתנה מופיע פעמיים ומתבטל; ובמשוואה $(A\\oplus B)\\cdot(B\\oplus C)=A\\bar B C+\\bar A B\\bar C$ כש-$B=1$ המכפלה היא $\\bar A\\cdot\\bar C$, וכש-$B=0$ היא $A C$, כלומר $\\bar A B\\bar C+A\\bar B C$.",
       recap: "OR אינו XOR: $(A\\oplus B)+(B\\oplus C)\\ne A\\oplus C$" },
     { id: "C07-Q5", question: "הביטוי $(\\bar A\\oplus B)\\cdot(A\\oplus\\bar B)$ שווה ל:",
       options: [
@@ -70,7 +70,7 @@ COURSE_LEVEL("boolean", {
         { id: "c", type: "math", value: "\\overline{A\\oplus B}\\cdot C=C\\cdot(\\bar A\\oplus B)" },
         { id: "d", type: "math", value: "A+\\overline{A+B}=A+\\bar B" }],
       correctId: "b",
-      explanation: "ב-$(0,1,1)$: משמאל $\\overline{0\\oplus1}\\cdot1=0$, ומימין $\\bar A C\\oplus\\bar B C=1\\oplus0=1$. הצדדים שונים. הסיבה: $\\bar AC\\oplus\\bar BC=C(A\\oplus B)$, בעוד שמשמאל יש XNOR. האחרות נכונות: (א) פילוג; (ג) קו אחד על אופרנד; (ד) $A+\\bar A\\bar B=A+\\bar B$.",
+      explanation: "ב-$(0,1,1)$: משמאל $\\overline{0\\oplus1}\\cdot1=0$, ומימין $\\bar A C\\oplus\\bar B C=1\\oplus0=1$. הצדדים שונים. הסיבה: $\\bar AC\\oplus\\bar BC=C(A\\oplus B)$, בעוד שמשמאל יש XNOR. האחרות נכונות: $(A\\oplus B)\\cdot C=A C\\oplus B C$ לפי פילוג; $\\overline{A\\oplus B}\\cdot C=C\\cdot(\\bar A\\oplus B)$ לפי קו אחד על אופרנד; ו-$A+\\overline{A+B}=A+\\bar B$ כי $A+\\bar A\\bar B=A+\\bar B$.",
       recap: "הקו אינו נכנס פנימה דרך מכפלה" },
   ],
 });

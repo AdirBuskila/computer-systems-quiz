@@ -571,7 +571,7 @@
    "answerSource": "solution-pdf",
    "official": true,
    "confidence": "low",
-   "explanation": "נמצא את $XY$ לפי $AB$: $AB=00\\to XY=11$, $AB=01\\to XY=01$, $AB=10\\to XY=00$, $AB=11\\to XY=01$.\n$F=\\bar X\\bar Y(\\bar C\\bar D+C\\bar D)+\\bar XY(\\bar C\\bar D+CD)+X\\bar Y\\cdot C+XY\\cdot D$, ובפיתוח למכפלות מלאות נקבל את שבע/שמונה המכפלות של תשובה א (לפי הפתרון המודפס).",
+   "explanation": "נמצא את $XY$ לפי $AB$: $AB=00\\to XY=11$, $AB=01\\to XY=01$, $AB=10\\to XY=00$, $AB=11\\to XY=01$.\n$F=\\bar X\\bar Y(\\bar C\\bar D+C\\bar D)+\\bar XY(\\bar C\\bar D+CD)+X\\bar Y\\cdot C+XY\\cdot D$, ובפיתוח למכפלות מלאות נקבל את שבע/שמונה המכפלות של המשוואה הנכונה (לפי הפתרון המודפס).",
    "image": "images/exams/25A-A-Q15.png",
    "hold": "Official key (circled a) disagrees with recomputation: the circuit gives F = sum(1,3,4,7,8,10,12,15), but the printed term A.Bbar.C.D (1011) appears in all four options where the circuit needs A.Bbar.C.Dbar (1010). Option a matches the other seven terms; the lecturer's working lists the 1010 term.",
    "note": "Held: every option prints A.Bbar.C.D in the place where the circuit needs A.Bbar.C.Dbar."
@@ -700,7 +700,7 @@
    "answerSource": "solution-pdf",
    "official": true,
    "confidence": "high",
-   "explanation": "בפקודת sw אותות הבקרה הם: ALUSrc=1, ALUOp=00 (ADD), MemRead=0, MemWrite=1, MemToReg=X, RegDst=X, RegWrite=0, Branch=0, Jump=0.\nב: ALUOp=10 ו-RegWrite=1 - שגוי. ג: RegWrite=1 - שגוי. ד: Branch=1 - שגוי. ה: ALUOp=10 - שגוי. ו: RegWrite=1 (ו-MemWrite=0) - שגוי.\nרק האפשרות א מתאימה (RegDst ו-MemToReg הם X ולכן הערכים שלהם לא משנים).",
+   "explanation": "בפקודת sw אותות הבקרה הם: ALUSrc=1, ALUOp=00 (ADD), MemRead=0, MemWrite=1, MemToReg=X, RegDst=X, RegWrite=0, Branch=0, Jump=0.\nב: ALUOp=10 ו-RegWrite=1 - שגוי. ג: RegWrite=1 - שגוי. ד: Branch=1 - שגוי. ה: ALUOp=10 - שגוי. ו: RegWrite=1 (ו-MemWrite=0) - שגוי.\nרק האפשרות `ALUOp=00 (add);  RegDst=0; MemWrite=1;  RegWrite=0;  MemToReg=1` מתאימה (RegDst ו-MemToReg הם X ולכן הערכים שלהם לא משנים).",
    "image": "images/exams/25A-A-Q18.png",
    "note": "Datapath figure is a low-resolution source scan. The lecturer's working lists RegWrite=1 for sw; sw has RegWrite=0 (slip), consistent with the circled key."
   },

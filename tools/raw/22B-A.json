@@ -761,7 +761,7 @@
    "answerSource": "solution-pdf",
    "official": true,
    "confidence": "high",
-   "explanation": "\\$6=sum=0, \\$7=i=0, \\$8=1; \\$9=4i, \\$9=array+4i, \\$10=array[i]; בסוף i=i+1 וחוזרים ל-loop אם i<size.\nא: \\$9=1 אם array[i]%2==1; אם לא - מדלגים (bne \\$9,\\$8,nxt); אחרת sum += array[i].\nב: `sub` בודק רק אם array[i] שווה ל-1 (לא אם הוא אי-זוגי), וה-`add` מוסיף ל-sum את \\$9 (הכתובת) במקום את \\$10. ג: הפקודה הראשונה מוחקת את \\$10 (array[i]) ולכן ל-sum יתווסף ערך שגוי. ד: beq מדלג כשהמספר אי-זוגי - הפוך.",
+   "explanation": "\\$6=sum=0, \\$7=i=0, \\$8=1; \\$9=4i, \\$9=array+4i, \\$10=array[i]; בסוף i=i+1 וחוזרים ל-loop אם i<size.\nבקטע הנכון \\$9=1 אם array[i]%2==1; אם לא - מדלגים (bne \\$9,\\$8,nxt); אחרת sum += array[i].\nבקטע שמתחיל ב-`sub \\$11,\\$10,\\$8`: `sub` בודק רק אם array[i] שווה ל-1 (לא אם הוא אי-זוגי), וה-`add` מוסיף ל-sum את \\$9 (הכתובת) במקום את \\$10. בקטע שמתחיל ב-`and \\$10,\\$10,\\$8`: הפקודה הראשונה מוחקת את \\$10 (array[i]) ולכן ל-sum יתווסף ערך שגוי. בקטע עם `beq \\$9,\\$8, nxt`: beq מדלג כשהמספר אי-זוגי - הפוך.",
    "note": "This question is printed with the number '1.' (it is the 20th page of the exam). The stem says array is in $5 and size in $4, matching the code."
   }
  ]

@@ -4,7 +4,7 @@
 - **Final questions: 238** (unique by dedupKey: 219, duplicates kept: 19)
 - Excluded: **0** 
 - Shared context blocks: **0**
-- Math spans rendered (distinct): **1495**
+- Math spans rendered (distinct): **1498**
 - lockOrder: 0 · multiple accepted answers: 2
 
 - **On hold (not in bank, see docs/ASK_ADIR.md): 2**

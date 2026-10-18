@@ -505,7 +505,7 @@
    "answerSource": "solution-pdf",
    "official": true,
    "confidence": "high",
-   "explanation": "מתאימים אוגרים: $b=\\$2$, $a=\\$3$, $c=\\$4$.\n`slt \\$1,\\$2,\\$3` נותן $\\$1=1$ אם $b<a$ (כלומר $a>b$); אם $\\$1=0$ מדלגים על `add \\$3,\\$2,\\$2` ($a=2b$) - `beq \\$1,\\$0,lab1`.\n`slt \\$1,\\$2,\\$4` נותן $\\$1=1$ אם $b<c$; אם $c>b$ מדלגים (`bne \\$1,\\$0,lab2`), אחרת ($c\\le b$) מבצעים `add \\$4,\\$2,\\$2` ($c=2b$).\nב: שתי הקפיצות הפוכות; ג, ד: מבצעים `a=a+b` ו-`c=c+b` במקום $2b$ (ד גם עם קפיצה נכונה בחלק הראשון).",
+   "explanation": "מתאימים אוגרים: $b=\\$2$, $a=\\$3$, $c=\\$4$.\n`slt \\$1,\\$2,\\$3` נותן $\\$1=1$ אם $b<a$ (כלומר $a>b$); אם $\\$1=0$ מדלגים על `add \\$3,\\$2,\\$2` ($a=2b$) - `beq \\$1,\\$0,lab1`.\n`slt \\$1,\\$2,\\$4` נותן $\\$1=1$ אם $b<c$; אם $c>b$ מדלגים (`bne \\$1,\\$0,lab2`), אחרת ($c\\le b$) מבצעים `add \\$4,\\$2,\\$2` ($c=2b$).\nבקטע עם הקפיצות הפוכות (`bne` ואז `beq`) שתי הקפיצות שגויות; בשני הקטעים עם `add \\$3,\\$3,\\$2` מבצעים `a=a+b` ו-`c=c+b` במקום $2b$ (באחד מהם גם הקפיצה הראשונה נכונה).",
    "note": "The register-to-variable mapping (b=$2, a=$3, c=$4) is not printed in the question; it is taken from the lecturer's solution page."
   },
   {
@@ -582,7 +582,7 @@
    "answerSource": "solution-pdf",
    "official": true,
    "confidence": "high",
-   "explanation": "הערוצים $X$ ו-$Y$: $X=1$ כאשר $AB=10$, $Y=1$ כאשר $AB=11$, ולכן $XY=00$ כאשר $AB=00$ או $AB=01$, $XY=01$ כאשר $AB=11$, $XY=10$ כאשר $AB=10$ ו-$XY=11$ אינו מתקבל.\nהכניסות הנבחרות: $XY=00\\to(CD=11)+(AB=00)$; $XY=01\\to(CD=01)+(CD=10)$; $XY=10\\to(AB=01)$; $XY=11\\to(CD=00)$.\nעבור $AB=00$: $F=CD+1=1$ - המינטרמים $0,1,2,3$; עבור $AB=01$: $F=CD$ - המינטרם $7$; עבור $AB=11$: $F=\\bar CD+C\\bar D$ - המינטרמים $13,14$; עבור $AB=10$: $F=0$.\n$F=\\Sigma(0,1,2,3,7,13,14)$ - זו תשובה א.",
+   "explanation": "הערוצים $X$ ו-$Y$: $X=1$ כאשר $AB=10$, $Y=1$ כאשר $AB=11$, ולכן $XY=00$ כאשר $AB=00$ או $AB=01$, $XY=01$ כאשר $AB=11$, $XY=10$ כאשר $AB=10$ ו-$XY=11$ אינו מתקבל.\nהכניסות הנבחרות: $XY=00\\to(CD=11)+(AB=00)$; $XY=01\\to(CD=01)+(CD=10)$; $XY=10\\to(AB=01)$; $XY=11\\to(CD=00)$.\nעבור $AB=00$: $F=CD+1=1$ - המינטרמים $0,1,2,3$; עבור $AB=01$: $F=CD$ - המינטרם $7$; עבור $AB=11$: $F=\\bar CD+C\\bar D$ - המינטרמים $13,14$; עבור $AB=10$: $F=0$.\n$F=\\Sigma(0,1,2,3,7,13,14)$.",
    "image": "images/exams/23B-B-Q15.png",
    "note": "Option rows read at 2x zoom; the minterm set of each option was rebuilt from the printed rows and compared by script with the lecturer's set (only a matches)."
   },
@@ -796,7 +796,7 @@
    "answerSource": "solved",
    "official": false,
    "confidence": "high",
-   "explanation": "המפתח הרשמי סימן א, אך התשובה הנכונה היא ב כי ב-א הפקודה `bne` מדלגת על ההעתקה בדיוק כאשר `array1[i]>array2[i]`, כלומר הפוך מהתנאי שבקוד.\n\\$8 מצביע ל-`array2[i]` ו-\\$9 ל-`array1[i]`; `lw \\$10,0(\\$9)` טוען את `array1[i]` ו-`lw \\$11,0(\\$8)` את `array2[i]`. הפקודה `slt \\$1,\\$11,\\$10` נותנת `\\$1=1` כאשר `array2[i]<array1[i]`, כלומר כאשר התנאי `array1[i]>array2[i]` מתקיים.\nלכן יש לדלג על ההעתקה כאשר `\\$1=0` (`beq \\$1,\\$0,lab2`), ואחרת `sw \\$10,0(\\$8)` מבצע `array2[i]=array1[i]` - תשובה ב.\nהערה: ג (`slt \\$1,\\$10,\\$11` עם `bne`) מעתיקה כאשר `array1[i]>=array2[i]`; היא משאירה אותו מערך כי במקרה השוויון ההעתקה אינה משנה דבר, אבל היא תרגום של `>=` ולא של `>`.",
+   "explanation": "המפתח הרשמי סימן את הקטע עם `bne \\$1,\\$0,lab2` (באותו `slt`), אך התשובה הנכונה היא הקטע עם `beq \\$1,\\$0,lab2` כי בקטע עם `bne` הפקודה `bne` מדלגת על ההעתקה בדיוק כאשר `array1[i]>array2[i]`, כלומר הפוך מהתנאי שבקוד.\n\\$8 מצביע ל-`array2[i]` ו-\\$9 ל-`array1[i]`; `lw \\$10,0(\\$9)` טוען את `array1[i]` ו-`lw \\$11,0(\\$8)` את `array2[i]`. הפקודה `slt \\$1,\\$11,\\$10` נותנת `\\$1=1` כאשר `array2[i]<array1[i]`, כלומר כאשר התנאי `array1[i]>array2[i]` מתקיים.\nלכן יש לדלג על ההעתקה כאשר `\\$1=0` (`beq \\$1,\\$0,lab2`), ואחרת `sw \\$10,0(\\$8)` מבצע `array2[i]=array1[i]`.\nהערה: הקטע (`slt \\$1,\\$10,\\$11` עם `bne`) מעתיקה כאשר `array1[i]>=array2[i]`; היא משאירה אותו מערך כי במקרה השוויון ההעתקה אינה משנה דבר, אבל היא תרגום של `>=` ולא של `>`.",
    "note": "Arbiter 2026-10-17: key circled a skips the store exactly when array1[i]>array2[i] (array2 ends as the minimum); b is the faithful translation. c matches b's final array only because the equal-case store is a no-op; it translates >=, so b is the unique answer (same standard as 24A-A Q20)."
   }
  ]

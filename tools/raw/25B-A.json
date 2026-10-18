@@ -419,7 +419,7 @@
    "answerSource": "solution-pdf",
    "official": true,
    "confidence": "high",
-   "explanation": "`\\$7` הוא ה-MASK ומתחיל ב-`0x00000001`; בכל סיבוב הוא מוזז שמאלה ב-1 ולכן עובר על כל 32 הביטים, ויוצאים כאשר `\\$7==0`.\nכל פעם מבצעים AND בין ה-MASK ל-`\\$3`: אם הביט הוא \"1\" מדלגים (אין `\\$8++`), אם הביט הוא \"0\" מבצעים `\\$8++`.\nלכן בסוף `\\$8` סופר את מספר האפסים (הביטים שערכם \"0\") שיש במספר שב-`\\$3`. 17 אפסים משמעו 15 אחדים - רק בתשובה א יש 15 אחדים."
+   "explanation": "`\\$7` הוא ה-MASK ומתחיל ב-`0x00000001`; בכל סיבוב הוא מוזז שמאלה ב-1 ולכן עובר על כל 32 הביטים, ויוצאים כאשר `\\$7==0`.\nכל פעם מבצעים AND בין ה-MASK ל-`\\$3`: אם הביט הוא \"1\" מדלגים (אין `\\$8++`), אם הביט הוא \"0\" מבצעים `\\$8++`.\nלכן בסוף `\\$8` סופר את מספר האפסים (הביטים שערכם \"0\") שיש במספר שב-`\\$3`. 17 אפסים משמעו 15 אחדים - רק בתשובה `0x830F14F6` יש 15 אחדים."
   },
   {
    "num": 11,
@@ -585,7 +585,7 @@
    "answerSource": "solution-pdf",
    "official": true,
    "confidence": "high",
-   "explanation": "נמצא את משוואת $F$ מהמעגל; תחילה נחשב את הקשר בין $AB$ ל-$XY$:\n$AB=00\\to XY=00$, $AB=01\\to XY=10$, $AB=10\\to XY=11$, $AB=11\\to XY=10$.\n$F=(\\bar X\\bar Y)\\cdot(\\bar C\\bar D+C\\bar D)+(X\\bar Y)\\cdot\\bar C+(XY)\\cdot D$ (אין מצב $\\bar X Y$).\n$\\Rightarrow F=\\bar A\\bar B(\\bar C\\bar D+C\\bar D)+(\\bar A B+AB)\\cdot\\bar C\\cdot(\\bar D+D)+A\\bar B(\\bar C+C)\\cdot D$, ובפיתוח למכפלות מלאות מתקבלת תשובה א.",
+   "explanation": "נמצא את משוואת $F$ מהמעגל; תחילה נחשב את הקשר בין $AB$ ל-$XY$:\n$AB=00\\to XY=00$, $AB=01\\to XY=10$, $AB=10\\to XY=11$, $AB=11\\to XY=10$.\n$F=(\\bar X\\bar Y)\\cdot(\\bar C\\bar D+C\\bar D)+(X\\bar Y)\\cdot\\bar C+(XY)\\cdot D$ (אין מצב $\\bar X Y$).\n$\\Rightarrow F=\\bar A\\bar B(\\bar C\\bar D+C\\bar D)+(\\bar A B+AB)\\cdot\\bar C\\cdot(\\bar D+D)+A\\bar B(\\bar C+C)\\cdot D$, ובפיתוח למכפלות מלאות מתקבלת המשוואה הנכונה.",
    "image": "images/exams/25B-A-Q15.png",
    "note": "Option rows read at 4x zoom; the minterm sets were rebuilt from the printed rows and the key row a recomputed from the circuit by script."
   },
@@ -713,7 +713,7 @@
    "answerSource": "solution-pdf",
    "official": true,
    "confidence": "high",
-   "explanation": "בפקודת beq אותות הבקרה הם: ALUSrc=0, ALUOp=01 (SUB), MemRead=0, MemWrite=0, MemtoReg=X, RegDst=X, RegWrite=0, Branch=1, Jump=0.\nרק האפשרות א מתאימה.",
+   "explanation": "בפקודת beq אותות הבקרה הם: ALUSrc=0, ALUOp=01 (SUB), MemRead=0, MemWrite=0, MemtoReg=X, RegDst=X, RegWrite=0, Branch=1, Jump=0.\nרק האפשרות `ALUOp=01 (sub);  RegDst=0; ALUSrc=0;  RegWrite=0;  Jump=0` מתאימה.",
    "image": "images/exams/25B-A-Q18.png",
    "note": "Datapath figure is a low-resolution source scan; control-signal labels in it are not legible in the source."
   },

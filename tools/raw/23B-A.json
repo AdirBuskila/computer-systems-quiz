@@ -546,7 +546,7 @@
    "answerSource": "solution-pdf",
    "official": true,
    "confidence": "high",
-   "explanation": "לפי המעגל: $F=(\\bar A\\bar B\\bar C)\\cdot D+(\\bar A\\bar BC)\\cdot D+(\\bar AB\\bar C)+(\\bar ABC)+(A\\bar BC)\\cdot\\bar D$ (שאר הכניסות הן 0).\nנבדוק את משוואה א: $\\bar AB+\\bar AD+A\\bar BC\\bar D$. הפיתוח למכפלות מלאות של $\\bar AB$ ושל $\\bar AD$ נותן בדיוק את המכפלות של $F$ שמכילות $\\bar A$, ובנוסף $A\\bar BC\\bar D$ - לכן המשוואה שווה ל-$F$.\nהמשוואות האחרות אינן שוות: עבור $ABCD=0010$ המעגל נותן $F=D=0$ ($ABC=001$), ואילו בתשובות ב, ג ו-ד מופיע $\\bar AC=1$.",
+   "explanation": "לפי המעגל: $F=(\\bar A\\bar B\\bar C)\\cdot D+(\\bar A\\bar BC)\\cdot D+(\\bar AB\\bar C)+(\\bar ABC)+(A\\bar BC)\\cdot\\bar D$ (שאר הכניסות הן 0).\nנבדוק את משוואה א: $\\bar AB+\\bar AD+A\\bar BC\\bar D$. הפיתוח למכפלות מלאות של $\\bar AB$ ושל $\\bar AD$ נותן בדיוק את המכפלות של $F$ שמכילות $\\bar A$, ובנוסף $A\\bar BC\\bar D$ - לכן המשוואה שווה ל-$F$.\nהמשוואות האחרות אינן שוות: עבור $ABCD=0010$ המעגל נותן $F=D=0$ ($ABC=001$), ואילו בתשובות $F=\\bar A\\cdot B+\\bar A\\cdot C+\\bar B\\cdot C$, $F=\\bar A\\cdot B+\\bar A\\cdot C+\\bar C\\cdot\\bar D$ ו-$F=A\\cdot B+\\bar A\\cdot C+C\\cdot D$ מופיע $\\bar AC=1$.",
    "image": "images/exams/23B-A-Q14.png"
   },
   {
@@ -584,7 +584,7 @@
    "answerSource": "solution-pdf",
    "official": true,
    "confidence": "high",
-   "explanation": "נמצא את המשוואה מהמעגל: מפענח ה-AB יוצר $X=1$ כאשר $AB=01$ ו-$Y=1$ כאשר $AB=10$.\n$AB=00\\Rightarrow XY=00\\Rightarrow F=D$; $AB=01\\Rightarrow XY=10\\Rightarrow F=\\bar CD+C\\bar D$; $AB=10\\Rightarrow XY=01\\Rightarrow F=\\bar C\\bar D+CD$; $AB=11\\Rightarrow XY=00\\Rightarrow F=D$.\n$\\Rightarrow F=(\\bar A\\bar B+AB)\\cdot D+\\bar AB\\cdot(\\bar CD+C\\bar D)+A\\bar B\\cdot(\\bar C\\bar D+CD)$ - זו תשובה א.\nבכל אחת מהאפשרויות האחרות מתקבל ערך שונה מהמעגל בצירוף כלשהו (הוחלפו הצירופים של $\\bar AB$ ו-$A\\bar B$ או שחסרים/שונים הגורמים של $AB$ ו-$\\bar A\\bar B$).",
+   "explanation": "נמצא את המשוואה מהמעגל: מפענח ה-AB יוצר $X=1$ כאשר $AB=01$ ו-$Y=1$ כאשר $AB=10$.\n$AB=00\\Rightarrow XY=00\\Rightarrow F=D$; $AB=01\\Rightarrow XY=10\\Rightarrow F=\\bar CD+C\\bar D$; $AB=10\\Rightarrow XY=01\\Rightarrow F=\\bar C\\bar D+CD$; $AB=11\\Rightarrow XY=00\\Rightarrow F=D$.\n$\\Rightarrow F=(\\bar A\\bar B+AB)\\cdot D+\\bar AB\\cdot(\\bar CD+C\\bar D)+A\\bar B\\cdot(\\bar C\\bar D+CD)$ - זו המשוואה הנכונה.\nבכל אחת מהאפשרויות האחרות מתקבל ערך שונה מהמעגל בצירוף כלשהו (הוחלפו הצירופים של $\\bar AB$ ו-$A\\bar B$ או שחסרים/שונים הגורמים של $AB$ ו-$\\bar A\\bar B$).",
    "image": "images/exams/23B-A-Q15.png",
    "note": "Option expressions were read at 2x zoom and every option was checked by script against the circuit (only a matches)."
   },
@@ -713,7 +713,7 @@
    "answerSource": "solution-pdf",
    "official": true,
    "confidence": "high",
-   "explanation": "בפקודת `lw` הפקודה מחשבת כתובת (ALUOp=00, חיבור), MemRead=1, MemWrite=0, MemToReg=1, RegDst=0 (היעד הוא Rt), RegWrite=1, Branch=0, Jump=0.\nרק האפשרות א מתאימה: ב כוללת MemWrite=1 ו-RegWrite=0; ג, ד, ו משתמשות ב-ALUOp=10 (func); ה ו-ו משתמשות ב-RegDst=1.",
+   "explanation": "בפקודת `lw` הפקודה מחשבת כתובת (ALUOp=00, חיבור), MemRead=1, MemWrite=0, MemToReg=1, RegDst=0 (היעד הוא Rt), RegWrite=1, Branch=0, Jump=0.\nרק האפשרות `ALUOp=00 (add);  MemRead=1;  RegWrite=1;  RegDst=0` מתאימה: ב כוללת MemWrite=1 ו-RegWrite=0; ג, ד, ו משתמשות ב-ALUOp=10 (func); ה ו-ו משתמשות ב-RegDst=1.",
    "image": "images/exams/23B-A-Q18.png",
    "note": "Datapath figure is a low-resolution source scan; control-signal labels in it are not legible in the source. Only the control signals used by the options are named in the explanation."
   },
